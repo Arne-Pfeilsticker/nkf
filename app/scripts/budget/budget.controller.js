@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('nkfApp').controller('HomeCtrl', HomeCtrl);
+    angular.module('nkfApp').controller('BudgetCtrl', BudgetCtrl);
 
     HomeCtrl.$inject = ['$state', '$scope'];
 
-    function HomeCtrl($state, $scope) {
+    function BudgetCtrl($state, $scope) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -26,7 +26,7 @@
         }
 
         function navigate(){
-            $state.go('leagues');
+            $state.go('home');
         }
 
     }
