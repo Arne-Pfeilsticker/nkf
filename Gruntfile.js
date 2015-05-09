@@ -19,9 +19,11 @@ module.exports = function (grunt) {
     var appConfig = {
         app: require('./bower.json').appPath || 'app',
         // NKF is intended to be a plugin for OrientDB.
-        // Copy the nkf directory into the plugins dicretory of OrientDB.
+        // Copy the (dist/)nkf subdirectory into the plugins dicretory of OrientDB.
         // Call nkf app with: http://localhost:2480/nkf/index.html#/
-        dist: 'dist/nkf/www'
+        dist: 'dist/nkf/www',
+        // Access ORIENTDB_HOME environment variable
+        orientdb: process.env.ORIENTDB_HOME
     };
 
     // Define the configuration for all the tasks
@@ -150,7 +152,11 @@ module.exports = function (grunt) {
                     ]
                 }]
             },
-            server: '.tmp'
+            server: '.tmp',
+            orientdb: {
+                options: {force: true},
+                src: ['<%= yeoman.orientdb %>/plugins/nkf']
+            }
         },
 
         // Add vendor prefixed styles
@@ -401,6 +407,12 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            orientdb: {
+                expand: true,
+                cwd: 'dist',
+                dest: '<%= yeoman.orientdb %>/plugins',
+                src: ['nkf/**/*.*']
             }
         },
 
@@ -480,4 +492,11 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    grunt.registerTask('orientdb', 'Copy nkf app into plugin directory of OrientDB', function () {
+        grunt.task.run([
+            'clean:orientdb',
+            'copy:orientdb'
+        ]);
+    });
 };
