@@ -1,0 +1,7 @@
+create class PersonTypes extends V;
+create property PersonTypes.id string;
+create property PersonTypes.parent_id string;
+create property PersonTypes.label string;
+create property PersonTypes.acronym string;
+alter property PersonTypes.id MANDATORY=true;
+alter property PersonTypes.label MANDATORY=true;

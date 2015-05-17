@@ -1,0 +1,53 @@
+{
+  "source": {
+    "content": {
+      "value": "id,name,surname,friendSince,friendId,friendName,friendSurname\n0,Jay,Miner,1996,1,Luca,Garulli"
+    }
+  },
+  "extractor": {
+    "row": {}
+  },
+  "transformers": [
+    {
+      "csv": {}
+    },
+    {
+      "vertex": {
+        "class": "V1"
+      }
+    },
+    {
+      "edge": {
+        "unresolvedLinkAction": "CREATE",
+        "class": "Friend",
+        "joinFieldName": "friendId",
+        "lookup": "V2.fid",
+        "targetVertexFields": {
+          "name": "${input.friendName}",
+          "surname": "${input.friendSurname}"
+        },
+        "edgeFields": {
+          "since": "${input.friendSince}"
+        }
+      }
+    },
+    {
+      "field": {
+        "fieldNames": [
+          "friendSince",
+          "friendId",
+          "friendName",
+          "friendSurname"
+        ],
+        "operation": "remove"
+      }
+    }
+  ],
+  "loader": {
+    "orientdb": {
+      "dbURL": "remote:/localhost/databases/demo",
+      "dbType": "graph",
+      "useLightweightEdges": false
+    }
+  }
+}

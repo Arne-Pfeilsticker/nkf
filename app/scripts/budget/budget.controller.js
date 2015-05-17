@@ -3,14 +3,9 @@
 
     angular.module('nkfApp').controller('BudgetCtrl', BudgetCtrl);
 
-    HomeCtrl.$inject = ['$state', '$scope'];
+    BudgetCtrl.$inject = ['$state'];
 
-    function BudgetCtrl($state, $scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    function BudgetCtrl($state) {
         /* jshint validthis: true */
         var vm = this;
         vm.notesCollapsed = true;

@@ -22,9 +22,40 @@ module.exports = function (grunt) {
         // Copy the (dist/)nkf subdirectory into the plugins dicretory of OrientDB.
         // Call nkf app with: http://localhost:2480/nkf/index.html#/
         dist: 'dist/nkf/www',
-        // Access ORIENTDB_HOME environment variable
-        orientdb: process.env.ORIENTDB_HOME
+        // Import path
+        importPath: process.cwd() + '/import'
     };
+
+    // OrientDB Parameters and Commands (Blanks before [after] the vars is assumed by usage.)
+    var cmdtxt,
+        // OrientDB database name
+        orientDB = 'test2',
+        // OrientDB Home directory
+        orientHome = process.env.ORIENTDB_HOME,
+        // Remote access
+        orientRemote = 'remote:/localhost/databases/' + orientDB,
+        // OrientDB Server User and Password
+        orientUser = ' root arne ',
+        // OrientDB console
+        orientConsole = orientHome + '/bin/console.sh ',
+        // OrientDB ETL
+        orientEtl = orientHome + '/bin/oetl.sh ',
+        // Connect to OrientDB: CONNECT <database-url> <user-name> <user-password>
+        orientConnect = ' CONNECT ' + orientRemote + ' admin admin ';
+
+    // Change orient-etl JSON-file
+    // csvFile = absolute Path to csv file
+    // jsonFile = absolute Path to etl JSON config file
+    // orientURL = OrientDB URL
+    var changeETL = function(jsonFile, csvFile, orientURL) {
+        var apJsonFile = appConfig.importPath + jsonFile;
+        var etlJsonFile = grunt.file.readJSON(apJsonFile);
+        etlJsonFile.source.file.path = appConfig.importPath + csvFile;
+        etlJsonFile.loader.orientdb.dbURL = orientURL;
+
+        grunt.file.write(apJsonFile, JSON.stringify(etlJsonFile, null, 2));  //serialize it back to file
+    };
+
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -153,9 +184,9 @@ module.exports = function (grunt) {
                 }]
             },
             server: '.tmp',
-            orientdb: {
+            orientPlugin: {
                 options: {force: true},
-                src: ['<%= yeoman.orientdb %>/plugins/nkf']
+                src: [orientHome + '/plugins/nkf']
             }
         },
 
@@ -408,10 +439,10 @@ module.exports = function (grunt) {
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
             },
-            orientdb: {
+            orientPlugin: {
                 expand: true,
                 cwd: 'dist',
-                dest: '<%= yeoman.orientdb %>/plugins',
+                dest: orientHome + '/plugins',
                 src: ['nkf/**/*.*']
             }
         },
@@ -436,6 +467,26 @@ module.exports = function (grunt) {
             unit: {
                 configFile: 'test/karma.conf.js',
                 singleRun: true
+            }
+        },
+
+        // Shell tasks
+        shell: {
+            createDB: {
+                command: orientConsole + ' "create database ' + orientRemote + orientUser + 'plocal"'
+            },
+            dropDB: {
+                command: orientConsole + ' "drop database ' + orientRemote + orientUser + '"'
+            },
+            createPersonTypesClass: {
+                command: orientConsole + '"' + orientConnect +';' + grunt.file.read('./import/persons/create_PersonTypes_class.txt') + '"'
+            },
+            loadPersonTypes: {
+                command: [
+                    changeETL('/persons/persontypes.json', '/persons/persontypes.csv', orientRemote),
+                    orientEtl + '<%= yeoman.importPath %>/persons/persontypes.json'
+                ].join('  ')  // Not join(' && ') because changeETL has no return value.
+
             }
         }
     });
@@ -493,10 +544,35 @@ module.exports = function (grunt) {
         'build'
     ]);
 
-    grunt.registerTask('orientdb', 'Copy nkf app into plugin directory of OrientDB', function () {
+    grunt.registerTask('orientPlugin', 'Copy nkf app into plugin directory of OrientDB', function () {
         grunt.task.run([
-            'clean:orientdb',
-            'copy:orientdb'
+            'clean:orientPlugin',
+            'copy:orientPlugin'
         ]);
+    });
+
+    grunt.registerTask('orientDBcreateLoad', 'Drop, create and load OrientDB', function () {
+        grunt.task.run([
+            'shell:dropDB',
+            'shell:createDB',
+            'shell:createPersonTypesClass',
+            'shell:loadPersonTypes'
+        ]);
+    });
+
+    grunt.registerTask('updatejson', function (key, value) {
+        var projectFile = "path/to/json/file";
+
+
+        if (!grunt.file.exists(projectFile)) {
+            grunt.log.error("file " + projectFile + " not found");
+            return true;//return false to abort the execution
+        }
+        var project = grunt.file.readJSON(projectFile);//get file as json object
+
+        project[key]= value;//edit the value of json object, you can also use projec.key if you know what you are updating
+
+        grunt.file.write(projectFile, JSON.stringify(project, null, 2));//serialize it back to file
+
     });
 };

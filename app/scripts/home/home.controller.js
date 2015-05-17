@@ -3,14 +3,9 @@
 
     angular.module('nkfApp').controller('HomeCtrl', HomeCtrl);
 
-    HomeCtrl.$inject = ['$state', '$scope'];
+    HomeCtrl.$inject = ['$state'];
 
-    function HomeCtrl($state, $scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    function HomeCtrl($state) {
         /* jshint validthis: true */
         var vm = this;
         vm.notesCollapsed = true;

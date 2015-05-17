@@ -1,0 +1,67 @@
+{
+  "config": {
+    "verbose": true,
+    "log": "debug"
+  },
+  "source": {
+    "file": {
+      "path": "/Volumes/Daten/WebstormProjects/nkf/import/persons/persontypes.csv",
+      "lock": true
+    }
+  },
+  "extractor": {
+    "row": {}
+  },
+  "transformers": [
+    {
+      "csv": {
+        "separator": ",",
+        "nullValue": ""
+      }
+    },
+    {
+      "merge": {
+        "joinFieldName": "id",
+        "lookup": "PersonTypes.id"
+      }
+    },
+    {
+      "vertex": {
+        "class": "PersonTypes"
+      }
+    },
+    {
+      "edge": {
+        "class": "hasPersonSubtype",
+        "joinFieldName": "parent_id",
+        "lookup": "PersonTypes.id",
+        "unresolvedLinkAction": "SKIP",
+        "direction": "in"
+      }
+    }
+  ],
+  "loader": {
+    "orientdb": {
+      "dbURL": "remote:/localhost/databases/test2",
+      "dbUser": "root",
+      "dbPassword": "arne",
+      "dbType": "graph",
+      "dbAutoCreate": true,
+      "classes": [
+        {
+          "name": "hasPersonSubtype",
+          "extends": "E"
+        }
+      ],
+      "indexes": [
+        {
+          "class": "PersonTypes",
+          "fields": [
+            "id:string"
+          ],
+          "type": "UNIQUE"
+        }
+      ]
+    }
+  }
+}

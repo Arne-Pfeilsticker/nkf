@@ -3,14 +3,9 @@
 
     angular.module('nkfApp').controller('ShellCtrl', ShellCtrl);
 
-    ShellCtrl.$inject = ['$rootScope', '$scope'];
+    ShellCtrl.$inject = ['$rootScope'];
 
-    function ShellCtrl($rootScope, $scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    function ShellCtrl($rootScope) {
         /* jshint validthis:true */
         var vm = this;
 

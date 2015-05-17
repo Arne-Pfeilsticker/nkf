@@ -58,7 +58,7 @@
             .state('budget', {
                 url: '/budget',
                 templateUrl: 'scripts/budget/budget.html',
-                controller: 'HomeCtrl',
+                controller: 'BudgetCtrl',
                 controllerAs: 'vm',
                 data: {
                     property1: 'foo',
