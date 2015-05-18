@@ -1,0 +1,69 @@
+{
+  "config": {
+    "verbose": true,
+    "log": "debug"
+  },
+  "source": {
+    "file": {
+      "path": "/Volumes/Daten/WebstormProjects/nkf/import/products/producttypes.csv",
+      "lock": true
+    }
+  },
+  "extractor": {
+    "row": {}
+  },
+  "transformers": [
+    {
+      "csv": {
+        "separator": ";",
+        "nullValue": ""
+      }
+    },
+    {
+      "merge": {
+        "joinFieldName": "id",
+        "lookup": "ProductTypes.id"
+      }
+    },
+    {
+      "vertex": {
+        "class": "ProductTypes"
+      }
+    },
+    {
+      "edge": {
+        "class": "hasProductSubtype",
+        "joinFieldName": "parent_id",
+        "lookup": "ProductTypes.id",
+        "unresolvedLinkAction": "SKIP",
+        "direction": "in"
+      }
+    }
+  ],
+  "loader": {
+    "orientdb": {
+      "dbURL": "remote:/localhost/databases/test2",
+      "dbUser": "root",
+      "dbPassword": "arne",
+      "dbType": "graph",
+      "dbAutoCreate": true,
+      "wal": false,
+      "batchCommit": 1000,
+      "classes": [
+        {
+          "name": "hasProductSubtype",
+          "extends": "E"
+        }
+      ],
+      "indexes": [
+        {
+          "class": "ProductTypes",
+          "fields": [
+            "id:string"
+          ],
+          "type": "UNIQUE"
+        }
+      ]
+    }
+  }
+}

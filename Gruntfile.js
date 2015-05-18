@@ -465,6 +465,11 @@ module.exports = function (grunt) {
 
         // Shell tasks to drop, create, create classes and load OrientDB
         shell: {
+            options: {
+                execOptions: {
+                    maxBuffer: Infinity
+                }
+            },
             createDB: {
                 command: orientConsole + '"create database ' + orientRemote + orientDBUserPassword + 'plocal"'
             },
@@ -482,6 +487,12 @@ module.exports = function (grunt) {
             },
             loadPersons: {
                 command: orientEtl + '<%= yeoman.importPath %>/persons/persons.json'
+            },
+            createProductTypesClass: {
+                command: orientConsole + '"' + orientConnect +';' + grunt.file.read('./import/products/create_ProductTypes_class.sql') + '"'
+            },
+            loadProductTypes: {
+                command: orientEtl + '<%= yeoman.importPath %>/products/producttypes.json'
             }
         }
     });
@@ -553,7 +564,9 @@ module.exports = function (grunt) {
             'shell:createPersonTypesClass',
             'orientLoadPersonTypes',
             'shell:createPersonsClass',
-            'orientLoadPersons'
+            'orientLoadPersons',
+            'shell:createProductTypesClass',
+            'orientLoadProductTypes'
         ]);
     });
 
@@ -596,6 +609,14 @@ module.exports = function (grunt) {
         grunt.task.run([
             'changeEtlConfig:/persons/persons.json:/persons/persons.csv',
             'shell:loadPersons'
+        ]);
+    });
+
+    grunt.registerTask('orientLoadProductTypes', 'Load Product Types (= product hierarchy ) into Orient Database.', function () {
+
+        grunt.task.run([
+            'changeEtlConfig:/products/producttypes.json:/products/producttypes.csv',
+            'shell:loadProductTypes'
         ]);
     });
 
