@@ -1,0 +1,69 @@
+{
+  "config": {
+    "verbose": true,
+    "log": "debug"
+  },
+  "source": {
+    "file": {
+      "path": "/Volumes/Daten/WebstormProjects/nkf/import/accounting/financial_accounts.csv",
+      "lock": true
+    }
+  },
+  "extractor": {
+    "row": {}
+  },
+  "transformers": [
+    {
+      "csv": {
+        "separator": ";",
+        "nullValue": ""
+      }
+    },
+    {
+      "merge": {
+        "joinFieldName": "id",
+        "lookup": "Framework.id"
+      }
+    },
+    {
+      "vertex": {
+        "class": "Framework"
+      }
+    },
+    {
+      "edge": {
+        "class": "hasSubaccount",
+        "joinFieldName": "parent_id",
+        "lookup": "Framework.id",
+        "unresolvedLinkAction": "SKIP",
+        "direction": "in"
+      }
+    }
+  ],
+  "loader": {
+    "orientdb": {
+      "dbURL": "remote:/localhost/databases/test2",
+      "dbUser": "root",
+      "dbPassword": "arne",
+      "dbType": "graph",
+      "dbAutoCreate": true,
+      "wal": false,
+      "batchCommit": 1000,
+      "classes": [
+        {
+          "name": "hasSubaccount",
+          "extends": "E"
+        }
+      ],
+      "indexes": [
+        {
+          "class": "Framework",
+          "fields": [
+            "id:string"
+          ],
+          "type": "UNIQUE"
+        }
+      ]
+    }
+  }
+}
