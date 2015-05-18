@@ -5,7 +5,7 @@
   },
   "source": {
     "file": {
-      "path": "/Volumes/Daten/WebstormProjects/nkf/import/persons/persontypes.csv",
+      "path": "/Volumes/Daten/WebstormProjects/nkf/import/persons/persons.csv",
       "lock": true
     }
   },
@@ -15,28 +15,37 @@
   "transformers": [
     {
       "csv": {
-        "separator": ",",
+        "separator": ";",
         "nullValue": ""
       }
     },
     {
       "merge": {
         "joinFieldName": "id",
-        "lookup": "PersonTypes.id"
+        "lookup": "Persons.id"
       }
     },
     {
       "vertex": {
-        "class": "PersonTypes"
+        "class": "Persons"
       }
     },
     {
       "edge": {
-        "class": "hasPersonSubtype",
+        "class": "hasPersons",
         "joinFieldName": "parent_id",
-        "lookup": "PersonTypes.id",
+        "lookup": "Persons.id",
         "unresolvedLinkAction": "SKIP",
         "direction": "in"
+      }
+    },
+    {
+      "edge": {
+        "class": "isPersonType",
+        "joinFieldName": "person_type",
+        "lookup": "PersonTypes.label",
+        "unresolvedLinkAction": "SKIP",
+        "direction": "out"
       }
     }
   ],
@@ -51,15 +60,26 @@
       "batchCommit": 100,
       "classes": [
         {
-          "name": "hasPersonSubtype",
+          "name": "hasPersons",
+          "extends": "E"
+        },
+        {
+          "name": "isPersonType",
           "extends": "E"
         }
       ],
       "indexes": [
         {
-          "class": "PersonTypes",
+          "class": "Persons",
           "fields": [
             "id:string"
+          ],
+          "type": "UNIQUE"
+        },
+        {
+          "class": "PersonTypes",
+          "fields": [
+            "label:string"
           ],
           "type": "UNIQUE"
         }

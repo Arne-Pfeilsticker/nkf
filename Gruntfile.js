@@ -26,7 +26,9 @@ module.exports = function (grunt) {
         importPath: process.cwd() + '/import'
     };
 
-    // OrientDB Parameters and Commands (Blanks before [after] the vars is assumed by usage.)
+    /**
+     * OrientDB Parameters and Commands (Blanks before [after] the vars is assumed by usage.)
+     */
     var cmdtxt,
         // OrientDB database name
         orientDB = 'test2',
@@ -35,26 +37,17 @@ module.exports = function (grunt) {
         // Remote access
         orientRemote = 'remote:/localhost/databases/' + orientDB,
         // OrientDB Server User and Password
-        orientUser = ' root arne ',
+        orientDBUser = 'root',
+        orientDBPassword = 'arne',
+        orientDBUserPassword = ' ' + orientDBUser + ' ' + orientDBPassword + ' ',
         // OrientDB console
         orientConsole = orientHome + '/bin/console.sh ',
-        // OrientDB ETL
+        // OrientDB ETL CLI
         orientEtl = orientHome + '/bin/oetl.sh ',
         // Connect to OrientDB: CONNECT <database-url> <user-name> <user-password>
         orientConnect = ' CONNECT ' + orientRemote + ' admin admin ';
 
-    // Change orient-etl JSON-file
-    // csvFile = absolute Path to csv file
-    // jsonFile = absolute Path to etl JSON config file
-    // orientURL = OrientDB URL
-    var changeETL = function(jsonFile, csvFile, orientURL) {
-        var apJsonFile = appConfig.importPath + jsonFile;
-        var etlJsonFile = grunt.file.readJSON(apJsonFile);
-        etlJsonFile.source.file.path = appConfig.importPath + csvFile;
-        etlJsonFile.loader.orientdb.dbURL = orientURL;
 
-        grunt.file.write(apJsonFile, JSON.stringify(etlJsonFile, null, 2));  //serialize it back to file
-    };
 
 
     // Define the configuration for all the tasks
@@ -470,23 +463,25 @@ module.exports = function (grunt) {
             }
         },
 
-        // Shell tasks
+        // Shell tasks to drop, create, create classes and load OrientDB
         shell: {
             createDB: {
-                command: orientConsole + ' "create database ' + orientRemote + orientUser + 'plocal"'
+                command: orientConsole + '"create database ' + orientRemote + orientDBUserPassword + 'plocal"'
             },
             dropDB: {
-                command: orientConsole + ' "drop database ' + orientRemote + orientUser + '"'
+                command: orientConsole + '"drop database ' + orientRemote + orientDBUserPassword + '"'
             },
             createPersonTypesClass: {
                 command: orientConsole + '"' + orientConnect +';' + grunt.file.read('./import/persons/create_PersonTypes_class.txt') + '"'
             },
             loadPersonTypes: {
-                command: [
-                    changeETL('/persons/persontypes.json', '/persons/persontypes.csv', orientRemote),
-                    orientEtl + '<%= yeoman.importPath %>/persons/persontypes.json'
-                ].join('  ')  // Not join(' && ') because changeETL has no return value.
-
+                command: orientEtl + '<%= yeoman.importPath %>/persons/persontypes.json'
+            },
+            createPersonsClass: {
+                command: orientConsole + '"' + orientConnect +';' + grunt.file.read('./import/persons/create_Persons_class.txt') + '"'
+            },
+            loadPersons: {
+                command: orientEtl + '<%= yeoman.importPath %>/persons/persons.json'
             }
         }
     });
@@ -544,7 +539,7 @@ module.exports = function (grunt) {
         'build'
     ]);
 
-    grunt.registerTask('orientPlugin', 'Copy nkf app into plugin directory of OrientDB', function () {
+    grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
         grunt.task.run([
             'clean:orientPlugin',
             'copy:orientPlugin'
@@ -556,23 +551,52 @@ module.exports = function (grunt) {
             'shell:dropDB',
             'shell:createDB',
             'shell:createPersonTypesClass',
+            'orientLoadPersonTypes',
+            'shell:createPersonsClass',
+            'orientLoadPersons'
+        ]);
+    });
+
+    /**
+     * Change variable parameters in orient-etl config JSON-file.
+     * @param {string} jsonFile = Path to etl JSON config file. Import path will be added.
+     * @param {string} csvFile = Path to csv file containing the data to import. Import path will be added.
+     * @param {string} orientURL = URL to destination OrientDB
+     */
+    grunt.registerTask('changeEtlConfig', 'Change variable parameters in orient-ETL config JSON-file.', function (jsonFile, csvFile) {
+        var apJsonFile = appConfig.importPath + jsonFile;
+
+
+        if (!grunt.file.exists(apJsonFile)) {
+            grunt.log.error("file " + apJsonFile + " not found");
+            return false;//return false to abort the execution
+        }
+
+        var etlJsonFile = grunt.file.readJSON(apJsonFile); //get file as json object
+
+        etlJsonFile.source.file.path = appConfig.importPath + csvFile;
+        etlJsonFile.loader.orientdb.dbURL = orientRemote;
+        etlJsonFile.loader.orientdb.dbUser = orientDBUser;
+        etlJsonFile.loader.orientdb.dbPassword = orientDBPassword;
+
+        grunt.file.write(apJsonFile, JSON.stringify(etlJsonFile, null, 2));  //serialize it back to file
+    });
+
+
+    grunt.registerTask('orientLoadPersonTypes', 'Load Person Types (= legal entity types ) into Orient Database.', function () {
+
+        grunt.task.run([
+            'changeEtlConfig:/persons/persontypes.json:/persons/persontypes.csv',
             'shell:loadPersonTypes'
         ]);
     });
 
-    grunt.registerTask('updatejson', function (key, value) {
-        var projectFile = "path/to/json/file";
+    grunt.registerTask('orientLoadPersons', 'Load Persons (= legal entities) into Orient Database.', function () {
 
-
-        if (!grunt.file.exists(projectFile)) {
-            grunt.log.error("file " + projectFile + " not found");
-            return true;//return false to abort the execution
-        }
-        var project = grunt.file.readJSON(projectFile);//get file as json object
-
-        project[key]= value;//edit the value of json object, you can also use projec.key if you know what you are updating
-
-        grunt.file.write(projectFile, JSON.stringify(project, null, 2));//serialize it back to file
-
+        grunt.task.run([
+            'changeEtlConfig:/persons/persons.json:/persons/persons.csv',
+            'shell:loadPersons'
+        ]);
     });
+
 };
