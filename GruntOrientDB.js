@@ -32,7 +32,7 @@ module.exports = function (grunt) {
         orientDB = 'test2',
     // OrientDB Home directory
         orientHome = process.env.ORIENTDB_HOME,
-    // Remote access
+    // Remote access to database
         orientRemote = 'remote:/localhost/databases/' + orientDB,
     // OrientDB Server User and Password
         orientDBUser = 'root',
@@ -65,57 +65,6 @@ module.exports = function (grunt) {
             dropDB: {
                 command: orientConsole + '"drop database ' + orientRemote + orientDBUserPassword + '"'
             },
-            createPersonTypesClass: {
-                command: orientConsole + '"' + orientConnect + ';' + grunt.file.read('./import/persons/create_PersonTypes_class.txt') + '"'
-            },
-            loadPersonTypes: {
-                command: orientEtl + '<%= yeoman.importPath %>/persons/persontypes.json'
-            },
-            createPersonsClass: {
-                command: orientConsole + '"' + orientConnect + ';' + grunt.file.read('./import/persons/create_Persons_class.txt') + '"'
-            },
-            loadPersons: {
-                command: orientEtl + '<%= yeoman.importPath %>/persons/persons.json'
-            },
-            createProductTypesClass: {
-                command: orientConsole + '"' + orientConnect + ';' + grunt.file.read('./import/products/create_ProductTypes_class.sql') + '"'
-            },
-            loadProductTypes: {
-                command: orientEtl + '<%= yeoman.importPath %>/products/producttypes.json'
-            },
-
-            /**
-             Accounting Framework
-
-             An accounting framework is stored as a tree structure.
-             The root node is the ID of the respective accounting framework.
-
-             The hierarchy can be arbitrary. In the classical case, the levels are:
-             1. Accounting framework (root node)
-             2. Framework part (Balance sheet, income statement, financial statement)
-             3. Account class
-             4. Account group
-             5. Account
-             6. Sub-Account
-
-             Kontenrahmen
-
-             Ein Kontenrahmen ist als Baumstruktur gespeichert. Der Root-Knoten ist die ID des jeweiligen Kontenrahmens.
-
-             Die Hierachie kann beliebig sein. Im klassischen Fall sind die Ebenen:
-             1. Kontenrahmen
-             2. (Bilanz, Ergebnisrechnung, Finanzrechnung)
-             3. Kontenklasse
-             4. Kontengruppe
-             5. Konto
-             6. Unterkonto
-             */
-            createFrameworkClass: {
-                command: orientConsole + '"' + orientConnect + ';' + grunt.file.read('./import/accounting/createFrameworkClass.sql') + '"'
-            },
-            loadFramework: {
-                command: orientEtl + '<%= yeoman.importPath %>/accounting/framework.json'
-            },
             execSQLfile: {
                 command: function (sqlfile) {
 
@@ -127,13 +76,13 @@ module.exports = function (grunt) {
                     return orientEtl + '<%= yeoman.importPath %>' + etlConfigFile
                 }
             }
-
         }
     });
 
 
     grunt.registerTask('default', [
-        'orientDBcreateLoad'
+        'orientDBCreate',
+        'orientDBLoadData'
     ]);
 
     grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
@@ -143,17 +92,21 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('orientDBcreateLoad', 'Drop, create and load OrientDB', function () {
+    grunt.registerTask('orientDBCreate', 'Drop and create OrientDB database and classes.', function () {
         grunt.task.run([
             'shell:dropDB',
             'shell:createDB',
-            //'shell:createPersonTypesClass',
-            //'orientLoadPersonTypes',
-            //'shell:createPersonsClass',
-            //'orientLoadPersons',
-            //'shell:createProductTypesClass',
-            //'orientLoadProductTypes',
-            'shell:execSQLfile:./import/accounting/createFrameworkClass.sql',
+            'shell:execSQLfile:./import/persons/createPersonClasses.sql',
+            'shell:execSQLfile:./import/products/createProductTypesClass.sql',
+            'shell:execSQLfile:./import/accounting/createFrameworkClass.sql'
+        ]);
+    });
+
+    grunt.registerTask('orientDBLoadData', 'Load data into OrientDB database.', function () {
+        grunt.task.run([
+            'orientLoadData:/persons/persontypes.json://persons/persontypes.csv',
+            'orientLoadData:/persons/persons.json://persons/persons.csv',
+            'orientLoadData:/products/producttypes.json:/products/producttypes.csv',
             'orientLoadData:/accounting/framework.json:/accounting/financial_accounts.csv'
         ]);
     });
@@ -183,40 +136,7 @@ module.exports = function (grunt) {
         grunt.file.write(apJsonFile, JSON.stringify(etlJsonFile, null, 2));  //serialize it back to file
     });
 
-
-    grunt.registerTask('orientLoadPersonTypes', 'Load Person Types (= legal entity types ) into Orient Database.', function () {
-
-        grunt.task.run([
-            'changeEtlConfig:/persons/persontypes.json:/persons/persontypes.csv',
-            'shell:loadPersonTypes'
-        ]);
-    });
-
-    grunt.registerTask('orientLoadPersons', 'Load Persons (= legal entities) into Orient Database.', function () {
-
-        grunt.task.run([
-            'changeEtlConfig:/persons/persons.json:/persons/persons.csv',
-            'shell:loadPersons'
-        ]);
-    });
-
-    grunt.registerTask('orientLoadProductTypes', 'Load Product Types (= product hierarchy ) into Orient Database.', function () {
-
-        grunt.task.run([
-            'changeEtlConfig:/products/producttypes.json:/products/producttypes.csv',
-            'shell:loadProductTypes'
-        ]);
-    });
-
-    grunt.registerTask('orientLoadFramework', 'Load Accounting Framework into Orient Database.', function () {
-
-        grunt.task.run([
-            'changeEtlConfig:/accounting/framework.json:/accounting/financial_accounts.csv',
-            'shell:loadFramework'
-        ]);
-    });
-
-    grunt.registerTask('orientLoadData', 'Load Data into Orient Database.', function (etlConfigFile, dataFile) {
+    grunt.registerTask('orientLoadData', 'Load Data into Orient Database with ETL tool.', function (etlConfigFile, dataFile) {
 
         grunt.task.run([
             'changeEtlConfig:' + etlConfigFile + ':' + dataFile,

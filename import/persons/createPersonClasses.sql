@@ -1,0 +1,17 @@
+create class PersonTypes extends V;
+create property PersonTypes.id string;
+create property PersonTypes.parent_id string;
+create property PersonTypes.label string;
+create property PersonTypes.acronym string;
+alter property PersonTypes.id MANDATORY=true;
+alter property PersonTypes.label MANDATORY=true;
+create class Persons extends V;
+create property Persons.id string;
+create property Persons.parent_id string;
+create property Persons.person_type string;
+create property Persons.name string;
+create property Persons.wiki_url string;
+create property Persons.begin date;
+create property Persons.end date;
+alter property Persons.id MANDATORY=true;
+alter property Persons.name MANDATORY=true;
