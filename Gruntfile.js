@@ -24,6 +24,10 @@ module.exports = function (grunt) {
         dist: 'dist/nkf/www'
     };
 
+    var
+    // OrientDB Home directory
+        orientHome = process.env.ORIENTDB_HOME;
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 

@@ -115,7 +115,19 @@ module.exports = function (grunt) {
             },
             loadFramework: {
                 command: orientEtl + '<%= yeoman.importPath %>/accounting/framework.json'
+            },
+            execSQLfile: {
+                command: function (sqlfile) {
+
+                    return orientConsole + '"' + orientConnect + ';' + grunt.file.read(sqlfile) + '"'
+                }
+            },
+            loadData: {
+                command: function(etlConfigFile) {
+                    return orientEtl + '<%= yeoman.importPath %>' + etlConfigFile
+                }
             }
+
         }
     });
 
@@ -135,25 +147,25 @@ module.exports = function (grunt) {
         grunt.task.run([
             'shell:dropDB',
             'shell:createDB',
-            'shell:createPersonTypesClass',
-            'orientLoadPersonTypes',
-            'shell:createPersonsClass',
-            'orientLoadPersons',
-            'shell:createProductTypesClass',
-            'orientLoadProductTypes',
-            'shell:createFrameworkClass',
-            'orientLoadFramework'
+            //'shell:createPersonTypesClass',
+            //'orientLoadPersonTypes',
+            //'shell:createPersonsClass',
+            //'orientLoadPersons',
+            //'shell:createProductTypesClass',
+            //'orientLoadProductTypes',
+            'shell:execSQLfile:./import/accounting/createFrameworkClass.sql',
+            'orientLoadData:/accounting/framework.json:/accounting/financial_accounts.csv'
         ]);
     });
 
     /**
      * Change variable parameters in orient-etl config JSON-file.
-     * @param {string} jsonFile = Path to etl JSON config file. Import path will be added.
-     * @param {string} csvFile = Path to csv file containing the data to import. Import path will be added.
+     * @param {string} etlConfigFile = Path to etl JSON config file. Import path will be added.
+     * @param {string} dataFile = Path to csv file containing the data to import. Import path will be added.
      * @param {string} orientURL = URL to destination OrientDB
      */
-    grunt.registerTask('changeEtlConfig', 'Change variable parameters in orient-ETL config JSON-file.', function (jsonFile, csvFile) {
-        var apJsonFile = appConfig.importPath + jsonFile;
+    grunt.registerTask('changeEtlConfig', 'Change variable parameters in orient-ETL config JSON-file.', function (etlConfigFile, dataFile) {
+        var apJsonFile = appConfig.importPath + etlConfigFile;
 
 
         if (!grunt.file.exists(apJsonFile)) {
@@ -163,7 +175,7 @@ module.exports = function (grunt) {
 
         var etlJsonFile = grunt.file.readJSON(apJsonFile); //get file as json object
 
-        etlJsonFile.source.file.path = appConfig.importPath + csvFile;
+        etlJsonFile.source.file.path = appConfig.importPath + dataFile;
         etlJsonFile.loader.orientdb.dbURL = orientRemote;
         etlJsonFile.loader.orientdb.dbUser = orientDBUser;
         etlJsonFile.loader.orientdb.dbPassword = orientDBPassword;
@@ -201,6 +213,14 @@ module.exports = function (grunt) {
         grunt.task.run([
             'changeEtlConfig:/accounting/framework.json:/accounting/financial_accounts.csv',
             'shell:loadFramework'
+        ]);
+    });
+
+    grunt.registerTask('orientLoadData', 'Load Data into Orient Database.', function (etlConfigFile, dataFile) {
+
+        grunt.task.run([
+            'changeEtlConfig:' + etlConfigFile + ':' + dataFile,
+            'shell:loadData:' + etlConfigFile
         ]);
     });
 
