@@ -19,31 +19,11 @@ module.exports = function (grunt) {
         // NKF is intended to be a plugin for OrientDB.
         // Copy the (dist/)nkf subdirectory into the plugins dicretory of OrientDB.
         // Call nkf app with: http://localhost:2480/nkf/index.html#/
-        dist: 'dist/nkf/www',
-        // Import path
-        importPath: process.cwd() + '/import'
+        dist: 'dist/nkf/www'
     };
 
-    /**
-     * OrientDB Parameters and Commands (Blanks before [after] the vars is assumed by usage.)
-     */
-    var
-    // OrientDB database name
-        orientDB = 'test2',
-    // OrientDB Home directory
-        orientHome = process.env.ORIENTDB_HOME,
-    // Remote access to database
-        orientRemote = 'remote:/localhost/databases/' + orientDB,
-    // OrientDB Server User and Password
-        orientDBUser = 'root',
-        orientDBPassword = 'arne',
-        orientDBUserPassword = ' ' + orientDBUser + ' ' + orientDBPassword + ' ',
-    // OrientDB console
-        orientConsole = orientHome + '/bin/console.sh ',
-    // OrientDB ETL CLI
-        orientEtl = orientHome + '/bin/oetl.sh ',
-    // Connect to OrientDB: CONNECT <database-url> <user-name> <user-password>
-        orientConnect = ' CONNECT ' + orientRemote + ' admin admin ';
+    // Get OrientDB Parameters and Command parts
+    var orient = require('./orientdb.config');
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -60,20 +40,20 @@ module.exports = function (grunt) {
                 }
             },
             createDB: {
-                command: orientConsole + '"create database ' + orientRemote + orientDBUserPassword + 'plocal"'
+                command: orient.Console + '"create database ' + orient.Remote + orient.SUserPassword + 'plocal"'
             },
             dropDB: {
-                command: orientConsole + '"drop database ' + orientRemote + orientDBUserPassword + '"'
+                command: orient.Console + '"drop database ' + orient.Remote + orient.SUserPassword + '"'
             },
             execSQLfile: {
                 command: function (sqlfile) {
 
-                    return orientConsole + '"' + orientConnect + ';' + grunt.file.read(sqlfile) + '"'
+                    return orient.Console + '"' + orient.Connect + ';' + grunt.file.read(sqlfile) + '"'
                 }
             },
             loadData: {
                 command: function(etlConfigFile) {
-                    return orientEtl + '<%= yeoman.importPath %>' + etlConfigFile
+                    return orient.Etl + orient.ImportPath + etlConfigFile
                 }
             }
         },
@@ -100,7 +80,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: orientHome + '/databases/' + orientDB + '/',
+                        cwd: orient.Home + '/databases/' + orient.DB + '/',
                         src: ['*'],
                         dest: 'nkf/'
                     }
@@ -148,7 +128,7 @@ module.exports = function (grunt) {
      * @param {string} orientURL = URL to destination OrientDB
      */
     grunt.registerTask('changeEtlConfig', 'Change variable parameters in orient-ETL config JSON-file.', function (etlConfigFile, dataFile) {
-        var apJsonFile = appConfig.importPath + etlConfigFile;
+        var apJsonFile = orient.ImportPath + etlConfigFile;
 
 
         if (!grunt.file.exists(apJsonFile)) {
@@ -158,10 +138,10 @@ module.exports = function (grunt) {
 
         var etlJsonFile = grunt.file.readJSON(apJsonFile); //get file as json object
 
-        etlJsonFile.source.file.path = appConfig.importPath + dataFile;
-        etlJsonFile.loader.orientdb.dbURL = orientRemote;
-        etlJsonFile.loader.orientdb.dbUser = orientDBUser;
-        etlJsonFile.loader.orientdb.dbPassword = orientDBPassword;
+        etlJsonFile.source.file.path = orient.ImportPath + dataFile;
+        etlJsonFile.loader.orientdb.dbURL = orient.Remote;
+        etlJsonFile.loader.orientdb.dbUser = orient.SUser;
+        etlJsonFile.loader.orientdb.dbPassword = orient.SPassword;
 
         grunt.file.write(apJsonFile, JSON.stringify(etlJsonFile, null, 2));  //serialize it back to file
     });

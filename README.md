@@ -16,7 +16,7 @@ falschen Schlussfolgerungen und die angestrebten Ziele werden nicht erreicht.
 Das Ziel dieses Open Source Projektes für Kommunen ist eine Software für die Haushaltsführung, die den
 Aufgaben und Bedürfnissen der Gemeinden gerecht wird.
 
-Mehr Informationen zum Projekt: [Vortrag] (https://dl.dropboxusercontent.com/u/13031383/EuWiKon%202015_T2V3%20-%20NKF.mp4)
+Mehr Informationen zum Projekt: [Vortrag] (https://dl.dropboxusercontent.com/u/13031383/EuWiKon%202015_T2V3%20-%20NKF.mp4) und 
 [Präsentation zum Vortrag](http://euwikon.eu/wordpress/wp-content/uploads/2015/01/EuWiKon-2015-Folien-NKF-Vortrag.key1.pdf)
 
 # Installation (Anwendung)
@@ -28,7 +28,7 @@ in der Version >= 1.6.
 1. Installiere OrientDB [Download] (http://orientdb.com/download/) [Installationsanleitung] (http://orientdb.com/docs/last/Tutorial-Installation.html)
 1. Setze die Umgebungsvariable **ORIENTDB_HOME**, die das Installationsverzeichnis von OrientDB enthält.
 1. Kopiere das **nkf**-Verzeichnis aus dem Verzeichnis **dist** in das Verzeichnis $ORIENTDB_HOME/plugins/
-1. Entpacke die dist/**nkfDatabase.zip**-Datei im Verzeichnis $ORIENTDB_HOME/databases. 
+1. Entpacke die **dist/nkfDatabase.zip**-Datei im Verzeichnis $ORIENTDB_HOME/databases. 
 Das erstellte Verzeichnis nkf enthält die nkf-Datenbank mit den Strukturdaten für das Bundesland NRW aber ohne Haushaltsdaten.
 Kontaktiere mich für eine Datenbank mit Haushaltsdaten.
 1. Mit dem Aufruf [http://localhost:2480/studio/index.html#] (http://localhost:2480/studio/index.html#/) 
@@ -48,14 +48,14 @@ installieren. Das WebStrom-Konfigurationsverzeichnis *.idea* wird mitgeliefert.
 
 1. Installiere OrientDB [Download] (http://orientdb.com/download/) [Installationsanleitung] (http://orientdb.com/docs/last/Tutorial-Installation.html)
 1. Setze die Umgebungsvariable **ORIENTDB_HOME**, die das Installationsverzeichnis von OrientDB enthält.
-1. Fork auf GitHub das Repo [Arne-Pfeilsticker / nkf] (https://github.com/Arne-Pfeilsticker/nkf)
+1. Fork auf GitHub dieses Repo [Arne-Pfeilsticker / nkf] (https://github.com/Arne-Pfeilsticker/nkf)
 1. Öffne WebStorm und *Check out from Version Control GitHub* (Ohne Webstorm: Clone das Projekt in ein Verzeichnis eigener Wahl.)
 1. Nachdem das Projekt geöffnet wurde öffne ein Terminal Fenster und führe folgende Befehle aus, um die erforderlichen 
 Node-Module und Bower-Komponenten herunter zu laden:
     1. npm install
     1. bower install
 1. Mit dem Befehl *grunt --gruntfile GruntOrientDB.js orientDBCreateAndLoad* wird die Datenbank neu aufgebaut und mit den Basis-Daten geladen.
-1. Mit dem Befehl *grunt default* wird die Anwendung / Plugin neu aufgebaut.
+1. Mit dem Befehl *grunt default* wird die Anwendung / das Plugin neu aufgebaut.
 1. Mit dem Befehl *grunt --gruntfile GruntOrientDB.js orientPlugin* wird das erstellte Plugin in das Verzeichnis *$ORIENTDB_HOME/plugins* der Datenbank kopiert. 
 1. Danach ist die Installation abgeschlossen.
 
