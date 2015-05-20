@@ -76,11 +76,41 @@ module.exports = function (grunt) {
                     return orientEtl + '<%= yeoman.importPath %>' + etlConfigFile
                 }
             }
+        },
+        compress: {
+            plugin: {
+                options: {
+                    archive: 'dist/nkf.zip'
+                },
+                files: [
+                    // {src: ['path/*'], dest: 'internal_folder/', filter: 'isFile'}, // includes files in path
+                    {
+                        expand: true,
+                        cwd: 'dist/nkf/',
+                        src: ['**','!*.zip']
+                    } // includes files in path and its subdirs
+                    // {expand: true, cwd: 'path/', src: ['**'], dest: 'internal_folder3/'}, // makes all src relative to cwd
+                    // {flatten: true, src: ['path/**'], dest: 'internal_folder4/', filter: 'isFile'} // flattens results to a single level
+                ]
+            },
+            database: {
+                options: {
+                    archive: 'dist/nkfDatabase.zip'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: orientHome + '/databases/' + orientDB + '/',
+                        src: ['*'],
+                        dest: 'nkf/'
+                    }
+                ]
+            }
         }
     });
 
 
-    grunt.registerTask('default', [
+    grunt.registerTask('orientDBCreateAndLoad', [
         'orientDBCreate',
         'orientDBLoadData'
     ]);

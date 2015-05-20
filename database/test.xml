@@ -1,0 +1,2 @@
+<parameter name="network.http.additionalResponseHeaders"
+           value="Access-Control-Allow-Origin: * ;Access-Control-Allow-Credentials: true;Access-Control-Allow-Headers: Content-Type;Access-Control-Allow-Methods: POST, GET, DELETE, HEAD, OPTION"/>

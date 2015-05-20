@@ -455,6 +455,19 @@ module.exports = function (grunt) {
                     // {expand: true, cwd: 'path/', src: ['**'], dest: 'internal_folder3/'}, // makes all src relative to cwd
                     // {flatten: true, src: ['path/**'], dest: 'internal_folder4/', filter: 'isFile'} // flattens results to a single level
                 ]
+            },
+            database: {
+                options: {
+                    archive: 'dist/nkfDatabase.zip'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: orientHome + '/databases/nkf/',
+                        src: ['*'],
+                        dest: 'nkf/'
+                    }
+                ]
             }
         }
     });
@@ -508,7 +521,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'newer:jshint',
-        'test',
+        // 'test',
         'build'
     ]);
 };
