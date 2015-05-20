@@ -44,7 +44,7 @@ als Datenbank und Web-Server nutzt. Der im [OrientDB Server] (http://orientdb.co
 integrierte Web-Server vereinfacht die Installation und den Betrieb der Anwendung erheblich.
  
 Wer Jetbrains [WebStorm] (https://www.jetbrains.com/webstorm/?fromMenu)-IDE nutzt kann das Projekt wie folgt auf dem eigenen PC
-installieren. Das Konfigurations
+installieren. Das WebStrom-Konfigurationsverzeichnis *.idea* wird mitgeliefert.
 
 1. Installiere OrientDB [Download] (http://orientdb.com/download/) [Installationsanleitung] (http://orientdb.com/docs/last/Tutorial-Installation.html)
 1. Setze die Umgebungsvariable **ORIENTDB_HOME**, die das Installationsverzeichnis von OrientDB enthält.
