@@ -25,6 +25,7 @@ module.exports = function (grunt) {
     // Get OrientDB Parameters and Command parts
     var orient = require('./orientdb.config');
 
+
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -152,6 +153,10 @@ module.exports = function (grunt) {
             'changeEtlConfig:' + etlConfigFile + ':' + dataFile,
             'shell:loadData:' + etlConfigFile
         ]);
+    });
+
+    grunt.registerTask('createServersideFunctions', 'Create all serverside functions', function () {
+        require('./database/serverside.functions');
     });
 
 };
