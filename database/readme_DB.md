@@ -22,3 +22,37 @@ Add this entry in config/orientdb-server-config.xml
 above
 
     <parameter value="utf-8" name="network.http.charset"/>
+    
+# Server-Side Functions
+
+## Database Graph-API for server-side functions
+
+var db = orient.getGraph();      // with transactions
+var db = orient.getGraphNoTx();  // without transaction for more speed
+
+To explore the database class you can write a simple function, orientClass, without parameter.
+
+    return orient.getClass();
+
+The result of the function execution is:
+
+    [
+        {
+            "@type": "d",
+            "@version": 0,
+            "value": "class com.orientechnologies.orient.graph.script.OScriptGraphOrientWrapper"
+        }
+    ]
+
+As you see, the functions is referencing a Java class directly. The java class that the orient variable wraps is OScriptGraphOrientWrapper. 
+Thus, in case you want to know more about its methods you can invoke just view the 
+[OScriptGraphOrientWrapper] (http://orientdb.com/javadoc/latest/com/orientechnologies/orient/graph/script/OScriptGraphOrientWrapper.html) javadoc.
+
+The methods to work with you find on the Graph wrapper class to use from scripts: 
+ [OScriptGraphWrapper] (http://orientdb.com/javadoc/latest/com/orientechnologies/orient/graph/script/OScriptGraphWrapper.html)
+ 
+### Test 
+
+Sometimes no error message are given. In this cases curl helps:
+
+    curl -X GET -u "admin:admin" http://localhost:2480/function/nkf/personTypes_getTree

@@ -36,7 +36,7 @@ module.exports = (function () {
      *
      * This function ist only beause Oriento's createFn can't set parameter idempotent
      */
-    var createFn = function (language, idempotent, fn) {
+    var createServerside = function (language, idempotent, fn) {
 
         var lang = ' LANGUAGE ' + language.toLowerCase();
         var idem = ' IDEMPOTENT ' + (idempotent ? 'true' : 'false');
@@ -54,8 +54,39 @@ module.exports = (function () {
             params = 'PARAMETERS ['+fnDef.params+']';
         }
 
+        var fnExists = true;
 
         var createFunction = 'CREATE FUNCTION ' + fnName + ' \"' + body + '\"' + params + lang + idem ;
+
+        // Delete function if exists.
+
+        db.select('name')
+            .from('OFunction')
+            .where({name: fnName})
+            .limit(1)
+            .one()
+            .then(function (params){
+                if(params.name == fnName) {
+                    console.log('Function ' + params.name + ' exists.');
+                    fnExists = true;
+                }
+            })
+            .catch(function(err) {
+                console.log('Info: function ' + fnName + ' does not exist.');
+                fnExists = false;
+            })
+            .done();
+
+        if (fnExists) {
+            db.delete()
+                .from('OFunction')
+                .where({name: fnName})
+                .scalar()
+                .then(function(total) {
+                    console.log('Deleted', total, 'function');
+                })
+                .done();
+        }
 
         db.exec(createFunction)
             .then(function (results){
@@ -74,9 +105,39 @@ module.exports = (function () {
 
     // Here the definition of server side functions begins.
 
-    createFn(js, true, function getAllUser() {
+    createServerside(js, true, function getAllUser() {
         var db = orient.getGraph();
 
         return db.command('sql', 'select from OUser');
     });
+
+    createServerside(js, true, function getPersonTree(node) {
+        var db = orient.getGraphNoTx();
+        var result = db.command('sql',"SELECT FROM #12:1");
+
+        function asTree(node) {
+            var obj = {
+                id: node.getProperty('id'),
+                type: node.getProperty('person_type'),
+                name: node.getProperty('name'),
+                children: [ function() {
+
+                    var childNodes = node.getProperty('out_hasPersons').iterator();
+
+                    if (!childNodes.hasNext()) { // There are no child nodes.
+                        return null;
+                    }
+
+                    while (childNodes.hasNext()) {
+                        return asTree(db.getVertex(childNodes.next().getProperty('in')));
+                    }
+                }]
+            };
+            return obj;
+        }
+
+
+        return result;
+    });
+
 })();

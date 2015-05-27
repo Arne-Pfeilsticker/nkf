@@ -519,6 +519,13 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
+    grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
+        grunt.task.run([
+            'clean:orientPlugin',
+            'copy:orientPlugin'
+        ]);
+    });
+
     grunt.registerTask('default', [
         'newer:jshint',
         // 'test',

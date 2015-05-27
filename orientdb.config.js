@@ -4,7 +4,7 @@
 module.exports = (function () {
     var
     // OrientDB database name
-        orientDB = 'test2',
+        orientDB = 'nkf',
 
     // OrientDB Server User and Password
         orientSUser = 'root',

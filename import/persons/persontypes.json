@@ -42,7 +42,7 @@
   ],
   "loader": {
     "orientdb": {
-      "dbURL": "remote:/localhost/databases/test2",
+      "dbURL": "remote:/localhost/databases/nkf",
       "dbUser": "root",
       "dbPassword": "arne",
       "dbType": "graph",
