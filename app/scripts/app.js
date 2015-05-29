@@ -11,7 +11,8 @@
         //'ui.calendar',
         //'uiGmapgoogle-maps',
         'ui.ace',
-        //'ui.grid',
+        'ui.grid',
+        //'ui.grid.treeView',
         //'ui.grid.importer',
         //'ui.grid.edit',
         //'ui.grid.resizeColumns',
@@ -34,26 +35,6 @@
                     property1: 'foo',
                     property2: 'bar'
                 }
-                //views: {
-                //    '': {
-                //        templateUrl: 'script/home/home.html',
-                //        controller: 'HomeCtrl',
-                //        controllerAs: 'vm',
-                //        data: {
-                //            property1: 'foo',
-                //            property2: 'bar'
-                //        }
-                //    },
-                //    'view1@': {
-                //        template: '<div>This is View 1</div>'
-                //    },
-                //    'view2@': {
-                //        template: '<div>This is View 2</div>'
-                //    },
-                //    'view3@': {
-                //        template: '<div>This is View 3</div>'
-                //    }
-                //}
             })
             .state('budget', {
                 url: '/budget',
@@ -64,37 +45,45 @@
                     property1: 'foo',
                     property2: 'bar'
                 }
-                //views: {
-                //    '': {
-                //        templateUrl: 'app/home/home.html',
-                //        controller: 'HomeCtrl',
-                //        controllerAs: 'vm',
-                //        data: {
-                //            property1: 'foo',
-                //            property2: 'bar'
-                //        }
-                //    },
-                //    'view1@': {
-                //        template: '<div>This is View 1</div>'
-                //    },
-                //    'view2@': {
-                //        template: '<div>This is View 2</div>'
-                //    },
-                //    'view3@': {
-                //        template: '<div>This is View 3</div>'
-                //    }
-                //}
-            });
+
+            })
+            .state('persons', {
+                url: '/persons',
+                templateUrl: 'scripts/persons/persons.html',
+                controller: 'PersonsCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    initialData: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getPersons();
+                    }]
+                }
+
+            })
+            .state('persontypes', {
+                url: '/persontypes',
+                templateUrl: 'scripts/persons/person-types.html',
+                controller: 'PersonTypesCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    initialData: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getPersonTypes();
+                    }]
+                }
+            })
+        ;
 
         $urlRouterProvider.otherwise('/');
     }
 
-    app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
+    // app.run(['$rootScope', '$state', '$stateParams', 'stateWatcherService', function ($rootScope, $state, $stateParams, $stateWatcherService) {
+    // jshint unused:false
+    app.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
+        /* jshint validthis: true */
         // It's very handy to add references to $state and $stateParams to the $rootScope
         // so that you can access them from any scope within your applications.For example,
         // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
         // to active whenever 'contacts.list' or one of its decendents is active.
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
+        //$rootScope.$state = $state;
+        //$rootScope.$stateParams = $stateParams;
     }]);
 })();

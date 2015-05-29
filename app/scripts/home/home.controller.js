@@ -21,7 +21,7 @@
         }
 
         function navigate(){
-            $state.go('leagues');
+            $state.go('persontypes');
         }
 
     }

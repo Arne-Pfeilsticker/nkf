@@ -11,15 +11,16 @@
  * @returns {Array} of tree structured objects.
  */
 module.exports = function (table, children, columns) {
+    'use strict';
 
     // The parameters children and columns are optional.
 
-    var _children = children || "children";
+    var _children = children || 'children';
     var _id, _pid;
 
     if (columns === undefined) {
         _id = 'id';
-        _pid = "parentid";
+        _pid = 'parentid';
 
     } else {
         _id = columns[0];
@@ -46,7 +47,7 @@ module.exports = function (table, children, columns) {
         }
         _row[_children] = [];
         temp[_row[_id]] = _row;
-        if (temp[_row[_pid]] != null) {
+        if (temp[_row[_pid]] !== null) {
             temp[_row[_pid]][_children].push(_row);
         } else {
             _tree.push(_row);
