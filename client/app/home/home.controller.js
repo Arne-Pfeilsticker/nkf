@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('nkfApp').controller('HomeCtrl', HomeCtrl);
+    angular.module('nkfApp').controller('HomeController', HomeController);
 
-    HomeCtrl.$inject = ['$state'];
+    HomeController.$inject = ['$state'];
 
-    function HomeCtrl($state) {
+    function HomeController($state) {
         /* jshint validthis: true */
         var vm = this;
         vm.notesCollapsed = true;

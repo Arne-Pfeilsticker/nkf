@@ -9,11 +9,11 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/angular-ui-select/dist/select.css" />
-    <link rel="stylesheet" href="../bower_components/angular-ui-grid-unstable/ui-grid.css" />
+    <link rel="stylesheet" href="../bower_components/angular-ui-grid/ui-grid.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.scss">
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body>
@@ -22,7 +22,7 @@
     <![endif]-->
 
     <div id="applicationHost" class="container body-content admin-appHost">
-        <div data-ng-include="'scripts/layout/shell.html'"></div>
+        <div data-ng-include="'app/layout/shell.html'"></div>
     </div>
 
     <div id="footer">
@@ -31,39 +31,41 @@
         </div>
     </div>
 
-    <!-- build:js scripts/vendor.js -->
+    <!-- build:js app/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-    <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="../bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="../bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <script src="../bower_components/angular-ui-ace/ui-ace.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="../bower_components/angular-ui-select/dist/select.js"></script>
     <script src="../bower_components/moment/moment.js"></script>
     <script src="../bower_components/showdown/src/showdown.js"></script>
     <script src="../bower_components/spin.js/spin.js"></script>
     <script src="../bower_components/csv-js/csv.js"></script>
-    <script src="../bower_components/angular-ui-grid-unstable/ui-grid.js"></script>
+    <script src="../bower_components/angular-ui-select/dist/select.js"></script>
+    <script src="../bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/budget/budget.controller.js"></script>
-    <script src="scripts/home/home.controller.js"></script>
-    <script src="scripts/persons/person-types.controller.js"></script>
-    <script src="scripts/persons/persons.controller.js"></script>
+    <!-- build:js({.tmp,app}) app/app.js -->
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/nkf-api.service.js"></script>
+    <script src="app/core/spinner.directive.js"></script>
+    <script src="app/core/app-spinner.service.js"></script>
+    <script src="app/core/state-watcher.service.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/layout/shell.controller.js"></script>
+    <script src="app/home/home.controller.js"></script>
+    <script src="app/budget/budget.controller.js"></script>
     <!--<script src="scripts/persons/persons-initial-data.service.js"></script>-->
-    <script src="scripts/layout/shell.controller.js"></script>
-    <script src="scripts/directives/spinner.directive.js"></script>
-    <script src="scripts/services/app-spinner.service.js"></script>
-    <script src="scripts/services/state-watcher.service.js"></script>
-    <script src="scripts/services/nkf-api.service.js"></script>
+    <script src="app/persons/person-types.controller.js"></script>
+    <script src="app/persons/persons.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>

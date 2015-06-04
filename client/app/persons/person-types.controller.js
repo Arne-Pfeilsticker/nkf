@@ -1,23 +1,22 @@
 (function () {
     'use strict';
 
-    angular.module('nkfApp').controller('PersonTypesCtrl', PersonTypesCtrl);
+    angular.module('nkfApp').controller('PersonTypesController', PersonTypesController);
 
-    PersonTypesCtrl.$inject = ['initialData'];
-    /* @ngInject */
-    function PersonTypesCtrl(initialData) {
+    PersonTypesController.$inject = ['personTypes'];
+
+    function PersonTypesController(personTypes) {
         /* jshint validthis: true */
         var vm = this;
 
-        vm.personTypes = initialData.result ;
-        console.log(vm.personTypes);
         vm.activate = activate;
 
-        // vm.importData = importData;
-        vm.parsedData = [];
+        vm.personTypes = personTypes;
+        console.log(vm.personTypes);
+
 
         vm.gridOptions = {
-            data:  vm.personTypes ,
+            data:  'vm.personTypes',
             enableGridMenu: true,
             columnDefs: [
                 { name: 'id', field: 'id' },
@@ -29,8 +28,6 @@
         };
 
         activate();
-
-
 
         ////////////////
 

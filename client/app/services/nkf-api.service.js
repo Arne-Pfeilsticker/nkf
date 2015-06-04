@@ -1,3 +1,8 @@
+/**
+ * API to communicate with the OrientDB-Server
+ * All API calls have a corresponding server side function to be executed.
+ * These functions are defined and can be uploaded with database/serverside.functions.js
+ */
 (function () {
     'use strict';
 
@@ -29,6 +34,8 @@
         };
 
         return service;
+
+        //////////////////////////////////////////
 
         // Person Types (= legal entity typ)
 

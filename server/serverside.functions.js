@@ -111,33 +111,5 @@ module.exports = (function () {
         return db.command('sql', 'select from OUser');
     });
 
-    createServerside(js, true, function getPersonTree(node) {
-        var db = orient.getGraphNoTx();
-        var result = db.command('sql',"SELECT FROM #12:1");
-
-        function asTree(node) {
-            var obj = {
-                id: node.getProperty('id'),
-                type: node.getProperty('person_type'),
-                name: node.getProperty('name'),
-                children: [ function() {
-
-                    var childNodes = node.getProperty('out_hasPersons').iterator();
-
-                    if (!childNodes.hasNext()) { // There are no child nodes.
-                        return null;
-                    }
-
-                    while (childNodes.hasNext()) {
-                        return asTree(db.getVertex(childNodes.next().getProperty('in')));
-                    }
-                }]
-            };
-            return obj;
-        }
-
-
-        return result;
-    });
 
 })();

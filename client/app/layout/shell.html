@@ -29,6 +29,19 @@
         <div class="page-splash-message page-splash-message-subtle">{{vm.spinnerMessage}}</div>
     </div>
 
-    <div ui-view id="ng-view" class="container slide-animation admin-content"></div>
+    <!--<div ui-view id="ng-view" class="container slide-animation admin-content"></div>-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ui-view></ui-view>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <alerts></alerts>
+            </div>
+        </div>
+    </div>
 
 </div>

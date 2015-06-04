@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('nkfApp').controller('BudgetCtrl', BudgetCtrl);
+    angular.module('nkfApp').controller('BudgetController', BudgetController);
 
-    BudgetCtrl.$inject = ['$state'];
+    BudgetController.$inject = ['$state'];
 
-    function BudgetCtrl($state) {
+    function BudgetController($state) {
         /* jshint validthis: true */
         var vm = this;
         vm.notesCollapsed = true;

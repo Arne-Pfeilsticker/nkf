@@ -1,5 +1,5 @@
 /**
- Parameters and command parts for working with OrientDB
+ * Parameters and command parts for working with OrientDB
  */
 module.exports = (function () {
     var

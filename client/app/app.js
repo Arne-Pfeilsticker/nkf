@@ -3,21 +3,24 @@
     var app = angular.module('nkfApp', [
         // Angular modules
         //'ngRoute',
-        'ngSanitize',
+        //'ngSanitize',
 
+
+        //'ngResource',
         // 3rd Party Modules
-        'ui.bootstrap',
-        'ui.router',
+        //'ui.bootstrap',
+        //'ui.router',
         //'ui.calendar',
         //'uiGmapgoogle-maps',
-        'ui.ace',
-        'ui.grid',
+        //'ui.ace',
+        //'ui.grid',
         //'ui.grid.treeView',
         //'ui.grid.importer',
         //'ui.grid.edit',
         //'ui.grid.resizeColumns',
-        'ui.select'
+        //'ui.select'
         //'ui.alias'
+        'app.core'
     ]);
 
     //app.config(['$stateProvider', '$urlRouterProvider', 'uiGmapGoogleMapApiProvider', configRoutes]);
@@ -28,8 +31,8 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'scripts/home/home.html',
-                controller: 'HomeCtrl',
+                templateUrl: 'app/home/home.html',
+                controller: 'HomeController',
                 controllerAs: 'vm',
                 data: {
                     property1: 'foo',
@@ -38,8 +41,8 @@
             })
             .state('budget', {
                 url: '/budget',
-                templateUrl: 'scripts/budget/budget.html',
-                controller: 'BudgetCtrl',
+                templateUrl: 'app/budget/budget.html',
+                controller: 'BudgetController',
                 controllerAs: 'vm',
                 data: {
                     property1: 'foo',
@@ -49,11 +52,11 @@
             })
             .state('persons', {
                 url: '/persons',
-                templateUrl: 'scripts/persons/persons.html',
-                controller: 'PersonsCtrl',
+                templateUrl: 'app/persons/persons.html',
+                controller: 'PersonsController',
                 controllerAs: 'vm',
                 resolve: {
-                    initialData: ['nkfApi', function (nkfApi) {
+                    persons: ['nkfApi', function (nkfApi) {
                         return nkfApi.getPersons();
                     }]
                 }
@@ -61,11 +64,11 @@
             })
             .state('persontypes', {
                 url: '/persontypes',
-                templateUrl: 'scripts/persons/person-types.html',
-                controller: 'PersonTypesCtrl',
+                templateUrl: 'app/persons/person-types.html',
+                controller: 'PersonTypesController',
                 controllerAs: 'vm',
                 resolve: {
-                    initialData: ['nkfApi', function (nkfApi) {
+                    personTypes: ['nkfApi', function (nkfApi) {
                         return nkfApi.getPersonTypes();
                     }]
                 }
