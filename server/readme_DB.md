@@ -27,8 +27,8 @@ above
 
 ## Database Graph-API for server-side functions
 
-var db = orient.getGraph();      // with transactions
-var db = orient.getGraphNoTx();  // without transaction for more speed
+    var db = orient.getGraph();      // with transactions
+    var db = orient.getGraphNoTx();  // without transaction for more speed
 
 To explore the database class you can write a simple function, orientClass, without parameter.
 

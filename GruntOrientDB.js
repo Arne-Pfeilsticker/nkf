@@ -115,8 +115,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('orientDBLoadData', 'Load data into OrientDB database.', function () {
         grunt.task.run([
-            'orientLoadData:/persons/persontypes.json://persons/persontypes.csv',
-            'orientLoadData:/persons/persons.json://persons/persons.csv',
+            'orientLoadData:/persons/persontypes.json:/persons/persontypes.csv',
+            'orientLoadData:/persons/persons.json:/persons/persons.csv',
             'orientLoadData:/products/producttypes.json:/products/producttypes.csv',
             'orientLoadData:/accounting/framework.json:/accounting/financial_accounts.csv'
         ]);
@@ -156,7 +156,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('createServersideFunctions', 'Create all serverside functions', function () {
-        require('./database/serverside.functions');
+        require('./server/serverside.functions');
     });
 
 };

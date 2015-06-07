@@ -44,17 +44,23 @@ module.exports = (function () {
         var fnDef  = parseFn(fn);
         var params = "";
         fnName   = fnDef.name;
-        var body   = fnDef.body
-            .replace(/\'/g, "\\'")
-            .replace(/\"/g, '\\"')
-            .replace(/( {8})/g, '')
-            .trim();
+        var body   = fnDef.body;
+
+        if (language == 'sql') {
+            eval(body);
+            body = cmd; // cmd variable contains the sql command
+        } else {
+            body.replace(/\'/g, "\\'")
+                .replace(/\"/g, '\\"')
+                .replace(/( {8})/g, '')
+                .trim();
+        }
 
         if(fnDef.arguments.length > 0) {
             params = 'PARAMETERS ['+fnDef.params+']';
         }
 
-        var fnExists = true;
+        var fnExists = false;
 
         var createFunction = 'CREATE FUNCTION ' + fnName + ' \"' + body + '\"' + params + lang + idem ;
 
@@ -111,5 +117,16 @@ module.exports = (function () {
         return db.command('sql', 'select from OUser');
     });
 
+    createServerside(sql, true, function getFramework() {
+        var cmd = "select $depth as $$treeLevel, out('hasSubaccount').size() as subaccounts, id, parent_id, label, shortcut, sign, breakdown, beneficiary, provider  from (traverse out('hasSubaccount') from (select from Framework where id = 'NKF05'))";
+    });
+
+    createServerside(sql, true, function persons_getTypes() {
+        var cmd = "select $depth as $$treeLevel, out('hasPersonSubtype').size() as personsubtypes, id, parent_id, label, acronym from (traverse out('hasPersonSubtype') from (select from PersonTypes where id = 'pt'))";
+    });
+
+    createServerside(sql, true, function persons_getAll() {
+        var cmd = "select $depth as $$treeLevel, out('hasPersons').size() as personsubtypes, id, parent_id, name, person_type, wiki_url, begin, end from (traverse out('hasPersons') from (select from Persons where id = 'de'))";
+    });
 
 })();

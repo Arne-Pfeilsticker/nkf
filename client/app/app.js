@@ -73,6 +73,17 @@
                     }]
                 }
             })
+            .state('framework', {
+                url: '/framework',
+                templateUrl: 'app/accounting/framework.html',
+                controller: 'FrameworkController',
+                controllerAs: 'vm',
+                resolve: {
+                    personTypes: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getFramework();
+                    }]
+                }
+            })
         ;
 
         $urlRouterProvider.otherwise('/');

@@ -3,30 +3,30 @@
 
     angular.module('nkfApp').controller('PersonsController', PersonsController);
 
-    PersonsController.$inject = ['persons', 'uiGridTreeViewConstants'];
+    //PersonsController.$inject = ['persons', 'uiGridTreeViewConstants'];
+    PersonsController.$inject = ['persons'];
 
-    function PersonsController(persons, uiGridTreeViewConstants) {
+    function PersonsController(persons) {
         /* jshint validthis: true */
         var vm = this;
         vm.persons = persons;
 
         vm.activate = activate;
 
-        // Add Tree levels
-        for (var i = 0; i < vm.persons.length; i++) {
-            var pid = '';
-            if (vm.persons[i].id.length < 11) {
-                pid = (vm.persons[i]).parent_id;
-                vm.persons[i].$$treeLevel = Math.max(0,pid.length - 5);
-            }
-        }
+        // Suppress + sign for Tree levels with no children (it does not work)
+        //for (var i = 0; i < vm.persons.length; i++) {
+        //    var pid = '';
+        //    if (vm.persons[i].personsubtypes == 0) {
+        //        vm.persons[i].$$treeLevel = null;
+        //    }
+        //}
 
         vm.gridOptions = {
             data: 'vm.persons',
             enableGridMenu: true,
             enableSorting: true,
             enableFiltering: true,
-            showTreeExpandNoChildren: true,
+            showTreeExpandNoChildren: false, // This should suppress + sign for leaves.
             columnDefs: [
                 {field: 'id', displayName: 'Kennzahl', width: '*'},
                 {field: 'parent_id', visible: false, width: '*'},

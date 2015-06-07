@@ -52,7 +52,7 @@
         }
 
         function getPersonTypes() {
-            return httpGet('/personTypes');
+            return httpGet('/persons_getTypes');
         }
 
         function savePersonType(personType) {
@@ -77,7 +77,7 @@
 
 
         function getPersons() {
-            return httpGet('/persons');
+            return httpGet('/persons_getAll');
         }
 
 
