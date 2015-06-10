@@ -49,12 +49,16 @@
     <script src="../bower_components/angular-ui-select/dist/select.js"></script>
     <script src="../bower_components/angular-ui-grid/ui-grid.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-soap/soapclient.js"></script>
+    <script src="../bower_components/angular-soap/angular.soap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) app/app.js -->
     <script src="app/core/core.module.js"></script>
     <script src="app/core/nkf-api.service.js"></script>
+    <script src="app/core/ldb-api.config.js"></script>
+    <script src="app/core/ldb-api.service.js"></script>
     <script src="app/core/spinner.directive.js"></script>
     <script src="app/core/app-spinner.service.js"></script>
     <script src="app/core/state-watcher.service.js"></script>
@@ -66,6 +70,7 @@
     <!--<script src="scripts/persons/persons-initial-data.service.js"></script>-->
     <script src="app/persons/person-types.controller.js"></script>
     <script src="app/persons/persons.controller.js"></script>
+    <script src="app/accounting/framework.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>

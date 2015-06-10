@@ -38,6 +38,8 @@ module.exports = function(config) {
       'bower_components/angular-ui-select/dist/select.js',
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/angular-animate/angular-animate.js',
+      'bower_components/angular-soap/soapclient.js',
+      'bower_components/angular-soap/angular.soap.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/**/*.js'

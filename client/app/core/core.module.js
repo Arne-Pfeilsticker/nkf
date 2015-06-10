@@ -13,9 +13,6 @@
         /*
          * 3rd Party modules
          */
-        // 'ngplus',
-
-        // 3rd Party Modules
         'ui.bootstrap',
         'ui.router',
         //'ui.calendar',
@@ -26,7 +23,9 @@
         //'ui.grid.importer',
         'ui.grid.edit',
         'ui.grid.resizeColumns',
-        'ui.select'
+        'ui.grid.autoResize',
+        'ui.select',
         //'ui.alias'
+        'angularSoap'
     ]);
 })();

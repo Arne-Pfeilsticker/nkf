@@ -3,10 +3,10 @@
 
     angular.module('nkfApp').controller('PersonsController', PersonsController);
 
-    //PersonsController.$inject = ['persons', 'uiGridTreeViewConstants'];
-    PersonsController.$inject = ['persons'];
+    PersonsController.$inject = ['persons', 'uiGridTreeViewConstants'];
+    // PersonsController.$inject = ['persons'];
 
-    function PersonsController(persons) {
+    function PersonsController(persons, uiGridTreeViewConstants) {
         /* jshint validthis: true */
         var vm = this;
         vm.persons = persons;

@@ -1,6 +1,6 @@
 /**
- * API to communicate with the OrientDB-Server
- * All API calls have a corresponding server side function to be executed.
+ * API to communicate with the WebServices of the Landesdatenbank NRW-Server
+ * https://www.landesdatenbank.nrw.de/
  * These functions are defined and can be uploaded with database/serverside.functions.js
  */
 (function (module) {
@@ -21,7 +21,9 @@
             // Persons
             deletePerson: deletePerson,
             getPersons: getPersons,
-            savePerson: savePerson
+            savePerson: savePerson,
+            // Accounting
+            getFramework: getFramework
         };
 
         var baseUrl = 'http://localhost:2480/function/nkf';
@@ -79,6 +81,13 @@
         function getPersons() {
             return httpGet('/persons_getAll');
         }
+
+        // Accounting
+
+        function getFramework() {
+            return httpGet('/getFramework');
+        }
+
 
 
         /** Private Methods **/

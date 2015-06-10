@@ -44,9 +44,10 @@
                 templateUrl: 'app/budget/budget.html',
                 controller: 'BudgetController',
                 controllerAs: 'vm',
-                data: {
-                    property1: 'foo',
-                    property2: 'bar'
+                resolve: {
+                    persons: ['ldbApi', function (ldbApi) {
+                        return ldbApi.getTableByGKZ('71147E-14i', '05111000');
+                    }]
                 }
 
             })
@@ -79,7 +80,7 @@
                 controller: 'FrameworkController',
                 controllerAs: 'vm',
                 resolve: {
-                    personTypes: ['nkfApi', function (nkfApi) {
+                    framework: ['nkfApi', function (nkfApi) {
                         return nkfApi.getFramework();
                     }]
                 }
