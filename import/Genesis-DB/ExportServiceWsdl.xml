@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="https://www.landesdatenbank.nrw.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="https://www.landesdatenbank.nrw.de" xmlns:intf="https://www.landesdatenbank.nrw.de" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="daten.methods.webservice.genesis" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+ <wsdl:types>
+  <schema targetNamespace="daten.methods.webservice.genesis" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="https://www.landesdatenbank.nrw.de"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ReturnInfo">
+    <sequence>
+     <element name="code" type="xsd:byte"/>
+     <element name="inhalt" nillable="true" type="xsd:string"/>
+     <element name="typ" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="Quader">
+    <sequence>
+     <element name="format" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="quaderDaten" nillable="true" type="xsd:string"/>
+     <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+     <element name="stand" nillable="true" type="xsd:string"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="QuaderAuswahl">
+    <sequence>
+     <element name="bereich" nillable="true" type="xsd:string"/>
+     <element name="namen" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="QuaderOptionen">
+    <sequence>
+     <element name="endjahr" nillable="true" type="xsd:string"/>
+     <element name="format" nillable="true" type="xsd:string"/>
+     <element name="metadaten" type="xsd:boolean"/>
+     <element name="regionalSchluessel" nillable="true" type="xsd:string"/>
+     <element name="sachMerkmal" nillable="true" type="xsd:string"/>
+     <element name="sachSchluessel" nillable="true" type="xsd:string"/>
+     <element name="sprache" nillable="true" type="xsd:string"/>
+     <element name="stand" nillable="true" type="xsd:string"/>
+     <element name="startjahr" nillable="true" type="xsd:string"/>
+     <element name="werte" type="xsd:boolean"/>
+     <element name="zeitscheiben" type="xsd:int"/>
+     <element name="zusatz" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="DatenExport">
+    <sequence>
+     <element name="quader" nillable="true" type="impl:ArrayOf_tns1_Quader"/>
+     <element name="quaderAuswahl" nillable="true" type="tns1:QuaderAuswahl"/>
+     <element name="quaderOptionen" nillable="true" type="tns1:QuaderOptionen"/>
+     <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ObjektAuswahl">
+    <sequence>
+     <element name="namen" nillable="true" type="xsd:string"/>
+     <element name="typ" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ObjektOptionen">
+    <sequence>
+     <element name="format" nillable="true" type="xsd:string"/>
+     <element name="sprache" nillable="true" type="xsd:string"/>
+     <element name="umfang" nillable="true" type="xsd:string"/>
+     <element name="zusatz" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="Objekt">
+    <sequence>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="objektDaten" nillable="true" type="xsd:string"/>
+     <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="ObjektExport">
+    <sequence>
+     <element name="objektAuswahl" nillable="true" type="tns1:ObjektAuswahl"/>
+     <element name="objektOptionen" nillable="true" type="tns1:ObjektOptionen"/>
+     <element name="objekte" nillable="true" type="impl:ArrayOf_tns1_Objekt"/>
+     <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+    </sequence>
+   </complexType>
+   <complexType name="StrukturElement">
+    <sequence>
+     <element name="auspraegungen" nillable="true" type="xsd:string"/>
+     <element name="fb_art" nillable="true" type="xsd:string"/>
+     <element name="fb_vr_ausg_art" nillable="true" type="xsd:string"/>
+     <element name="insgesamt" type="xsd:boolean"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="nummer" nillable="true" type="xsd:string"/>
+     <element name="regel" type="xsd:boolean"/>
+     <element maxOccurs="unbounded" name="strukturElement" nillable="true" type="tns1:StrukturElement"/>
+     <element name="strukturElemente" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+     <element name="titel" nillable="true" type="xsd:string"/>
+     <element name="top" nillable="true" type="xsd:string"/>
+     <element name="typ" nillable="true" type="xsd:string"/>
+     <element name="wertausgabe" type="xsd:boolean"/>
+     <element name="zusammen" type="xsd:boolean"/>
+    </sequence>
+   </complexType>
+   <complexType name="TabellenLayout">
+    <sequence>
+     <element name="kopfspaltenAnzahl" nillable="true" type="xsd:string"/>
+     <element name="tabellenkopfZeilenAnzahl" nillable="true" type="xsd:string"/>
+     <element name="vorspaltenAnzahl" nillable="true" type="xsd:string"/>
+     <element name="zeilenueberschriftenAnzahl" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="StrukturInformation">
+    <sequence>
+     <element name="abrufDatum" nillable="true" type="xsd:string"/>
+     <element name="abrufTabelle" nillable="true" type="xsd:string"/>
+     <element name="abrufZeit" nillable="true" type="xsd:string"/>
+     <element name="anzahlWertFelder" nillable="true" type="xsd:string"/>
+     <element name="anzahlWerte" nillable="true" type="xsd:string"/>
+     <element name="ident" nillable="true" type="xsd:string"/>
+     <element name="kopfZeile" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="tabellenKopf" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+     <element name="tabellenLayout" nillable="true" type="tns1:TabellenLayout"/>
+     <element name="unterTitel" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+     <element name="vorSpalte" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+     <element name="zwischenTitel" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+    </sequence>
+   </complexType>
+   <complexType name="Tabelle">
+    <sequence>
+     <element name="format" nillable="true" type="xsd:string"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+     <element name="status" nillable="true" type="xsd:string"/>
+     <element name="strukturInformation" nillable="true" type="tns1:StrukturInformation"/>
+     <element name="tabellenDaten" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="TabellenAuswahl">
+    <sequence>
+     <element name="bereich" nillable="true" type="xsd:string"/>
+     <element name="namen" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="TabellenOptionen">
+    <sequence>
+     <element name="endjahr" nillable="true" type="xsd:string"/>
+     <element name="format" nillable="true" type="xsd:string"/>
+     <element name="regionalSchluessel" nillable="true" type="xsd:string"/>
+     <element name="sachMerkmal" nillable="true" type="xsd:string"/>
+     <element name="sachSchluessel" nillable="true" type="xsd:string"/>
+     <element name="sprache" nillable="true" type="xsd:string"/>
+     <element name="startjahr" nillable="true" type="xsd:string"/>
+     <element name="zeitscheiben" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <complexType name="TabellenExport">
+    <sequence>
+     <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+     <element name="tabellen" nillable="true" type="impl:ArrayOf_tns1_Tabelle"/>
+     <element name="tabellenAuswahl" nillable="true" type="tns1:TabellenAuswahl"/>
+     <element name="tabellenOptionen" nillable="true" type="tns1:TabellenOptionen"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema targetNamespace="https://www.landesdatenbank.nrw.de" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="daten.methods.webservice.genesis"/>
+   <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <complexType name="ArrayOf_tns1_Quader">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Quader[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_Objekt">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Objekt[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_StrukturElement">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:StrukturElement[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+   <complexType name="ArrayOf_tns1_Tabelle">
+    <complexContent>
+     <restriction base="soapenc:Array">
+      <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Tabelle[]"/>
+     </restriction>
+    </complexContent>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="DatenExportRequest">
+
+      <wsdl:part name="kennung" type="xsd:string"/>
+
+      <wsdl:part name="passwort" type="xsd:string"/>
+
+      <wsdl:part name="namen" type="xsd:string"/>
+
+      <wsdl:part name="bereich" type="xsd:string"/>
+
+      <wsdl:part name="format" type="xsd:string"/>
+
+      <wsdl:part name="werte" type="xsd:boolean"/>
+
+      <wsdl:part name="metadaten" type="xsd:boolean"/>
+
+      <wsdl:part name="zusatz" type="xsd:boolean"/>
+
+      <wsdl:part name="startjahr" type="xsd:string"/>
+
+      <wsdl:part name="endjahr" type="xsd:string"/>
+
+      <wsdl:part name="zeitscheiben" type="xsd:string"/>
+
+      <wsdl:part name="regionalschluessel" type="xsd:string"/>
+
+      <wsdl:part name="sachmerkmal" type="xsd:string"/>
+
+      <wsdl:part name="sachschluessel" type="xsd:string"/>
+
+      <wsdl:part name="stand" type="xsd:string"/>
+
+      <wsdl:part name="sprache" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TabellenExportRequest">
+
+      <wsdl:part name="kennung" type="xsd:string"/>
+
+      <wsdl:part name="passwort" type="xsd:string"/>
+
+      <wsdl:part name="namen" type="xsd:string"/>
+
+      <wsdl:part name="bereich" type="xsd:string"/>
+
+      <wsdl:part name="format" type="xsd:string"/>
+
+      <wsdl:part name="strukturinformation" type="xsd:boolean"/>
+
+      <wsdl:part name="komprimierung" type="xsd:boolean"/>
+
+      <wsdl:part name="startjahr" type="xsd:string"/>
+
+      <wsdl:part name="endjahr" type="xsd:string"/>
+
+      <wsdl:part name="zeitscheiben" type="xsd:string"/>
+
+      <wsdl:part name="regionalschluessel" type="xsd:string"/>
+
+      <wsdl:part name="sachmerkmal" type="xsd:string"/>
+
+      <wsdl:part name="sachschluessel" type="xsd:string"/>
+
+      <wsdl:part name="sprache" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="TabellenExportResponse">
+
+      <wsdl:part name="TabellenExportReturn" type="tns1:TabellenExport"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ObjektExportResponse">
+
+      <wsdl:part name="ObjektExportReturn" type="tns1:ObjektExport"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="ObjektExportRequest">
+
+      <wsdl:part name="kennung" type="xsd:string"/>
+
+      <wsdl:part name="passwort" type="xsd:string"/>
+
+      <wsdl:part name="typ" type="xsd:string"/>
+
+      <wsdl:part name="namen" type="xsd:string"/>
+
+      <wsdl:part name="format" type="xsd:string"/>
+
+      <wsdl:part name="umfang" type="xsd:string"/>
+
+      <wsdl:part name="zusatz" type="xsd:boolean"/>
+
+      <wsdl:part name="sprache" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="DatenExportResponse">
+
+      <wsdl:part name="DatenExportReturn" type="tns1:DatenExport"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ExportService">
+
+      <wsdl:operation name="DatenExport" parameterOrder="kennung passwort namen bereich format werte metadaten zusatz startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel stand sprache">
+
+         <wsdl:input message="impl:DatenExportRequest" name="DatenExportRequest"/>
+
+         <wsdl:output message="impl:DatenExportResponse" name="DatenExportResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ObjektExport" parameterOrder="kennung passwort typ namen format umfang zusatz sprache">
+
+         <wsdl:input message="impl:ObjektExportRequest" name="ObjektExportRequest"/>
+
+         <wsdl:output message="impl:ObjektExportResponse" name="ObjektExportResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TabellenExport" parameterOrder="kennung passwort namen bereich format strukturinformation komprimierung startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel sprache">
+
+         <wsdl:input message="impl:TabellenExportRequest" name="TabellenExportRequest"/>
+
+         <wsdl:output message="impl:TabellenExportResponse" name="TabellenExportResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ExportServiceSoapBinding" type="impl:ExportService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="DatenExport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="DatenExportRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="DatenExportResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ObjektExport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="ObjektExportRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="ObjektExportResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="TabellenExport">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="TabellenExportRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="TabellenExportResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ExportServiceService">
+
+      <wsdl:port binding="impl:ExportServiceSoapBinding" name="ExportService">
+
+         <wsdlsoap:address location="https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

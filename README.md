@@ -16,7 +16,13 @@ falschen Schlussfolgerungen und die angestrebten Ziele werden nicht erreicht.
 Das Ziel dieses Open Source Projektes für Kommunen ist eine Software für die Haushaltsführung, die den
 Aufgaben und Bedürfnissen der Gemeinden gerecht wird.
 
-Mehr Informationen zum Projekt: [Vortrag] (https://dl.dropboxusercontent.com/u/13031383/EuWiKon%202015_T2V3%20-%20NKF.mp4) und 
+## Warum soll ich mich mit der Rechnungslegung meiner Kommune beschäftigen?
+
+Die Bedeutung der Rechnungslegung für Wirtschaft und Gesellschaft wird vielfach unterschätzt: 
+* Eine einzige Änderung in den Rechnungslegungsvorschriften hätte z.B. die Finanzkrise 2007/2008 erst gar nicht entstehen lassen. 
+* Selbst der schlechte Zustand unserer Straßen ist im Kern eine Folge der Rechnungslegung der Kommunen.
+
+Die Begründung dieser Thesen und mehr Informationen zum Projekt: [Vortrag] (https://dl.dropboxusercontent.com/u/13031383/EuWiKon%202015_T2V3%20-%20NKF.mp4) und 
 [Präsentation zum Vortrag](http://euwikon.eu/wordpress/wp-content/uploads/2015/01/EuWiKon-2015-Folien-NKF-Vortrag.key1.pdf)
 
 # Installation (Anwendung)

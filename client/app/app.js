@@ -46,7 +46,7 @@
                 controllerAs: 'vm',
                 resolve: {
                     persons: ['ldbApi', function (ldbApi) {
-                        return ldbApi.getTableByGKZ('71147E-14i', '05111000');
+                        return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
                     }]
                 }
 

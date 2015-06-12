@@ -40,6 +40,8 @@ module.exports = function(config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-soap/soapclient.js',
       'bower_components/angular-soap/angular.soap.js',
+      'bower_components/x2js/xml2json.min.js',
+      'bower_components/angular-xml/angular-xml.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/**/*.js'
