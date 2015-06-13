@@ -1,0 +1,1367 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <ns1:TabellenKatalogResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:ns1="http://webservice.genesis">
+         <TabellenKatalogReturn>
+            <objektKatalogEintraege soapenc:arrayType="ns2:TabellenKatalogEintrag[173]" xsi:type="soapenc:Array" xmlns:ns2="katalog.daten.methods.webservice.genesis" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-01ir</code>
+                  <inhalt>Finanzen (GFK) der Gemeinden und Gemeindeverbände
+Einzahlungen nach ausgewählten Einzahlungsarten
+- Gemeinden - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-01iz</code>
+                  <inhalt>Finanzen (GFK) der Gemeinden und Gemeindeverbände
+Einzahlungen nach ausgewählten Einzahlungsarten
+- Gemeinden - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-02ir</code>
+                  <inhalt>Finanzen (GFK) der Gemeinden und Gemeindeverbände
+Auszahlungen nach ausgewählten Auszahlungsarten
+- Gemeinden - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-02iz</code>
+                  <inhalt>Finanzen (GFK) der Gemeinden und Gemeindeverbände
+Auszahlungen nach ausgewählten Auszahlungsarten
+- Gemeinden - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-11ir</code>
+                  <inhalt>Kassenergebnisse: Ausgaben der Gemeinden/GV nach
+Ausgabearten (8) - Gemeinden - Jahr (bis 2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-11iz</code>
+                  <inhalt>Kassenergebnisse: Ausgaben der Gemeinden/GV nach
+Ausgabearten (8) - Gemeinden - Jahr (bis 2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-12ir</code>
+                  <inhalt>Kassenergebnisse: Ausgaben der Kreisverwaltungen nach
+Ausgabearten (8) - kreisfreie Städte und Kreise - Jahr (bis
+2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-12iz</code>
+                  <inhalt>Kassenergebnisse: Ausgaben der Kreisverwaltungen nach
+Ausgabearten (8) - kreisfreie Städte und Kreise - Jahr (bis
+2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-13ir</code>
+                  <inhalt>Kassenergebnisse: Einnahmen der Gemeinden/GV nach
+Einnahmearten (9) - Gemeinden - Jahr (bis 2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-13iz</code>
+                  <inhalt>Kassenergebnisse: Einnahmen der Gemeinden/GV nach
+Einnahmearten (9) - Gemeinden - Jahr (bis 2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-14ir</code>
+                  <inhalt>Kassenergebnisse: Einnahmen der Kreisverwaltungen nach
+Einnahmearten (4) - kreisfreie Städte und Kreise - Jahr (bis
+ 2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-14iz</code>
+                  <inhalt>Kassenergebnisse: Einnahmen der Kreisverwaltungen nach
+Einnahmearten (4) - kreisfreie Städte und Kreise - Jahr (bis
+ 2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-21i</code>
+                  <inhalt>Einzahlungen insgesamt nach Kontenklassen -1- (1-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-22i</code>
+                  <inhalt>Einzahlungen insgesamt nach Kontengruppen -10- (2-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-23i</code>
+                  <inhalt>Einzahlungen insgesamt nach Kontenarten -52- (3-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-24i</code>
+                  <inhalt>Einzahlungen insgesamt nach Konten -196- (4-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-25i</code>
+                  <inhalt>Einzahlungen insgesamt nach Konten -196- (4-Steller)
+und kumulierte Quartale
+- Gemeinden, Kreisverw.,Bezirksverbände - Jahr/Quartale</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-26i</code>
+                  <inhalt>Auszahlungen insgesamt nach Kontenklassen -1- (1-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-27i</code>
+                  <inhalt>Auszahlungen insgesamt nach Kontengruppen -8- (2-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-28i</code>
+                  <inhalt>Auszahlungen insgesamt nach Kontenarten -49- (3-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-29i</code>
+                  <inhalt>Auszahlungen insgesamt nach Konten -209- (4-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Quartale kumuliert</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-30i</code>
+                  <inhalt>Auszahlungen insgesamt nach Konten -209- (4-Steller)
+und kumulierte Quartale
+- Gemeinden, Kreisverw.,Bezirksverbände - Jahr/Quartale</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-31i</code>
+                  <inhalt>Verbindlichkeiten nach Kontenklassen -1- (1-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Stichtag zum Quartalsende</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-32i</code>
+                  <inhalt>Verbindlichkeiten nach Kontengruppen -5- (2-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Stichtag zum Quartalsende</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-33i</code>
+                  <inhalt>Verbindlichkeiten nach Kontenarten -9- (3-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Stichtag zum Quartalsende</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-34i</code>
+                  <inhalt>Verbindlichkeiten nach Konten -31- (4-Steller)
+- Gemeinden, Kreisverwaltungen, Bezirksverbände -
+Stichtag zum Quartalsende</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-35i</code>
+                  <inhalt>Verbindlichkeiten nach Konten -31- (4-Steller)
+zum Quartalsende
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Stichtag</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-36i</code>
+                  <inhalt>Hebesätze
+- Gemeinden - Stichtag zum Quartalsende</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71137-37i</code>
+                  <inhalt>Kreisumlage
+- Kreisverwaltungen und Bezirksverbände -
+Stichtag zum Quartalsende</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-01i</code>
+                  <inhalt>Einzahlungen insgesamt
+- Land, Gemeinden, Gemeindeverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-02i</code>
+                  <inhalt>Einzahlungen insgesamt nach Produktgruppen
+- Land, Gemeinden, Gemeindeverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-03i</code>
+                  <inhalt>Einzahlungen nach Einzahlungskonten
+- Land, Gemeinden, Gemeindeverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-04i</code>
+                  <inhalt>Einzahlungen nach Einzahlungskonten und Produktgruppen
+- Land, Gemeinden, Gemeindeverbände - Jahr
+(Konten + Produktgruppen in der Tabellen-Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-05i</code>
+                  <inhalt>Einzahlungen nach Einzahlungskonten und Produktgruppen
+- Land, Gemeinden, Gemeindeverbände - Jahr
+(Produktgruppen im Tabellenkopf/Konten in Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-11i</code>
+                  <inhalt>Auszahlungen insgesamt
+- Land, Gemeinden, Gemeindeverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-12i</code>
+                  <inhalt>Auszahlungen insgesamt nach Produktgruppen
+- Land, Gemeinden, Gemeindeverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-13i</code>
+                  <inhalt>Auszahlungen nach Auszahlungskonten
+- Land, Gemeinden, Gemeindeverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-14i</code>
+                  <inhalt>Auszahlungen nach Auszahlungskonten und Produktgruppen
+- Land, Gemeinden, Gemeindeverbände - Jahr
+(Konten + Produktgruppen in der Tabellen-Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147-15i</code>
+                  <inhalt>Auszahlungen nach Auszahlungskonten und Produktgruppen
+- Land, Gemeinden, Gemeindeverbände - Jahr
+(Produktgruppen im Tabellenkopf/Konten in Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-01i</code>
+                  <inhalt>Bilanzsummen
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-02i</code>
+                  <inhalt>Aktiva und Passiva nach Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-03i</code>
+                  <inhalt>Aktiva am 31.12. des Haushaltsjahres
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-03z</code>
+                  <inhalt>Aktiva am 31.12. des Haushaltsjahres
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-04i</code>
+                  <inhalt>Passiva am 31.12. des Haushaltsjahres
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-04z</code>
+                  <inhalt>Passiva am 31.12. des Haushaltsjahres
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-05i</code>
+                  <inhalt>Verbindlichkeitenspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-05r</code>
+                  <inhalt>Verbindlichkeitenspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-05z</code>
+                  <inhalt>Verbindlichkeitenspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-06i</code>
+                  <inhalt>Forderungsspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-06r</code>
+                  <inhalt>Forderungsspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-06z</code>
+                  <inhalt>Forderungsspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-07i</code>
+                  <inhalt>Anlagenspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-07r</code>
+                  <inhalt>Anlagenspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147B-07z</code>
+                  <inhalt>Anlagenspiegel
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-01i</code>
+                  <inhalt>Erträge insgesamt
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-02i</code>
+                  <inhalt>Erträge insgesamt nach Produktgruppen
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-03i</code>
+                  <inhalt>Erträge nach Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-04</code>
+                  <inhalt>Erträge nach Produktgruppen und Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr
+(Produktgruppen + Konten in der Tabellen-Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-04i</code>
+                  <inhalt>Erträge nach Produktgruppen und Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr
+(Produktgruppen + Konten in der Tabellen-Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-05i</code>
+                  <inhalt>Erträge nach Produktgruppen und Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr
+(Produktgruppen im Tabellenkopf/Konten in Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-11i</code>
+                  <inhalt>Aufwendungen insgesamt
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-12i</code>
+                  <inhalt>Aufwendungen insgesamt nach Produktgruppen
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-13i</code>
+                  <inhalt>Aufwendungen nach Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-14i</code>
+                  <inhalt>Aufwendungen nach Produktgruppen und Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr
+(Produktgruppen + Konten in der Tabellen-Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71147E-15i</code>
+                  <inhalt>Aufwendungen nach Produktgruppen und Konten
+- Gemeinden, Kreisverwaltungen, Bezirksverbände - Jahr
+(Produktgruppen im Tabellenkopf/Konten in Vorspalte)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71231-01ir</code>
+                  <inhalt>Realsteuervergleich der Gemeinden in Nordrhein-Westfalen
+- Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71231-01iz</code>
+                  <inhalt>Realsteuervergleich der Gemeinden in Nordrhein-Westfalen
+- Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71231-02i</code>
+                  <inhalt>Realsteuervergleich der Gemeinden in Nordrhein-Westfalen
+- Gemeindengrößenklassen - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71327-01ir</code>
+                  <inhalt>Schulden der Gemeinden und Gemeindeverbände: kommunale
+Verwaltung, Kreditmarktmittel, Eigenbetriebe und Kranken-
+häuser der Gemeinden/GV  - Gemeinden/GV - Stichtag</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>71327-01iz</code>
+                  <inhalt>Schulden der Gemeinden und Gemeindeverbände: kommunale
+Verwaltung, Kreditmarktmittel, Eigenbetriebe und Kranken-
+häuser der Gemeinden/GV  - Gemeinden/GV - Stichtag</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-01ir</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Anzahl und Beschäftigte
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-01iz</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Anzahl und Beschäftigte
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-02ir</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Gewinn- und Verlustrechnung
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-02iz</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Gewinn- und Verlustrechnung
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-03ir</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Aktiva
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-03iz</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Aktiva
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-04ir</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Passiva
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-04iz</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Passiva
+- Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-05ir</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Anzahl und Beschäftigte, Gewinn- und Verlustrechnung, Aktiva
+und Passiva - Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>72111-05iz</code>
+                  <inhalt>Jahresabschlüsse öffentlicher Fonds, Einr. u. Unternehmen:
+Anzahl und Beschäftigte, Gewinn- und Verlustrechnung, Aktiva
+und Passiva - Trägerschaft - Berichtsjahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-01ir</code>
+                  <inhalt>Lohn- und Einkommensteuer: Steuerpflichtige, Gesamtbetrag
+der Einkünfte, Lohn- und Einkommensteuer
+- Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-01iz</code>
+                  <inhalt>Lohn- und Einkommensteuer: Steuerpflichtige, Gesamtbetrag
+der Einkünfte, Lohn- und Einkommensteuer
+- Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-02ir</code>
+                  <inhalt>Lohn- und Einkommensteuer ab 2007: Steuerpfl., Gesamtbetrag
+der Einkünfte, Lohn- und Einkommensteuer und Größenklassen
+des Gesamtbetrages der Einkünfte (11) - Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-02iz</code>
+                  <inhalt>Lohn- und Einkommensteuer ab 2007: Steuerpfl., Gesamtbetrag
+der Einkünfte, Lohn- und Einkommensteuer und Größenklassen
+des Gesamtbetrages der Einkünfte (11) - Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-03ir</code>
+                  <inhalt>Lohn- und Einkommensteuer: Steuerpflichtige und Gesamtbetrag
+der Einkünfte nach Einkommensgrößenklassen
+- Gemeinden - Jahr (bis 2004)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-03iz</code>
+                  <inhalt>Lohn- und Einkommensteuer: Steuerpflichtige und Gesamtbetrag
+der Einkünfte nach Einkommensgrößenklassen
+- Gemeinden - Jahr (bis 2004)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-04ir</code>
+                  <inhalt>Lohn- und Einkommensteuer 2004: Steuerpflichtige, Gesamtbe-
+trag der Einkünfte, festzusetzende Einkommen-/Jahreslohn-
+steuer nach Größenklassen - krfr. Städte und Kreise - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-04iz</code>
+                  <inhalt>Lohn- und Einkommensteuer 2004: Steuerpflichtige, Gesamtbe-
+trag der Einkünfte, festzusetzende Einkommen-/Jahreslohn-
+steuer nach Größenklassen - krfr. Städte und Kreise - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-21i</code>
+                  <inhalt>Lohn- und Einkommensteuer 2004: Steuerpflichtige nach
+Grund-/Splittingtabellen-Gliederung und Größenklassen des
+Gesamtbetrag der Einkünfte - Land - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-22i</code>
+                  <inhalt>Lohn- und Einkommensteuer 2004: Einkünfte aus nach
+Grund-/Splittingtabellen-Gliederung und Größenklassen des
+Gesamtbetrag der Einkünfte - Land - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73111-23i</code>
+                  <inhalt>Lohn- und Einkommensteuer 2004: Steuerpflichtige und
+Einkünfte aus nach Grund-/Splittingtabellen-Gliederung und
+Größenklassen des Gesamtbetrag der Einkünfte - Land - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-01ir</code>
+                  <inhalt>Umsatzsteuerstatistik: Umsatzsteuerpflichtige, Steuerbarer
+Umsatz, Steuerbarer Umsatz für Lieferungen und Leistungen,
+Umsatzsteuervorauszahlung - Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-01iz</code>
+                  <inhalt>Umsatzsteuerstatistik: Umsatzsteuerpflichtige, Steuerbarer
+Umsatz, Steuerbarer Umsatz für Lieferungen und Leistungen,
+Umsatzsteuervorauszahlung - Gemeinden - Jahr</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-702i</code>
+                  <inhalt>Umsatzsteuerpflichtige und deren Lieferungen und Leistungen
+nach Wirtschaftsabschnitte (19) der WZ 2008
+- Gemeinden - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-703i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsabschnitte (19)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-705i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsabteilungen (85)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-706i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsgruppen (266)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-713i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsabschnitte (19)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-715i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsabteilungen (85)
+der WZ 2008- Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-716i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsgruppen (266)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-723i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsabschnitte (19)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-725i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsabteilungen (85)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-726i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsgruppen (266)
+der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-733i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Wirtschafts-
+abschnitte (19) der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-735i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Wirtschafts-
+abteilungen (85) der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-736i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Wirtschafts-
+gruppen (266) der WZ 2008 - Land - Jahr (ab 2009)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-802i</code>
+                  <inhalt>Umsatzsteuerpflichtige und deren Lieferungen und Leistungen
+nach Abschnitten und Zusammenfassungen (14) der WZ 2003
+- kreisfreie Städte und Kreise - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-803i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Abschnitten und
+Zusammenfassungen (14) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-804i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsunterabschnitten
+(30) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-805i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsabteilungen (75)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-806i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsgruppen (283)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-813i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Abschnitten und
+Zusammenfassungen (14) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-814i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsunterabschnitten
+(28) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-815i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsabteilungen (75)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-816i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsgruppen (283)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-823i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Abschnitten und Zusammenfassungen
+(14) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-824i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsunterabschnitten (28)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-825i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsabteilungen (75)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-826i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsgruppen (283)
+der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-833i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Abschnitten und
+Zusammenfassungen (14) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-834i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze und Wirtschafts-
+unterabschnitten (28) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-835i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze und Wirtschaftsabteilungen
+(75) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-836i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze und Wirtschaftsgruppen
+(283) der WZ 2003 - Land - Jahr (2002-2008)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-9k51</code>
+                  <inhalt>Kommunalprofil: Umsatzsteuer - Zeitreihe (4 Jahre)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-902i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz für Lieferungen
+und Leistungen nach Wirtschaftsabschnitten (14) der WZ 1993
+kreisfreie Städte und Kreise - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-903i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsabschnitten (14)
+der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-904i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsunterabschnitten
+(30) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-905i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und Umsatzs
+teuervorauszahlung nach Wirtschaftsabteilungen (75)
+der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-906i</code>
+                  <inhalt>Umsatzsteuerpflichtige, Steuerbarer Umsatz und
+Umsatzsteuervorauszahlung nach Wirtschaftsgruppen (283)
+der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-913i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsabschnitten
+(14) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-914i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsunterabschnitten
+(30) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-915i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsabteilungen
+(75) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-916i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Umsatzgrößenklassen (8) und Wirtschaftsgruppen (283)
+der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-923i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsabschnitten (14)
+der WZ 1993- Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-924i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsunterabschnitten (30)
+der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-925i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsabteilungen (75)
+der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-926i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach Rechtsformen (4) und Wirtschaftsgruppen (283)
+der WZ 1993- Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-933i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Abschnitten und
+Zusammenfassungen (14) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-934i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Wirtschafts-
+unterabschnitten (30) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-935i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Wirtschafts-
+abteilungen (75) der WZ 1993 - Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>73311-936i</code>
+                  <inhalt>Umsatzsteuerpflichtige, deren Lieferungen und Leistungen
+nach der Besteuerung der Umsätze (7) und Wirtschaftsgruppen
+(283) der WZ 1993- Land - Jahr (1999-2001)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-01ir</code>
+                  <inhalt>Beschäftigte des Bundes, der Länder und der Gemeinden/GV
+(am Dienstort) nach Voll- und Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-01iz</code>
+                  <inhalt>Beschäftigte des Bundes, der Länder und der Gemeinden/GV
+(am Dienstort) nach Voll- und Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-02ir</code>
+                  <inhalt>Beschäftigte des Bundes, der Länder und der Gemeinden/GV
+(am Dienstort) nach Voll- und Teilzeit und Dienstverhältnis
+- krfr. Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-02iz</code>
+                  <inhalt>Beschäftigte des Bundes, der Länder und der Gemeinden/GV
+(am Dienstort) nach Voll- und Teilzeit, Dienstverhältnis und
+Geschlecht - krfr. Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-03ir</code>
+                  <inhalt>Beschäftigte im unmittelbaren öffentlichen Dienst
+(am Dienstort) nach Voll- und Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (1995 - 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-03iz</code>
+                  <inhalt>Beschäftigte im unmittelbaren öffentlichen Dienst
+(am Dienstort) nach Voll- und Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (1995 - 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-04ir</code>
+                  <inhalt>Beschäftigte im unmittelbaren öffentlichen Dienst
+(am Dienstort) nach Voll- und Teilzeit, Dienstverhältnis und
+Geschlecht - krfr. Städte u. Kreise - Stichtag (1995 - 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74100-04iz</code>
+                  <inhalt>Beschäftigte im unmittelbaren öffentlichen Dienst
+(am Dienstort) nach Voll- und Teilzeit, Dienstverhältnis und
+Geschlecht - krfr. Städte u. Kreise - Stichtag (1995 - 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-01ir</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-01iz</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-02ir</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-02iz</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-03ir</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-03iz</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-04ir</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74111-04iz</code>
+                  <inhalt>Beschäftigte des Bundes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- kreisfreie Städte und Kreise - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-01ir</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+-Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-01iz</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-02ir</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-02iz</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-03ir</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht - Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-03iz</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht - Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-04ir</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-04iz</code>
+                  <inhalt>Beschäftigte des Landes (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-11ir</code>
+                  <inhalt>Beschäftigte der Gemeinden/GV (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-11iz</code>
+                  <inhalt>Beschäftigte der Gemeinden/GV (am Dienstort) nach Voll- und
+Teilzeit und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-12ir</code>
+                  <inhalt>Beschäftigte der Gemeinden/GV (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-12iz</code>
+                  <inhalt>Beschäftigte der Gemeinden/GV (am Dienstort) nach Voll- und
+Teilzeit, Dienstverhältnis und Geschlecht
+- Gemeinden - Stichtag (ab 2006)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-13ir</code>
+                  <inhalt>Beschäftigte der Gemeinden und Gemeindeverbände
+(am Dienstort) nach Voll-und Teilzeit und Geschlecht
+- Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-13iz</code>
+                  <inhalt>Beschäftigte der Gemeinden und Gemeindeverbände
+(am Dienstort) nach Voll-und Teilzeit und Geschlecht
+- Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-14ir</code>
+                  <inhalt>Beschäftigte der Gemeinden und Gemeindeverbände
+(am Dienstort) nach Voll- und Teilzeit, Dienstverhältnis und
+Geschlecht - Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+               <objektKatalogEintraege>
+                  <abrufbar>true</abrufbar>
+                  <code>74121-14iz</code>
+                  <inhalt>Beschäftigte der Gemeinden und Gemeindeverbände
+(am Dienstort) nach Voll- und Teilzeit, Dienstverhältnis und
+Geschlecht - Gemeinden - Stichtag (bis 2007)</inhalt>
+                  <kostenpflichtig>false</kostenpflichtig>
+               </objektKatalogEintraege>
+            </objektKatalogEintraege>
+            <returnInfo>
+               <code>0</code>
+               <inhalt>erfolgreich</inhalt>
+               <typ>Information</typ>
+            </returnInfo>
+            <tabellenAuswahl>
+               <bereich>Alle</bereich>
+               <filter>7*</filter>
+               <kriterium>Name</kriterium>
+               <listenLaenge>500</listenLaenge>
+               <sprache>de</sprache>
+            </tabellenAuswahl>
+         </TabellenKatalogReturn>
+      </ns1:TabellenKatalogResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

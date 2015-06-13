@@ -1,0 +1,2212 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <soapenv:Body>
+        <ns1:DatenKatalogResponse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                                  xmlns:ns1="http://webservice.genesis"
+                                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                  xsi:schemaLocation="http://webservice.genesis ">
+            <DatenKatalogReturn>
+                <datenAuswahl>
+                    <bereich>Alle</bereich>
+                    <filter>7*</filter>
+                    <kriterium>Name</kriterium>
+                    <listenLaenge>500</listenLaenge>
+                    <sprache>de</sprache>
+                </datenAuswahl>
+                <objektKatalogEintraege soapenc:arrayType="ns2:DatenKatalogEintrag[186]" xsi:type="soapenc:Array"
+                                        xmlns:ns2="katalog.daten.methods.webservice.genesis"
+                                        xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                        xsi:schemaLocation="katalog.daten.methods.webservice.genesis ">
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einzahlungen, ausgewählte Einzahlungsarten GFK,
+                            Gemeinden und Kreisverwaltungen, Jahr
+                        </beschriftungstext>
+                        <code>71137NWGJ1</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Auszahlungen, ausgewählte Auszahlungsarten GFK,
+                            Gemeinden und Kreisverwaltungen, Jahr
+                        </beschriftungstext>
+                        <code>71137NWGJ2</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einzahlungen, Einzahlungskonten GFK, Quartale
+                            kumuliert, Gemeinden, Kreisverwaltungen,
+                            Bezirksverbände, Jahr
+                        </beschriftungstext>
+                        <code>71137NWGK1</code>
+                        <inhalt>4. Quartal 2009-4. Quartal 2014</inhalt>
+                        <stand>02.04.2015 11:20:37h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Auszahlungen, Auszahlungskonten GFK, Quartale
+                            kumuliert, Gemeinden, Kreisverwaltungen,
+                            Bezirksverbände, Jahr
+                        </beschriftungstext>
+                        <code>71137NWGK2</code>
+                        <inhalt>4. Quartal 2009-4. Quartal 2014</inhalt>
+                        <stand>02.04.2015 11:18:47h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Verbindlichkeiten, Verbindlichkeitskonten GFK,
+                            Quartale (jeweils Stichtag zum Quartalsende),
+                            Gemeinden, Kreisverwaltungen, Bezirksverbände,
+                            Jahr
+                        </beschriftungstext>
+                        <code>71137NWGK3</code>
+                        <inhalt>31. Dezembe 2009-31. Dezembe 2014</inhalt>
+                        <stand>02.04.2015 11:22:16h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Hebesätze, Hebesatzkonten GFK, Quartale (jeweils
+                            Stichtag zum Quartalsende), Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>71137NWGK4</code>
+                        <inhalt>31. März (E 2009-31. Dezembe 2014</inhalt>
+                        <stand>02.04.2015 11:20:59h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Kreis-, Landschafts- und Verbandsumlage,
+                            Kreisumlagekonten GFK, Quartale (jeweils Stichtag
+                            zum Quartalsende), Kreisverwaltungen und
+                            Bezirksverbände, Jahr
+                        </beschriftungstext>
+                        <code>71137NWGK5</code>
+                        <inhalt>31. März (E 2009-31. Dezembe 2014</inhalt>
+                        <stand>02.04.2015 11:22:11h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Bevölkerungsstand am 30.06., Gemeinden,
+                            Kreisverwaltungen, Bezirksverbände, Stichtag
+                        </beschriftungstext>
+                        <code>71137NWGK6</code>
+                        <inhalt>30.06.2009-30.06.2014</inhalt>
+                        <stand>02.04.2015 11:19:06h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einzahlungen, ausgewählte Einzahlungsarten GFK,
+                            Kreisfreie Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>71137NWKJ1</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Auszahlungen, ausgewählte Auszahlungsarten GFK,
+                            Kreisfreie Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>71137NWKJ2</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einzahlungen, ausgewählte Einzahlungsarten GFK,
+                            Land, Jahr
+                        </beschriftungstext>
+                        <code>71137NWLJ1</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Auszahlungen, ausgewählte Auszahlungsarten GFK,
+                            Land, Jahr
+                        </beschriftungstext>
+                        <code>71137NWLJ2</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einzahlungen, ausgewählte Einzahlungsarten GFK,
+                            Regierungsbezirke und Bezirksverbände, Jahr
+                        </beschriftungstext>
+                        <code>71137NWRJ1</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Auszahlungen, ausgewählte Auszahlungsarten GFK,
+                            Regierungsbezirke und Bezirksverbände, Jahr
+                        </beschriftungstext>
+                        <code>71137NWRJ2</code>
+                        <inhalt>2009-2014</inhalt>
+                        <stand>01.04.2015 10:03:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Ausgaben, Bruttoausgaben der Gemeinden, Gemeinden,
+                            Jahr
+                        </beschriftungstext>
+                        <code>71137XXGJ2</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:51:24h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einnahmen, Bruttoeinnahmen der Gemeinden,
+                            Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>71137XXGJ3</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:51:37h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Ausgaben, Bruttoausgaben der Kreise, Kreisfreie
+                            Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>71137XXKJ2</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 16:00:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einnahmen, Bruttoeinnahmen der Kreise, Kreisfreie
+                            Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>71137XXKJ3</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:51:54h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Ausgaben, Bruttoausgaben der Gemeinden, Land,
+                            Jahr
+                        </beschriftungstext>
+                        <code>71137XXLJ1</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:52:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einnahmen, Bruttoeinnahmen der Gemeinden, Land,
+                            Jahr
+                        </beschriftungstext>
+                        <code>71137XXLJ2</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:52:14h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Ausgaben, Bruttoausgaben der Kreise,
+                            Regierungsbezirke, Jahr
+                        </beschriftungstext>
+                        <code>71137XXRJ1</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:52:26h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Vierteljährliche Kassenergebnisse der Gemeinden/GV
+                            Einnahmen, Bruttoeinnahmen der Kreise,
+                            Regierungsbezirke, Jahr
+                        </beschriftungstext>
+                        <code>71137XXRJ2</code>
+                        <inhalt>1995-2008</inhalt>
+                        <stand>12.09.2012 15:52:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Bilanzstatistik, Aktiva und Passiva, Konten der
+                            Aktiva und Passiva, Jahr, Gemeinden,
+                            Kreisverwaltungen, Bezirksverbände
+                        </beschriftungstext>
+                        <code>71147BGJ01</code>
+                        <inhalt>2008-2009</inhalt>
+                        <stand>15.04.2014 09:28:59h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Bilanzstatistik, Gesamtbetrag am 31.12. des
+                            Haushaltsjahres, Restlaufzeit von bis zu 1 Jahr,
+                            Restlaufzeit von 1 bis 5 Jahre, Restlaufzeit von
+                            mehr als 5 Jahre, Gesamtbetrag am 31.12. des
+                            Vorjahres, Art der Verbindlichkeiten, Jahr,
+                            Gemeinden, Kreisverwaltungen, Bezirksverbände
+                        </beschriftungstext>
+                        <code>71147BGJ02</code>
+                        <inhalt>2008-2009</inhalt>
+                        <stand>12.05.2014 11:19:39h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Bilanzstatistik, Gesamtbetrag am 31.12. des
+                            Haushaltsjahres, Restlaufzeit von bis zu 1 Jahr,
+                            Restlaufzeit von 1 bis 5 Jahre, Restlaufzeit von
+                            mehr als 5 Jahre, Gesamtbetrag am 31.12. des
+                            Vorjahres, Art der Forderungen, Jahr, Gemeinden,
+                            Kreisverwaltungen, Bezirksverbände
+                        </beschriftungstext>
+                        <code>71147BGJ03</code>
+                        <inhalt>2008-2009</inhalt>
+                        <stand>12.05.2014 11:19:54h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Bilanzstatistik, Stand am 31.12. des Vorjahres,
+                            Zugänge im Haushaltsjahr, Abgänge im
+                            Haushaltsjahr, Umbuchungen im Haushaltsjahr,
+                            Abschreibungen im Haushaltsjahr, Zuschreibungen
+                            im Haushaltsjahr, Kumulierte Abschreibungen (auch
+                            aus Vorjahren), am 31.12. des Haushaltsjahres, am
+                            31.12. des Vorjahres, Anlagenspiegel, Art des
+                            Anlagevermögens, Jahr, Gemeinden,
+                            Kreisverwaltungen, Bezirksverbände
+                        </beschriftungstext>
+                        <code>71147BGJ04</code>
+                        <inhalt>2008-2009</inhalt>
+                        <stand>12.05.2014 11:20:27h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Ergebnisrechnungsstatistik, Erträge,
+                            Ertragskonten, Produktgruppen, Jahr, Gemeinden,
+                            Kreisverwaltungen, Bezirksverbände
+                        </beschriftungstext>
+                        <code>71147EGJ01</code>
+                        <inhalt>2009-2010</inhalt>
+                        <stand>07.02.2014 13:59:09h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Ergebnisrechnungsstatistik, Aufwendungen,
+                            Aufwendungskonten, Produktgruppen, Jahr,
+                            Gemeinden, Kreisverwaltungen, Bezirksverbände
+                        </beschriftungstext>
+                        <code>71147EGJ02</code>
+                        <inhalt>2009-2010</inhalt>
+                        <stand>07.02.2014 13:58:46h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Finanzrechnungsstatistik der Gemeinden/GV,
+                            Einzahlungen, Einzahlungskonten, Produktgruppen,
+                            Jahr, Land, Gemeinden, Gemeindeverbände
+                        </beschriftungstext>
+                        <code>71147GJ001</code>
+                        <inhalt>2009-2013</inhalt>
+                        <stand>08.04.2015 10:27:30h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Finanzrechnungsstatistik der Gemeinden/GV,
+                            Auszahlungen, Auszahlungskonten, Produktgruppen,
+                            Jahr, Land, Gemeinden, Gemeindeverbände
+                        </beschriftungstext>
+                        <code>71147GJ002</code>
+                        <inhalt>2009-2013</inhalt>
+                        <stand>08.04.2015 10:27:10h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Ist-Aufkommen: Grundsteuer A,
+                            Ist-Aufkommen: Grundsteuer B, Ist-Aufkommen:
+                            Gewerbesteuer, Grundbetrag: Grundsteuer A,
+                            Grundbetrag: Grundsteuer B, Grundbetrag:
+                            Gewerbesteuer, Hebesatz: Grundsteuer A, Hebesatz:
+                            Grundsteuer B, Hebesatz: Gewerbesteuer,
+                            Gemeindeanteil an der Einkommensteuer,
+                            Gewerbesteuerumlage (einschl. FDE),
+                            Gemeindeanteil an der Umsatzsteuer, Gewerbesteuer
+                            - netto -, Ist-Aufkommen: Grundsteuer A je
+                            Einwohner, Ist-Aufkommen: Grundsteuer B je
+                            Einwohner, Ist-Aufkommen: Gewerbesteuer je
+                            Einwohner, Grundbetrag: Grundsteuer A je
+                            Einwohner, Grundbetrag: Grundsteuer B je
+                            Einwohner, Grundbetrag: Gewerbesteuer B je
+                        </beschriftungstext>
+                        <code>71231NWGJ1</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:06:59h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Realsteueraufbringungskraft
+                            je Einwohner, Steuereinnahmekraft je Einwohner,
+                            Realsteueraufbringungskraft,
+                            Realsteueraufbringungskraft: Gewerbesteuer,
+                            Steuereinnahmekraft, Realsteueraufbringungskraft:
+                            Grundsteuer A, Realsteueraufbringungskraft:
+                            Grundsteuer A je Einw,
+                            Realsteueraufbringungskraft: Grundsteuer B,
+                            Realsteueraufbringungskraft: Grundsteuer B je Einw
+                            Realsteueraufbringungskraft: Gewerbesteuer je Einw
+                            Gemeindeanteil an der Einkommensteuer je Einwohner
+                            Gemeindeanteil an der Umsatzsteuer je Einwohner,
+                            Gewerbesteuerumlage (einschl. FDE) je Einwohner,
+                            Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>71231NWGJ2</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:00h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Ist-Aufkommen: Grundsteuer A
+                            je Einwohner, Ist-Aufkommen: Grundsteuer B je
+                            Einwohner, Ist-Aufkommen: Gewerbesteuer je
+                            Einwohner, Grundbetrag: Grundsteuer A je
+                            Einwohner, Grundbetrag: Grundsteuer B je
+                            Einwohner, Grundbetrag: Gewerbesteuer B je
+                            Einwohner, Hebesatz: Grundsteuer A, Hebesatz:
+                            Grundsteuer B, Hebesatz: Gewerbesteuer,
+                            Ist-Aufkommen: Grundsteuer A, Ist-Aufkommen:
+                            Grundsteuer B, Ist-Aufkommen: Gewerbesteuer,
+                            Grundbetrag: Grundsteuer A, Grundbetrag:
+                            Grundsteuer B, Grundbetrag: Gewerbesteuer,
+                            Gemeindeanteil an der Umsatzsteuer, Gewerbesteuer
+                            - netto -, Gemeindeanteil an der Einkommensteuer,
+                            Gewerbesteuerumlage (einschl. FDE), Gewerbesteuer
+                        </beschriftungstext>
+                        <code>71231NWKJ1</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:00h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Realsteueraufbringungskraft
+                            je Einwohner, Steuereinnahmekraft je Einwohner,
+                            Realsteueraufbringungskraft,
+                            Realsteueraufbringungskraft: Gewerbesteuer,
+                            Steuereinnahmekraft, Realsteueraufbringungskraft:
+                            Grundsteuer A, Realsteueraufbringungskraft:
+                            Grundsteuer A je Einw,
+                            Realsteueraufbringungskraft: Grundsteuer B,
+                            Realsteueraufbringungskraft: Grundsteuer B je Einw
+                            Realsteueraufbringungskraft: Gewerbesteuer je Einw
+                            Gemeindeanteil an der Einkommensteuer je Einwohner
+                            Gemeindeanteil an der Umsatzsteuer je Einwohner,
+                            Gewerbesteuerumlage (einschl. FDE) je Einwohner,
+                            Kreisfreie Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>71231NWKJ2</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:00h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Ist-Aufkommen: Grundsteuer B
+                            je Einwohner, Ist-Aufkommen: Gewerbesteuer je
+                            Einwohner, Grundbetrag: Grundsteuer A je
+                            Einwohner, Grundbetrag: Grundsteuer B je
+                            Einwohner, Grundbetrag: Gewerbesteuer B je
+                            Einwohner, Gewerbesteuer - netto - je Einwohner,
+                            Hebesatz: Grundsteuer A, Hebesatz: Grundsteuer B,
+                            Hebesatz: Gewerbesteuer, Ist-Aufkommen:
+                            Grundsteuer A, Ist-Aufkommen: Grundsteuer B,
+                            Ist-Aufkommen: Gewerbesteuer, Grundbetrag:
+                            Grundsteuer A, Grundbetrag: Grundsteuer B,
+                            Grundbetrag: Gewerbesteuer, Gemeindeanteil an der
+                            Einkommensteuer, Gewerbesteuerumlage (einschl.
+                            FDE), Gemeindeanteil an der Umsatzsteuer,
+                            Gewerbesteuer - netto -, Ist-Aufkommen:
+                        </beschriftungstext>
+                        <code>71231NWLJ1</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:00h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Realsteueraufbringungskraft
+                            je Einwohner, Steuereinnahmekraft je Einwohner,
+                            Realsteueraufbringungskraft,
+                            Realsteueraufbringungskraft: Gewerbesteuer,
+                            Steuereinnahmekraft, Realsteueraufbringungskraft:
+                            Grundsteuer A, Realsteueraufbringungskraft:
+                            Grundsteuer A je Einw,
+                            Realsteueraufbringungskraft: Grundsteuer B,
+                            Realsteueraufbringungskraft: Grundsteuer B je Einw
+                            Realsteueraufbringungskraft: Gewerbesteuer je Einw
+                            Gemeindeanteil an der Einkommensteuer je Einwohner
+                            Gemeindeanteil an der Umsatzsteuer je Einwohner,
+                            Gewerbesteuerumlage (einschl. FDE) je Einwohner,
+                            Land, Jahr
+                        </beschriftungstext>
+                        <code>71231NWLJ2</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Ist-Aufkommen: Grundsteuer B
+                            je Einwohner, Ist-Aufkommen: Gewerbesteuer je
+                            Einwohner, Grundbetrag: Grundsteuer A je
+                            Einwohner, Grundbetrag: Grundsteuer B je
+                            Einwohner, Grundbetrag: Gewerbesteuer B je
+                            Einwohner, Gewerbesteuer - netto - je Einwohner,
+                            Hebesatz: Grundsteuer A, Hebesatz: Grundsteuer B,
+                            Hebesatz: Gewerbesteuer, Ist-Aufkommen:
+                            Grundsteuer A, Ist-Aufkommen: Grundsteuer B,
+                            Ist-Aufkommen: Gewerbesteuer, Grundbetrag:
+                            Grundsteuer A, Grundbetrag: Grundsteuer B,
+                            Grundbetrag: Gewerbesteuer, Gemeindeanteil an der
+                            Einkommensteuer, Gewerbesteuerumlage (einschl.
+                            FDE), Gemeindeanteil an der Umsatzsteuer,
+                            Gewerbesteuer - netto -, Ist-Aufkommen:
+                        </beschriftungstext>
+                        <code>71231NWRJ1</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Realsteueraufbringungskraft
+                            je Einwohner, Steuereinnahmekraft je Einwohner,
+                            Realsteueraufbringungskraft,
+                            Realsteueraufbringungskraft: Gewerbesteuer,
+                            Steuereinnahmekraft, Realsteueraufbringungskraft:
+                            Grundsteuer A, Realsteueraufbringungskraft:
+                            Grundsteuer A je Einw,
+                            Realsteueraufbringungskraft: Grundsteuer B,
+                            Realsteueraufbringungskraft: Grundsteuer B je Einw
+                            Realsteueraufbringungskraft: Gewerbesteuer je Einw
+                            Gemeindeanteil an der Einkommensteuer je Einwohner
+                            Gemeindeanteil an der Umsatzsteuer je Einwohner,
+                            Gewerbesteuerumlage (einschl. FDE) je Einwohner,
+                            Regierungsbezirke, Jahr
+                        </beschriftungstext>
+                        <code>71231NWRJ2</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Ist-Aufkommen: Grundsteuer A,
+                            Ist-Aufkommen: Grundsteuer B, Ist-Aufkommen:
+                            Gewerbesteuer, Grundbetrag: Grundsteuer A,
+                            Grundbetrag: Grundsteuer B, Grundbetrag:
+                            Gewerbesteuer, Hebesatz: Grundsteuer A, Hebesatz:
+                            Grundsteuer B, Hebesatz: Gewerbesteuer,
+                            Gemeindeanteil an der Einkommensteuer,
+                            Gemeindeanteil an der Umsatzsteuer,
+                            Gewerbesteuerumlage (einschl. FDE), Gewerbesteuer
+                            - netto -, Ist-Aufkommen: Grundsteuer A je
+                            Einwohner, Ist-Aufkommen: Grundsteuer B je
+                            Einwohner, Ist-Aufkommen: Gewerbesteuer je
+                            Einwohner, Grundbetrag: Grundsteuer A je
+                            Einwohner, Grundbetrag: Grundsteuer B je
+                            Einwohner, Grundbetrag: Gewerbesteuer B je
+                        </beschriftungstext>
+                        <code>71231NWSJ1</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Realsteueraufbringungskraft:
+                            Grundsteuer A, Realsteueraufbringungskraft:
+                            Grundsteuer A je Einw,
+                            Realsteueraufbringungskraft: Grundsteuer B,
+                            Realsteueraufbringungskraft: Grundsteuer B je Einw
+                            Realsteueraufbringungskraft: Gewerbesteuer,
+                            Realsteueraufbringungskraft: Gewerbesteuer je Einw
+                            Realsteueraufbringungskraft,
+                            Realsteueraufbringungskraft je Einwohner,
+                            Gemeindeanteil an der Einkommensteuer je Einwohner
+                            Gemeindeanteil an der Umsatzsteuer je Einwohner,
+                            Gewerbesteuerumlage (einschl. FDE) je Einwohner,
+                            Steuereinnahmekraft, Steuereinnahmekraft je
+                            Einwohner, Größenklassen Kreisfreie Städte, Jahr
+                        </beschriftungstext>
+                        <code>71231NWSJ2</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Ist-Aufkommen: Grundsteuer A,
+                            Ist-Aufkommen: Grundsteuer B, Ist-Aufkommen:
+                            Gewerbesteuer, Grundbetrag: Grundsteuer A,
+                            Grundbetrag: Grundsteuer B, Grundbetrag:
+                            Gewerbesteuer, Hebesatz: Grundsteuer A, Hebesatz:
+                            Grundsteuer B, Hebesatz: Gewerbesteuer,
+                            Gemeindeanteil an der Einkommensteuer,
+                            Gemeindeanteil an der Umsatzsteuer,
+                            Gewerbesteuerumlage (einschl. FDE), Gewerbesteuer
+                            - netto -, Ist-Aufkommen: Grundsteuer A je
+                            Einwohner, Ist-Aufkommen: Grundsteuer B je
+                            Einwohner, Ist-Aufkommen: Gewerbesteuer je
+                            Einwohner, Grundbetrag: Grundsteuer A je
+                            Einwohner, Grundbetrag: Grundsteuer B je
+                            Einwohner, Grundbetrag: Gewerbesteuer B je
+                        </beschriftungstext>
+                        <code>71231NWSJ3</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Realsteuervergleich, Realsteueraufbringungskraft:
+                            Grundsteuer A, Realsteueraufbringungskraft:
+                            Grundsteuer A je Einw,
+                            Realsteueraufbringungskraft: Grundsteuer B,
+                            Realsteueraufbringungskraft: Grundsteuer B je Einw
+                            Realsteueraufbringungskraft: Gewerbesteuer,
+                            Realsteueraufbringungskraft: Gewerbesteuer je Einw
+                            Realsteueraufbringungskraft,
+                            Realsteueraufbringungskraft je Einwohner,
+                            Gemeindeanteil an der Einkommensteuer je Einwohner
+                            Gemeindeanteil an der Umsatzsteuer je Einwohner,
+                            Gewerbesteuerumlage (einschl. FDE) je Einwohner,
+                            Steuereinnahmekraft, Steuereinnahmekraft je
+                            Einwohner, Größenklassen Kreisangehörige
+                            Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>71231NWSJ4</code>
+                        <inhalt>1977-2014</inhalt>
+                        <stand>01.04.2015 08:07:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jährliche Schulden der Gemeinden, Schulden der
+                            Gemeinden (GV) - Kernhaushalt, Schulden der
+                            Gemeinden (GV): dar. am Kreditmarkt, Schulden der
+                            kommunalen Eigenbetriebe, Schulden der kommunalen
+                            Krankenhäuser, Gemeinden und Kreisverwaltungen,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>71327GJNW1</code>
+                        <inhalt>31.12.1995-31.12.2009</inhalt>
+                        <stand>18.08.2010 14:22:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jährliche Schulden der Gemeinden, Schulden der
+                            Gemeinden (GV) - Kernhaushalt, Schulden der
+                            Gemeinden (GV): dar. am Kreditmarkt, Schulden der
+                            kommunalen Eigenbetriebe, Schulden der kommunalen
+                            Krankenhäuser, Stichtag, Kreisfreie Städte und
+                            Kreise
+                        </beschriftungstext>
+                        <code>71327KJNW1</code>
+                        <inhalt>31.12.1995-31.12.2009</inhalt>
+                        <stand>18.08.2010 14:22:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jährliche Schulden der Gemeinden, Schulden der
+                            Gemeinden (GV) - Kernhaushalt, Schulden der
+                            Gemeinden (GV): dar. am Kreditmarkt, Schulden der
+                            kommunalen Eigenbetriebe, Schulden der kommunalen
+                            Krankenhäuser, Stichtag, Land
+                        </beschriftungstext>
+                        <code>71327LJNW1</code>
+                        <inhalt>31.12.1995-31.12.2009</inhalt>
+                        <stand>18.08.2010 14:22:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jährliche Schulden der Gemeinden, Schulden der
+                            Gemeinden (GV) - Kernhaushalt, Schulden der
+                            Gemeinden (GV): dar. am Kreditmarkt, Schulden der
+                            kommunalen Eigenbetriebe, Schulden der kommunalen
+                            Krankenhäuser, Stichtag, Regierungsbezirke und
+                            Bezirksverbände
+                        </beschriftungstext>
+                        <code>71327RJNW1</code>
+                        <inhalt>31.12.1995-31.12.2009</inhalt>
+                        <stand>18.08.2010 14:22:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jahresabschl. öffentl. Fonds, Einr. u. Unternehmen
+                            Öffentl. Fonds, Einr. und Unternehmen am 31.12.,
+                            Beschäftigte insgesamt am 31.12., Beschäftigte
+                            weiblich am 31.12., Gemeinden, Kreisverwaltungen,
+                            Bezirksverbände, Jahr
+                        </beschriftungstext>
+                        <code>72111GNW01</code>
+                        <inhalt>2011-2012</inhalt>
+                        <stand>05.01.2015 13:17:13h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jahresabschl. öffentl. Fonds, Einr. u. Unternehmen
+                            Gewinn- und Verlustrechnung, Gemeinden,
+                            Kreisverwaltungen, Bezirksverbände,
+                            Einzelpositionen, Jahr
+                        </beschriftungstext>
+                        <code>72111GNW02</code>
+                        <inhalt>2011-2012</inhalt>
+                        <stand>05.01.2015 13:17:24h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jahresabschl. öffentl. Fonds, Einr. u. Unternehmen
+                            Aktiva, Gemeinden, Kreisverwaltungen,
+                            Bezirksverbände, Aktivseite der Bilanz, Jahr
+                        </beschriftungstext>
+                        <code>72111GNW03</code>
+                        <inhalt>2011-2012</inhalt>
+                        <stand>05.01.2015 13:17:28h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Jahresabschl. öffentl. Fonds, Einr. u. Unternehmen
+                            Passiva, Gemeinden, Kreisverwaltungen,
+                            Bezirksverbände, Passivseite der Bilanz, Jahr
+                        </beschriftungstext>
+                        <code>72111GNW04</code>
+                        <inhalt>2011-2012</inhalt>
+                        <stand>05.01.2015 13:17:36h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Lohn- und
+                            Einkommensteuerpflichtige, Gesamtbetrag der
+                            Einkünfte, Lohn- und Einkommensteuer, Gemeinden,
+                            Größenklassen des Gesamtbetrages der Einkünfte,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73111GJ003</code>
+                        <inhalt>2007-2010</inhalt>
+                        <stand>28.07.2014 13:58:24h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Lohn- und
+                            Einkommensteuerpflichtige, Gesamtbetrag der
+                            Einkünfte, Lohn- und Einkommensteuer, Kreisfreie
+                            Städte und Kreise, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111KJ003</code>
+                        <inhalt>2007-2010</inhalt>
+                        <stand>28.07.2014 13:58:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige mit Gesamtbetrag der Einkünfte,
+                            Steuerpflichtige mit festgesetzter Einkommensteuer
+                            Gesamtbetrag der Einkünfte, Festgesetzte Steuer,
+                            Kreisfreie Städte und Kreise, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111K3101</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige mit Gesamtbetrag der Einkünfte,
+                            Gesamtbetrag der Einkünfte, Steuerpflichtige mit
+                            festgesetzter Einkommensteuer, Festgesetzte
+                            Steuer, Kreisfreie Städte und Kreise, veranlagt
+                            und nicht veranlagt zusammen, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111K32X1</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Lohn- und
+                            Einkommensteuerpflichtige, Gesamtbetrag der
+                            Einkünfte, Lohn- und Einkommensteuer, Land,
+                            Größenklassen des Gesamtbetrages der Einkünfte,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73111LJ003</code>
+                        <inhalt>2007-2010</inhalt>
+                        <stand>28.07.2014 13:59:16h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige m. pos. Eink. a. Land-u-Forstw.,
+                            Steuerpflichtige m. pos. Eink. a. Gewerbebetrieb,
+                            Steuerpflichtige m. pos. Eink. aus selbst. Arbeit,
+                            Steuerpflichtige m.pos.Eink. aus nichtselbst. Arb.
+                            Steuerpflichtige m. pos. Eink. aus Kapitalvermögen
+                            Steuerpflichtige m.pos.Eink.aus Vermiet./Verpacht.
+                            Steuerpflichtige m. positiven sonstigen Einkünften
+                            Steuerpflichtige mit Summe der positiven Einkünfte
+                            Land, Grund- und Splittingtabelle, Größenklassen
+                            des Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L3101</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:39h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige m.neg.Eink. aus Land-u.Forstwirt.
+                            Steuerpflichtige m. neg. Eink. aus Gewerbebetrieb,
+                            Steuerpflichtige m. neg. Eink. aus selbst. Arbeit,
+                            Steuerpflichtige m.neg.Eink. aus nichtselbst. Arb.
+                            Steuerpflichtige m. neg. Eink. aus Kapitalvermögen
+                            Steuerpflichtige m.neg.Eink.aus Vermiet./Verpacht.
+                            Steuerpflichtige m. negativen sonstigen Einkünften
+                            Steuerpflichtige mit Summe der negativen Einkünfte
+                            Land, Grund- und Splittingtabelle, Größenklassen
+                            des Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L3102</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:39h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige mit Gesamtbetrag der Einkünfte,
+                            Steuerpflichtige mit Sonderausgaben,
+                            Steuerpflichtige mit außergewöhnlichen Belastungen
+                            Steuerpflichtige m.abziehb. Freibeträgen f. Kinder
+                            Steuerpflichtige mit zu versteuerndem Einkommen,
+                            Steuerpflichtige mit festgesetzter Einkommensteuer
+                            Land, Grund- und Splittingtabelle, Größenklassen
+                            des Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L3103</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:39h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Summe der
+                            EInkünfte, Gesamtbetrag der Einkünfte,
+                            Sonderausgaben, Außergewöhnliche Belastungen,
+                            Einkommen, Abzuziehende Freibeträge für Kinder,
+                            Zu versteuerndes Einkommen, Festgesetzte Steuer,
+                            Land, Grund- und Splittingtabelle, Größenklassen
+                            des Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L3104</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:39h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Positive
+                            Einkünfte aus Land- und Forstwirtschaft, Positive
+                            Einkünfte aus Gewerbebetrieb, Positive Einkünfte
+                            aus selbstständiger Arbeit, Positive Einkünfte
+                            aus nichtselbstständiger Arbeit, Positive
+                            Einkünfte aus Kapitalvermögen, Positive Einkünfte
+                            aus Vermietung und Verpachtung, Positive sonstige
+                            Einkünfte, Summe der positiven Einkünfte, Land,
+                            Grund- und Splittingtabelle, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L3105</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:39h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Negative
+                            Einkünfte aus Land- und Forstwirtschaft, Negative
+                            Einkünfte aus Gewerbebetrieb, Negative Einkünfte
+                            aus selbständiger Arbeit, Negative Einkünfte aus
+                            nichtselbständiger Arbeit, Negative Einkünfte aus
+                            Kapitalvermögen, Negative Einkünfte aus
+                            Vermietung und Verpachtung, Negative sonstige
+                            Einkünfte, Summe der negativen Einkünfte, Land,
+                            Grund- und Splittingtabelle, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L3106</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige m. Eink. a. Land- u.Forstwirtsch.
+                            Steuerpflichtige m. Eink. a. Gewerbebetrieb,
+                            Steuerpflichtige m. Eink. a. selbständiger Arbeit,
+                            Steuerpflichtige m. Eink. a. nichtselbst. Arbeit,
+                            Steuerpflichtige mit Bruttolohn, Steuerpflichtige
+                            mit Versorgungsfreibetrag, Steuerpflichtige mit
+                            Werbungskosten, Steuerpflichtige m. Eink. a.
+                            Kapitalvermögen, Steuerpflichtige m. Eink. a.
+                            Vermiet. u.Verpacht., Steuerpflichtige mit
+                            sonstigen Einkünften, Steuerpflichtige mit Summe
+                            der Einkünfte, Land, veranlagt und nicht
+                            veranlagt zusammen, Grund- und Splittingtabelle,
+                            Größenklassen des Gesamtbetrages der Einkünfte,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73111L32X1</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Einkünfte aus
+                            Land- und Forstwirtschaft, Einkünfte aus
+                            Gewerbebetrieb, Einkünfte aus selbständiger
+                            Arbeit, Einkünfte aus nichtselbständiger Arbeit,
+                            Bruttolohn, Versorgungsfreibetrag, Werbungskosten,
+                            Einkünfte aus Kapitalvermögen, Einkünfte aus
+                            Vermietung und Verpachtung, sonstige Einkünfte,
+                            Summe der EInkünfte, Land, veranlagt und nicht
+                            veranlagt zusammen, Grund- und Splittingtabelle,
+                            Größenklassen des Gesamtbetrages der Einkünfte,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73111L32X2</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige mit Altersentlastungsbetrag,
+                            Steuerpflichtige mit Freibetr.f.Land-u.Forstwirt.,
+                            Steuerpflichtige mit Gesamtbetrag der Einkünfte,
+                            Steuerpflichtige mit verbrauchtem Verlust (§10d),
+                            Steuerpflichtige m.unbeschr.abziehb.Sonderausgaben
+                            Steuerpflichtige mit außergewöhnlichen Belastungen
+                            Steuerpfl. m. Steuerbegünst.f.eig.genutzten Wohnr.
+                            Steuerpflichtige mit Einkommen, Land, veranlagt
+                            und nicht veranlagt zusammen, Grund- und
+                            Splittingtabelle, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L32X3</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Altersentlastungsbetrag, Freibetrag für Land- und
+                            Forstwirtschaft, Gesamtbetrag der Einkünfte,
+                            verbrauchter Verlust (§10d), unbeschränkt
+                            abziehbare Sonderausgaben, Außergewöhnliche
+                            Belastungen, Steuerbegünstigung für
+                            eigengenutzten Wohnraum, Einkommen, Land,
+                            veranlagt und nicht veranlagt zusammen, Grund-
+                            und Splittingtabelle, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L32X4</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige m.abziehb. Freibeträgen f. Kinder
+                            Steuerpflichtige mit Ermäßigung nach §34f EStG,
+                            Steuerpflichtige mit hinzuzurechnendem Kindergeld,
+                            Steuerpflichtige mit festgesetzter Einkommensteuer
+                            Steuerpflichtige m.festzusetz. Solidaritätszuschl.
+                            Steuerpflichtige mit verbleibender Einkommensteuer
+                            Land, veranlagt und nicht veranlagt zusammen,
+                            Grund- und Splittingtabelle, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L32X5</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Abzuziehende
+                            Freibeträge für Kinder, Zu versteuerndes
+                            Einkommen, Ermäßigung nach §34f EStG,
+                            hinzuzurechnendes Kindergeld, Festgesetzte Steuer,
+                            festzusetzender Solidaritätszuschlag,
+                            verbleibende Einkommensteuer, Land, veranlagt und
+                            nicht veranlagt zusammen, Grund- und
+                            Splittingtabelle, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111L32X6</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige, Gesamtbetrag der Einkünfte,
+                            Größenklassen (Gesamtbetrages Einkünfte) in EUR,
+                            Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>73111NWG31</code>
+                        <inhalt>1998-2004</inhalt>
+                        <stand>04.07.2008 11:04:41h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige, Gesamtbetrag der Einkünfte,
+                            Lohn- und Einkommensteuer, Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>73111NWG32</code>
+                        <inhalt>1998-2010</inhalt>
+                        <stand>28.07.2014 13:59:36h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige, Gesamtbetrag der Einkünfte,
+                            Lohn- und Einkommensteuer, Kreisfreie Städte und
+                            Kreise, Jahr
+                        </beschriftungstext>
+                        <code>73111NWK32</code>
+                        <inhalt>1998-2010</inhalt>
+                        <stand>28.07.2014 13:59:50h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige, Gesamtbetrag der Einkünfte,
+                            Lohn- und Einkommensteuer, Land, Jahr
+                        </beschriftungstext>
+                        <code>73111NWL32</code>
+                        <inhalt>1998-2010</inhalt>
+                        <stand>28.07.2014 14:00:16h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige, Gesamtbetrag der Einkünfte,
+                            Lohn- und Einkommensteuer, Regierungsbezirke,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73111NWR32</code>
+                        <inhalt>1998-2010</inhalt>
+                        <stand>28.07.2014 14:00:04h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik, Lohn- und
+                            Einkommensteuerpflichtige, Gesamtbetrag der
+                            Einkünfte, Lohn- und Einkommensteuer,
+                            Regierungsbezirke, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111RJ003</code>
+                        <inhalt>2007-2010</inhalt>
+                        <stand>28.07.2014 13:59:03h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige mit Gesamtbetrag der Einkünfte,
+                            Steuerpflichtige mit festgesetzter Einkommensteuer
+                            Gesamtbetrag der Einkünfte, Festgesetzte Steuer,
+                            Regierungsbezirke, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111R3101</code>
+                        <inhalt>2001</inhalt>
+                        <stand>14.08.2006 11:00:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Lohn- und Einkommensteuerstatistik,
+                            Steuerpflichtige mit Gesamtbetrag der Einkünfte,
+                            Gesamtbetrag der Einkünfte, Steuerpflichtige mit
+                            festgesetzter Einkommensteuer, Festgesetzte
+                            Steuer, Regierungsbezirke, veranlagt und nicht
+                            veranlagt zusammen, Größenklassen des
+                            Gesamtbetrages der Einkünfte, Jahr
+                        </beschriftungstext>
+                        <code>73111R32X1</code>
+                        <inhalt>2004</inhalt>
+                        <stand>25.03.2010 14:09:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, Umsatzsteuer für
+                            Lieferungen und Leistungen, Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>73311GJ001</code>
+                        <inhalt>1994-2009</inhalt>
+                        <stand>01.10.2013 09:54:03h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (Abschnitte): Steuerstatistiken,
+                            Gemeinden, Jahr
+                        </beschriftungstext>
+                        <code>73311GYY02</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:51:12h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Abschnitte und Zusammenfassungen (16),
+                            Kreisfreie Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>73311KJZZ2</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:40:47h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, Umsatzsteuer für
+                            Lieferungen und Leistungen, Kreisfreie Städte und
+                            Kreise, Jahr
+                        </beschriftungstext>
+                        <code>73311KJ001</code>
+                        <inhalt>1994-2009</inhalt>
+                        <stand>01.10.2013 09:54:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabschnitte, Kreisfreie Städte
+                            und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>73311KJ002</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (Abschnitte): Steuerstatistiken,
+                            Kreisfreie Städte und Kreise, Jahr
+                        </beschriftungstext>
+                        <code>73311KYY02</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:53:16h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2003: Abschnitte
+                            und Zusammenfassungen (16), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ1</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2003: Unterabschn.
+                            der Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ2</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2003: 2-Steller der
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ3</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2003: 3-Steller der
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ4</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:06h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2003: 4-Steller der
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ5</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2003 - Unterklassen
+                            der Umsatzsteuerstatistik, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ6</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:09h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Abschnitte und Zusammenfassungen (16),
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ7</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:09h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Unterabschn. der Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ8</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:09h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 2-Steller der Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJZZ9</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:09h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 1993:
+                            Wirtschaftsabschnitte, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ001</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:10h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 1993:
+                            Wirtschaftsunterabschnitte, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ002</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:10h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 1993:
+                            Wirtschaftsabteilungen, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ003</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:11h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 1993:
+                            Wirtschaftsgruppen, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ004</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:12h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 1993:
+                            Wirtschaftsklassen, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ005</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:15h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 1993:
+                            Umsatzsteuerstatistik - Unterklassen, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ006</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:19h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabschnitte,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ007</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:34h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsunterabschnitte,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ008</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:35h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabteilungen,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ009</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:36h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsgruppen, Umsatzgrößenklassen
+                            (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ010</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:38h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsklassen, Umsatzgrößenklassen
+                            (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ011</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:45h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Umsatzsteuerstatistik - Unterklassen,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ012</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:56h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabschnitte, Rechtsform, Land,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73311LJ013</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:56h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsunterabschnitte, Rechtsform,
+                            Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ014</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:56h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabteilungen, Rechtsform, Land,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73311LJ015</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:57h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsgruppen, Rechtsform, Land,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73311LJ016</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:21:59h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsklassen, Rechtsform, Land,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73311LJ017</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:03h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Umsatzsteuerstatistik - Unterklassen,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ018</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:10h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabschnitte, Besteuerung der
+                            Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ019</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:19h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsunterabschnitte, Besteuerung
+                            der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ020</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:20h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsabteilungen, Besteuerung der
+                            Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ021</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:21h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsgruppen, Besteuerung der
+                            Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ022</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:23h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Wirtschaftsklassen, Besteuerung der
+                            Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ023</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:28h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 1993: Umsatzsteuerstatistik - Unterklassen,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ024</code>
+                        <inhalt>1999-2001</inhalt>
+                        <stand>03.03.2008 14:22:49h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, Umsatzsteuer für
+                            Lieferungen und Leistungen, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ025</code>
+                        <inhalt>1994-2009</inhalt>
+                        <stand>01.10.2013 09:55:41h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LJ026</code>
+                        <inhalt>2002-2009</inhalt>
+                        <stand>01.10.2013 09:55:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2008 (Abschnitte):
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY01</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:22h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2008 (2-Steller):
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY03</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:23h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2008 (3-Steller):
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY04</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:24h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2008 (4-Steller):
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY05</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:27h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Umsatzsteuer für Lieferungen
+                            und Leistungen, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, WZ 2008 (5-Steller):
+                            Steuerstatistiken, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY06</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:29h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (Abschnitte): Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY07</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:30h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (2-Steller): Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY09</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:31h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (3-Steller): Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY10</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:32h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (4-Steller): Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY11</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:35h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (5-Steller): Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY12</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (Abschnitte): Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY13</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:40h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (2-Steller): Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY15</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:41h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (3-Steller): Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY16</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (4-Steller): Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY17</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:44h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (5-Steller): Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY18</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:48h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (Abschnitte): Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY19</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:48h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (2-Steller): Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY21</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:49h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (3-Steller): Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY22</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:52h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (4-Steller): Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY23</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:50:58h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (5-Steller): Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LYY24</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:51:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 3-Steller der Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ10</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:10h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 4-Steller der Steuerstatistiken,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ11</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:12h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003 - Unterklassen der Umsatzsteuerstatistik,
+                            Umsatzgrößenklassen (EUR), Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ12</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:14h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Abschnitte und Zusammenfassungen (16),
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ13</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:15h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Unterabschn. der Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ14</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:15h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 2-Steller der Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ15</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:15h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 3-Steller der Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ16</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:15h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 4-Steller der Steuerstatistiken,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ17</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:17h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003 - Unterklassen der Umsatzsteuerstatistik,
+                            Rechtsform, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ18</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:19h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Abschnitte und Zusammenfassungen (16),
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ19</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:19h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: Unterabschn. der Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ20</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:20h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 2-Steller der Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ21</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:20h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 3-Steller der Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ22</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:20h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003: 4-Steller der Steuerstatistiken,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ23</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:22h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2003 - Unterklassen der Umsatzsteuerstatistik,
+                            Besteuerung der Umsätze, Land, Jahr
+                        </beschriftungstext>
+                        <code>73311LZZ24</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:24h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            Regierungsbezirke, WZ 2003: Abschnitte und
+                            Zusammenfassungen (16), Jahr
+                        </beschriftungstext>
+                        <code>73311RJZZ2</code>
+                        <inhalt>2002-2008</inhalt>
+                        <stand>20.06.2013 10:41:24h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz, Steuerbarer Umsatz für
+                            Lieferungen und Leistungen, Umsatzsteuer vor
+                            Abzug der Vorsteuer, Abziehbare Vorsteuer,
+                            Umsatzsteuervorauszahlung, Umsatzsteuer für
+                            Lieferungen und Leistungen, Regierungsbezirke,
+                            Jahr
+                        </beschriftungstext>
+                        <code>73311RJ001</code>
+                        <inhalt>1994-2009</inhalt>
+                        <stand>01.10.2013 09:55:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Umsatzsteuerstatistik, Umsatzsteuerpflichtige,
+                            Steuerbarer Umsatz für Lieferungen und Leistungen,
+                            WZ 2008 (Abschnitte): Steuerstatistiken,
+                            Regierungsbezirke, Jahr
+                        </beschriftungstext>
+                        <code>73311RYY02</code>
+                        <inhalt>2009</inhalt>
+                        <stand>01.10.2013 08:54:01h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstand im unmittelbaren öffentlichen Dienst
+                            Beschäftigte im unmittelbaren öffentlichen Dienst,
+                            Geschlecht, Dienstverhältnis (öffentlicher
+                            Dienst), Beschäftigungsumfang (Vollzeit, T1 und
+                            T2), Stichtag, Kreisfreie Städte und Kreise
+                        </beschriftungstext>
+                        <code>74100NWKJ1</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>08.09.2009 15:12:53h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstand im unmittelbaren öffentlichen Dienst
+                            Beschäftigte im unmittelbaren öffentlichen Dienst,
+                            Geschlecht, Dienstverhältnis (öffentlicher
+                            Dienst), Stichtag, Kreisfreie Städte und Kreise
+                        </beschriftungstext>
+                        <code>74100NWKJ2</code>
+                        <inhalt>30.06.1995-30.06.2001</inhalt>
+                        <stand>08.09.2009 15:13:29h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstand im unmittelbaren öffentlichen Dienst
+                            Beschäftigte im unmittelbaren öffentlichen Dienst,
+                            Geschlecht, Beschäftigungsumfang (Vollzeit, T1
+                            und T2), Stichtag, Kreisfreie Städte und Kreise
+                        </beschriftungstext>
+                        <code>74100NWKJ3</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>08.09.2009 15:12:21h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik des Bundes,
+                            Vollzeitbeschäftigte des Bundes, T1-Beschäftigte
+                            des Bundes, einschl.Altersteilzeit,
+                            T2-Beschäftigte des Bundes einschl. Altersteilzeit
+                            Dienstverhältnis (öffentlicher Dienst),
+                            Geschlecht, Kreisfreie Städte und Kreise,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74111KJZZ1</code>
+                        <inhalt>30.06.2002-30.06.2005</inhalt>
+                        <stand>09.09.2009 13:23:56h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik des Bundes,
+                            Vollzeitbeschäftigte des Bundes,
+                            Teilzeitbeschäftigte des Bundes, einschl. ATZ,
+                            Beschäftigte des Bundes (Vollzeitäquivalent),
+                            Dienstverhältnis (Beschäftigte des Bundes),
+                            Geschlecht, Kreisfreie Städte und Kreise,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74111KJ001</code>
+                        <inhalt>30.06.2006-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:02:20h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik des Bundes,
+                            Vollzeitbeschäftigte des Bundes, T1-Beschäftigte
+                            des Bundes, T2-Beschäftigte des Bundes,
+                            Beschäftigte des Bundes in Altersteilzeit,
+                            Beschäftigte des Bundes (Vollzeitäquivalent),
+                            Organisationseinheit des Bundes, Dienstverhältnis
+                            (Bund), Laufbahngruppen, Geschlecht, Staatliche
+                            Aufgabengebiete, Land, Stichtag
+                        </beschriftungstext>
+                        <code>74111LJZZ1</code>
+                        <inhalt>30.06.2002-30.06.2005</inhalt>
+                        <stand>09.09.2009 13:23:55h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik des Bundes,
+                            Vollzeitbeschäftigte des Bundes, T1-Beschäftigte
+                            des Bundes, T2-Beschäftigte des Bundes,
+                            Beschäftigte des Bundes in Altersteilzeit,
+                            Beschäftigte des Bundes (Vollzeitäquivalent),
+                            Organisationseinheit des Bundes, Dienstverhältnis
+                            (Bund), Geschlecht, Staatliche Aufgabengebiete,
+                            Land, Stichtag
+                        </beschriftungstext>
+                        <code>74111LJ001</code>
+                        <inhalt>30.06.2007-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:02:31h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik des Bundes, Beschäftigte
+                            des Bundes, Geschlecht, Dienstverhältnis
+                            (öffentlicher Dienst), Beschäftigungsumfang
+                            (Vollzeit, T1 und T2), Stichtag, Kreisfreie
+                            Städte und Kreise
+                        </beschriftungstext>
+                        <code>74111NWKJ1</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>08.09.2009 15:14:07h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik des Bundes, Beschäftigte
+                            des Bundes, Geschlecht, Beschäftigungsumfang
+                            (Vollzeit, T1 und T2), Stichtag, Kreisfreie
+                            Städte und Kreise
+                        </beschriftungstext>
+                        <code>74111NWKJ3</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>08.09.2009 15:12:36h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte des Landes (Vollzeitäquivalente),
+                            Vollzeitbeschäftigte des Landes,
+                            Teilzeitbeschäftigte des Landes, einschl. ATZ,
+                            Gemeinden, Dienstverhältnis (Beschäftigte des
+                            Landes), Geschlecht, Stichtag
+                        </beschriftungstext>
+                        <code>74121GJ001</code>
+                        <inhalt>30.06.2006-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte der Gemeinden (Gv.),
+                            Beschäftigte der Gemeinden/GV - Vollzeitäquivalent
+                            Teilzeitbeschäftigte der Gemeinden/GV einschl. ATZ
+                            Gemeinden, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121GJ002</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Besch.d.Gem./Gv.-Vollzeitäq.(n.Arbeitgeb.zugeord.)
+                            Gemeinden und Kreisverwaltungen, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121GJ005</code>
+                        <inhalt>30.06.2006-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:51h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte der Gemeinden und Gemeindeverbände,
+                            T1-Beschäftigte des Landes, T2-Beschäftigte des
+                            Landes, T2-Beschäftigte der Gemeinden (Gv.),
+                            Geschlecht, Stichtag, Gemeinden
+                        </beschriftungstext>
+                        <code>74121NWGJ1</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 11:49:25h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte des Landes, T1-Beschäftigte
+                            des Landes, T2-Beschäftigte des Landes,
+                            Geschlecht, Dienstverhältnis (öffentlicher
+                            Dienst), Stichtag, Gemeinden
+                        </beschriftungstext>
+                        <code>74121NWGJ4</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>08.09.2009 15:14:29h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            T1-Beschäftigte der Gemeinden (Gv.),
+                            T2-Beschäftigte der Gemeinden (Gv.), Geschlecht,
+                            Dienstverhältnis (Beamte,Angestellte,Arbeiter),
+                            Stichtag, Gemeinden
+                        </beschriftungstext>
+                        <code>74121NWGJ6</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>08.09.2009 15:13:49h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte des Landes (Vollzeitäquivalente),
+                            Vollzeitbeschäftigte des Landes,
+                            Teilzeitbeschäftigte des Landes, einschl. ATZ,
+                            Gemeinden, Geschlecht, Stichtag
+                        </beschriftungstext>
+                        <code>74121NWGJ7</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte der Gemeinden und Gemeindeverbände,
+                            T1-Beschäftigte des Landes, T2-Beschäftigte des
+                            Landes, T2-Beschäftigte der Gemeinden (Gv.),
+                            Geschlecht, Stichtag, Kreisfreie Städte und
+                            Kreise
+                        </beschriftungstext>
+                        <code>74121NWKJ1</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 12:19:56h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            T2-Beschäftigte der Gemeinden (Gv.),
+                            T1-Beschäftigte der Gemeinden (Gv.), Beschäftigte
+                            der Gemeinden und Gemeindeverbände,
+                            Dienstverhältnis (Beamte,Angestellte,Arbeiter),
+                            Geschlecht, Kreisfreie Städte und Kreise,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWKJ2</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>09.09.2009 14:35:37h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte des Landes, T1-Beschäftigte
+                            des Landes, T2-Beschäftigte des Landes,
+                            Geschlecht, Dienstverhältnis (öffentlicher
+                            Dienst), Stichtag, Kreisfreie Städte und Kreise
+                        </beschriftungstext>
+                        <code>74121NWKJ4</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 11:56:31h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte des Landes (Vollzeitäquivalente),
+                            Vollzeitbeschäftigte des Landes,
+                            Teilzeitbeschäftigte des Landes, einschl. ATZ,
+                            Kreisfreie Städte und Kreise, Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWKJ7</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte der Gemeinden (Gv.),
+                            Beschäftigte der Gemeinden/GV - Vollzeitäquivalent
+                            Teilzeitbeschäftigte der Gemeinden/GV einschl. ATZ
+                            Kreisfreie Städte und Kreise, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWKJ8</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Besch.d.Gem./Gv.-Vollzeitäq.(n.Arbeitgeb.zugeord.)
+                            Kreisfreie Städte und Kreise, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWKJ9</code>
+                        <inhalt>30.06.2006-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:51h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte der Gemeinden und Gemeindeverbände,
+                            T1-Beschäftigte des Landes, T2-Beschäftigte des
+                            Landes, T2-Beschäftigte der Gemeinden (Gv.),
+                            Geschlecht, Stichtag, Land
+                        </beschriftungstext>
+                        <code>74121NWLJ1</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 12:23:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte des Landes, T1-Beschäftigte
+                            des Landes, T2-Beschäftigte des Landes,
+                            Geschlecht, Dienstverhältnis (öffentlicher
+                            Dienst), Stichtag, Land
+                        </beschriftungstext>
+                        <code>74121NWLJ4</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 11:55:41h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte des Landes (Vollzeitäquivalente),
+                            Vollzeitbeschäftigte des Landes,
+                            Teilzeitbeschäftigte des Landes, einschl. ATZ,
+                            Land, Geschlecht, Stichtag
+                        </beschriftungstext>
+                        <code>74121NWLJ7</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte der Gemeinden (Gv.),
+                            Beschäftigte der Gemeinden/GV - Vollzeitäquivalent
+                            Teilzeitbeschäftigte der Gemeinden/GV einschl. ATZ
+                            Land, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWLJ8</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Besch.d.Gem./Gv.-Vollzeitäq.(n.Arbeitgeb.zugeord.)
+                            Land, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWLJ9</code>
+                        <inhalt>30.06.2006-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:51h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte der Gemeinden und Gemeindeverbände,
+                            T1-Beschäftigte des Landes, T2-Beschäftigte des
+                            Landes, T2-Beschäftigte der Gemeinden (Gv.),
+                            Geschlecht, Stichtag, Regierungsbezirke
+                        </beschriftungstext>
+                        <code>74121NWRJ1</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 12:22:05h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte des Landes, T1-Beschäftigte
+                            des Landes, T2-Beschäftigte des Landes,
+                            Geschlecht, Dienstverhältnis (öffentlicher
+                            Dienst), Stichtag, Regierungsbezirke
+                        </beschriftungstext>
+                        <code>74121NWRJ4</code>
+                        <inhalt>30.06.1995-30.06.2007</inhalt>
+                        <stand>25.04.2012 11:56:10h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Beschäftigte des Landes (Vollzeitäquivalente),
+                            Vollzeitbeschäftigte des Landes,
+                            Teilzeitbeschäftigte des Landes, einschl. ATZ,
+                            Regierungsbezirke, Geschlecht, Stichtag
+                        </beschriftungstext>
+                        <code>74121NWRJ7</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:33h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Vollzeitbeschäftigte der Gemeinden (Gv.),
+                            Beschäftigte der Gemeinden/GV - Vollzeitäquivalent
+                            Teilzeitbeschäftigte der Gemeinden/GV einschl. ATZ
+                            Regierungsbezirke, Dienstverhältnis
+                            (Beamte,Angestellte,Arbeiter), Geschlecht,
+                            Stichtag
+                        </beschriftungstext>
+                        <code>74121NWRJ8</code>
+                        <inhalt>30.06.1995-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:42h</stand>
+                    </objektKatalogEintraege>
+                    <objektKatalogEintraege>
+                        <beschriftungstext>Personalstandstatistik der Länder, Gemeinden/GV,
+                            Besch.d.Gem./Gv.-Vollzeitäq.(n.Arbeitgeb.zugeord.)
+                            Regierungsbezirke und Bezirksverbände,
+                            Dienstverhältnis (Beamte,Angestellte,Arbeiter),
+                            Geschlecht, Stichtag
+                        </beschriftungstext>
+                        <code>74121NWRJ9</code>
+                        <inhalt>30.06.2006-30.06.2013</inhalt>
+                        <stand>08.10.2014 10:05:51h</stand>
+                    </objektKatalogEintraege>
+                </objektKatalogEintraege>
+                <returnInfo>
+                    <code>0</code>
+                    <inhalt>erfolgreich</inhalt>
+                    <typ>Information</typ>
+                </returnInfo>
+            </DatenKatalogReturn>
+        </ns1:DatenKatalogResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
