@@ -1,0 +1,11 @@
+<div>
+    <h2 class="page-title">Daten Import</h2>
+        <input type="text" class="form-control" placeholder="Gemeindekennzahl" ng-model="vm.gkz"/>
+        <input type="text" class="form-control" placeholder="Tabelle" ng-model="vm.table"/>
+        <button class="btn btn-primary" ng-click="vm.importData()">Importieren</button>
+        <button class="btn btn-default" ng-click="vm.cancel()">Abbrechen</button>
+
+    </div>
+
+    <div id="grid1" ui-grid="vm.gridOptions" class="grid"></div>
+</div>

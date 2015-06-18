@@ -23,7 +23,7 @@
         'app.core'
     ]);
 
-    app.config(['$httpProvider', function ($httpProvider) {
+    app.config(['$httpProvider', '$logProvider', function ($httpProvider, $logProvider) {
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         //$httpProvider.defaults.headers.post.Accept = 'application/json, text/javascript';
         //$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
@@ -33,6 +33,7 @@
         //$httpProvider.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8';
         $httpProvider.defaults.useXDomain = true;
         // $httpProvider.defaults.withCredentials = true;
+        $logProvider.debugEnabled(true);
     }]);
 
     //app.config(['$stateProvider', '$urlRouterProvider', 'uiGmapGoogleMapApiProvider', configRoutes]);
@@ -57,11 +58,22 @@
                 controller: 'BudgetController',
                 controllerAs: 'vm',
                 resolve: {
-                    persons: ['ldbApi', function (ldbApi) {
+                    importedData: ['ldbApi', function (ldbApi) {
                         return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
-                        // return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
                     }]
                 }
+
+            })
+            .state('import', {
+                url: '/import',
+                templateUrl: 'app/data-import/data-import.html',
+                controller: 'DataImportController',
+                controllerAs: 'vm'
+                //resolve: {
+                //    importedData: ['ldbApi', function (ldbApi) {
+                //        return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
+                //    }]
+                //}
 
             })
             .state('persons', {
@@ -103,15 +115,15 @@
         $urlRouterProvider.otherwise('/');
     }
 
-    // app.run(['$rootScope', '$state', '$stateParams', 'stateWatcherService', function ($rootScope, $state, $stateParams, $stateWatcherService) {
+    app.run(['$rootScope', '$state', '$stateParams', 'stateWatcherService', function ($rootScope, $state, $stateParams, $stateWatcherService) {
     // jshint unused:false
-    app.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
+    //app.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
         /* jshint validthis: true */
         // It's very handy to add references to $state and $stateParams to the $rootScope
         // so that you can access them from any scope within your applications.For example,
         // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
         // to active whenever 'contacts.list' or one of its decendents is active.
-        //$rootScope.$state = $state;
-        //$rootScope.$stateParams = $stateParams;
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
     }]);
 })();

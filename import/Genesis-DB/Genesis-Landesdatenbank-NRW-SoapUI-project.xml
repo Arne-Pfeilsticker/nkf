@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="168294c8-2909-4e4e-9a75-2f247f648ca8" activeEnvironment="Default" name="Genesis Landesdatenbank NRW" resourceRoot="${projectDir}" soapui-version="5.1.3" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="e73f709d-27a3-4372-88f8-46873d04cbcc" wsaVersion="NONE" name="RechercheServiceSoapBinding" type="wsdl" bindingName="{https://www.landesdatenbank.nrw.de}RechercheServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService?wsdl"><con:part><con:url>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="https://www.landesdatenbank.nrw.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="https://www.landesdatenbank.nrw.de" xmlns:intf="https://www.landesdatenbank.nrw.de" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="daten.methods.webservice.genesis" xmlns:tns2="katalog.daten.methods.webservice.genesis" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+  <wsdl:types>
+    <schema targetNamespace="daten.methods.webservice.genesis" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.landesdatenbank.nrw.de"/>
+      <import namespace="katalog.daten.methods.webservice.genesis"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="EinzelTreffer">
+        <sequence>
+          <element name="gewichtung" type="xsd:double"/>
+          <element name="kostenpflichtig" type="xsd:boolean"/>
+          <element name="kurztext" nillable="true" type="xsd:string"/>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="objektTyp" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ObjektTreffer">
+        <sequence>
+          <element name="objektTyp" nillable="true" type="xsd:string"/>
+          <element name="trefferAnzahl" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="GenesisTreffer">
+        <sequence>
+          <element name="returncode" nillable="true" type="xsd:string"/>
+          <element name="trefferListe" nillable="true" type="impl:ArrayOf_tns1_EinzelTreffer"/>
+          <element name="trefferUebersicht" nillable="true" type="impl:ArrayOf_tns1_ObjektTreffer"/>
+        </sequence>
+      </complexType>
+      <complexType name="ReturnInfo">
+        <sequence>
+          <element name="code" type="xsd:byte"/>
+          <element name="inhalt" nillable="true" type="xsd:string"/>
+          <element name="typ" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema targetNamespace="https://www.landesdatenbank.nrw.de" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="daten.methods.webservice.genesis"/>
+      <import namespace="katalog.daten.methods.webservice.genesis"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="ArrayOf_tns1_EinzelTreffer">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:EinzelTreffer[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOf_tns1_ObjektTreffer">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:ObjektTreffer[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOf_tns2_ObjektKatalogEintrag">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns2:ObjektKatalogEintrag[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOf_tns2_MerkmalAuspraegungenKatalogEintrag">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns2:MerkmalAuspraegungenKatalogEintrag[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+    </schema>
+    <schema targetNamespace="katalog.daten.methods.webservice.genesis" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="daten.methods.webservice.genesis"/>
+      <import namespace="https://www.landesdatenbank.nrw.de"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="ObjektKatalogEintrag">
+        <sequence>
+          <element name="code" nillable="true" type="xsd:string"/>
+          <element name="inhalt" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="DatenKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence>
+              <element name="beschriftungstext" nillable="true" type="xsd:string"/>
+              <element name="stand" nillable="true" type="xsd:string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="StatistikKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence>
+              <element name="datenquader" nillable="true" type="xsd:string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="MerkmalsKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence>
+              <element name="auspraegungen" nillable="true" type="xsd:string"/>
+              <element name="typ" nillable="true" type="xsd:string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ErgebnisKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="MerkmalAuspraegungenKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence>
+              <element name="merkmale" type="xsd:int"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="TabellenKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence>
+              <element name="abrufbar" type="xsd:boolean"/>
+              <element name="kostenpflichtig" type="xsd:boolean"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ZeitreihenKatalogEintrag">
+        <complexContent>
+          <extension base="tns2:ObjektKatalogEintrag">
+            <sequence>
+              <element name="abrufbar" type="xsd:boolean"/>
+              <element name="kostenpflichtig" type="xsd:boolean"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ObjektKatalog">
+        <sequence>
+          <element name="objektKatalogEintraege" nillable="true" type="impl:ArrayOf_tns2_ObjektKatalogEintrag"/>
+          <element maxOccurs="unbounded" name="objektKatalogEintrag" nillable="true" type="tns2:ObjektKatalogEintrag"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+        </sequence>
+      </complexType>
+      <complexType name="ObjektAuswahl">
+        <sequence>
+          <element name="bereich" nillable="true" type="xsd:string"/>
+          <element name="filter" nillable="true" type="xsd:string"/>
+          <element name="kriterium" nillable="true" type="xsd:string"/>
+          <element name="listenLaenge" nillable="true" type="xsd:string"/>
+          <element name="sprache" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="DatenAuswahl">
+        <complexContent>
+          <extension base="tns2:ObjektAuswahl">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="DatenKatalog">
+        <complexContent>
+          <extension base="tns2:ObjektKatalog">
+            <sequence>
+              <element name="datenAuswahl" nillable="true" type="tns2:DatenAuswahl"/>
+              <element maxOccurs="unbounded" name="datenKatalogEintrag" nillable="true" type="tns2:DatenKatalogEintrag"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="MerkmalsAuswahl">
+        <complexContent>
+          <extension base="tns2:ObjektAuswahl">
+            <sequence>
+              <element name="typ" nillable="true" type="xsd:string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="MerkmalsKatalog">
+        <complexContent>
+          <extension base="tns2:ObjektKatalog">
+            <sequence>
+              <element name="merkmalsAuswahl" nillable="true" type="tns2:MerkmalsAuswahl"/>
+              <element maxOccurs="unbounded" name="merkmalsKatalogEintrag" nillable="true" type="tns2:MerkmalsKatalogEintrag"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="MerkmalAuspraegungenAuswahl">
+        <complexContent>
+          <extension base="tns2:ObjektAuswahl">
+            <sequence>
+              <element name="merkmal" nillable="true" type="xsd:string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="MerkmalAuspraegungenKatalog">
+        <sequence>
+          <element name="merkmalAuspraegungenAuswahl" nillable="true" type="tns2:MerkmalAuspraegungenAuswahl"/>
+          <element name="merkmalAuspraegungenKatalogEintraege" nillable="true" type="impl:ArrayOf_tns2_MerkmalAuspraegungenKatalogEintrag"/>
+          <element maxOccurs="unbounded" name="merkmalAuspraegungenKatalogEintrag" nillable="true" type="tns2:MerkmalAuspraegungenKatalogEintrag"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+        </sequence>
+      </complexType>
+      <complexType name="TabellenAuswahl">
+        <complexContent>
+          <extension base="tns2:ObjektAuswahl">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="TabellenKatalog">
+        <complexContent>
+          <extension base="tns2:ObjektKatalog">
+            <sequence>
+              <element name="tabellenAuswahl" nillable="true" type="tns2:TabellenAuswahl"/>
+              <element maxOccurs="unbounded" name="tabellenKatalogEintrag" nillable="true" type="tns2:TabellenKatalogEintrag"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ErgebnisAuswahl">
+        <complexContent>
+          <extension base="tns2:ObjektAuswahl">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="ErgebnisKatalog">
+        <complexContent>
+          <extension base="tns2:ObjektKatalog">
+            <sequence>
+              <element name="ergebnisAuswahl" nillable="true" type="tns2:ErgebnisAuswahl"/>
+              <element maxOccurs="unbounded" name="ergebnisKatalogEintrag" nillable="true" type="tns2:ErgebnisKatalogEintrag"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="StatistikAuswahl">
+        <complexContent>
+          <extension base="tns2:ObjektAuswahl">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="StatistikKatalog">
+        <complexContent>
+          <extension base="tns2:ObjektKatalog">
+            <sequence>
+              <element name="statistikAuswahl" nillable="true" type="tns2:StatistikAuswahl"/>
+              <element maxOccurs="unbounded" name="statistikKatalogEintrag" nillable="true" type="tns2:StatistikKatalogEintrag"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="MerkmalAuspraegungenKatalogRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="name" type="xsd:string"/>
+    <wsdl:part name="auswahl" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="StatistikKatalogRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="filter" type="xsd:string"/>
+    <wsdl:part name="kriterium" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="DatenKatalogResponse">
+    <wsdl:part name="DatenKatalogReturn" type="tns2:DatenKatalog"/>
+  </wsdl:message>
+  <wsdl:message name="MerkmalsKatalogRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="filter" type="xsd:string"/>
+    <wsdl:part name="kriterium" type="xsd:string"/>
+    <wsdl:part name="typ" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="DatenKatalogRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="filter" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="RechercheRequest">
+    <wsdl:part name="luceneString" type="xsd:string"/>
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+    <wsdl:part name="kategorie" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="MerkmalsKatalogResponse">
+    <wsdl:part name="MerkmalsKatalogReturn" type="tns2:MerkmalsKatalog"/>
+  </wsdl:message>
+  <wsdl:message name="ErgebnisKatalogResponse">
+    <wsdl:part name="ErgebnisKatalogReturn" type="tns2:ErgebnisKatalog"/>
+  </wsdl:message>
+  <wsdl:message name="StatistikKatalogResponse">
+    <wsdl:part name="StatistikKatalogReturn" type="tns2:StatistikKatalog"/>
+  </wsdl:message>
+  <wsdl:message name="RechercheResponse">
+    <wsdl:part name="RechercheReturn" type="tns1:GenesisTreffer"/>
+  </wsdl:message>
+  <wsdl:message name="TabellenKatalogResponse">
+    <wsdl:part name="TabellenKatalogReturn" type="tns2:TabellenKatalog"/>
+  </wsdl:message>
+  <wsdl:message name="MerkmalAuspraegungenKatalogResponse">
+    <wsdl:part name="MerkmalAuspraegungenKatalogReturn" type="tns2:MerkmalAuspraegungenKatalog"/>
+  </wsdl:message>
+  <wsdl:message name="TabellenKatalogRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="filter" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="ErgebnisKatalogRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="filter" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="listenLaenge" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="RechercheService">
+    <wsdl:operation name="Recherche" parameterOrder="luceneString kennung passwort listenLaenge sprache kategorie">
+      <wsdl:input message="impl:RechercheRequest" name="RechercheRequest"/>
+      <wsdl:output message="impl:RechercheResponse" name="RechercheResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DatenKatalog" parameterOrder="kennung passwort filter bereich listenLaenge sprache">
+      <wsdl:input message="impl:DatenKatalogRequest" name="DatenKatalogRequest"/>
+      <wsdl:output message="impl:DatenKatalogResponse" name="DatenKatalogResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="MerkmalsKatalog" parameterOrder="kennung passwort filter kriterium typ bereich listenLaenge sprache">
+      <wsdl:input message="impl:MerkmalsKatalogRequest" name="MerkmalsKatalogRequest"/>
+      <wsdl:output message="impl:MerkmalsKatalogResponse" name="MerkmalsKatalogResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="MerkmalAuspraegungenKatalog" parameterOrder="kennung passwort name auswahl bereich listenLaenge sprache">
+      <wsdl:input message="impl:MerkmalAuspraegungenKatalogRequest" name="MerkmalAuspraegungenKatalogRequest"/>
+      <wsdl:output message="impl:MerkmalAuspraegungenKatalogResponse" name="MerkmalAuspraegungenKatalogResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TabellenKatalog" parameterOrder="kennung passwort filter bereich listenLaenge sprache">
+      <wsdl:input message="impl:TabellenKatalogRequest" name="TabellenKatalogRequest"/>
+      <wsdl:output message="impl:TabellenKatalogResponse" name="TabellenKatalogResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ErgebnisKatalog" parameterOrder="kennung passwort filter bereich listenLaenge sprache">
+      <wsdl:input message="impl:ErgebnisKatalogRequest" name="ErgebnisKatalogRequest"/>
+      <wsdl:output message="impl:ErgebnisKatalogResponse" name="ErgebnisKatalogResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="StatistikKatalog" parameterOrder="kennung passwort filter kriterium listenLaenge sprache">
+      <wsdl:input message="impl:StatistikKatalogRequest" name="StatistikKatalogRequest"/>
+      <wsdl:output message="impl:StatistikKatalogResponse" name="StatistikKatalogResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RechercheServiceSoapBinding" type="impl:RechercheService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Recherche">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="RechercheRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="RechercheResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DatenKatalog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="DatenKatalogRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="DatenKatalogResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MerkmalsKatalog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="MerkmalsKatalogRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="MerkmalsKatalogResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MerkmalAuspraegungenKatalog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="MerkmalAuspraegungenKatalogRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="MerkmalAuspraegungenKatalogResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TabellenKatalog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="TabellenKatalogRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="TabellenKatalogResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErgebnisKatalog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="ErgebnisKatalogRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="ErgebnisKatalogResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StatistikKatalog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="StatistikKatalogRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="StatistikKatalogResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RechercheServiceService">
+    <wsdl:port binding="impl:RechercheServiceSoapBinding" name="RechercheService">
+      <wsdlsoap:address location="https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint></con:endpoints><con:operation id="75ea17cd-57f3-4294-af4b-909fc0b3d8b3" isOneWay="false" action="" name="DatenKatalog" bindingOperationName="DatenKatalog" type="Request-Response" outputName="DatenKatalogResponse" inputName="DatenKatalogRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0e58923e-15d3-409d-be40-fdd3b2be7e74" defaultOutgoingWss="" name="Rechercheaufruf"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DatenKatalog soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <filter xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">7*</filter>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">500</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:DatenKatalog>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/DatenKatalogRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="50141a24-a0cc-4169-9f0b-c993b929b5c5" isOneWay="false" action="" name="ErgebnisKatalog" bindingOperationName="ErgebnisKatalog" type="Request-Response" outputName="ErgebnisKatalogResponse" inputName="ErgebnisKatalogRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="56bd97f9-e593-4810-bde9-cd9898fe0236" defaultOutgoingWss="" name="Ergebnistabellen 71147"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ErgebnisKatalog soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <filter xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">*</filter>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">500</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:ErgebnisKatalog>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/ErgebnisKatalogRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="375562fc-a3df-49b2-b084-64bec99dadde" isOneWay="false" action="" name="MerkmalAuspraegungenKatalog" bindingOperationName="MerkmalAuspraegungenKatalog" type="Request-Response" outputName="MerkmalAuspraegungenKatalogResponse" inputName="MerkmalAuspraegungenKatalogRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b5a0c1cd-6237-4a6c-b4b1-0dc68e8632c9" defaultOutgoingWss="" name="Ausprägungen KONTO0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:MerkmalAuspraegungenKatalog soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">KONTO6</name>
+         <auswahl xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">*</auswahl>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">1000</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:MerkmalAuspraegungenKatalog>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/MerkmalAuspraegungenKatalogRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="bd13e686-e552-4fc8-927b-0236acc03b7c" isOneWay="false" action="" name="MerkmalsKatalog" bindingOperationName="MerkmalsKatalog" type="Request-Response" outputName="MerkmalsKatalogResponse" inputName="MerkmalsKatalogRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2cb7abc0-4199-46b1-9385-50a8a3b0b307" defaultOutgoingWss="" name="Merkmal KONTO*"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:MerkmalsKatalog soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <filter xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">KONTO*</filter>
+         <kriterium xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Code</kriterium>
+         <typ xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">alle</typ>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">500</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:MerkmalsKatalog>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/MerkmalsKatalogRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="edb53fb1-6a67-42f1-9d62-055db36afb8a" isOneWay="false" action="" name="Recherche" bindingOperationName="Recherche" type="Request-Response" outputName="RechercheResponse" inputName="RechercheRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cab2012d-a6f9-4427-9c94-4b06cbb23a98" defaultOutgoingWss="" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:Recherche soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <luceneString xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">*711*</luceneString>
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">100</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+         <kategorie xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Datenquader</kategorie>
+      </web:Recherche>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/RechercheRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="153821cc-1cd4-483e-8a4e-24592dab6b08" isOneWay="false" action="" name="StatistikKatalog" bindingOperationName="StatistikKatalog" type="Request-Response" outputName="StatistikKatalogResponse" inputName="StatistikKatalogRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cb97bb93-592f-425f-aabb-413319a5cd52" defaultOutgoingWss="" name="Statistiken 71*"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:StatistikKatalog soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <filter xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">7*</filter>
+         <kriterium xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Code</kriterium>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">500</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:StatistikKatalog>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/StatistikKatalogRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5ba1c466-fd9f-4e06-ba88-2a31cef11e16" isOneWay="false" action="" name="TabellenKatalog" bindingOperationName="TabellenKatalog" type="Request-Response" outputName="TabellenKatalogResponse" inputName="TabellenKatalogRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4bd522c5-9fa4-443d-89f3-2cf552c0d5fb" defaultOutgoingWss="" name="Tabellen Katalog 71*"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/RechercheService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:TabellenKatalog soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <filter xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">7*</filter>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <listenLaenge xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">500</listenLaenge>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:TabellenKatalog>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/RechercheService/TabellenKatalogRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="6a85cd54-5b87-4c98-8174-8dc663b80024" wsaVersion="NONE" name="ExportServiceSoapBinding" type="wsdl" bindingName="{https://www.landesdatenbank.nrw.de}ExportServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService?wsdl"><con:part><con:url>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="https://www.landesdatenbank.nrw.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="https://www.landesdatenbank.nrw.de" xmlns:intf="https://www.landesdatenbank.nrw.de" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="daten.methods.webservice.genesis" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+  <wsdl:types>
+    <schema targetNamespace="daten.methods.webservice.genesis" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="https://www.landesdatenbank.nrw.de"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="ReturnInfo">
+        <sequence>
+          <element name="code" type="xsd:byte"/>
+          <element name="inhalt" nillable="true" type="xsd:string"/>
+          <element name="typ" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="Quader">
+        <sequence>
+          <element name="format" nillable="true" type="xsd:string"/>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="quaderDaten" nillable="true" type="xsd:string"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+          <element name="stand" nillable="true" type="xsd:string"/>
+          <element name="status" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="QuaderAuswahl">
+        <sequence>
+          <element name="bereich" nillable="true" type="xsd:string"/>
+          <element name="namen" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="QuaderOptionen">
+        <sequence>
+          <element name="endjahr" nillable="true" type="xsd:string"/>
+          <element name="format" nillable="true" type="xsd:string"/>
+          <element name="metadaten" type="xsd:boolean"/>
+          <element name="regionalSchluessel" nillable="true" type="xsd:string"/>
+          <element name="sachMerkmal" nillable="true" type="xsd:string"/>
+          <element name="sachSchluessel" nillable="true" type="xsd:string"/>
+          <element name="sprache" nillable="true" type="xsd:string"/>
+          <element name="stand" nillable="true" type="xsd:string"/>
+          <element name="startjahr" nillable="true" type="xsd:string"/>
+          <element name="werte" type="xsd:boolean"/>
+          <element name="zeitscheiben" type="xsd:int"/>
+          <element name="zusatz" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="DatenExport">
+        <sequence>
+          <element name="quader" nillable="true" type="impl:ArrayOf_tns1_Quader"/>
+          <element name="quaderAuswahl" nillable="true" type="tns1:QuaderAuswahl"/>
+          <element name="quaderOptionen" nillable="true" type="tns1:QuaderOptionen"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+        </sequence>
+      </complexType>
+      <complexType name="ObjektAuswahl">
+        <sequence>
+          <element name="namen" nillable="true" type="xsd:string"/>
+          <element name="typ" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="ObjektOptionen">
+        <sequence>
+          <element name="format" nillable="true" type="xsd:string"/>
+          <element name="sprache" nillable="true" type="xsd:string"/>
+          <element name="umfang" nillable="true" type="xsd:string"/>
+          <element name="zusatz" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="Objekt">
+        <sequence>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="objektDaten" nillable="true" type="xsd:string"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+        </sequence>
+      </complexType>
+      <complexType name="ObjektExport">
+        <sequence>
+          <element name="objektAuswahl" nillable="true" type="tns1:ObjektAuswahl"/>
+          <element name="objektOptionen" nillable="true" type="tns1:ObjektOptionen"/>
+          <element name="objekte" nillable="true" type="impl:ArrayOf_tns1_Objekt"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+        </sequence>
+      </complexType>
+      <complexType name="StrukturElement">
+        <sequence>
+          <element name="auspraegungen" nillable="true" type="xsd:string"/>
+          <element name="fb_art" nillable="true" type="xsd:string"/>
+          <element name="fb_vr_ausg_art" nillable="true" type="xsd:string"/>
+          <element name="insgesamt" type="xsd:boolean"/>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="nummer" nillable="true" type="xsd:string"/>
+          <element name="regel" type="xsd:boolean"/>
+          <element maxOccurs="unbounded" name="strukturElement" nillable="true" type="tns1:StrukturElement"/>
+          <element name="strukturElemente" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+          <element name="titel" nillable="true" type="xsd:string"/>
+          <element name="top" nillable="true" type="xsd:string"/>
+          <element name="typ" nillable="true" type="xsd:string"/>
+          <element name="wertausgabe" type="xsd:boolean"/>
+          <element name="zusammen" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="TabellenLayout">
+        <sequence>
+          <element name="kopfspaltenAnzahl" nillable="true" type="xsd:string"/>
+          <element name="tabellenkopfZeilenAnzahl" nillable="true" type="xsd:string"/>
+          <element name="vorspaltenAnzahl" nillable="true" type="xsd:string"/>
+          <element name="zeilenueberschriftenAnzahl" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="StrukturInformation">
+        <sequence>
+          <element name="abrufDatum" nillable="true" type="xsd:string"/>
+          <element name="abrufTabelle" nillable="true" type="xsd:string"/>
+          <element name="abrufZeit" nillable="true" type="xsd:string"/>
+          <element name="anzahlWertFelder" nillable="true" type="xsd:string"/>
+          <element name="anzahlWerte" nillable="true" type="xsd:string"/>
+          <element name="ident" nillable="true" type="xsd:string"/>
+          <element name="kopfZeile" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="tabellenKopf" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+          <element name="tabellenLayout" nillable="true" type="tns1:TabellenLayout"/>
+          <element name="unterTitel" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+          <element name="vorSpalte" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+          <element name="zwischenTitel" nillable="true" type="impl:ArrayOf_tns1_StrukturElement"/>
+        </sequence>
+      </complexType>
+      <complexType name="Tabelle">
+        <sequence>
+          <element name="format" nillable="true" type="xsd:string"/>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+          <element name="status" nillable="true" type="xsd:string"/>
+          <element name="strukturInformation" nillable="true" type="tns1:StrukturInformation"/>
+          <element name="tabellenDaten" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="TabellenAuswahl">
+        <sequence>
+          <element name="bereich" nillable="true" type="xsd:string"/>
+          <element name="namen" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="TabellenOptionen">
+        <sequence>
+          <element name="endjahr" nillable="true" type="xsd:string"/>
+          <element name="format" nillable="true" type="xsd:string"/>
+          <element name="regionalSchluessel" nillable="true" type="xsd:string"/>
+          <element name="sachMerkmal" nillable="true" type="xsd:string"/>
+          <element name="sachSchluessel" nillable="true" type="xsd:string"/>
+          <element name="sprache" nillable="true" type="xsd:string"/>
+          <element name="startjahr" nillable="true" type="xsd:string"/>
+          <element name="zeitscheiben" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="TabellenExport">
+        <sequence>
+          <element name="returnInfo" nillable="true" type="tns1:ReturnInfo"/>
+          <element name="tabellen" nillable="true" type="impl:ArrayOf_tns1_Tabelle"/>
+          <element name="tabellenAuswahl" nillable="true" type="tns1:TabellenAuswahl"/>
+          <element name="tabellenOptionen" nillable="true" type="tns1:TabellenOptionen"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema targetNamespace="https://www.landesdatenbank.nrw.de" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="daten.methods.webservice.genesis"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="ArrayOf_tns1_Quader">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Quader[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOf_tns1_Objekt">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Objekt[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOf_tns1_StrukturElement">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:StrukturElement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="ArrayOf_tns1_Tabelle">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:Tabelle[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="DatenExportRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="namen" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="format" type="xsd:string"/>
+    <wsdl:part name="werte" type="xsd:boolean"/>
+    <wsdl:part name="metadaten" type="xsd:boolean"/>
+    <wsdl:part name="zusatz" type="xsd:boolean"/>
+    <wsdl:part name="startjahr" type="xsd:string"/>
+    <wsdl:part name="endjahr" type="xsd:string"/>
+    <wsdl:part name="zeitscheiben" type="xsd:string"/>
+    <wsdl:part name="regionalschluessel" type="xsd:string"/>
+    <wsdl:part name="sachmerkmal" type="xsd:string"/>
+    <wsdl:part name="sachschluessel" type="xsd:string"/>
+    <wsdl:part name="stand" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="TabellenExportRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="namen" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="format" type="xsd:string"/>
+    <wsdl:part name="strukturinformation" type="xsd:boolean"/>
+    <wsdl:part name="komprimierung" type="xsd:boolean"/>
+    <wsdl:part name="startjahr" type="xsd:string"/>
+    <wsdl:part name="endjahr" type="xsd:string"/>
+    <wsdl:part name="zeitscheiben" type="xsd:string"/>
+    <wsdl:part name="regionalschluessel" type="xsd:string"/>
+    <wsdl:part name="sachmerkmal" type="xsd:string"/>
+    <wsdl:part name="sachschluessel" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="TabellenExportResponse">
+    <wsdl:part name="TabellenExportReturn" type="tns1:TabellenExport"/>
+  </wsdl:message>
+  <wsdl:message name="ObjektExportResponse">
+    <wsdl:part name="ObjektExportReturn" type="tns1:ObjektExport"/>
+  </wsdl:message>
+  <wsdl:message name="ObjektExportRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="typ" type="xsd:string"/>
+    <wsdl:part name="namen" type="xsd:string"/>
+    <wsdl:part name="format" type="xsd:string"/>
+    <wsdl:part name="umfang" type="xsd:string"/>
+    <wsdl:part name="zusatz" type="xsd:boolean"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="DatenExportResponse">
+    <wsdl:part name="DatenExportReturn" type="tns1:DatenExport"/>
+  </wsdl:message>
+  <wsdl:portType name="ExportService">
+    <wsdl:operation name="DatenExport" parameterOrder="kennung passwort namen bereich format werte metadaten zusatz startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel stand sprache">
+      <wsdl:input message="impl:DatenExportRequest" name="DatenExportRequest"/>
+      <wsdl:output message="impl:DatenExportResponse" name="DatenExportResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ObjektExport" parameterOrder="kennung passwort typ namen format umfang zusatz sprache">
+      <wsdl:input message="impl:ObjektExportRequest" name="ObjektExportRequest"/>
+      <wsdl:output message="impl:ObjektExportResponse" name="ObjektExportResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TabellenExport" parameterOrder="kennung passwort namen bereich format strukturinformation komprimierung startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel sprache">
+      <wsdl:input message="impl:TabellenExportRequest" name="TabellenExportRequest"/>
+      <wsdl:output message="impl:TabellenExportResponse" name="TabellenExportResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExportServiceSoapBinding" type="impl:ExportService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DatenExport">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="DatenExportRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="DatenExportResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObjektExport">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="ObjektExportRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="ObjektExportResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TabellenExport">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="TabellenExportRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="TabellenExportResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ExportServiceService">
+    <wsdl:port binding="impl:ExportServiceSoapBinding" name="ExportService">
+      <wsdlsoap:address location="https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint></con:endpoints><con:operation id="8b28c51d-ed35-46fa-8808-4ba6616df0fe" isOneWay="false" action="" name="DatenExport" bindingOperationName="DatenExport" type="Request-Response" outputName="DatenExportResponse" inputName="DatenExportRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="df4f7d7c-a593-401a-b669-c7d31a56a051" defaultOutgoingWss="" name="Export 71137NWGJ1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">All</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DatenExport soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <namen xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71137NWGJ1</namen>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <werte xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</werte>
+         <metadaten xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">false</metadaten>
+         <zusatz xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">false</zusatz>
+         <startjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</startjahr>
+         <endjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2013</endjahr>
+         <zeitscheiben xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">3</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">05111000</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachschluessel>
+         <stand xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">01.01.2001</stand>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:DatenExport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/ExportService/DatenExportRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="fd9982e7-1f7c-499b-aef9-c7878bd6906c" name="Export 71147GJ002"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DatenExport soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <namen xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71147GJ002</namen>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <werte xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</werte>
+         <metadaten xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">false</metadaten>
+         <zusatz xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">false</zusatz>
+         <startjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</startjahr>
+         <endjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</endjahr>
+         <zeitscheiben xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance"></zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">05111000</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachschluessel>
+         <stand xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">01.01.2001</stand>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:DatenExport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/ExportService/DatenExportRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5d7dbcf5-a55b-40a4-bf9a-762e8719d851" isOneWay="false" action="" name="ObjektExport" bindingOperationName="ObjektExport" type="Request-Response" outputName="ObjektExportResponse" inputName="ObjektExportRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ba45a7c8-b064-44ae-be21-e6c6b65d56b9" defaultOutgoingWss="" name="Methadaten Objekt 71137NWGJ1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ObjektExport soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <typ xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Datenquader</typ>
+         <namen xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71137NWGJ1</namen>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <umfang xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">alle</umfang>
+         <zusatz xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">false</zusatz>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:ObjektExport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/ExportService/ObjektExportRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="555a18d3-b6c0-441d-8678-bc1eadbcc11f" isOneWay="false" action="" name="TabellenExport" bindingOperationName="TabellenExport" type="Request-Response" outputName="TabellenExportResponse" inputName="TabellenExportRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="916948cd-68c4-4463-a825-89e401870abb" defaultOutgoingWss="" name="Export 71147-04i"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:TabellenExport soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <namen xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71147-04i</namen>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <strukturinformation xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</strukturinformation>
+         <komprimierung xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</komprimierung>
+         <startjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</startjahr>
+         <endjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</endjahr>
+         <zeitscheiben xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">1</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">05111000</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachschluessel>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:TabellenExport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/ExportService/TabellenExportRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="9167820a-deae-4e36-bad9-98b26f605684" name="Export 71147E-14i"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:TabellenExport soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <namen xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71147E-14i</namen>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <strukturinformation xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</strukturinformation>
+         <komprimierung xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</komprimierung>
+         <startjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</startjahr>
+         <endjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</endjahr>
+         <zeitscheiben xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">1</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">05111000</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachschluessel>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:TabellenExport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/ExportService/TabellenExportRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="28e79c10-f13b-45cb-a095-b120014c14b1" name="Request 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/ExportService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:TabellenExport soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+            <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <namen xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71147E-14i</namen>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <strukturinformation xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">false</strukturinformation>
+         <komprimierung xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</komprimierung>
+         <startjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</startjahr>
+         <endjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</endjahr>
+         <zeitscheiben xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">1</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">05111000</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachschluessel>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+        </web:TabellenExport>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/ExportService/TabellenExportRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="a1112794-51f9-4e52-bd35-181a24f8f97d" wsaVersion="NONE" name="DownloadServiceSoapBinding" type="wsdl" bindingName="{https://www.landesdatenbank.nrw.de}DownloadServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService?wsdl"><con:part><con:url>https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="https://www.landesdatenbank.nrw.de" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="https://www.landesdatenbank.nrw.de" xmlns:intf="https://www.landesdatenbank.nrw.de" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.3
+Built on Oct 05, 2005 (05:23:37 EDT)-->
+  <wsdl:message name="ExcelDownloadRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="name" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="komprimierung" type="xsd:boolean"/>
+    <wsdl:part name="startjahr" type="xsd:string"/>
+    <wsdl:part name="endjahr" type="xsd:string"/>
+    <wsdl:part name="zeitscheiben" type="xsd:string"/>
+    <wsdl:part name="regionalschluessel" type="xsd:string"/>
+    <wsdl:part name="sachmerkmal" type="xsd:string"/>
+    <wsdl:part name="sachschluessel" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="TabellenDownloadRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="name" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="format" type="xsd:string"/>
+    <wsdl:part name="komprimierung" type="xsd:boolean"/>
+    <wsdl:part name="startjahr" type="xsd:string"/>
+    <wsdl:part name="endjahr" type="xsd:string"/>
+    <wsdl:part name="zeitscheiben" type="xsd:string"/>
+    <wsdl:part name="regionalschluessel" type="xsd:string"/>
+    <wsdl:part name="sachmerkmal" type="xsd:string"/>
+    <wsdl:part name="sachschluessel" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="TabellenDownloadResponse">
+    <wsdl:part name="TabellenDownloadReturn" type="apachesoap:DataHandler"/>
+  </wsdl:message>
+  <wsdl:message name="ExcelDownloadResponse">
+    <wsdl:part name="ExcelDownloadReturn" type="apachesoap:DataHandler"/>
+  </wsdl:message>
+  <wsdl:message name="DiagrammDownloadResponse">
+    <wsdl:part name="DiagrammDownloadReturn" type="apachesoap:DataHandler"/>
+  </wsdl:message>
+  <wsdl:message name="DiagrammDownloadRequest">
+    <wsdl:part name="kennung" type="xsd:string"/>
+    <wsdl:part name="passwort" type="xsd:string"/>
+    <wsdl:part name="name" type="xsd:string"/>
+    <wsdl:part name="bereich" type="xsd:string"/>
+    <wsdl:part name="format" type="xsd:string"/>
+    <wsdl:part name="diagrammTyp" type="xsd:byte"/>
+    <wsdl:part name="zeichnePunkte" type="xsd:boolean"/>
+    <wsdl:part name="zoom" type="xsd:byte"/>
+    <wsdl:part name="startjahr" type="xsd:string"/>
+    <wsdl:part name="endjahr" type="xsd:string"/>
+    <wsdl:part name="zeitscheiben" type="xsd:string"/>
+    <wsdl:part name="regionalschluessel" type="xsd:string"/>
+    <wsdl:part name="sachmerkmal" type="xsd:string"/>
+    <wsdl:part name="sachschluessel" type="xsd:string"/>
+    <wsdl:part name="sprache" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="DownloadService">
+    <wsdl:operation name="DiagrammDownload" parameterOrder="kennung passwort name bereich format diagrammTyp zeichnePunkte zoom startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel sprache">
+      <wsdl:input message="impl:DiagrammDownloadRequest" name="DiagrammDownloadRequest"/>
+      <wsdl:output message="impl:DiagrammDownloadResponse" name="DiagrammDownloadResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ExcelDownload" parameterOrder="kennung passwort name bereich komprimierung startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel sprache">
+      <wsdl:input message="impl:ExcelDownloadRequest" name="ExcelDownloadRequest"/>
+      <wsdl:output message="impl:ExcelDownloadResponse" name="ExcelDownloadResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TabellenDownload" parameterOrder="kennung passwort name bereich format komprimierung startjahr endjahr zeitscheiben regionalschluessel sachmerkmal sachschluessel sprache">
+      <wsdl:input message="impl:TabellenDownloadRequest" name="TabellenDownloadRequest"/>
+      <wsdl:output message="impl:TabellenDownloadResponse" name="TabellenDownloadResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DownloadServiceSoapBinding" type="impl:DownloadService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="DiagrammDownload">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="DiagrammDownloadRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="DiagrammDownloadResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcelDownload">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="ExcelDownloadRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="ExcelDownloadResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TabellenDownload">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="TabellenDownloadRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://webservice.genesis" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="TabellenDownloadResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="https://www.landesdatenbank.nrw.de" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DownloadServiceService">
+    <wsdl:port binding="impl:DownloadServiceSoapBinding" name="DownloadService">
+      <wsdlsoap:address location="https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService</con:endpoint></con:endpoints><con:operation id="05ec3da2-278a-42fa-b046-3b5b5584de6e" isOneWay="false" action="" name="DiagrammDownload" bindingOperationName="DiagrammDownload" type="Request-Response" outputName="DiagrammDownloadResponse" inputName="DiagrammDownloadRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4c697e86-4607-46cd-b96e-761b0359a92d" defaultOutgoingWss="" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:DiagrammDownload soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string">?</kennung>
+         <passwort xsi:type="xsd:string">?</passwort>
+         <name xsi:type="xsd:string">?</name>
+         <bereich xsi:type="xsd:string">?</bereich>
+         <format xsi:type="xsd:string">?</format>
+         <diagrammTyp xsi:type="xsd:byte">?</diagrammTyp>
+         <zeichnePunkte xsi:type="xsd:boolean">?</zeichnePunkte>
+         <zoom xsi:type="xsd:byte">?</zoom>
+         <startjahr xsi:type="xsd:string">?</startjahr>
+         <endjahr xsi:type="xsd:string">?</endjahr>
+         <zeitscheiben xsi:type="xsd:string">?</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string">?</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string">?</sachschluessel>
+         <sprache xsi:type="xsd:string">?</sprache>
+      </web:DiagrammDownload>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/DownloadService/DiagrammDownloadRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7971306e-a4e8-45bc-9c45-e0702c4aa83c" isOneWay="false" action="" name="ExcelDownload" bindingOperationName="ExcelDownload" type="Request-Response" outputName="ExcelDownloadResponse" inputName="ExcelDownloadRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="310e9886-ea6e-4dfc-930c-28d84a393d04" defaultOutgoingWss="" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ExcelDownload soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string">?</kennung>
+         <passwort xsi:type="xsd:string">?</passwort>
+         <name xsi:type="xsd:string">?</name>
+         <bereich xsi:type="xsd:string">?</bereich>
+         <komprimierung xsi:type="xsd:boolean">?</komprimierung>
+         <startjahr xsi:type="xsd:string">?</startjahr>
+         <endjahr xsi:type="xsd:string">?</endjahr>
+         <zeitscheiben xsi:type="xsd:string">?</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string">?</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string">?</sachschluessel>
+         <sprache xsi:type="xsd:string">?</sprache>
+      </web:ExcelDownload>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/DownloadService/ExcelDownloadRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="69b0aba1-7e2f-4d8c-b482-89d400656fd8" isOneWay="false" action="" name="TabellenDownload" bindingOperationName="TabellenDownload" type="Request-Response" outputName="TabellenDownloadResponse" inputName="TabellenDownloadRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7aaba72-5349-41b1-b33d-e1921e43a680" defaultOutgoingWss="" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://www.landesdatenbank.nrw.de/ldbnrwws/services/DownloadService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.genesis">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:TabellenDownload soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <kennung xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">NW014114</kennung>
+         <passwort xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Nipa1gT2</passwort>
+         <name xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">71147-04i</name>
+         <bereich xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">Alle</bereich>
+         <format xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">csv</format>
+         <komprimierung xsi:type="xsd:boolean" xs:type="type:boolean" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">true</komprimierung>
+         <startjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</startjahr>
+         <endjahr xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">2010</endjahr>
+         <zeitscheiben xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">1</zeitscheiben>
+         <regionalschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">05111000</regionalschluessel>
+         <sachmerkmal xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachmerkmal>
+         <sachschluessel xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">?</sachschluessel>
+         <sprache xsi:type="xsd:string" xs:type="type:string" xmlns:xs="http://www.w3.org/2000/XMLSchema-instance">de</sprache>
+      </web:TabellenDownload>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="https://www.landesdatenbank.nrw.de/DownloadService/TabellenDownloadRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties><con:property><con:name>csv</con:name></con:property></con:properties><con:wssContainer/><con:databaseConnectionContainer/><con:oAuth2ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:sensitiveInformation/></con:soapui-project>

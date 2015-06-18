@@ -13,6 +13,9 @@ Stattdessen haben sich die Gemeinden mit der Doppik eine Rechnungslegung zugeleg
 gewinnorientierte Unternehmen konzipiert und optimiert wurde. Die Doppik führt in den Gemeinden zu
 falschen Schlussfolgerungen und die angestrebten Ziele werden nicht erreicht.
 
+Die Ziele des NKFs könnten selbst 10 Jahre nach Projektstart nicht viel besser formuliert werden. Leider blieben 
+diese Ziele bei der Umsetzung auf der Strecke.
+
 Das Ziel dieses Open Source Projektes für Kommunen ist eine Software für die Haushaltsführung, die den
 Aufgaben und Bedürfnissen der Gemeinden gerecht wird.
 
