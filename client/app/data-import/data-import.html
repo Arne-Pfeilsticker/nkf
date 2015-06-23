@@ -1,10 +1,31 @@
 <div>
     <h2 class="page-title">Daten Import</h2>
-        <input type="text" class="form-control" placeholder="Gemeindekennzahl" ng-model="vm.gkz"/>
-        <input type="text" class="form-control" placeholder="Tabelle" ng-model="vm.table"/>
-        <button class="btn btn-primary" ng-click="vm.importData()">Importieren</button>
-        <button class="btn btn-default" ng-click="vm.cancel()">Abbrechen</button>
 
+    <div class="row">
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Gemeindekennzahl" ng-model="vm.gkz"/>
+        </div>
+        <div class="col-md-3">
+            <ui-select ng-model="vm.table" theme="select2">
+                <ui-select-match placeholder="Datentabelle auswählen ...">
+                    {{ $select.selected.code }}
+                </ui-select-match>
+                <ui-select-choices repeat="table in vm.tables | filter:$select.search">
+                    <span ng-bind-html="table.name | highlight: $select.search"></span>
+                    <span><small>({{table.code}})</small></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="2010" ng-model="vm.year"/>
+        </div>
+    </div>
+    <div class="row">
+        Tabelle: {{ vm.table }}
+
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" ng-click="vm.importData()">Importieren</button>
     </div>
 
     <div id="grid1" ui-grid="vm.gridOptions" class="grid"></div>

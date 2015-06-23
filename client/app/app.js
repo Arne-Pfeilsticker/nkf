@@ -62,19 +62,12 @@
                         return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
                     }]
                 }
-
             })
             .state('import', {
                 url: '/import',
                 templateUrl: 'app/data-import/data-import.html',
                 controller: 'DataImportController',
                 controllerAs: 'vm'
-                //resolve: {
-                //    importedData: ['ldbApi', function (ldbApi) {
-                //        return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
-                //    }]
-                //}
-
             })
             .state('persons', {
                 url: '/persons',
@@ -86,7 +79,6 @@
                         return nkfApi.getPersons();
                     }]
                 }
-
             })
             .state('persontypes', {
                 url: '/persontypes',
@@ -115,15 +107,15 @@
         $urlRouterProvider.otherwise('/');
     }
 
-    app.run(['$rootScope', '$state', '$stateParams', 'stateWatcherService', function ($rootScope, $state, $stateParams, $stateWatcherService) {
+    // app.run(['$rootScope', '$state', '$stateParams', 'stateWatcherService', function ($rootScope, $state, $stateParams, $stateWatcherService) {
     // jshint unused:false
-    //app.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
+    app.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
         /* jshint validthis: true */
         // It's very handy to add references to $state and $stateParams to the $rootScope
         // so that you can access them from any scope within your applications.For example,
         // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
         // to active whenever 'contacts.list' or one of its decendents is active.
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
+        //$rootScope.$state = $state;
+        //$rootScope.$stateParams = $stateParams;
     }]);
 })();

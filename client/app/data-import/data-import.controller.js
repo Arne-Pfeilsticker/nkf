@@ -13,7 +13,30 @@
         //vm.navigate = navigate;
         vm.activate = activate;
         vm.gkz = '05124000';
-        vm.table = '71147GJ002';
+        vm.table = '71147EGJ01';
+        vm.year = '2010';
+
+        vm.table.select
+
+        vm.tables = [
+            {
+                name: 'Aufwendungen',
+                code: '71147EGJ02'
+            },
+            {
+                name: 'Erträge',
+                code: '71147EGJ01'
+            },
+            {
+                name: 'Auszahlungen',
+                code: '71147GJ002'
+            },
+            {
+                name: 'Einzahlungen',
+                code: '71147GJ001'
+            }
+
+        ];
 
         vm.gridOptions = {
             data: 'vm.importedData',
@@ -44,7 +67,7 @@
         vm.importData = function (){
 
             return $q.all([
-                ldbApi.httpTableByGKZ(vm.table, vm.gkz)
+                ldbApi.httpTableByGKZ(vm.table, vm.gkz, vm.year)
                 //eliteApi.getGames(leagueId),
                 //eliteApi.getLocations()
             ]).then(function(results){
