@@ -13,7 +13,7 @@
         /*
          * 3rd Party modules
          */
-        'ui.bootstrap',
+        // 'ui.bootstrap',
         'ui.router',
         //'ui.calendar',
         //'uiGmapgoogle-maps',

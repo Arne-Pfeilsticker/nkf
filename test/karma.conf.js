@@ -22,18 +22,13 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
-      'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/lodash/dist/lodash.compat.js',
       'bower_components/angular-google-maps/dist/angular-google-maps.js',
       'bower_components/angular-ui-ace/ui-ace.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/moment/moment.js',
-      'bower_components/showdown/src/showdown.js',
-      'bower_components/spin.js/spin.js',
       'bower_components/csv-js/csv.js',
       'bower_components/angular-ui-select/dist/select.js',
       'bower_components/angular-ui-grid/ui-grid.js',
@@ -42,6 +37,8 @@ module.exports = function(config) {
       'bower_components/angular-soap/angular.soap.js',
       'bower_components/x2js/xml2json.min.js',
       'bower_components/angular-xml/angular-xml.js',
+      'bower_components/showdown/dist/showdown.js',
+      'bower_components/spin.js/spin.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/**/*.js'
