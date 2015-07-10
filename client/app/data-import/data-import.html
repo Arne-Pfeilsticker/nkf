@@ -1,32 +1,27 @@
-<div>
-    <h2 class="page-title">Daten Import</h2>
+<div layout="column" layout-margin layout-fill layout-padding>
+    <h2 class="md-title">
+        Daten aus der
+        <a href="http://www.landesdatenbank.nrw.de"> Landesdatenbank NRW </a>
+        importieren
+    </h2>
 
-    <div class="row">
-        <div class="col-md-3">
-            <input type="text" class="form-control" placeholder="Gemeindekennzahl" ng-model="vm.gkz"/>
-        </div>
-        <div class="col-md-3">
-            <ui-select ng-model="vm.table" theme="select2">
-                <ui-select-match placeholder="Datentabelle auswählen ...">
-                    {{ $select.selected.code }}
-                </ui-select-match>
-                <ui-select-choices repeat="table in vm.tables | filter:$select.search">
-                    <span ng-bind-html="table.name | highlight: $select.search"></span>
-                    <span><small>({{table.code}})</small></span>
-                </ui-select-choices>
-            </ui-select>
-        </div>
-        <div class="col-md-3">
-            <input type="text" class="form-control" placeholder="2010" ng-model="vm.year"/>
-        </div>
-    </div>
-    <div class="row">
-        Tabelle: {{ vm.table }}
-
-    </div>
-    <div class="row">
-        <button class="btn btn-primary" ng-click="vm.importData()">Importieren</button>
-    </div>
+    <md-content layout-padding layout="row" layout-align="space-around center" layout-sm="column" >
+        <md-input-container flex>
+            <label>Gemeindekennzahl</label>
+            <input ng-model="vm.gkz"/>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Tabelle</label>
+            <input ng-model="vm.table"/>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Jahr</label>
+            <input ng-model="vm.year"/>
+        </md-input-container>
+        <span>
+            <md-button class="md-raised md-primary" ng-click="vm.importData()">Importieren</md-button>
+        </span>
+    </md-content>
 
     <div id="grid1" ui-grid="vm.gridOptions" class="grid"></div>
 </div>
