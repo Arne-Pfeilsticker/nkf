@@ -3,10 +3,10 @@
  * Used for debugging and is set in app.js
  */
 
-(function () {
+(function (appCore) {
     'use strict';
 
-    angular.module('app.core').factory('stateWatcherService', stateWatcherService);
+    appCore.factory('stateWatcherService', stateWatcherService);
 
     stateWatcherService.$inject = ['$rootScope'];
 
@@ -37,4 +37,4 @@
         var service = {};
         return service;
     }
-})();
+})(angular.module('app.core'));

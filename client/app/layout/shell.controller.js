@@ -1,37 +1,58 @@
-(function () {
+(function (appLayout) {
     'use strict';
 
-    angular.module('nkfApp').controller('ShellController', ShellController);
+    appLayout.controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$rootScope'];
+    ShellController.$inject = ['$rootScope', '$log', '$state', '$timeout', '$location', 'menu', '$mdSidenav' ];
 
-    function ShellController($rootScope) {
+    function ShellController($rootScope, $log, $state, $timeout, $location, menu, $mdSidenav) {
         /* jshint validthis:true */
         var vm = this;
+        //functions for menu-link and menu-toggle
+        vm.toggleMenu = toggleMenu;
+        vm.isOpen = isOpen;
+        vm.toggleOpen = toggleOpen;
+        vm.isSectionSelected = isSectionSelected;
+        vm.autoFocusContent = false;
+        vm.menu = menu;
 
-        vm.showSpinner = false;
-        vm.spinnerMessage = 'Lade Daten ...';
+        // console.log('menu: ', vm.menu);
 
-        vm.spinnerOptions = {
-            radius: 40,
-            lines: 8,
-            length: 0,
-            width: 30,
-            speed: 1.7,
-            corners: 1.0,
-            trail: 100,
-            color: '#428bca'
+        vm.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
         };
 
         activate();
 
         function activate() { }
 
-        $rootScope.$on('spinner.toggle', function (event, args) {
-            vm.showSpinner = args.show;
-            if (args.message) {
-                vm.spinnerMessage = args.message;
+        function isOpen(section) {
+            return menu.isSectionSelected(section);
+        }
+
+        function toggleOpen(section) {
+            menu.toggleSelectSection(section);
+        }
+
+        function toggleMenu() {
+            $mdSidenav('left').toggle();
+        };
+
+        function isSectionSelected(section) {
+            var selected = false;
+            var openedSection = menu.openedSection;
+            if (openedSection === section) {
+                selected = true;
             }
-        });
+            else if (section.children) {
+                section.children.forEach(function (childSection) {
+                    if (childSection === openedSection) {
+                        selected = true;
+                    }
+                });
+            }
+            return selected;
+        }
     }
-})();
+}(angular.module('app.layout')));

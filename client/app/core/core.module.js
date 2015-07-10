@@ -5,7 +5,10 @@
         /*
          * Angular modules
          */
-        'ngAnimate', 'ngSanitize',
+        'ngAnimate',
+        'ngMaterial',
+        'ngAria',
+        'ngSanitize',
         /*
          * Our reusable cross app code modules
          */
@@ -26,6 +29,6 @@
         'ui.grid.autoResize',
         'ui.select',
         //'ui.alias'
-        'angularSoap'
+        //'angularSoap'
     ]);
 })();

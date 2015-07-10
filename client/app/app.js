@@ -1,29 +1,7 @@
-(function () {
+(function (nkfApp) {
     'use strict';
-    var app = angular.module('nkfApp', [
-        // Angular modules
-        //'ngRoute',
-        //'ngSanitize',
 
-
-        //'ngResource',
-        // 3rd Party Modules
-        //'ui.bootstrap',
-        //'ui.router',
-        //'ui.calendar',
-        //'uiGmapgoogle-maps',
-        //'ui.ace',
-        //'ui.grid',
-        //'ui.grid.treeView',
-        //'ui.grid.importer',
-        //'ui.grid.edit',
-        //'ui.grid.resizeColumns',
-        //'ui.select'
-        //'ui.alias'
-        'app.core'
-    ]);
-
-    app.config(['$httpProvider', '$logProvider', function ($httpProvider, $logProvider) {
+    nkfApp.config(['$httpProvider', '$logProvider', function ($httpProvider, $logProvider) {
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
         //$httpProvider.defaults.headers.post.Accept = 'application/json, text/javascript';
         //$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
@@ -36,8 +14,27 @@
         $logProvider.debugEnabled(true);
     }]);
 
+
+    nkfApp.config(['$mdThemingProvider', '$mdIconProvider', function ($mdThemingProvider, $mdIconProvider) {
+
+        $mdIconProvider
+            .defaultIconSet("./assets/svg/avatars.svg", 128)
+            .icon("menu", "./assets/svg/menu.svg", 24)
+            .icon("share", "./assets/svg/share.svg", 24)
+            .icon("google_plus", "./assets/svg/google_plus.svg", 512)
+            .icon("hangouts", "./assets/svg/hangouts.svg", 512)
+            .icon("twitter", "./assets/svg/twitter.svg", 512)
+            .icon("phone", "./assets/svg/phone.svg", 512);
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('lime')
+            .accentPalette('deep-orange');
+
+    }]);
+
+
     //app.config(['$stateProvider', '$urlRouterProvider', 'uiGmapGoogleMapApiProvider', configRoutes]);
-    app.config(['$stateProvider', '$urlRouterProvider', configRoutes]);
+    nkfApp.config(['$stateProvider', '$urlRouterProvider', configRoutes]);
 
     function configRoutes($stateProvider, $urlRouterProvider) {
 
@@ -109,7 +106,7 @@
 
     // app.run(['$rootScope', '$state', '$stateParams', 'stateWatcherService', function ($rootScope, $state, $stateParams, $stateWatcherService) {
     // jshint unused:false
-    app.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
+    nkfApp.run(['$state', 'stateWatcherService', function ($state, stateWatcherService) {
         /* jshint validthis: true */
         // It's very handy to add references to $state and $stateParams to the $rootScope
         // so that you can access them from any scope within your applications.For example,
@@ -118,4 +115,32 @@
         //$rootScope.$state = $state;
         //$rootScope.$stateParams = $stateParams;
     }]);
-})();
+
+    /**
+     * Description:
+     *     removes white space from text. useful for html values that cannot have spaces
+     * Usage:
+     *   {{some_text | nospace}}
+     */
+    nkfApp.filter('nospace', function () {
+        return function (value) {
+            return (!value) ? '' : value.replace(/ /g, '');
+        };
+    });
+
+    //replace uppercase to regular case
+    nkfApp.filter('humanizeDoc', function () {
+        return function (doc) {
+            if (!doc) {
+                return;
+            }
+            if (doc.type === 'directive') {
+                return doc.name.replace(/([A-Z])/g, function ($1) {
+                    return '-' + $1.toLowerCase();
+                });
+            }
+
+            return doc.label || doc.name;
+        };
+    });
+})(angular.module('nkfApp'));
