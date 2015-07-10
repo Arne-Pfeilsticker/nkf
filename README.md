@@ -44,7 +44,7 @@ Kontaktiere mich für eine Datenbank mit Haushaltsdaten.
 erscheint das [OrientDB-Studio] (http://orientdb.com/docs/last/Home-page.html), 
 eine Web-Benutzerinterface zur Administration von OrientDB. Hier kann man sich direkt an der Datenbank nkf anmelden.
 1. Mit dem Aufruf [http://localhost:2480/nkf/index.html#/] (http://localhost:2480/nkf/index.html#/) kommt man zur NKF-Anwendung.
-(Im Moment sieht man nur die Home-Seite.)
+(Im Moment sieht man nur ein paar Seiten.)
 
 # Installation (Entwicklung)
 

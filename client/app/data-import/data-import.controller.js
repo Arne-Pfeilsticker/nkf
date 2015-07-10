@@ -16,7 +16,7 @@
         vm.table = '71147EGJ01';
         vm.year = '2010';
 
-        vm.table.select
+        //vm.table.select
 
         vm.tables = [
             {
@@ -76,7 +76,7 @@
                     //locations: results[2]
 
             });
-        }
+        };
 
     }
 })();

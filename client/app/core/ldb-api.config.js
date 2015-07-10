@@ -1,10 +1,10 @@
 /**
  * Parameters for working with Landesdatenbank NRW WebServices
  */
-(function(module) {
+(function(appCore) {
     'use strict';
 
-    module.factory('ldbApiConfig', ldbApiConfig);
+    appCore.factory('ldbApiConfig', ldbApiConfig);
 
     function ldbApiConfig() {
 

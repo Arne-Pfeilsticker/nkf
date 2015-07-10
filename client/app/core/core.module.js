@@ -5,7 +5,10 @@
         /*
          * Angular modules
          */
-        'ngAnimate', 'ngSanitize',
+        'ngAnimate',
+        'ngMaterial',
+        'ngAria',
+        'ngSanitize',
         /*
          * Our reusable cross app code modules
          */
@@ -13,7 +16,7 @@
         /*
          * 3rd Party modules
          */
-        'ui.bootstrap',
+        // 'ui.bootstrap',
         'ui.router',
         //'ui.calendar',
         //'uiGmapgoogle-maps',
@@ -26,6 +29,6 @@
         'ui.grid.autoResize',
         'ui.select',
         //'ui.alias'
-        'angularSoap'
+        //'angularSoap'
     ]);
 })();

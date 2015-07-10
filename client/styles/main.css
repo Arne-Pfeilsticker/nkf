@@ -1,0 +1,331 @@
+
+.dark-primary-color    { background: #AFB42B; }
+.default-primary-color { background: #CDDC39; }
+.light-primary-color   { background: #F0F4C3; }
+.text-primary-color    { color: #212121; }
+.accent-color          { background: #FF5722; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #727272; }
+.divider-color         { border-color: #B6B6B6; }
+
+.text-accent-color          { color: #FF5722; }
+
+/*.md-menu::-webkit-scrollbar-track {*/
+  /*background-color: #FFF;*/
+/*}*/
+
+/*.md-menu::-webkit-scrollbar {*/
+  /*width: 6px;*/
+  /*background-color: #FFF;*/
+/*}*/
+
+/*.md-menu::-webkit-scrollbar-thumb {*/
+  /*background-color: #D9D9D9;*/
+/*}*/
+
+/*md-menu-item {*/
+  /*display: block;*/
+  /*padding: 8px 16px;*/
+  /*color: rgba(0,0,0,.87);*/
+  /*font-size: 16px;*/
+  /*height: 45px;*/
+/*}*/
+
+/*md-menu-item:hover {*/
+  /*cursor: pointer;*/
+  /*background-color: rgba(0,0,0,.10);*/
+/*}*/
+
+/*.md-menu-bg {*/
+  /*background:rgba(0,0,0,.1);*/
+  /*position:fixed;*/
+  /*top:0;*/
+  /*left:0;*/
+  /*bottom:0;*/
+  /*right:0;*/
+  /*width:100%;*/
+  /*height:100%;*/
+  /*z-index:24;*/
+/*}*/
+
+/*.md-menu-bg.ng-hide-add, .md-menu-bg.ng-hide-remove {*/
+  /*-webkit-transition: opacity .25s linear;*/
+  /*transition: opacity .25s linear;*/
+  /*opacity: 1;*/
+/*}*/
+
+/*.md-menu-bg.ng-hide {*/
+  /*opacity: 0;*/
+/*}*/
+
+
+/*html,*/
+/*body {*/
+  /*height: 100%;*/
+  /*padding-top: 20px;*/
+/*}*/
+
+/*/!* Set the fixed height of the footer here *!/*/
+/*#footer {*/
+  /*height: 60px;*/
+  /*background-color: #f5f5f5;*/
+/*}*/
+
+/*.container {*/
+  /*width: auto;*/
+  /*//max-width: 900px;*/
+  /*padding: 0 15px;*/
+/*}*/
+
+/*.container .credit {*/
+  /*margin: 20px 0;*/
+/*}*/
+
+/*.bold-text {*/
+  /*font-weight: bold;*/
+/*}*/
+
+/*.filter-control {*/
+  /*margin-left: 10px;*/
+/*}*/
+
+/*.header-input>td{*/
+  /*vertical-align: middle !important;*/
+/*}*/
+
+/*.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }*/
+
+/*.form-horizontal .time-label{*/
+  /*padding-top: 42px;*/
+/*}*/
+
+/*/!*.ace_editor { height: 200px; }*!/*/
+
+/*.import-area {*/
+  /*width: 840px;*/
+  /*height: 250px;*/
+/*}*/
+
+
+/*#splash-page {*/
+  /*z-index: 99999 !important;*/
+/*}*/
+
+/*#splash-page .bar {*/
+  /*width: 100%;*/
+/*}*/
+
+/*.page-splash {*/
+  /*z-index: 99999 !important;*/
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*left: 0;*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*background-color: #424040;*/
+  /*opacity: .9;*/
+  /*pointer-events: auto;*/
+  /*-webkit-backface-visibility: hidden;*/
+  /*-moz-backface-visibility: hidden;*/
+  /*backface-visibility: hidden;*/
+  /*-webkit-transition: opacity 0.3s linear;*/
+  /*-moz-transition: opacity 0.3s linear;*/
+  /*-o-transition: opacity 0.3s linear;*/
+  /*transition: opacity 0.3s linear;*/
+/*}*/
+
+/*.page-splash-message {*/
+  /*text-align: center;*/
+  /*margin: 20% auto 0 auto;*/
+  /*font-size: 400%;*/
+  /*font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/
+  /*font-weight: normal;*/
+  /*-webkit-text-shadow: 2px 2px #000000;*/
+  /*//text-shadow: 2px 2px #000000;*/
+  /*text-shadow: 2px 2px rgba(0, 0, 0, 0.15);*/
+  /*text-transform: uppercase;*/
+  /*text-decoration: none;*/
+  /*/!*color: #F58A00;*!/*/
+  /*color: #efb73e;*/
+  /*padding: 0;*/
+/*}*/
+
+/* UI Grid */
+.grid {
+  width: 100%;
+  height: 800px;
+}
+
+.my-custom-menu {
+  position: absolute;
+}
+
+.ui-grid-menu-button {
+  height: 31px;
+}
+
+.my-custom-menu .ui-grid-menu {
+  padding: 0;
+}
+
+.my-custom-menu .ui-grid-menu-inner {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.rotated {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.grid-aline-right {
+  text-align: right;
+}
+
+/*/!*************/
+ /** NKF MENU*/
+ /*************!/*/
+/*.site-sidenav {*/
+  /*background: #adfe40;*/
+/*}*/
+/*.site-sidenav md-content {*/
+  /*background: transparent;*/
+/*}*/
+/*.site-sidenav,*/
+/*.site-sidenav.md-locked-open-add-active,*/
+/*.site-sidenav.md-locked-open {*/
+  /*width: 256px;*/
+  /*min-width: 256px;*/
+  /*max-width: 256px;*/
+/*}*/
+/*.site-sidenav > * {*/
+  /*min-width: 218px;*/
+/*}*/
+
+/*.nkf-menu,*/
+/*.nkf-menu ul {*/
+  /*list-style: none;*/
+  /*padding: 0;*/
+/*}*/
+/*.nkf-menu li {*/
+  /*margin: 0;*/
+/*}*/
+/*.nkf-menu > li:nth-child(1) {*/
+  /*border-top: none;*/
+/*}*/
+/*.md-whiteframe-glow-z1 {*/
+  /*box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14),*/
+  /*0px 0px 2px 2px rgba(0, 0, 0, 0.098),*/
+  /*0px 0px 5px 1px rgba(0, 0, 0, 0.084);*/
+/*}*/
+/*.nkf-menu > li {*/
+  /*border-bottom: 1px solid #267ED5;*/
+/*}*/
+
+/*.nkf-menu .md-button {*/
+  /*border-radius: 0;*/
+  /*color: white;*/
+  /*cursor: pointer;*/
+  /*display: block;*/
+  /*align-items: inherit;*/
+  /*line-height: 40px;*/
+  /*margin: 0;*/
+  /*max-height: 40px;*/
+  /*overflow: hidden;*/
+  /*padding: 0px 16px;*/
+  /*text-align: left;*/
+  /*text-decoration: none;*/
+  /*white-space: normal;*/
+  /*width: 100%;*/
+/*}*/
+/*.nkf-menu .md-button:hover,*/
+/*.nkf-menu .md-button:focus {*/
+  /*background: #267ED5 !important;*/
+/*}*/
+/*.nkf-menu .md-button md-icon {*/
+  /*color: white;*/
+/*}*/
+
+/*.nkf-menu md-select {*/
+
+  /*/!* Override md-select margins.  With margins the menu will look incorrect and causes mobile list*/
+     /*to not be scrollable.*/
+   /**!/*/
+  /*margin: 0;*/
+  /*width: 100%;*/
+/*}*/
+/*//*/
+/*//.nkf-menu md-select md-select-label {*/
+/*//  justify-content: flex-end;*/
+/*//  padding-top: 10px;*/
+/*//}*/
+/*//*/
+/*//.nkf-menu md-select md-select-label span {*/
+/*//  margin-right: auto;*/
+/*//  padding-left: 13px;*/
+/*//}*/
+
+/*.nkf-menu md-select .md-select-icon {*/
+  /*margin-right: 28px;*/
+/*}*/
+
+/*.nkf-menu button.md-button::-moz-focus-inner {*/
+  /*padding: 0;*/
+/*}*/
+/*.nkf-menu .md-button.active {*/
+  /*background: #267ED5;*/
+/*}*/
+/*.menu-heading {*/
+  /*display: block;*/
+  /*line-height: 32px;*/
+  /*margin: 0;*/
+  /*padding: 8px 16px 0;*/
+  /*text-align: left;*/
+  /*width: 100%;*/
+  /*color: rgba(255, 255, 255, 0.54)*/
+/*}*/
+/*.nkf-menu li.parentActive,*/
+/*.nkf-menu li.parentActive .menu-toggle-list {*/
+  /*/!*background-color: #2C80D2 !important;*!/*/
+/*}*/
+/*.menu-toggle-list {*/
+  /*overflow: hidden;*/
+  /*position: relative;*/
+  /*z-index: 1;*/
+  /*-webkit-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);*/
+  /*-webkit-transition-property: height;*/
+  /*-moz-transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);*/
+  /*-moz-transition-property: height;*/
+  /*transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);*/
+  /*transition-property: height;*/
+/*}*/
+/*.nkf-menu .menu-toggle-list a.md-button {*/
+  /*display: block;*/
+  /*padding: 0 16px 0 32px;*/
+  /*text-transform: none;*/
+  /*text-rendering: optimizeLegibility;*/
+  /*font-weight: 500;*/
+/*}*/
+
+/*ul#nkf-menu-Directives {*/
+  /*margin-bottom: 20px;*/
+/*}*/
+/*.md-button-toggle .md-toggle-icon {*/
+  /*display: block;*/
+  /*margin-left: auto;*/
+  /*speak: none;*/
+  /*vertical-align: middle;*/
+  /*transform: rotate(180deg);*/
+  /*-webkit-transform: rotate(180deg);*/
+  /*transition: transform 0.3s ease-in-out;*/
+  /*-webkit-transition: -webkit-transform 0.3s ease-in-out;*/
+/*}*/
+/*.md-button-toggle .md-toggle-icon.toggled {*/
+  /*transform: rotate(0deg);*/
+  /*-webkit-transform: rotate(0deg);*/
+/*}*/
+
+/* End Docs Menu */

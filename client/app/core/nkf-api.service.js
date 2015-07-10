@@ -3,14 +3,14 @@
  * https://www.landesdatenbank.nrw.de/
  * These functions are defined and can be uploaded with database/serverside.functions.js
  */
-(function (module) {
+(function (appCore) {
     'use strict';
 
-    module.factory('nkfApi', nkfApi);
+    appCore.factory('nkfApi', nkfApi);
 
-    nkfApi.$inject = ['$http', 'appSpinner'];
+    nkfApi.$inject = ['$http'];
 
-    function nkfApi($http, appSpinner) {
+    function nkfApi($http) {
         var service = {
             // Person types
             addPersonType: addPersonType,
@@ -101,14 +101,13 @@
         }
 
         function httpExecute(requestUrl, method, data){
-            appSpinner.showSpinner();
+
             return $http({
                 url: baseUrl + requestUrl,
                 method: method,
                 data: data,
                 headers: requestConfig.headers }).then(function(response){
 
-                appSpinner.hideSpinner();
                 console.log('**response from EXECUTE', response);
                 return response.data.result;
             });
