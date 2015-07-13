@@ -8,10 +8,10 @@ module.exports = (function () {
     var odb = require('../orientdb.config');
 
     var parseFn = require("parse-function");
-    var Oriento = require('oriento');
+    var Orientjs = require('orientjs');
 
 
-    var server = Oriento({
+    var server = Orientjs({
         host: 'localhost',
         port: 2424,
         username: odb.SUser,
@@ -34,7 +34,7 @@ module.exports = (function () {
      * @param {Boolean} idempotent  [true|false]
      * @param {Object}  fn          Plain Javascript function to stringify
      *
-     * This function ist only beause Oriento's createFn can't set parameter idempotent
+     * This function ist only beause Orientjs's createFn can't set parameter idempotent
      */
     var createServerside = function (language, idempotent, fn) {
 

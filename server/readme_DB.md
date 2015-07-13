@@ -56,3 +56,18 @@ The methods to work with you find on the Graph wrapper class to use from scripts
 Sometimes no error message are given. In this cases curl helps:
 
     curl -X GET -u "admin:admin" http://localhost:2480/function/nkf/personTypes_getTree
+    
+# Snippets
+
+Create edge when edge to PersonTypes is missing.
+
+    create edge isPersonType from (select from Persons where out_isPersonType is null or out_isPersonType.size() = 0) to #11:17
+    
+    create edge isPersonType from (select from Persons where person_type = 'Bund' and ( out_isPersonType is null or out_isPersonType.size() = 0)) to (select from PersonTypes where label = 'Bund')
+    
+    out_isPersonType is null means: out_isPersonType is not an attribute of Persons vertex.
+    out_isPersonType.size() = 0 means: out_isPersonType is attribute of Persons vertex, but it is empty.
+    
+Remove property out_isPersonType when edge is empty:
+
+    update V remove out_isPersonType where out_isPersonType.size() = 0

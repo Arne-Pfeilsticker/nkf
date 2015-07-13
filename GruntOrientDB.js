@@ -109,7 +109,8 @@ module.exports = function (grunt) {
             'shell:createDB',
             'shell:execSQLfile:./import/persons/createPersonClasses.sql',
             'shell:execSQLfile:./import/products/createProductTypesClass.sql',
-            'shell:execSQLfile:./import/accounting/createFrameworkClass.sql'
+            'shell:execSQLfile:./import/accounting/createFrameworkClass.sql',
+            'shell:execSQLfile:./import/accounting/createBookingsClass.sql'
         ]);
     });
 
