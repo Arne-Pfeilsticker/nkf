@@ -20,11 +20,11 @@
             enableFiltering: true,
             // showTreeExpandNoChildren: false, // This should suppress + sign for leaves.
             columnDefs: [
-                {field: 'gkz', displayName: 'Kennzahl', width: '*'},
-                {field: 'prodgr', displayName: 'Produktgruppe', visible: true, width: '*'},
-                {field: 'account', displayName: 'Konto', width: '*'},
-                {field: 'year', displayName: 'Jahr', width: '*'},
-                {field: 'value', displayName: 'Betrag', cellFilter: 'currency', cellClass: 'grid-align-right'}
+                {field: 'personId', displayName: 'Kennzahl', width: '*'},
+                {field: 'productId', displayName: 'Produktgruppe', visible: true, width: '*'},
+                {field: 'nkfAccount', displayName: 'Konto', width: '*'},
+                {field: 'bookingYear', displayName: 'Jahr', width: '*'},
+                {field: 'amount', displayName: 'Betrag', cellFilter: 'currency', cellClass: 'grid-align-right'}
             ]
 
             //importerDataAddCallback: function (grid, newObjects) {

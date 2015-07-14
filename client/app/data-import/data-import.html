@@ -2,13 +2,13 @@
     <h2 class="md-title">
         Daten aus der
         <a href="http://www.landesdatenbank.nrw.de"> Landesdatenbank NRW </a>
-        importieren
+        importieren und in der NKF-Datenbank sichern
     </h2>
 
     <md-content layout-padding layout="row" layout-align="space-around center" layout-sm="column" >
         <md-input-container flex>
             <label>Gemeindekennzahl</label>
-            <input ng-model="vm.gkz"/>
+            <input ng-model="vm.personId"/>
         </md-input-container>
         <md-input-container flex>
             <label>Tabelle</label>
@@ -16,10 +16,13 @@
         </md-input-container>
         <md-input-container flex>
             <label>Jahr</label>
-            <input ng-model="vm.year"/>
+            <input ng-model="vm.bookingYear"/>
         </md-input-container>
         <span>
             <md-button class="md-raised md-primary" ng-click="vm.importData()">Importieren</md-button>
+        </span>
+        <span>
+            <md-button class="md-raised md-primary" ng-click="vm.importBookings(vm.values)">Sichern</md-button>
         </span>
     </md-content>
 

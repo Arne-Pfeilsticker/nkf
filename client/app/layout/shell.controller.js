@@ -37,7 +37,7 @@
 
         function toggleMenu() {
             $mdSidenav('left').toggle();
-        };
+        }
 
         function isSectionSelected(section) {
             var selected = false;

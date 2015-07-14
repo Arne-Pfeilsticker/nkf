@@ -129,4 +129,113 @@ module.exports = (function () {
         var cmd = "select $depth as $$treeLevel, out('hasPersons').size() as personsubtypes, id, parent_id, name, person_type, wiki_url, begin, end from (traverse out('hasPersons') from (select from Persons where id = 'de'))";
     });
 
+    createServerside(js, true, function importBookings() {
+        /**
+         * Insert Bookings and add edges to timeline and person
+         **/
+
+        var db = orient.getGraph();
+
+        var data = JSON.parse(request.getContent()); // request payload
+        var vt;
+        var row, rowJSON,
+            nkfAccount, // NKF account #
+            accountId,  // Internal account # of the accounting framework
+            accountV,   // current account vertex
+            personV,    // Person vertex
+            personId;   // Person Id (Gemeindekennzahl)
+
+        var bookingYear,
+            currentYear,
+            yearV;      // Year vertex
+
+        var toYearE,    // Edge to vertex timeline
+            toPersonE;  // Edge to vertex person
+
+        // Just a way to get the current datetime
+        var importDate = db.command('sql', 'select date() as importDate from OUser limit 1')[0].getProperty('importDate');;
+
+        db.begin();
+
+        try {
+            for (var i = 0, len = data.length; i < len; i++ ) {
+                row = data[i];
+
+                rowJSON = JSON.stringify(row);
+
+                vt = db.command('sql', 'insert into Bookings content ' + rowJSON );
+
+                vt.setProperty('personId', 'de.' + row['personId'] );
+                row['personId'] = vt.getProperty('personId');
+
+
+                // Transform NKF account into internal account
+                if (row['nkfAccount'] != nkfAccount) {
+
+                    accountV = db.command('sql', 'select from Framework where nkf_account = ' + row['nkfAccount'] )[0];
+
+                    if (accountV.getProperty('nkf_account') != row['nkfAccount']) {
+                        db.rollback();
+                        //response.send(500, "Error on creating new bookings", "text/plain", err.toString());
+                        return 'Error: NKF-Account ' + row['nkfAccount'] + ' != ' + accountV.getProperty('nkf_account') + ' not in database. AccountV: ' + accountV.toString();
+                    } else {
+
+                        nkfAccount = accountV.getProperty('nkf_account');
+                        accountId  = accountV.getProperty('id')
+
+                    }
+
+                }
+                vt.setProperty('account', accountId);
+                vt.setProperty('importDate', importDate);
+
+                vt.save();
+
+                // Get or create year vertex
+                if (row['bookingYear'] != bookingYear) {
+
+                    yearV = db.command('sql', 'select from Timeline where bookingYear = ' + row['bookingYear'] )[0];
+
+                    if (typeof yearV === undefined || yearV.getProperty('bookingYear') != row['bookingYear']) {
+
+                        yearV = db.command('sql', 'insert into Timeline set bookingYear = ' + row['bookingYear'] );
+                        bookingYear = yearV.getProperty('bookingYear');
+
+                    }
+                }
+
+                // Create Edges to Timeline and Persons
+                toYearE = db.addEdge(null, vt, yearV, 'toBookingYear');
+
+                // Get person vertex
+                if (vt.getProperty('personId') != personId) {
+
+                    personV = db.command('sql', 'select from Persons where id = "' + row['personId'] + '"' )[0];
+
+                    //return personV;
+
+                    if (typeof personV === undefined || personV.getProperty('id') != row['personId']) {
+                        db.rollback();
+                        //response.send(500, "Error on creating new bookings", "text/plain", err.toString());
+                        return 'Error: NKF-Person-Id ' + row['personId'] + ' != ' + personV.getProperty('id') + ' not in database. PersonV: ' + personV.toString();
+                    } else {
+
+                        personId  = personV.getProperty('id')
+
+                    }
+
+                }
+                toPersonE = db.addEdge(null, vt, personV, 'toPerson');
+
+            }
+        } catch (err) {
+            db.rollback();
+            //response.send(500, "Error on creating new bookings", "text/plain", err.toString());
+            return err;
+        }
+
+        db.commit();
+        return vt;
+    });
+
 })();

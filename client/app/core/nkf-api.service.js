@@ -23,7 +23,8 @@
             getPersons: getPersons,
             savePerson: savePerson,
             // Accounting
-            getFramework: getFramework
+            getFramework: getFramework,
+            importBookings: importBookings
         };
 
         var baseUrl = 'http://localhost:2480/function/nkf';
@@ -86,6 +87,10 @@
 
         function getFramework() {
             return httpGet('/getFramework');
+        }
+
+        function importBookings(values) {
+            return httpPost('/importBookings', values);
         }
 
 
