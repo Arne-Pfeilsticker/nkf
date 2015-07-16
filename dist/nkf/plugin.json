@@ -1,0 +1,8 @@
+{
+	"name" : "nkf",
+	"version" : "0.0",
+	"description" : "Neues Kommunales Finanzmanagement",
+	"web" : "https://github.com/Arne-Pfeilsticker/nkf",
+	"copyrights" : "Arne Pfeilsticker",
+	"license" : "MIT"
+}

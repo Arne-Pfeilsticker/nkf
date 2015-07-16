@@ -17,14 +17,22 @@
 
         vm.gridOptions = {
             data:  'vm.personTypes',
+            enableFiltering: true,
+            enableSorting: true,
             enableGridMenu: true,
             columnDefs: [
-                { name: 'id', field: 'id' },
-                { name: 'parent_id', field: 'parent_id' },
-                { name: 'label', field: 'label' }
+                {field: 'id', displayName: 'Id', type: 'string', width: '*'},
+                {field: 'parent_id', displayName: 'Id Oberbegriff', type: 'string', width: '*'},
+                {field: 'label', displayName: 'Bezeichnung', type: 'string', width: '50%'},
+                {field: 'acronym', displayName: 'Abk.', type: 'string', width: '*'}
             ],
+            importerDataAddCallback: function (grid, newObjects) {
+                vm.importedData = vm.importedData.concat(newObjects);
+            },
+            onRegisterApi: function(gridApi){
+                vm.gridApi = gridApi;
+            }
 
-            enableFiltering: true
         };
 
         activate();

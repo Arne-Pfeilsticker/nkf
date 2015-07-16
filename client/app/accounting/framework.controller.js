@@ -17,7 +17,8 @@
             enableGridMenu: true,
             enableSorting: true,
             enableFiltering: true,
-            showTreeExpandNoChildren: false,
+            enableColumnResize: true,
+            //showTreeExpandNoChildren: false,
             rowHeight: 30,
             headerHeight: 30,
             columnDefs: [
@@ -30,10 +31,13 @@
                 {field: 'shortcut', displayName: 'Kurzbezeichnung', visible: false},
                 {field: 'beneficiary', displayName: 'Leistungsempfänger', visible: false},
                 {field: 'provider', displayName: 'Leister', visible: false},
-                {field: '$$treeLevel', displayName: 'Ebene', width: '8%'}
+                {field: '$$treeLevel', displayName: 'Ebene', width: '*'}
             ],
             importerDataAddCallback: function(grid, newObjects){
                 vm.framework = vm.framework.concat(newObjects);
+            },
+            onRegisterApi: function(gridApi){
+                vm.gridApi = gridApi;
             }
         };
 
@@ -49,7 +53,7 @@
             var rowHeight = 30; // your row height
             var headerHeight = 30; // your header height
             return {
-                height: (vm.gridOptions.data.length * rowHeight + headerHeight) + "px"
+                height: (vm.gridOptions.data.length * rowHeight + headerHeight) + 'px'
             };
         };
     }

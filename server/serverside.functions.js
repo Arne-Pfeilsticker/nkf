@@ -152,10 +152,10 @@ module.exports = (function () {
         var toYearE,    // Edge to vertex timeline
             toPersonE;  // Edge to vertex person
 
-        // Just a way to get the current datetime
+// Just a way to get the current datetime
         var importDate = db.command('sql', 'select date() as importDate from OUser limit 1')[0].getProperty('importDate');;
 
-        db.begin();
+// db.begin(); // Not a function of db!?
 
         try {
             for (var i = 0, len = data.length; i < len; i++ ) {
@@ -196,9 +196,10 @@ module.exports = (function () {
 
                     yearV = db.command('sql', 'select from Timeline where bookingYear = ' + row['bookingYear'] )[0];
 
-                    if (typeof yearV === undefined || yearV.getProperty('bookingYear') != row['bookingYear']) {
+                    if (typeof yearV === 'undefined') {
 
                         yearV = db.command('sql', 'insert into Timeline set bookingYear = ' + row['bookingYear'] );
+
                         bookingYear = yearV.getProperty('bookingYear');
 
                     }
@@ -214,7 +215,7 @@ module.exports = (function () {
 
                     //return personV;
 
-                    if (typeof personV === undefined || personV.getProperty('id') != row['personId']) {
+                    if (typeof personV === 'undefined' || personV.getProperty('id') != row['personId']) {
                         db.rollback();
                         //response.send(500, "Error on creating new bookings", "text/plain", err.toString());
                         return 'Error: NKF-Person-Id ' + row['personId'] + ' != ' + personV.getProperty('id') + ' not in database. PersonV: ' + personV.toString();
@@ -236,6 +237,7 @@ module.exports = (function () {
 
         db.commit();
         return vt;
+
     });
 
 })();
