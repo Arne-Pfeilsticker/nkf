@@ -7,6 +7,7 @@
          */
         'ngAnimate',
         'ngMaterial',
+        //'ngMdIcons',
         'ngAria',
         'ngSanitize',
         /*

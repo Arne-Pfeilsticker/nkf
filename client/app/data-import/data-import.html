@@ -6,9 +6,15 @@
         importieren und in der NKF-Datenbank sichern
     </h2>
 
-    <p>Über das Tabellenmenü können wahlweise Daten aus einer csv-Datei importiert und dann in der NKF-Datenbank gespeichert werden. </p>
+    <p>Über das Tabellenmenü
+        <span>
+            <md-icon md-svg-icon="navigation:menu"></md-icon>
+        </span>
 
-    <md-content layout-padding layout="row" layout-align="space-around center" layout-sm="column" >
+        können wahlweise Daten aus einer csv-Datei importiert und dann in der NKF-Datenbank gespeichert werden.
+    </p>
+
+    <md-content layout-padding layout="row" layout-align="space-around center" layout-sm="column">
         <md-input-container flex>
             <label>Gemeindekennzahl</label>
             <input ng-model="vm.personId"/>
@@ -22,14 +28,22 @@
             <input ng-model="vm.bookingYear"/>
         </md-input-container>
         <span>
-            <md-button class="md-raised md-primary" ng-click="vm.importData()">Importieren</md-button>
+
+            <md-button class="md-raised md-primary" ng-click="vm.importData()">
+                <md-icon md-svg-icon="file:cloud_download"></md-icon>
+                <span>Importieren</span>
+            </md-button>
         </span>
         <span>
-            <md-button class="md-raised md-primary" ng-click="vm.importBookings(vm.importedData)">Sichern</md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.importBookings(vm.importedData)">
+                <md-icon md-svg-icon="content:save"></md-icon>
+                <span>Sichern</span>
+            </md-button>
         </span>
     </md-content>
 
     <div class="spinner" ng-show="vm.loading"></div>
 
-    <div id="grid1" ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer ui-grid-edit ui-grid-resize-columns class="grid"></div>
+    <div id="grid1" ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer ui-grid-edit ui-grid-resize-columns
+         class="grid"></div>
 </div>

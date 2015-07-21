@@ -1,6 +1,97 @@
-<div>
-    <h2 class="md-title">Importierte Daten</h2>
+<div layout="column" layout-margin layout-fill layout-padding>
 
-    <div ui-grid="vm.gridOptions" class="grid"></div>
+    <h1 class="md-title">Haushaltsübersicht</h1>
+
+    <div class="md-whiteframe-z1">
+        <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
+            <div class="md-toolbar-tools">
+
+                <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
+                    Güterebene
+                </md-button>
+
+            </div>
+
+        </md-toolbar>
+
+        <div layout="row" layout-align="center center" layout-padding layout-fill>
+            <div layout="row" style="background-color: #ffff4f">
+                <div flex>
+                    Input
+                </div>
+                <div>
+                    <svg height="120" width="30" style="fill: #ffff4f">
+                        <path d="M0 0 L0 120 L30 60 Z" />
+                    </svg>
+                </div>
+            </div>
+            <div flex>
+                Verarbeitung
+            </div>
+
+            <div flex style="background-color: #ffff4f">
+                <div>
+                    Output
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br/>
+
+    <div class="md-whiteframe-z1">
+        <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
+            <div class="md-toolbar-tools">
+
+                <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
+                    Leistungsebene
+                </md-button>
+
+            </div>
+
+        </md-toolbar>
+
+        <div layout="row" layout-align="space-between center" layout-wrap layout-sm="column" >
+            <div flex>
+                <div layout="row" layout-align="space-between center" layout-fill>
+                    <div flex style="background-color: #ffff4f">
+                        <p>
+                            Aufwand
+                        </p>
+
+                    </div>
+                    <div>
+                        <svg height="120" width="30" style="fill: #ffff4f">
+                            <path d="M0 0 L0 120 L30 60 Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+            <div flex>
+                <div layout="row" layout-align="center center" layout-margin layout-padding>
+                    Verarbeitung
+                </div>
+            </div>
+            <div flex>
+                <div layout="row" layout-align="space-between center" layout-fill>
+                    <div flex style="background-color: #ffff4f">
+                        <p>
+                            Verwaltungsertrag und Transferertrag Verwaltungsertrag und Transferertrag
+                        </p>
+
+                    </div>
+                    <div>
+                        <svg height="120" width="30" style="fill: #ffff4f">
+                            <path d="M0 0 L0 120 L30 60 Z" />
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 
 </div>

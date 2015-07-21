@@ -8,7 +8,15 @@
 .secondary-text-color  { color: #727272; }
 .divider-color         { border-color: #B6B6B6; }
 
-.text-accent-color          { color: #FF5722; }
+.text-accent-color {
+  color: #FF5722;
+}
+
+md-icon {
+    fill: #FF5722;
+}
+
+
 
 /** Spinner for pages that don't load angular but have angular templates in them. **/
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {

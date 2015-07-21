@@ -18,13 +18,25 @@
     nkfApp.config(['$mdThemingProvider', '$mdIconProvider', function ($mdThemingProvider, $mdIconProvider) {
 
         $mdIconProvider
-            .defaultIconSet('./assets/svg/avatars.svg', 128)
-            .icon('menu', './assets/svg/menu.svg', 24)
-            .icon('share', './assets/svg/share.svg', 24)
-            .icon('google_plus', './assets/svg/google_plus.svg', 512)
-            .icon('hangouts', './assets/svg/hangouts.svg', 512)
-            .icon('twitter', './assets/svg/twitter.svg', 512)
-            .icon('phone', './assets/svg/phone.svg', 512);
+            //.iconSet('action', './images/icons/action-icons.svg', 24)
+            //.iconSet('alert', './images/icons/alert-icons.svg', 24)
+            //.iconSet('av', './images/icons/av-icons.svg', 24)
+            //.iconSet('communication', './images/icons/communication-icons.svg', 24)
+            .iconSet('content', './images/icons/content-icons.svg', 24)
+            //.iconSet('device', './images/icons/device-icons.svg', 24)
+            //.iconSet('editor', './images/icons/editor-icons.svg', 24)
+            .iconSet('file', './images/icons/file-icons.svg', 24)
+            //.iconSet('hardware', './images/icons/hardware-icons.svg', 24)
+            //.iconSet('icons', './images/icons/icons-icons.svg', 24)
+            //.iconSet('image', './images/icons/image-icons.svg', 24)
+            //.iconSet('maps', './images/icons/maps-icons.svg', 24)
+            .iconSet('navigation', './images/icons/navigation-icons.svg', 24)
+            //.iconSet('notification', './images/icons/notification-icons.svg', 24)
+            //.iconSet('social', './images/icons/social-icons.svg', 24)
+            //.iconSet('toggle', './images/icons/toggle-icons.svg', 24)
+            .icon('kommune', './images/icons/icon_kommune.png', 24)
+            .icon('arrowright', './images/icons/arrow_right.svg', 150)
+        ;
 
         $mdThemingProvider.theme('default')
             .primaryPalette('lime')
@@ -54,11 +66,11 @@
                 templateUrl: 'app/budget/budget.html',
                 controller: 'BudgetController',
                 controllerAs: 'vm',
-                resolve: {
-                    importedData: ['ldbApi', function (ldbApi) {
-                        return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
-                    }]
-                }
+                //resolve: {
+                //    importedData: ['ldbApi', function (ldbApi) {
+                //        return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
+                //    }]
+                //}
             })
             .state('import', {
                 url: '/import',
