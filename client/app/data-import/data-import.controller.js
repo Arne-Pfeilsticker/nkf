@@ -12,9 +12,9 @@
         //vm.notesCollapsed = true;
         //vm.navigate = navigate;
         vm.activate = activate;
-        vm.personId = '05124000';
+        vm.personId = '05315000';
         vm.table = '71147GJ001';
-        vm.bookingYear = '2010';
+        vm.bookingYear = '2009';
 
         vm.loading = false;
         //vm.importDataJSON = '';

@@ -22,8 +22,11 @@
             deletePerson: deletePerson,
             getPersons: getPersons,
             savePerson: savePerson,
+
+            getProductTypes: getProductTypes,
             // Accounting
             getFramework: getFramework,
+            getBookingsByPid: getBookingsByPid,
             importBookings: importBookings
         };
 
@@ -68,6 +71,10 @@
             return httpDelete('/persons/' + id);
         }
 
+        function getProductTypes() {
+            return httpGet('/products_getTypes');
+        }
+
 
         //function getPerson(id){
         //    var url = getUrlByPersonId('/persons', id);
@@ -87,6 +94,10 @@
 
         function getFramework() {
             return httpGet('/getFramework');
+        }
+
+        function getBookingsByPid(pid) {
+            return httpGet('/getBookingsByPid/' + pid);
         }
 
         function importBookings(values) {

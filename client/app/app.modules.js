@@ -14,8 +14,6 @@
          * 3rd Party modules
          */
         'ui.router',
-        //'ui.calendar',
-        //'uiGmapgoogle-maps',
         'ui.ace',
         'ui.grid',
         'ui.grid.treeView',
@@ -24,17 +22,19 @@
         'ui.grid.edit',
         'ui.grid.resizeColumns',
         'ui.grid.autoResize',
-        'ui.select'
+        'ui.select',
         //'ui.alias'
         //'angularSoap'
+        //'lodash',
+        //'dcjs',
+        //'d3',
+        //'crossfilter',
+        'angularDc'
     ]);
 
     angular.module('app.services', []);
 
     angular.module('app.layout', ['app.services']);
 
-    angular.module('nkfApp', [
-        'app.layout',
-        'app.core'
-    ]);
+    angular.module('nkfApp', ['app.layout', 'app.core']);
 })();

@@ -65,10 +65,10 @@
                 url: '/budget',
                 templateUrl: 'app/budget/budget.html',
                 controller: 'BudgetController',
-                controllerAs: 'vm',
+                controllerAs: 'vm'
                 //resolve: {
-                //    importedData: ['ldbApi', function (ldbApi) {
-                //        return ldbApi.httpTableByGKZ('71147GJ002', '05111000');
+                //    bookingData: ['nkfApi', function (nkfApi) {
+                //        return nkfApi.getBookingsByPid('de.05111000');
                 //    }]
                 //}
             })

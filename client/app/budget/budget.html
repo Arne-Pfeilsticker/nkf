@@ -1,6 +1,21 @@
 <div layout="column" layout-margin layout-fill layout-padding>
 
-    <h1 class="md-title">Haushaltsübersicht</h1>
+    <md-content layout-padding layout="row" layout-align="start end" layout-sm="column">
+        <h1 class="md-display-1" style="margin: 0" layout-padding>Haushaltsübersicht</h1>
+        <md-input-container flex>
+            <label>Gemeindekennzahl</label>
+            <input ng-model="vm.personId"/>
+        </md-input-container>
+
+        <span>
+
+            <md-button class="md-raised md-primary" ng-click="vm.bookingsData(vm.personId)">
+                <md-icon md-svg-icon="file:cloud_download"></md-icon>
+                <span>Anzeigen</span>
+            </md-button>
+        </span>
+
+    </md-content>
 
     <div class="md-whiteframe-z1">
         <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
@@ -9,32 +24,47 @@
                 <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
                     Güterebene
                 </md-button>
+                <h2>Zahlungen nach ...</h2>
 
             </div>
 
         </md-toolbar>
 
-        <div layout="row" layout-align="center center" layout-padding layout-fill>
-            <div layout="row" style="background-color: #ffff4f">
-                <div flex>
-                    Input
-                </div>
-                <div>
-                    <svg height="120" width="30" style="fill: #ffff4f">
-                        <path d="M0 0 L0 120 L30 60 Z" />
-                    </svg>
-                </div>
-            </div>
-            <div flex>
-                Verarbeitung
-            </div>
+        <div layout="row" layout-align="space-between center" layout-padding layout-fill >
+            <div layout="column" layout-align="space-between center" layout-fill>
+                <h2 class="md-title">Produktfelder</h2>
 
-            <div flex style="background-color: #ffff4f">
-                <div>
-                    Output
+                <div dc-chart="pieChart"
+                     dc-chart-group="1"
+                     dc-width="250" dc-height="150" dc-inner-radius="30"
+                     dc-slices-cap="4"
+                     dc-post-setup-chart="vm.piePostSetupChart"
+                     dc-dimension="vm.prod1Dimension" dc-group="vm.prod1SumGroup"
+                     dc-legend="dc.legend().x(0).y(0).itemHeight(13).gap(5)">
                 </div>
             </div>
+            <div layout="column" layout-align="space-between center" layout-fill>
+                <h2 class="md-title">Produktbereiche</h2>
 
+                <div dc-chart="pieChart"
+                     dc-chart-group="1"
+                     dc-width="250" dc-height="150" dc-inner-radius="30"
+                     dc-slices-cap="4"
+                     dc-dimension="vm.prod2Dimension" dc-group="vm.prod2SumGroup"
+                     dc-legend="dc.legend()">
+                </div>
+            </div>
+            <div layout="column" layout-align="space-between center" layout-fill>
+                <h2 class="md-title">Produktgruppen</h2>
+
+                <div dc-chart="pieChart"
+                     dc-chart-group="1"
+                     dc-width="250" dc-height="150" dc-inner-radius="30"
+                     dc-slices-cap="4"
+                     dc-dimension="vm.prod3Dimension" dc-group="vm.prod3SumGroup"
+                     dc-legend="dc.legend()">
+                </div>
+            </div>
         </div>
     </div>
     <br/>
@@ -44,54 +74,267 @@
             <div class="md-toolbar-tools">
 
                 <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
-                    Leistungsebene
+                    Finanzebene
                 </md-button>
 
             </div>
 
         </md-toolbar>
 
-        <div layout="row" layout-align="space-between center" layout-wrap layout-sm="column" >
+        <div layout="row" layout-align="space-between center" layout-wrap layout-sm="column">
             <div flex>
                 <div layout="row" layout-align="space-between center" layout-fill>
                     <div flex style="background-color: #ffff4f">
-                        <p>
-                            Aufwand
-                        </p>
+                        <div layout="column" layout-align="space-between center" layout-fill>
+                            <h2 class="md-title">Einzahlungen in Mio €</h2>
+
+                            <div dc-chart="barChart"
+                                 dc-name="'Einzahlungen'"
+                                 dc-chart-group="1"
+                                 dc-width="300"
+                                 dc-height="150"
+                                 dc-margins="{top: 0, right: 0, bottom: 30, left: 50}"
+                                 dc-x="d3.scale.ordinal().rangeRoundBands([0, 250], .05)"
+                                 dc-x-units="dc.units.ordinal"
+                                 dc-center-bar="false"
+                                 dc-gap="1"
+                                 dc.bar-padding="0.01"
+                                 dc.outer-padding="0.05"
+                                 dc-dimension="vm.yearDimension"
+                                 dc-group="vm.paymentsSumGroup"
+                                 dc-elastic-x="true"
+                                 dc-elastic-y="true"
+                                 dc-center-bar="true">
+                            </div>
+                        </div>
 
                     </div>
-                    <div>
-                        <svg height="120" width="30" style="fill: #ffff4f">
-                            <path d="M0 0 L0 120 L30 60 Z" />
+                    <p></p>
+
+                    <div flex="10">
+                        <svg height="200" width="30" style="fill: #ffff4f">
+                            <path d="M0 0 L0 200 L30 100 Z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div flex>
+                <div layout="column" layout-align="center center" layout-margin layout-padding>
+                    <h2 class="md-title">
+                        Forderungen
+                    </h2>
+
+                    <h2 class="md-title">
+                        Verbindlichkeiten
+                    </h2>
+                </div>
+            </div>
+            <div flex>
+                <div layout="row" layout-align="space-between center" layout-fill>
+                    <div flex style="background-color: #ffff4f">
+                        <div layout="column" layout-align="space-between center" layout-fill>
+                            <h2 class="md-title">Auszahlungen in Mio €</h2>
+
+                            <div dc-chart="barChart"
+                                 dc-name="'Auszahlungen'"
+                                 dc-chart-group="1"
+                                 dc-width="300"
+                                 dc-height="150"
+                                 dc-margins="{top: 0, right: 0, bottom: 30, left: 50}"
+                                 dc-x="d3.scale.ordinal().rangeRoundBands([0, 250], .05)"
+                                 dc-x-units="dc.units.ordinal"
+                                 dc-center-bar="false"
+                                 dc-gap="1"
+                                 dc.bar-padding="0.01"
+                                 dc.outer-padding="0.05"
+                                 dc-dimension="vm.yearDimension"
+                                 dc-group="vm.paymentsOutSumGroup"
+                                 dc-elastic-x="true"
+                                 dc-elastic-y="true"
+                                 dc-center-bar="true">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div flex="10">
+                        <svg height="200" width="30" style="fill: #ffff4f">
+                            <path d="M0 0 L0 200 L30 100 Z"/>
                         </svg>
                     </div>
 
                 </div>
             </div>
-            <div flex>
-                <div layout="row" layout-align="center center" layout-margin layout-padding>
-                    Verarbeitung
-                </div>
-            </div>
-            <div flex>
-                <div layout="row" layout-align="space-between center" layout-fill>
-                    <div flex style="background-color: #ffff4f">
-                        <p>
-                            Verwaltungsertrag und Transferertrag Verwaltungsertrag und Transferertrag
-                        </p>
 
-                    </div>
-                    <div>
-                        <svg height="120" width="30" style="fill: #ffff4f">
-                            <path d="M0 0 L0 120 L30 60 Z" />
-                        </svg>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
 
+        <div layout="row" layout-align="space-between center" layout-wrap layout-sm="column">
+            <div flex>
+                <div layout="row" layout-align="space-between center" layout-fill>
+                    <div flex>
+                        <div layout="column" layout-align="space-between center" layout-fill>
+
+                            <div class="dc-chart" id="paymentRangeChart"
+                                 dc-chart="barChart"
+                                 dc-bar-padding="0.01"
+                                 dc-brush-on="true"
+                                 dc-chart-group="1"
+                                 dc-dimension="vm.paymentDimension"
+                                 dc-elastic-x="true"
+                                 dc-elastic-y="true"
+                                 dc-gap="1"
+                                 dc-group="vm.paymentGroup"
+                                 dc-height="220"
+                                 dc-margins="{top: 30, right: 60, bottom: 25, left: 60}"
+                                 dc-options="vm.paymentRangeChartOptions"
+                                 dc-post-setup-chart="vm.setupRangeChart"
+                                 dc-render-area="true"
+                                 dc-render-horizontal-grid-lines="true"
+                                 dc-transitionDuration="1000"
+                                 dc-width="1100"
+                                 dc-x="d3.scale.linear().domain([0, 200000])"
+                                 dc-y-axis-label="'Summe pro Gruppe in T€'">
+                            </div>
+                            <div class="dc-chart" id="paymentRangeSelectChart"
+                                 dc-chart="barChart"
+                                 dc-always-use-rounding="true"
+                                 dc-brush-on="true"
+                                 dc-chart-group="1"
+                                 dc-dimension="vm.paymentDimension"
+                                 dc-elastic-x="true"
+                                 dc-elastic-y="true"
+                                 dc-gap="1"
+                                 dc-group="vm.paymentGroup"
+                                 dc-height="85"
+                                 dc-margins="{top: 0, right: 50, bottom: 45, left: 60}"
+                                 dc-name="'paymentRangeSelectChart'"
+                                 dc-outer-padding="0.05"
+                                 dc-post-setup-chart="vm.paymentRanageSelectChartPostSetupChart"
+                                 dc-render-horizontal-grid-lines="true"
+                                 dc-width="1100"
+                                 dc-x-axis-label="'Zahlungen gruppiert nach der Höhe T€'"
+                                 dc-x="d3.scale.linear().domain([0, 200000])"
+                                 dc-y-axis-label="' '">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <br/>
+
+
+    <!--<div id="paymentRangeChart"-->
+         <!--dc-chart="barChart"-->
+         <!--dc-center-bar="true"-->
+         <!--dc-chart-group="1"-->
+         <!--dc-dimension="vm.paymentDimension"-->
+         <!--dc-elastic-x="true"-->
+         <!--dc-elastic-y="true"-->
+         <!--dc-gap="1"-->
+         <!--dc-group="vm.paymentGroup"-->
+         <!--dc-height="220"-->
+         <!--dc-margins="{top: 0, right: 0, bottom: 25, left: 60}"-->
+         <!--dc-name="'paymentRangeChart'"-->
+         <!--dc-width="1100"-->
+         <!--dc-x-units="dc.units.ordinal"-->
+         <!--dc-x="d3.scale.ordinal().rangeRoundBands([0, 250], .05)"-->
+         <!--dc-y-axis-label="'Summe pro Gruppe in T€'">-->
+    <!--</div>-->
+
+    <!--<div id="paymentRangeChart"-->
+         <!--dc-chart="barChart"-->
+         <!--dc-center-bar="true"-->
+         <!--dc-chart-group="1"-->
+         <!--dc-dimension="vm.yearDimension"-->
+         <!--dc-elastic-x="true"-->
+         <!--dc-elastic-y="true"-->
+         <!--dc-gap="1"-->
+         <!--dc-group="vm.paymentsOutSumGroup"-->
+         <!--dc-height="220"-->
+         <!--dc-margins="{top: 0, right: 0, bottom: 25, left: 50}"-->
+         <!--dc-mouse-zoomable="true"-->
+         <!--dc-name="'paymentRangeChart'"-->
+         <!--dc-width="1100"-->
+         <!--dc-x-units="dc.units.ordinal"-->
+         <!--dc-x="d3.scale.linear().domain([0, 200000])"-->
+         <!--dc-y-axis-label="'Summe pro Gruppe in T€'">-->
+    <!--</div>-->
+
+
+    <!--<div class="md-whiteframe-z1">-->
+    <!--<md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">-->
+    <!--<div class="md-toolbar-tools">-->
+
+    <!--<md-button ui-sref="home" aria-label="Menü Startseite öffnen">-->
+    <!--Haushaltsansätze im Detail-->
+    <!--</md-button>-->
+
+    <!--</div>-->
+
+    <!--</md-toolbar>-->
+
+    <!--<div layout="column">-->
+    <!--<h3>Tabelle der Einzelbudget-->
+    <!--<span>-->
+    <!--<md-button class="md-raised md-primary" ng-click="vm.dataTable.filterAll()">-->
+    <!--<md-icon md-svg-icon="file:cloud_download"></md-icon>-->
+    <!--<span>Reset</span>-->
+    <!--</md-button>-->
+
+    <!--</span>-->
+    <!--</h3>-->
+
+    <!--<div flex>-->
+    <!--<table class='table table-hover' id='dc-table-graph'>-->
+    <!--<thead>-->
+    <!--<tr class='header'>-->
+    <!--<th>Jahr</th>-->
+    <!--<th>Produkt</th>-->
+    <!--<th>Konto</th>-->
+    <!--<th><span style="float:right">Betrag in €</span></th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--</table>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;<div layout="row" layout-align="space-between center">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div flex>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div layout="column" layout-align="space-between center" layout-fill>&ndash;&gt;-->
+    <!--&lt;!&ndash;<h2 class="md-subhead">Zahlungen</h2>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<table class='table table-hover' id='dc-table-graph'>&ndash;&gt;-->
+    <!--&lt;!&ndash;<thead>&ndash;&gt;-->
+    <!--&lt;!&ndash;<tr class='header'>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Jahr</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Produkt</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th>Konto</th>&ndash;&gt;-->
+    <!--&lt;!&ndash;<th><span style="float:right">Betrag in €</span></th>&ndash;&gt;-->
+    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+    <!--&lt;!&ndash;</thead>&ndash;&gt;-->
+    <!--&lt;!&ndash;</table>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<div class="table table-hover dc-data-table" dc-chart="dataTable"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-name="'Haushaltsansätze'"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-chart-group="1"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-width="1000"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-height="400"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-dimension="vm.yearDimension"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-group="vm.tableGroup"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-size="20"&ndash;&gt;-->
+    <!--&lt;!&ndash;dc-post-setup-chart="vm.tablePostSetupChart">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--</div>-->
 
 </div>

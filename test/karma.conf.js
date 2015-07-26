@@ -41,6 +41,10 @@ module.exports = function(config) {
       'bower_components/angular-aria/angular-aria.js',
       'bower_components/angular-material/angular-material.js',
       'bower_components/showdown/dist/showdown.js',
+      'bower_components/d3/d3.js',
+      'bower_components/crossfilter/crossfilter.js',
+      'bower_components/dcjs/dc.js',
+      'bower_components/angular-dc/dist/angular-dc.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-material-icons/angular-material-icons.min.js',
       // endbower

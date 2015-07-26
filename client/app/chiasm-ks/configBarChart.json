@@ -1,0 +1,45 @@
+{
+  "layout": {
+    "plugin": "chiasm/src/plugins/layout",
+    "state": {
+      "layout": {
+        "orientation": "vertical",
+        "children": [
+          "barChart"
+        ]
+      }
+    }
+  },
+  "barChart": {
+    "plugin": "chiasm/src/plugins/barChart",
+    "state": {
+      "xColumn": "letter",
+      "xAxisLabel": "Letter",
+      "yColumn": "frequency",
+      "yAxisLabel": "Frequency",
+      "xAxisLabelOffset": 1.9,
+      "yAxisLabelOffset": 1.4,
+      "colorDefault": "#059e00",
+      "title": "Bar Chart",
+      "titleOffset": -0.269568,
+      "yDomainMin": 0
+    }
+  },
+  "barChartCSVLoader": {
+    "plugin": "chiasm/src/plugins/csvLoader",
+    "state": {
+      "csvPath": "scripts/chiasm-ks/simpleBars.csv",
+      "numericColumns": [
+        "frequency"
+      ]
+    }
+  },
+  "links": {
+    "plugin": "chiasm/src/plugins/links",
+    "state": {
+      "bindings": [
+        "barChartCSVLoader.data -> barChart.data"
+      ]
+    }
+  }
+}

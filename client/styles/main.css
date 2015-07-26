@@ -52,6 +52,13 @@ md-icon {
   height: 24px;
 }
 
+/**
+* dc.js formating
+*/
+.y-axis-label {
+  font-size: x-small;
+}
+
 
 /*.md-menu::-webkit-scrollbar-track {*/
   /*background-color: #FFF;*/
