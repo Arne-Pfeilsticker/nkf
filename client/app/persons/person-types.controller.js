@@ -27,7 +27,7 @@
                 {field: 'acronym', displayName: 'Abk.', type: 'string', width: '*'}
             ],
             importerDataAddCallback: function (grid, newObjects) {
-                vm.importedData = vm.importedData.concat(newObjects);
+                vm.personTypes = vm.personTypes.concat(newObjects);
             },
             onRegisterApi: function(gridApi){
                 vm.gridApi = gridApi;

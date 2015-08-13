@@ -30,40 +30,45 @@
 
         </md-toolbar>
 
-        <div layout="row" layout-align="space-between center" layout-padding layout-fill >
+        <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
             <div layout="column" layout-align="space-between center" layout-fill>
                 <h2 class="md-title">Produktfelder</h2>
+                <a class="reset" href="javascript:rowChart1.filterAll();dc.redrawAll();">reset</a>
 
-                <div dc-chart="pieChart"
+                <!--<div id="rowChartProductField"></div>-->
+
+                <div id="rowChart1"
+                     dc-chart="rowChart"
                      dc-chart-group="1"
-                     dc-width="250" dc-height="150" dc-inner-radius="30"
-                     dc-slices-cap="4"
-                     dc-post-setup-chart="vm.piePostSetupChart"
                      dc-dimension="vm.prod1Dimension" dc-group="vm.prod1SumGroup"
-                     dc-legend="dc.legend().x(0).y(0).itemHeight(13).gap(5)">
+                     dc-options="vm.rowChartOptions"
+                     dc-post-setup-chart="vm.rowChartPostSetup">
                 </div>
+
             </div>
             <div layout="column" layout-align="space-between center" layout-fill>
                 <h2 class="md-title">Produktbereiche</h2>
 
-                <div dc-chart="pieChart"
+                <div id="rowChart2"
+                     dc-chart="rowChart"
                      dc-chart-group="1"
-                     dc-width="250" dc-height="150" dc-inner-radius="30"
-                     dc-slices-cap="4"
                      dc-dimension="vm.prod2Dimension" dc-group="vm.prod2SumGroup"
-                     dc-legend="dc.legend()">
+                     dc-options="vm.rowChartOptions"
+                     dc-post-setup-chart="vm.rowChartPostSetup">
                 </div>
+
             </div>
             <div layout="column" layout-align="space-between center" layout-fill>
                 <h2 class="md-title">Produktgruppen</h2>
 
-                <div dc-chart="pieChart"
+                <div id="rowChart3"
+                     dc-chart="rowChart"
                      dc-chart-group="1"
-                     dc-width="250" dc-height="150" dc-inner-radius="30"
-                     dc-slices-cap="4"
                      dc-dimension="vm.prod3Dimension" dc-group="vm.prod3SumGroup"
-                     dc-legend="dc.legend()">
+                     dc-options="vm.rowChartOptions"
+                     dc-post-setup-chart="vm.rowChartPostSetup">
                 </div>
+
             </div>
         </div>
     </div>
@@ -76,6 +81,9 @@
                 <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
                     Finanzebene
                 </md-button>
+                <div>
+                    <a href="javascript:dc.filterAll(); dc.redrawAll();">Zurücksetzen</a>
+                </div>
 
             </div>
 
@@ -168,173 +176,84 @@
 
         </div>
 
-        <div layout="row" layout-align="space-between center" layout-wrap layout-sm="column">
-            <div flex>
-                <div layout="row" layout-align="space-between center" layout-fill>
-                    <div flex>
-                        <div layout="column" layout-align="space-between center" layout-fill>
+        <div layout="column" layout-padding>
 
-                            <div class="dc-chart" id="paymentRangeChart"
-                                 dc-chart="barChart"
-                                 dc-bar-padding="0.01"
-                                 dc-brush-on="true"
-                                 dc-chart-group="1"
-                                 dc-dimension="vm.paymentDimension"
-                                 dc-elastic-x="true"
-                                 dc-elastic-y="true"
-                                 dc-gap="1"
-                                 dc-group="vm.paymentGroup"
-                                 dc-height="220"
-                                 dc-margins="{top: 30, right: 60, bottom: 25, left: 60}"
-                                 dc-options="vm.paymentRangeChartOptions"
-                                 dc-post-setup-chart="vm.setupRangeChart"
-                                 dc-render-area="true"
-                                 dc-render-horizontal-grid-lines="true"
-                                 dc-transitionDuration="1000"
-                                 dc-width="1100"
-                                 dc-x="d3.scale.linear().domain([0, 200000])"
-                                 dc-y-axis-label="'Summe pro Gruppe in T€'">
-                            </div>
-                            <div class="dc-chart" id="paymentRangeSelectChart"
-                                 dc-chart="barChart"
-                                 dc-always-use-rounding="true"
-                                 dc-brush-on="true"
-                                 dc-chart-group="1"
-                                 dc-dimension="vm.paymentDimension"
-                                 dc-elastic-x="true"
-                                 dc-elastic-y="true"
-                                 dc-gap="1"
-                                 dc-group="vm.paymentGroup"
-                                 dc-height="85"
-                                 dc-margins="{top: 0, right: 50, bottom: 45, left: 60}"
-                                 dc-name="'paymentRangeSelectChart'"
-                                 dc-outer-padding="0.05"
-                                 dc-post-setup-chart="vm.paymentRanageSelectChartPostSetupChart"
-                                 dc-render-horizontal-grid-lines="true"
-                                 dc-width="1100"
-                                 dc-x-axis-label="'Zahlungen gruppiert nach der Höhe T€'"
-                                 dc-x="d3.scale.linear().domain([0, 200000])"
-                                 dc-y-axis-label="' '">
-                            </div>
+            <div class="dc-chart" id="paymentRangeChart"
+                 dc-chart="barChart"
+                 dc-bar-padding="0.01"
+                 dc-brush-on="true"
+                 dc-chart-group="1"
+                 dc-dimension="vm.paymentDimension"
+                 dc-elastic-x="false"
+                 dc-elastic-y="true"
+                 dc-gap="1"
+                 dc-group="vm.paymentGroup"
+                 dc-height="220"
+                 dc-margins="{top: 30, right: 0, bottom: 25, left: 60}"
+                 dc-options="vm.paymentRangeChartOptions"
+                 dc-post-setup-chart="vm.setupRangeChart"
+                 dc-render-horizontal-grid-lines="true"
+                 dc-transition-duration="1000"
+                 dc-width="1100"
+                 dc-x="d3.scale.linear().domain([0, vm.paymentMax])"
+                 dc-y-axis-label="'Summe pro Gruppe in T€'">
 
-                        </div>
-
-                    </div>
-                </div>
             </div>
+            <div id="paymentRangeSelectChart"></div>
+
         </div>
 
     </div>
-
     <br/>
 
+    <div class="md-whiteframe-z1">
+        <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
+            <div class="md-toolbar-tools">
 
-    <!--<div id="paymentRangeChart"-->
-         <!--dc-chart="barChart"-->
-         <!--dc-center-bar="true"-->
-         <!--dc-chart-group="1"-->
-         <!--dc-dimension="vm.paymentDimension"-->
-         <!--dc-elastic-x="true"-->
-         <!--dc-elastic-y="true"-->
-         <!--dc-gap="1"-->
-         <!--dc-group="vm.paymentGroup"-->
-         <!--dc-height="220"-->
-         <!--dc-margins="{top: 0, right: 0, bottom: 25, left: 60}"-->
-         <!--dc-name="'paymentRangeChart'"-->
-         <!--dc-width="1100"-->
-         <!--dc-x-units="dc.units.ordinal"-->
-         <!--dc-x="d3.scale.ordinal().rangeRoundBands([0, 250], .05)"-->
-         <!--dc-y-axis-label="'Summe pro Gruppe in T€'">-->
-    <!--</div>-->
+                <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
+                    Haushaltsansätze im Detail
+                </md-button>
 
-    <!--<div id="paymentRangeChart"-->
-         <!--dc-chart="barChart"-->
-         <!--dc-center-bar="true"-->
-         <!--dc-chart-group="1"-->
-         <!--dc-dimension="vm.yearDimension"-->
-         <!--dc-elastic-x="true"-->
-         <!--dc-elastic-y="true"-->
-         <!--dc-gap="1"-->
-         <!--dc-group="vm.paymentsOutSumGroup"-->
-         <!--dc-height="220"-->
-         <!--dc-margins="{top: 0, right: 0, bottom: 25, left: 50}"-->
-         <!--dc-mouse-zoomable="true"-->
-         <!--dc-name="'paymentRangeChart'"-->
-         <!--dc-width="1100"-->
-         <!--dc-x-units="dc.units.ordinal"-->
-         <!--dc-x="d3.scale.linear().domain([0, 200000])"-->
-         <!--dc-y-axis-label="'Summe pro Gruppe in T€'">-->
-    <!--</div>-->
+            </div>
 
+        </md-toolbar>
 
-    <!--<div class="md-whiteframe-z1">-->
-    <!--<md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">-->
-    <!--<div class="md-toolbar-tools">-->
+        <!--<div layout="column">-->
+        <!--<h3>Tabelle der Einzelbudget-->
+        <!--<span>-->
+        <!--<md-button class="md-raised md-primary" ng-click="vm.dataTable.filterAll()">-->
+        <!--<md-icon md-svg-icon="file:cloud_download"></md-icon>-->
+        <!--<span>Reset</span>-->
+        <!--</md-button>-->
 
-    <!--<md-button ui-sref="home" aria-label="Menü Startseite öffnen">-->
-    <!--Haushaltsansätze im Detail-->
-    <!--</md-button>-->
+        <!--</span>-->
+        <!--</h3>-->
 
-    <!--</div>-->
+        <table class="table table-hover dc-data-table dc-table-group layout-padding"
+               id='dc-table-graph'
+               dc-chart="dataTable"
+               dc-name="'Haushaltsansätze'"
+               dc-chart-group="1"
+               dc-width="1000"
+               dc-height="400"
+               dc-dimension="vm.yearDimension"
+               dc-group="vm.tableGroup"
+               dc-size="20"
+               dc-post-setup-chart="vm.tablePostSetupChart">
 
-    <!--</md-toolbar>-->
+            <thead>
+            <tr class='header'>
+                <th flex>Jahr</th>
+                <th flex>Produkt</th>
+                <th flex>Konto</th>
+                <th flex><span style="float:right; padding-right:5px">Betrag in €</span></th>
+            </tr>
+            </thead>
 
-    <!--<div layout="column">-->
-    <!--<h3>Tabelle der Einzelbudget-->
-    <!--<span>-->
-    <!--<md-button class="md-raised md-primary" ng-click="vm.dataTable.filterAll()">-->
-    <!--<md-icon md-svg-icon="file:cloud_download"></md-icon>-->
-    <!--<span>Reset</span>-->
-    <!--</md-button>-->
+        </table>
+    </div>
 
-    <!--</span>-->
-    <!--</h3>-->
+    <!--<div ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer class="grid"></div>-->
 
-    <!--<div flex>-->
-    <!--<table class='table table-hover' id='dc-table-graph'>-->
-    <!--<thead>-->
-    <!--<tr class='header'>-->
-    <!--<th>Jahr</th>-->
-    <!--<th>Produkt</th>-->
-    <!--<th>Konto</th>-->
-    <!--<th><span style="float:right">Betrag in €</span></th>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--</table>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--&lt;!&ndash;<div layout="row" layout-align="space-between center">&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<div flex>&ndash;&gt;-->
-    <!--&lt;!&ndash;<div layout="column" layout-align="space-between center" layout-fill>&ndash;&gt;-->
-    <!--&lt;!&ndash;<h2 class="md-subhead">Zahlungen</h2>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<table class='table table-hover' id='dc-table-graph'>&ndash;&gt;-->
-    <!--&lt;!&ndash;<thead>&ndash;&gt;-->
-    <!--&lt;!&ndash;<tr class='header'>&ndash;&gt;-->
-    <!--&lt;!&ndash;<th>Jahr</th>&ndash;&gt;-->
-    <!--&lt;!&ndash;<th>Produkt</th>&ndash;&gt;-->
-    <!--&lt;!&ndash;<th>Konto</th>&ndash;&gt;-->
-    <!--&lt;!&ndash;<th><span style="float:right">Betrag in €</span></th>&ndash;&gt;-->
-    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-    <!--&lt;!&ndash;</thead>&ndash;&gt;-->
-    <!--&lt;!&ndash;</table>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;<div class="table table-hover dc-data-table" dc-chart="dataTable"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-name="'Haushaltsansätze'"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-chart-group="1"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-width="1000"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-height="400"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-dimension="vm.yearDimension"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-group="vm.tableGroup"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-size="20"&ndash;&gt;-->
-    <!--&lt;!&ndash;dc-post-setup-chart="vm.tablePostSetupChart">&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
-
-    <!--</div>-->
-
+</div>
 </div>

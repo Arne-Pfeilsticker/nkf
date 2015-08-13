@@ -65,12 +65,15 @@
                 url: '/budget',
                 templateUrl: 'app/budget/budget.html',
                 controller: 'BudgetController',
-                controllerAs: 'vm'
-                //resolve: {
-                //    bookingData: ['nkfApi', function (nkfApi) {
-                //        return nkfApi.getBookingsByPid('de.05111000');
-                //    }]
-                //}
+                controllerAs: 'vm',
+                resolve: {
+                    productTypes: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getProductTypes();
+                    }],
+                    frameworkShortcuts: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getFrameworkShortcuts();
+                    }]
+                }
             })
             .state('import', {
                 url: '/import',

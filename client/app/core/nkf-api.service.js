@@ -25,6 +25,7 @@
 
             getProductTypes: getProductTypes,
             // Accounting
+            getFrameworkShortcuts: getFrameworkShortcuts,
             getFramework: getFramework,
             getBookingsByPid: getBookingsByPid,
             importBookings: importBookings
@@ -94,6 +95,10 @@
 
         function getFramework() {
             return httpGet('/getFramework');
+        }
+
+        function getFrameworkShortcuts() {
+            return httpGet('/framework_getShortcuts');
         }
 
         function getBookingsByPid(pid) {
