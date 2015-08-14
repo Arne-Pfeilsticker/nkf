@@ -13,6 +13,10 @@
                 <md-icon md-svg-icon="file:cloud_download"></md-icon>
                 <span>Anzeigen</span>
             </md-button>
+            <md-button class="md-raised md-primary" ng-click="vm.resetAll()" class="md-button"
+                       aria-label="Grafiken zurücksetzen">
+                Auswahl Zurücksetzen
+            </md-button>
         </span>
 
     </md-content>
@@ -24,18 +28,17 @@
                 <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
                     Güterebene
                 </md-button>
-                <h2>Zahlungen nach ...</h2>
-
             </div>
 
         </md-toolbar>
 
-        <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
-            <div layout="column" layout-align="space-between center" layout-fill>
-                <h2 class="md-title">Produktfelder</h2>
-                <a class="reset" href="javascript:rowChart1.filterAll();dc.redrawAll();">reset</a>
+        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Auszahlungen nach ...</h2>
 
-                <!--<div id="rowChartProductField"></div>-->
+        <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
+
+            <div layout="column" layout-align="space-between center" layout-fill>
+
+                <h2 class="md-title">Produktfelder</h2>
 
                 <div id="rowChart1"
                      dc-chart="rowChart"
@@ -81,9 +84,6 @@
                 <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
                     Finanzebene
                 </md-button>
-                <div>
-                    <a href="javascript:dc.filterAll(); dc.redrawAll();">Zurücksetzen</a>
-                </div>
 
             </div>
 
@@ -172,24 +172,23 @@
 
                 </div>
             </div>
-
-
         </div>
 
-        <div layout="column" layout-padding>
+        <div layout="column" layout-align="space-between center" layout-padding>
 
             <div class="dc-chart" id="paymentRangeChart"
                  dc-chart="barChart"
                  dc-bar-padding="0.01"
-                 dc-brush-on="true"
+                 dc-brush-on="false"
                  dc-chart-group="1"
                  dc-dimension="vm.paymentDimension"
-                 dc-elastic-x="false"
+                 dc-elastic-x="true"
                  dc-elastic-y="true"
                  dc-gap="1"
                  dc-group="vm.paymentGroup"
                  dc-height="220"
-                 dc-margins="{top: 30, right: 0, bottom: 25, left: 60}"
+                 dc-margins="{top: 30, right: 25, bottom: 25, left: 60}"
+                 dc-name="'paymentRangeChart'"
                  dc-options="vm.paymentRangeChartOptions"
                  dc-post-setup-chart="vm.setupRangeChart"
                  dc-render-horizontal-grid-lines="true"
@@ -218,17 +217,6 @@
 
         </md-toolbar>
 
-        <!--<div layout="column">-->
-        <!--<h3>Tabelle der Einzelbudget-->
-        <!--<span>-->
-        <!--<md-button class="md-raised md-primary" ng-click="vm.dataTable.filterAll()">-->
-        <!--<md-icon md-svg-icon="file:cloud_download"></md-icon>-->
-        <!--<span>Reset</span>-->
-        <!--</md-button>-->
-
-        <!--</span>-->
-        <!--</h3>-->
-
         <table class="table table-hover dc-data-table dc-table-group layout-padding"
                id='dc-table-graph'
                dc-chart="dataTable"
@@ -252,8 +240,4 @@
 
         </table>
     </div>
-
-    <!--<div ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer class="grid"></div>-->
-
-</div>
 </div>

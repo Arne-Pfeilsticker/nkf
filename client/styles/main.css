@@ -96,6 +96,14 @@ md-icon {
     fill: black;
 }
 
+.dc-chart g.dc-tooltip path {
+    font-size: large;
+    fill: none;
+    stroke: grey;
+    stroke-opacity: .8;
+}
+
+
 /**
 * dc table
 */
