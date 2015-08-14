@@ -103,6 +103,17 @@
                     }]
                 }
             })
+            .state('producttypes', {
+                url: '/producttypes',
+                templateUrl: 'app/products/product-types.html',
+                controller: 'ProductTypesController',
+                controllerAs: 'vm',
+                resolve: {
+                    productTypes: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getProductTypes();
+                    }]
+                }
+            })
             .state('framework', {
                 url: '/framework',
                 templateUrl: 'app/accounting/framework.html',

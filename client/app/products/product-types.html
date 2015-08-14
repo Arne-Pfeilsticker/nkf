@@ -1,0 +1,10 @@
+<div layout="column" layout-margin layout-fill layout-padding>
+
+        <h2 class="md-headline">NKF Produkthierachie</h2>
+
+        <!--<div id="grid2" ui-grid="vm.gridOptions" ui-grid-tree-view class="grid"></div>-->
+        <!--<div ui-if="gridData.data.length>0" ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer class="grid" ui-grid-auto-resize ng-style="vm.getTableHeight()" ui-grid-edit></div>-->
+
+        <div md-flex ui-if="vm.gridOptions.data.length>0" ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer ui-grid-resize-columns class="grid" ui-grid-auto-resize style="height: 600px"></div>
+
+</div>
