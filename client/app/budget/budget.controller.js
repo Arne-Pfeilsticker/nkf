@@ -3,18 +3,17 @@
 
     angular.module('nkfApp').controller('BudgetController', BudgetController);
 
-    BudgetController.$inject = ['$scope', '$state', '$http', 'nkfApi', 'productTypes', 'frameworkShortcuts'];
+    BudgetController.$inject = ['$scope', '$state', '$http', 'nkfApi', 'productTypes', 'personsBooked', 'frameworkShortcuts'];
 
-    function BudgetController($scope, $state, $http, nkfApi, productTypes, frameworkShortcuts) {
+    function BudgetController($scope, $state, $http, nkfApi, productTypes, personsBooked, frameworkShortcuts) {
         /* jshint validthis: true */
         var vm = this;
 
-        vm.personId = 'de.05315000';
+        vm.personsBooked = personsBooked;
+
+        vm.personId = '';
 
         //vm.yearDimensionData = {};
-
-        vm.productTypes = {};
-        vm.frameworkShortcuts = {};
 
         //todo: implement locals
         vm.de_DE = {
@@ -64,11 +63,16 @@
             //return d === $scope.x.domain()[1] ? s + " Mio.€" : s;
         }
 
+        vm.productTypes = {};
+        vm.productTypeParent = {};
 
         for (var i = 0, len = productTypes.length; i < len; i++) {
 
             vm.productTypes[productTypes[i].id] = productTypes[i].label;
+            vm.productTypeParent[productTypes[i].id] = productTypes[i].parent_id;
         }
+
+        vm.frameworkShortcuts = {};
 
         for (var i = 0, len = frameworkShortcuts.length; i < len; i++) {
 
@@ -145,11 +149,11 @@
         });
 
         vm.prodIn2Dimension = vm.ndx.dimension(function (d) {
-            return d.productId.substring(0, 2);
+            return vm.productTypeParent[d.productId];
         });
 
         vm.prodOut2Dimension = vm.ndx.dimension(function (d) {
-            return d.productId.substring(0, 2);
+            return vm.productTypeParent[d.productId];
         });
 
         vm.prodIn2SumGroup = vm.prodIn2Dimension.group().reduceSum(function (d) {
@@ -161,11 +165,11 @@
         });
 
         vm.prodIn3Dimension = vm.ndx.dimension(function (d) {
-            return d.productId.substring(0, 3);
+            return d.productId;
         });
 
         vm.prodOut3Dimension = vm.ndx.dimension(function (d) {
-            return d.productId.substring(0, 3);
+            return d.productId;
         });
 
         vm.prodIn3SumGroup = vm.prodIn3Dimension.group().reduceSum(function (d) {

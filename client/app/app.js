@@ -70,6 +70,9 @@
                     productTypes: ['nkfApi', function (nkfApi) {
                         return nkfApi.getProductTypes();
                     }],
+                    personsBooked: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getPersonsBooked();
+                    }],
                     frameworkShortcuts: ['nkfApi', function (nkfApi) {
                         return nkfApi.getFrameworkShortcuts();
                     }]

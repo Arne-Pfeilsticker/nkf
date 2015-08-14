@@ -1,14 +1,25 @@
 <div layout="column" layout-margin layout-fill layout-padding>
 
-    <md-content layout-padding layout="row" layout-align="start end" layout-sm="column">
-        <h1 class="md-display-1" style="margin: 0" layout-padding>Haushaltsübersicht</h1>
-        <md-input-container flex>
-            <label>Gemeindekennzahl</label>
-            <input ng-model="vm.personId"/>
-        </md-input-container>
+    <md-content layout="row" layout-align="space-between center" class="md-padding" layout-sm="column">
+        <h1 class="md-display-1" style="margin: 0px">Haushaltsübersicht</h1>
+            <span >
+                <md-input-container flex style="padding: 0px">
+                    <md-select class="md-display-1" style="margin: 0px; padding: 0px" placeholder="Kommune auswählen" ng-model="vm.personId">
+                        <md-option ng-repeat="person in vm.personsBooked" value="{{person.id}}">
+                            {{person.person_type}} {{person.name}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </span>
+
+
+
+        <!--<md-input-container flex>-->
+        <!--<label>Gemeindekennzahl</label>-->
+        <!--<input ng-model="vm.personId"/>-->
+        <!--</md-input-container>-->
 
         <span>
-
             <md-button class="md-raised md-primary" ng-click="vm.bookingsData(vm.personId)">
                 <md-icon md-svg-icon="file:cloud_download"></md-icon>
                 <span>Anzeigen</span>
@@ -20,7 +31,7 @@
         </span>
 
     </md-content>
-
+    <!--<md-progress-linear md-mode="indeterminate" ng-show="vm.loading"></md-progress-linear>-->
     <div class="spinner" ng-show="vm.loading"></div>
 
     <div class="md-whiteframe-z1">
@@ -172,15 +183,15 @@
                 </div>
             </div>
             <!--<div flex>-->
-                <!--<div layout="column" layout-align="center center" layout-margin layout-padding>-->
-                    <!--<h2 class="md-title">-->
-                        <!--Forderungen-->
-                    <!--</h2>-->
+            <!--<div layout="column" layout-align="center center" layout-margin layout-padding>-->
+            <!--<h2 class="md-title">-->
+            <!--Forderungen-->
+            <!--</h2>-->
 
-                    <!--<h2 class="md-title">-->
-                        <!--Verbindlichkeiten-->
-                    <!--</h2>-->
-                <!--</div>-->
+            <!--<h2 class="md-title">-->
+            <!--Verbindlichkeiten-->
+            <!--</h2>-->
+            <!--</div>-->
             <!--</div>-->
             <div flex>
                 <div layout="row" layout-align="space-between center" layout-fill>

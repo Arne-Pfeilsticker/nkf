@@ -21,8 +21,9 @@
             // Persons
             deletePerson: deletePerson,
             getPersons: getPersons,
+            getPersonsBooked: getPersonsBooked,
             savePerson: savePerson,
-
+            // Product types
             getProductTypes: getProductTypes,
             // Accounting
             getFrameworkShortcuts: getFrameworkShortcuts,
@@ -89,6 +90,10 @@
 
         function getPersons() {
             return httpGet('/persons_getAll');
+        }
+
+        function getPersonsBooked() {
+            return httpGet('/persons_booked');
         }
 
         // Accounting
