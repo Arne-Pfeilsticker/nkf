@@ -103,39 +103,76 @@
         vm.yearDimension = vm.ndx.dimension(function (d) {
             return d.bookingYear;
         });
-        //console.log(vm.yearDimension.top(4));
-        vm.paymentsSumGroup = vm.yearDimension.group().reduceSum(function (d) {
+
+        vm.yearInDimension = vm.ndx.dimension(function (d) {
+            return d.bookingYear;
+        });
+
+        vm.yearOutDimension = vm.ndx.dimension(function (d) {
+            return d.bookingYear;
+        });
+
+        vm.paymentsSumGroup = vm.yearInDimension.group().reduceSum(function (d) {
+            return Math.round(d.amount / 1000000);
+        });
+
+        vm.paymentsInSumGroup = vm.yearInDimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsIn / 1000000);
         });
 
-        vm.paymentsOutSumGroup = vm.yearDimension.group().reduceSum(function (d) {
+        vm.paymentsOutSumGroup = vm.yearOutDimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000000);
         });
 
         //console.log(vm.paymentsSumGroup.top(3));
         //console.log(vm.paymentsOutSumGroup.top(2));
 
-        vm.prod1Dimension = vm.ndx.dimension(function (d) {
+        vm.prodIn1Dimension = vm.ndx.dimension(function (d) {
             return d.productId.substring(0, 1);
         });
 
-        vm.prod1SumGroup = vm.prod1Dimension.group().reduceSum(function (d) {
+        vm.prodOut1Dimension = vm.ndx.dimension(function (d) {
+            return d.productId.substring(0, 1);
+        });
+
+
+        vm.prodIn1SumGroup = vm.prodIn1Dimension.group().reduceSum(function (d) {
+            return Math.round(d.paymentsIn / 1000);
+        });
+
+        vm.prodOut1SumGroup = vm.prodOut1Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
 
-        vm.prod2Dimension = vm.ndx.dimension(function (d) {
+        vm.prodIn2Dimension = vm.ndx.dimension(function (d) {
             return d.productId.substring(0, 2);
         });
 
-        vm.prod2SumGroup = vm.prod2Dimension.group().reduceSum(function (d) {
+        vm.prodOut2Dimension = vm.ndx.dimension(function (d) {
+            return d.productId.substring(0, 2);
+        });
+
+        vm.prodIn2SumGroup = vm.prodIn2Dimension.group().reduceSum(function (d) {
+            return Math.round(d.paymentsIn / 1000);
+        });
+
+        vm.prodOut2SumGroup = vm.prodOut2Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
 
-        vm.prod3Dimension = vm.ndx.dimension(function (d) {
+        vm.prodIn3Dimension = vm.ndx.dimension(function (d) {
             return d.productId.substring(0, 3);
         });
 
-        vm.prod3SumGroup = vm.prod3Dimension.group().reduceSum(function (d) {
+        vm.prodOut3Dimension = vm.ndx.dimension(function (d) {
+            return d.productId.substring(0, 3);
+        });
+
+        vm.prodIn3SumGroup = vm.prodIn3Dimension.group().reduceSum(function (d) {
+            return Math.round(d.paymentsIn / 1000);
+        });
+
+        vm.prodOut3SumGroup = vm.prodOut3Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
 
@@ -143,7 +180,7 @@
         vm.paymentDimension = vm.ndx.dimension(function (d) {
             return Math.round(d.amount / 1000);
         });
-        vm.paymentMax = 200000;
+        //vm.paymentMax = 20000000;
 
         //console.log(vm.paymentDimension);
         //vm.paymentGroup = vm.paymentDimension.group(function (d) {

@@ -21,6 +21,8 @@
 
     </md-content>
 
+    <div class="spinner" ng-show="vm.loading"></div>
+
     <div class="md-whiteframe-z1">
         <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
             <div class="md-toolbar-tools">
@@ -32,7 +34,7 @@
 
         </md-toolbar>
 
-        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Auszahlungen nach ...</h2>
+        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Einzahlungen nach ...</h2>
 
         <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
 
@@ -40,10 +42,10 @@
 
                 <h2 class="md-title">Produktfelder</h2>
 
-                <div id="rowChart1"
+                <div id="paymentsIn1"
                      dc-chart="rowChart"
                      dc-chart-group="1"
-                     dc-dimension="vm.prod1Dimension" dc-group="vm.prod1SumGroup"
+                     dc-dimension="vm.prodIn1Dimension" dc-group="vm.prodIn1SumGroup"
                      dc-options="vm.rowChartOptions"
                      dc-post-setup-chart="vm.rowChartPostSetup">
                 </div>
@@ -52,10 +54,10 @@
             <div layout="column" layout-align="space-between center" layout-fill>
                 <h2 class="md-title">Produktbereiche</h2>
 
-                <div id="rowChart2"
+                <div id="paymentsIn2"
                      dc-chart="rowChart"
                      dc-chart-group="1"
-                     dc-dimension="vm.prod2Dimension" dc-group="vm.prod2SumGroup"
+                     dc-dimension="vm.prodIn2Dimension" dc-group="vm.prodIn2SumGroup"
                      dc-options="vm.rowChartOptions"
                      dc-post-setup-chart="vm.rowChartPostSetup">
                 </div>
@@ -64,10 +66,53 @@
             <div layout="column" layout-align="space-between center" layout-fill>
                 <h2 class="md-title">Produktgruppen</h2>
 
-                <div id="rowChart3"
+                <div id="paymentsIn3"
                      dc-chart="rowChart"
                      dc-chart-group="1"
-                     dc-dimension="vm.prod3Dimension" dc-group="vm.prod3SumGroup"
+                     dc-dimension="vm.prodIn3Dimension" dc-group="vm.prodIn3SumGroup"
+                     dc-options="vm.rowChartOptions"
+                     dc-post-setup-chart="vm.rowChartPostSetup">
+                </div>
+
+            </div>
+        </div>
+
+        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Auszahlungen nach ...</h2>
+
+        <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
+
+            <div layout="column" layout-align="space-between center" layout-fill>
+
+                <h2 class="md-title">Produktfelder</h2>
+
+                <div id="paymentsOut1"
+                     dc-chart="rowChart"
+                     dc-chart-group="1"
+                     dc-dimension="vm.prodOut1Dimension" dc-group="vm.prodOut1SumGroup"
+                     dc-options="vm.rowChartOptions"
+                     dc-post-setup-chart="vm.rowChartPostSetup">
+                </div>
+
+            </div>
+            <div layout="column" layout-align="space-between center" layout-fill>
+                <h2 class="md-title">Produktbereiche</h2>
+
+                <div id="paymentsOut2"
+                     dc-chart="rowChart"
+                     dc-chart-group="1"
+                     dc-dimension="vm.prodOut2Dimension" dc-group="vm.prodOut2SumGroup"
+                     dc-options="vm.rowChartOptions"
+                     dc-post-setup-chart="vm.rowChartPostSetup">
+                </div>
+
+            </div>
+            <div layout="column" layout-align="space-between center" layout-fill>
+                <h2 class="md-title">Produktgruppen</h2>
+
+                <div id="paymentsOut3"
+                     dc-chart="rowChart"
+                     dc-chart-group="1"
+                     dc-dimension="vm.prodOut3Dimension" dc-group="vm.prodOut3SumGroup"
                      dc-options="vm.rowChartOptions"
                      dc-post-setup-chart="vm.rowChartPostSetup">
                 </div>
@@ -108,8 +153,8 @@
                                  dc-gap="1"
                                  dc.bar-padding="0.01"
                                  dc.outer-padding="0.05"
-                                 dc-dimension="vm.yearDimension"
-                                 dc-group="vm.paymentsSumGroup"
+                                 dc-dimension="vm.yearInDimension"
+                                 dc-group="vm.paymentsInSumGroup"
                                  dc-elastic-x="true"
                                  dc-elastic-y="true"
                                  dc-center-bar="true">
@@ -126,17 +171,17 @@
                     </div>
                 </div>
             </div>
-            <div flex>
-                <div layout="column" layout-align="center center" layout-margin layout-padding>
-                    <h2 class="md-title">
-                        Forderungen
-                    </h2>
+            <!--<div flex>-->
+                <!--<div layout="column" layout-align="center center" layout-margin layout-padding>-->
+                    <!--<h2 class="md-title">-->
+                        <!--Forderungen-->
+                    <!--</h2>-->
 
-                    <h2 class="md-title">
-                        Verbindlichkeiten
-                    </h2>
-                </div>
-            </div>
+                    <!--<h2 class="md-title">-->
+                        <!--Verbindlichkeiten-->
+                    <!--</h2>-->
+                <!--</div>-->
+            <!--</div>-->
             <div flex>
                 <div layout="row" layout-align="space-between center" layout-fill>
                     <div flex style="background-color: #ffff4f">
@@ -155,7 +200,7 @@
                                  dc-gap="1"
                                  dc.bar-padding="0.01"
                                  dc.outer-padding="0.05"
-                                 dc-dimension="vm.yearDimension"
+                                 dc-dimension="vm.yearOutDimension"
                                  dc-group="vm.paymentsOutSumGroup"
                                  dc-elastic-x="true"
                                  dc-elastic-y="true"
