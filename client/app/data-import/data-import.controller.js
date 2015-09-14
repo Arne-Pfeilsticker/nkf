@@ -12,8 +12,8 @@
         //vm.notesCollapsed = true;
         //vm.navigate = navigate;
         vm.activate = activate;
-        vm.personId = '05315000';
-        vm.table = '71147GJ001';
+        vm.personId = '05111000';  // Düsseldorf
+        vm.table = '71147GJ001';   // Einzahlungen
         vm.bookingYear = '2009';
 
         vm.loading = false;

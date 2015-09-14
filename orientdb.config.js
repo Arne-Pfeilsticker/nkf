@@ -4,6 +4,7 @@
 module.exports = (function () {
     var
     // OrientDB database name
+        orientHost = 'localhost',
         orientDB = 'nkf',
 
     // OrientDB Server User and Password
@@ -21,12 +22,14 @@ module.exports = (function () {
         orientImportPath = process.cwd() + '/import',
 
     // Remote access to database
-        orientRemote = 'remote:/localhost/databases/' + orientDB
+        //orientRemote = 'remote:h2258975.stratoserver.net/' + orientDB
+        orientRemote = orientHost + '/' + orientDB
         ;
 
     return {
         DB: orientDB,
         Home: orientHome,
+        Host: orientHost,
 
         Remote: orientRemote,
 

@@ -105,12 +105,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('orientDBCreate', 'Drop and create OrientDB database and classes.', function () {
         grunt.task.run([
-            //'shell:dropDB',
-            //'shell:createDB',
-            //'shell:execSQLfile:./import/persons/createPersonClasses.sql',
-            //'shell:execSQLfile:./import/products/createProductTypesClass.sql',
-            //'shell:execSQLfile:./import/accounting/createFrameworkClass.sql',
-            //'shell:execSQLfile:./import/accounting/createBookingsClass.sql',
+            'shell:dropDB',
+            'shell:createDB',
+            'shell:execSQLfile:./import/persons/createPersonClasses.sql',
+            'shell:execSQLfile:./import/products/createProductTypesClass.sql',
+            'shell:execSQLfile:./import/hierarchies/createHierarchiesClass.sql',
+            'shell:execSQLfile:./import/accounting/createFrameworkClass.sql',
+            'shell:execSQLfile:./import/accounting/createBookingsClass.sql',
             'shell:execSQLfile:./import/accounting/createTimelineClasses.sql'
         ]);
     });

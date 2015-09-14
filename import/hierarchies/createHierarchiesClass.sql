@@ -1,0 +1,10 @@
+create class Hierarchies extends V;
+create property Hierarchies.hierarchy_id string;
+create property Hierarchies.class string;
+create property Hierarchies.root_rid string;
+create property Hierarchies.label string;
+create property Hierarchies.shortcut string;
+alter property Hierarchies.hierarchy_id MANDATORY=true;
+alter property Hierarchies.label MANDATORY=true;
+alter property Hierarchies.hierarchy_id NOTNULL=true;
+alter property Hierarchies.label NOTNULL=true;

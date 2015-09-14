@@ -42,9 +42,9 @@
   ],
   "loader": {
     "orientdb": {
-      "dbURL": "remote:/localhost/databases/nkf",
-      "dbUser": "root",
-      "dbPassword": "arne",
+      "dbURL": "remote:h2258975.stratoserver.net/nkf",
+      "dbUser": "odbadmin",
+      "dbPassword": "odbadmin",
       "dbType": "graph",
       "dbAutoCreate": true,
       "wal": false,

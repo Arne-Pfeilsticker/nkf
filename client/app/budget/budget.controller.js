@@ -3,14 +3,13 @@
 
     angular.module('nkfApp').controller('BudgetController', BudgetController);
 
-    BudgetController.$inject = ['$scope', '$state', '$http', 'nkfApi', 'productTypes', 'personsBooked', 'frameworkShortcuts'];
+    BudgetController.$inject = ['$scope', '$state', '$http', 'nkfApi', 'productTypes', 'personsBooked', 'framework', 'frameworkShortcuts'];
 
-    function BudgetController($scope, $state, $http, nkfApi, productTypes, personsBooked, frameworkShortcuts) {
+    function BudgetController($scope, $state, $http, nkfApi, productTypes, personsBooked, framework, frameworkShortcuts) {
         /* jshint validthis: true */
         var vm = this;
 
         vm.personsBooked = personsBooked;
-
         vm.personId = '';
 
         //vm.yearDimensionData = {};
@@ -78,7 +77,29 @@
 
             vm.frameworkShortcuts[frameworkShortcuts[i].id] = frameworkShortcuts[i].shortcut;
         }
-        //console.log(vm.frameworkShortcuts);
+
+        vm.framework = {};
+        vm.frameworkLevelMax = 0;
+        vm.frameworkRid = '';
+        vm.frameworkId = '';
+
+        for (var i = 0, len = framework.length; i < len; i++) {
+
+            vm.frameworkRid = framework[i].rid;
+            vm.frameworkId = framework[i].id;
+
+            framework[i].$path = [ framework[i].$path.match(/(#\d+:\d+)/g) ];
+
+            vm.framework[vm.frameworkRid] = framework[i];
+            vm.framework[vm.frameworkId] = vm.frameworkRid;
+
+            if (vm.frameworkLevelMax < framework[i].$$treeLevel) {
+                vm.frameworkLevelMax = framework[i].$$treeLevel
+            }
+        }
+
+
+        //console.log(vm.framework);
 
         // ui-grid
         //vm.gridOptions = {
@@ -139,7 +160,6 @@
             return d.productId.substring(0, 1);
         });
 
-
         vm.prodIn1SumGroup = vm.prodIn1Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsIn / 1000);
         });
@@ -179,6 +199,29 @@
         vm.prodOut3SumGroup = vm.prodOut3Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
+
+        // Account dimensions and groups
+
+        vm.accountIn1Dimension = vm.ndx.dimension(function (d) {
+            return vm.framework[vm.framework[d.account]].$$treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
+        });
+
+        vm.accountOut1Dimension = vm.ndx.dimension(function (d) {
+            vm.frameworkRid = vm.framework[d.account];
+            vm.framworkIdObject = vm.framework[vm.frameworkRid];
+            return vm.framworkIdObject.$$treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
+        });
+
+        vm.accountIn1SumGroup = vm.accountIn1Dimension.group().reduceSum(function (d) {
+            return Math.round(d.paymentsIn / 1000);
+        });
+
+        vm.accountOut1SumGroup = vm.accountOut1Dimension.group().reduceSum(function (d) {
+            return Math.round(d.paymentsOut / 1000);
+        });
+
+
+
 
         //Payment group dimension
         vm.paymentDimension = vm.ndx.dimension(function (d) {

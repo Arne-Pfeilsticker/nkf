@@ -12,6 +12,8 @@
 
     function nkfApi($http) {
         var service = {
+            // Hierarchies
+            getHierarchyById: getHierarchyById,
             // Person types
             addPersonType: addPersonType,
             deletePersonType: deletePersonType,
@@ -28,11 +30,12 @@
             // Accounting
             getFrameworkShortcuts: getFrameworkShortcuts,
             getFramework: getFramework,
+            importFramework: importFramework,
             getBookingsByPid: getBookingsByPid,
             importBookings: importBookings
         };
 
-        var baseUrl = 'http://localhost:2480/function/nkf';
+        var baseUrl = 'http://egov-infrastructure.org:2480/function/nkf';
         var requestConfig = {
             headers: {
                 'Authorization': 'Basic YWRtaW46YWRtaW4='
@@ -44,6 +47,10 @@
         return service;
 
         //////////////////////////////////////////
+
+        function getHierarchyById(id) {
+            return httpGet('/hierarchy_getById/' + id);
+        }
 
         // Person Types (= legal entity typ)
 
@@ -110,11 +117,13 @@
             return httpGet('/getBookingsByPid/' + pid);
         }
 
+        function importFramework(values) {
+            return httpPost('/framework_import', values);
+        }
+
         function importBookings(values) {
             return httpPost('/importBookings', values);
         }
-
-
 
         /** Private Methods **/
 
