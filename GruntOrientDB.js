@@ -1,11 +1,5 @@
 'use strict';
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-shell');
@@ -45,6 +39,18 @@ module.exports = function (grunt) {
             },
             dropDB: {
                 command: orient.Console + '"drop database ' + orient.Remote + orient.SUserPassword + '"'
+            },
+            importServersideFunctions: {
+                command: function (importfile) {
+
+                    return orient.Console + '"' + orient.Connect + ';delete from OFunction;IMPORT DATABASE ' + orient.ImportPath + importfile + ' -merge=true"'
+                }
+            },
+            exportServersideFunctions: {
+                command: function (exportfile) {
+
+                    return orient.Console + '"' + orient.Connect + ';EXPORT DATABASE ' + orient.ImportPath + exportfile + ' -includeClass=OFunction -includeInfo=false -includeClusterDefinitions=false -includeSchema=false -includeIndexDefinitions=false -includeManualIndexes=false"'
+                }
             },
             execSQLfile: {
                 command: function (sqlfile) {
@@ -93,7 +99,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('orientDBCreateAndLoad', [
         'orientDBCreate',
-        'orientDBLoadData'
+        'orientDBLoadData',
+        'importServersideFunctions'
     ]);
 
     grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
@@ -158,8 +165,16 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('createServersideFunctions', 'Create all serverside functions', function () {
-        require('./server/serverside.functions');
+    grunt.registerTask('importServersideFunctions', 'Import all serverside js functions', function () {
+        grunt.task.run([
+            'shell:importServersideFunctions:/functions/functions.json.gz'
+        ]);
+    });
+
+    grunt.registerTask('exportServersideFunctions', 'Export all serverside js functions', function () {
+        grunt.task.run([
+            'shell:exportServersideFunctions:/functions/functions.json.gz'
+        ]);
     });
 
 };

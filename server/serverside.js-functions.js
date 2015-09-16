@@ -2,14 +2,14 @@
  * Definition of the server side js functions
  */
 
-module.exports = (function () {
+(function () {
 
     // OrientDB Parameters and Command parts
     var odb = require('../orientdb.config');
 
     var parseFn = require("parse-function");
-    var Orientjs = require('../node_modules/orientjs/lib');
-//    var Orientjs = require('orientjs');
+    //var Orientjs = require('../node_modules/orientjs/lib');
+    var Orientjs = require('orientjs');
 
     var server = Orientjs({
         // host: 'h2258975.stratoserver.net',
@@ -36,9 +36,9 @@ module.exports = (function () {
 
         return db.command('sql', 'select from OUser');
     })
-        .then(function(count) {
-        console.log("Function getAllUser created. Count: " + count)
-    });
+        .then(function (count) {
+            console.log("Function getAllUser created. Count: " + count)
+        });
 
     db.createFn(function importBookings() {
         /**
@@ -150,9 +150,9 @@ module.exports = (function () {
         return vt;
 
     })
-        .then(function(count) {
-        console.log("Function importBookings created. Count: " + count)
-    });
+        .then(function (count) {
+            console.log("Function importBookings created. Count: " + count)
+        });
 
     db.createFn(function framework_delete() {
         var db = orient.getGraph();
@@ -161,7 +161,7 @@ module.exports = (function () {
 
         return result;
     })
-        .then(function(count) {
+        .then(function (count) {
             console.log("Function framework_delete created. Count: " + count)
         });
 
@@ -268,8 +268,13 @@ module.exports = (function () {
         return vt;
 
     })
-        .then(function(count) {
-            console.log("Function framework_import created. Count: " + count)
+        .then(function (count) {
+            console.log("Function framework_import created. Count: " + count);
+
+            db.close();
+            server.close();
         });
+
+
 
 })();

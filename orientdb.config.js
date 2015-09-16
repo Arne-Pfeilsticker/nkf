@@ -23,7 +23,7 @@ module.exports = (function () {
 
     // Remote access to database
         //orientRemote = 'remote:h2258975.stratoserver.net/' + orientDB
-        orientRemote = orientHost + '/' + orientDB
+        orientRemote = 'remote:' + orientHost + '/' + orientDB
         ;
 
     return {
