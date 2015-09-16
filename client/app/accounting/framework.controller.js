@@ -33,7 +33,7 @@
                 {field: 'shortcut', displayName: 'Kurzbezeichnung', visible: false},
                 {field: 'beneficiary', displayName: 'Leistungsempfänger', visible: false},
                 {field: 'provider', displayName: 'Leister', visible: false},
-                {field: '$$treeLevel', displayName: 'Ebene', width: '*'},
+                {field: 'treeLevel', displayName: 'Ebene', width: '*'},
                 {field: 'rid', displayName: 'RId', width: '*'},
                 {field: '$path', displayName: 'Pfad', width: '*'},
                 {field: 'subaccounts', displayName: 'Anz. Unterkonten', width: '*'}

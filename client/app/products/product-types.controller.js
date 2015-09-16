@@ -26,7 +26,7 @@
                 {field: 'parent_id', visible: false, width: '*'},
                 {field: 'label', displayName: 'Bezeichnung', width: '60%'},
                 {field: 'subproducts', displayName: 'Anzahl Unterprodukte', visible: false, width: '*'},
-                {field: '$$treeLevel', displayName: 'Ebene', width: '*'}
+                {field: 'treeLevel', displayName: 'Ebene', width: '*'}
             ],
             importerDataAddCallback: function(grid, newObjects){
                 vm.productTypes = vm.productTypes.concat(newObjects);

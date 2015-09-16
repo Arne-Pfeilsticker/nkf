@@ -93,8 +93,8 @@
             vm.framework[vm.frameworkRid] = framework[i];
             vm.framework[vm.frameworkId] = vm.frameworkRid;
 
-            if (vm.frameworkLevelMax < framework[i].$$treeLevel) {
-                vm.frameworkLevelMax = framework[i].$$treeLevel
+            if (vm.frameworkLevelMax < framework[i].treeLevel) {
+                vm.frameworkLevelMax = framework[i].treeLevel
             }
         }
 
@@ -203,13 +203,13 @@
         // Account dimensions and groups
 
         vm.accountIn1Dimension = vm.ndx.dimension(function (d) {
-            return vm.framework[vm.framework[d.account]].$$treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
+            return vm.framework[vm.framework[d.account]].treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
         });
 
         vm.accountOut1Dimension = vm.ndx.dimension(function (d) {
             vm.frameworkRid = vm.framework[d.account];
             vm.framworkIdObject = vm.framework[vm.frameworkRid];
-            return vm.framworkIdObject.$$treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
+            return vm.framworkIdObject.treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
         });
 
         vm.accountIn1SumGroup = vm.accountIn1Dimension.group().reduceSum(function (d) {

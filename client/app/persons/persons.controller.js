@@ -17,7 +17,7 @@
         //for (var i = 0; i < vm.persons.length; i++) {
         //    var pid = '';
         //    if (vm.persons[i].personsubtypes == 0) {
-        //        vm.persons[i].$$treeLevel = null;
+        //        vm.persons[i].treeLevel = null;
         //    }
         //}
 
@@ -33,7 +33,7 @@
                 {field: 'person_type', displayName: 'Art', width: '*'},
                 {field: 'name', displayName: 'Name', width: '*'},
                 {field: 'wiki_url', displayName: 'Wiki-URL'},
-                {field: '$$treeLevel', displayName: 'Ebene'}
+                {field: 'treeLevel', displayName: 'Ebene'}
             ],
             importerDataAddCallback: function(grid, newObjects){
                 vm.persons = vm.persons.concat(newObjects);
