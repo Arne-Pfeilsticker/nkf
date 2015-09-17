@@ -6,6 +6,9 @@
 (function (appCore) {
     'use strict';
 
+    // Get OrientDB Parameters and Command parts
+    var orient = require('../../../orientdb.config');
+
     appCore.factory('nkfApi', nkfApi);
 
     nkfApi.$inject = ['$http'];
@@ -35,7 +38,8 @@
             importBookings: importBookings
         };
 
-        var baseUrl = 'http://egov-infrastructure.org:2480/function/nkf';
+        //var baseUrl = 'http://egov-infrastructure.org:2480/function/nkf';
+        var baseUrl = 'http://' + orient.Host + ':2480/function/' + orient.DB;
         var requestConfig = {
             headers: {
                 'Authorization': 'Basic YWRtaW46YWRtaW4='

@@ -35,10 +35,17 @@ module.exports = function (grunt) {
                 }
             },
             createDB: {
+                //command: orient.Console + '"create database ' + orient.Remote + orient.SUserPassword + '"'
                 command: orient.Console + '"create database ' + orient.Remote + orient.SUserPassword + 'plocal"'
             },
             dropDB: {
                 command: orient.Console + '"drop database ' + orient.Remote + orient.SUserPassword + '"'
+            },
+            generateTimeline: {
+                command: function () {
+
+                    return orient.Console + '"' + orient.Connect + ';INSERT INTO Timeline (bookingYear) VALUES (2009),(2010),(2011),(2012),(2013),(2014),(2015),(2016),(2017),(2018)"'
+                }
             },
             importServersideFunctions: {
                 command: function (importfile) {
@@ -100,7 +107,8 @@ module.exports = function (grunt) {
     grunt.registerTask('orientDBCreateAndLoad', [
         'orientDBCreate',
         'orientDBLoadData',
-        'importServersideFunctions'
+        'importServersideFunctions',
+        'generateTimeline'
     ]);
 
     grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
@@ -162,6 +170,12 @@ module.exports = function (grunt) {
         grunt.task.run([
             'changeEtlConfig:' + etlConfigFile + ':' + dataFile,
             'shell:loadData:' + etlConfigFile
+        ]);
+    });
+
+    grunt.registerTask('generateTimeline', 'Generate timeline data 2009 - 2018', function () {
+        grunt.task.run([
+            'shell:generateTimeline'
         ]);
     });
 

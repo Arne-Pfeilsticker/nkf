@@ -4,6 +4,7 @@
 module.exports = (function () {
     var
     // OrientDB database name
+        //orientHost = 'h2258975.stratoserver.net',
         orientHost = 'localhost',
         orientDB = 'nkf',
 
@@ -30,6 +31,8 @@ module.exports = (function () {
         DB: orientDB,
         Home: orientHome,
         Host: orientHost,
+
+        URL: orientHost + '/' + orientDB,
 
         Remote: orientRemote,
 
