@@ -10,7 +10,7 @@ module.exports = (function () {
 
     // OrientDB Server User and Password
         orientSUser = 'root',
-        orientSPassword = 'arne',
+        orientSPassword = 'root',
 
     // OrientDB Database User and Password
         orientDBUser = 'admin',

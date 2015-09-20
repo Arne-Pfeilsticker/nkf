@@ -44,7 +44,7 @@
     "orientdb": {
       "dbURL": "remote:localhost/nkf",
       "dbUser": "root",
-      "dbPassword": "arne",
+      "dbPassword": "root",
       "dbType": "graph",
       "dbAutoCreate": true,
       "wal": false,

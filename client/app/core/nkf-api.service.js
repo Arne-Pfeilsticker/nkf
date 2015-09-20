@@ -7,7 +7,7 @@
     'use strict';
 
     // Get OrientDB Parameters and Command parts
-    var orient = require('../../../orientdb.config');
+    //var orient = require('../../../orientdb.config');
 
     appCore.factory('nkfApi', nkfApi);
 
@@ -38,11 +38,15 @@
             importBookings: importBookings
         };
 
-        //var baseUrl = 'http://egov-infrastructure.org:2480/function/nkf';
-        var baseUrl = 'http://' + orient.Host + ':2480/function/' + orient.DB;
+        //var baseUrl = 'http://h2258975.stratoserver.net:2480/function/nkf';
+        var baseUrl = 'http://localhost:2480/function/nkf';
+        //var baseUrl = 'http://' + orient.Host + ':2480/function/' + orient.DB;
+        console.log('Base URL: ' + baseUrl);
+
         var requestConfig = {
             headers: {
                 'Authorization': 'Basic YWRtaW46YWRtaW4='
+                //'Access-Control-Allow-Origin': '*'
                 // 'Accept-Encoding': 'gzip,deflate',
                 // 'Content-Length': 500000
             }
@@ -131,25 +135,32 @@
 
         /** Private Methods **/
 
-        //function getUrlByPersonTypeId(url, personTypeId){
-        //    return url + '?$top=100&$filter=' + encodeURIComponent('personTypeId eq \'' + personTypeId + '\'');
-        //}
-
-        function httpDelete(url){
-            return httpExecute(url, 'DELETE');
-        }
-
         function httpExecute(requestUrl, method, data){
 
             return $http({
                 url: baseUrl + requestUrl,
                 method: method,
                 data: data,
-                headers: requestConfig.headers }).then(function(response){
+                headers: requestConfig.headers })
+                .then(function(response){
 
-                console.log('**response from EXECUTE', response);
+                console.log('** Response from EXECUTE NKF-Api: ', response);
                 return response.data.result;
             });
+
+            //return $http({
+            //    url: baseUrl + requestUrl,
+            //    method: method,
+            //    data: data })
+            //    .then(function(response){
+            //
+            //    console.log('**response from EXECUTE', response);
+            //    return response.data.result;
+            //});
+        }
+
+        function httpDelete(url){
+            return httpExecute(url, 'DELETE');
         }
 
         function httpGet(url){

@@ -208,8 +208,8 @@
 
         vm.accountOut1Dimension = vm.ndx.dimension(function (d) {
             vm.frameworkRid = vm.framework[d.account];
-            vm.framworkIdObject = vm.framework[vm.frameworkRid];
-            return vm.framworkIdObject.treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
+            vm.frameworkIdObject = vm.framework[vm.frameworkRid];
+            return vm.frameworkIdObject.treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
         });
 
         vm.accountIn1SumGroup = vm.accountIn1Dimension.group().reduceSum(function (d) {

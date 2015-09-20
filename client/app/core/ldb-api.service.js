@@ -16,7 +16,7 @@
             httpTableByGKZ: httpTableByGKZ
         };
 
-        delete $http.defaults.headers.common['X-Requested-With'];
+        // delete $http.defaults.headers.common['X-Requested-With']; // Nach app.js verlagert
 
         /**
          * Transform XML response to array of csv strings
@@ -85,6 +85,7 @@
 
             var headers = {
                 'Accept': 'application/xml',
+                'Access-Control-Allow-Origin': '*'
                 // 'Accept-Language': 'de'
             };
 

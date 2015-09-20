@@ -70,8 +70,11 @@
             //var frstr = "{" + JSON.stringify(values) + "}";
             //var frstr = {id:"NKF05",label:"Kontenrahmen"};
             //var frstr = vm.framework[0];
+            vm.hdata = { data: values };
 
-            nkfApi.importFramework( {msg:'hello word!'} )
+            console.log(vm.hdata);
+
+            nkfApi.importFramework( vm.hdata )
                 .then(function (results) {
                     console.log('Imported Framework data', results);
                 })

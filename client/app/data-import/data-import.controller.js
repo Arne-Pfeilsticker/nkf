@@ -97,7 +97,8 @@
             vm.loading = true;
             console.log(vm.importedData[0]);
             console.log(vm.importedData[0].personId);
-            nkfApi.importBookings(values)
+            vm.hdata = { data: values };
+            nkfApi.importBookings(vm.hdata)
                 .then(function (results) {
                     console.log('Imported data', results);
                 })
