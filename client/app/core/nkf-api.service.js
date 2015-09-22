@@ -45,8 +45,9 @@
 
         var requestConfig = {
             headers: {
-                'Authorization': 'Basic YWRtaW46YWRtaW4='
-                //'Access-Control-Allow-Origin': '*'
+                'Authorization': 'Basic YWRtaW46YWRtaW4=',
+                //'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json; charset=utf-8'
                 // 'Accept-Encoding': 'gzip,deflate',
                 // 'Content-Length': 500000
             }
@@ -98,7 +99,7 @@
         //    return httpGet(url);
         //}
 
-        function savePerson(person){
+        function savePerson(person) {
             return saveItem('/persons', person);
         }
 
@@ -135,18 +136,20 @@
 
         /** Private Methods **/
 
-        function httpExecute(requestUrl, method, data){
+        function httpExecute(requestUrl, method, data) {
 
             return $http({
                 url: baseUrl + requestUrl,
                 method: method,
                 data: data,
-                headers: requestConfig.headers })
-                .then(function(response){
+                //withCredentials: true,
+                headers: requestConfig.headers
+            })
+                .then(function (response) {
 
-                console.log('** Response from EXECUTE NKF-Api: ', response);
-                return response.data.result;
-            });
+                    console.log('** Response from EXECUTE NKF-Api: ', response);
+                    return response.data.result;
+                });
 
             //return $http({
             //    url: baseUrl + requestUrl,
@@ -159,23 +162,23 @@
             //});
         }
 
-        function httpDelete(url){
+        function httpDelete(url) {
             return httpExecute(url, 'DELETE');
         }
 
-        function httpGet(url){
+        function httpGet(url) {
             return httpExecute(url, 'GET');
         }
 
-        function httpPatch(url, data){
+        function httpPatch(url, data) {
             return httpExecute(url, 'PATCH', data);
         }
 
-        function httpPost(url, data){
+        function httpPost(url, data) {
             return httpExecute(url, 'POST', data);
         }
 
-        function saveItem(url, item){
+        function saveItem(url, item) {
             if (item.id) {
                 return httpPatch(url + '/' + item.id, item);
             } else {

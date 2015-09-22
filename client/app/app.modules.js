@@ -22,7 +22,7 @@
         'ui.grid.edit',
         'ui.grid.resizeColumns',
         'ui.grid.autoResize',
-        'ui.select',
+        //'ui.select',
         //'ui.alias'
         //'angularSoap'
         //'lodash',

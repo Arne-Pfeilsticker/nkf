@@ -34,7 +34,7 @@
             othersLabel: 'Sonstige',
             elasticX: true,
             elasticY: true,
-            sortBy: function (d) {return d.amount;},
+            //sortBy: function (d) {return d.amount;}, // Does not work in Crom
             x: d3.scale.linear()
         };
 
@@ -64,8 +64,9 @@
 
         vm.productTypes = {};
         vm.productTypeParent = {};
+        var i, len;
 
-        for (var i = 0, len = productTypes.length; i < len; i++) {
+        for (i = 0, len = productTypes.length; i < len; i++) {
 
             vm.productTypes[productTypes[i].id] = productTypes[i].label;
             vm.productTypeParent[productTypes[i].id] = productTypes[i].parent_id;
@@ -73,7 +74,7 @@
 
         vm.frameworkShortcuts = {};
 
-        for (var i = 0, len = frameworkShortcuts.length; i < len; i++) {
+        for (i = 0, len = frameworkShortcuts.length; i < len; i++) {
 
             vm.frameworkShortcuts[frameworkShortcuts[i].id] = frameworkShortcuts[i].shortcut;
         }
@@ -83,12 +84,12 @@
         vm.frameworkRid = '';
         vm.frameworkId = '';
 
-        for (var i = 0, len = framework.length; i < len; i++) {
+        for (i = 0, len = framework.length; i < len; i++) {
 
             vm.frameworkRid = framework[i].rid;
             vm.frameworkId = framework[i].id;
 
-            framework[i].$path = [ framework[i].$path.match(/(#\d+:\d+)/g) ];
+            framework[i].$path =  framework[i].$path.match(/(#\d+:\d+)/g) ;
 
             vm.framework[vm.frameworkRid] = framework[i];
             vm.framework[vm.frameworkId] = vm.frameworkRid;
@@ -122,6 +123,8 @@
         //
         //};
 
+        var dstr;
+
         vm.ndx = crossfilter();
         //console.log(vm.ndx);
 
@@ -129,105 +132,93 @@
             return d.bookingYear;
         });
 
-        vm.yearInDimension = vm.ndx.dimension(function (d) {
-            return d.bookingYear;
-        });
-
-        vm.yearOutDimension = vm.ndx.dimension(function (d) {
-            return d.bookingYear;
-        });
-
-        vm.paymentsSumGroup = vm.yearInDimension.group().reduceSum(function (d) {
+        vm.paymentsSumGroup = vm.yearDimension.group().reduceSum(function (d) {
             return Math.round(d.amount / 1000000);
         });
 
-        vm.paymentsInSumGroup = vm.yearInDimension.group().reduceSum(function (d) {
+        vm.paymentsInSumGroup = vm.yearDimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsIn / 1000000);
         });
 
-        vm.paymentsOutSumGroup = vm.yearOutDimension.group().reduceSum(function (d) {
+        vm.paymentsOutSumGroup = vm.yearDimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000000);
         });
 
         //console.log(vm.paymentsSumGroup.top(3));
         //console.log(vm.paymentsOutSumGroup.top(2));
 
-        vm.prodIn1Dimension = vm.ndx.dimension(function (d) {
-            return d.productId.substring(0, 1);
+        vm.prod1Dimension = vm.ndx.dimension(function (d) {
+            dstr = d.productId.substring(0, 1);
+            return typeof dstr === 'string' ? dstr : 'prod1Dimension';
+            //return d.productId.substring(0, 1);
         });
 
-        vm.prodOut1Dimension = vm.ndx.dimension(function (d) {
-            return d.productId.substring(0, 1);
-        });
-
-        vm.prodIn1SumGroup = vm.prodIn1Dimension.group().reduceSum(function (d) {
+        vm.prodIn1SumGroup = vm.prod1Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsIn / 1000);
         });
 
-        vm.prodOut1SumGroup = vm.prodOut1Dimension.group().reduceSum(function (d) {
+        vm.prodOut1SumGroup = vm.prod1Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
 
-        vm.prodIn2Dimension = vm.ndx.dimension(function (d) {
-            return vm.productTypeParent[d.productId];
+        vm.prod2Dimension = vm.ndx.dimension(function (d) {
+            dstr = vm.productTypeParent[d.productId];
+            return typeof dstr === 'string' ? dstr : 'prod2Dimension';
+            //return vm.productTypeParent[d.productId];
         });
 
-        vm.prodOut2Dimension = vm.ndx.dimension(function (d) {
-            return vm.productTypeParent[d.productId];
-        });
-
-        vm.prodIn2SumGroup = vm.prodIn2Dimension.group().reduceSum(function (d) {
+        vm.prodIn2SumGroup = vm.prod2Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsIn / 1000);
         });
 
-        vm.prodOut2SumGroup = vm.prodOut2Dimension.group().reduceSum(function (d) {
+        vm.prodOut2SumGroup = vm.prod2Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
 
-        vm.prodIn3Dimension = vm.ndx.dimension(function (d) {
-            return d.productId;
+        vm.prod3Dimension = vm.ndx.dimension(function (d) {
+            dstr = d.productId;
+            return typeof dstr === 'string' ? dstr : 'prod3Dimension';
+            //return d.productId;
         });
 
-        vm.prodOut3Dimension = vm.ndx.dimension(function (d) {
-            return d.productId;
-        });
-
-        vm.prodIn3SumGroup = vm.prodIn3Dimension.group().reduceSum(function (d) {
+        vm.prodIn3SumGroup = vm.prod3Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsIn / 1000);
         });
 
-        vm.prodOut3SumGroup = vm.prodOut3Dimension.group().reduceSum(function (d) {
+        vm.prodOut3SumGroup = vm.prod3Dimension.group().reduceSum(function (d) {
             return Math.round(d.paymentsOut / 1000);
         });
 
         // Account dimensions and groups
 
-        vm.accountIn1Dimension = vm.ndx.dimension(function (d) {
-            return vm.framework[vm.framework[d.account]].treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
-        });
-
-        vm.accountOut1Dimension = vm.ndx.dimension(function (d) {
-            vm.frameworkRid = vm.framework[d.account];
-            vm.frameworkIdObject = vm.framework[vm.frameworkRid];
-            return vm.frameworkIdObject.treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : null;
-        });
-
-        vm.accountIn1SumGroup = vm.accountIn1Dimension.group().reduceSum(function (d) {
-            return Math.round(d.paymentsIn / 1000);
-        });
-
-        vm.accountOut1SumGroup = vm.accountOut1Dimension.group().reduceSum(function (d) {
-            return Math.round(d.paymentsOut / 1000);
-        });
-
-
-
+        //vm.account1Dimension = vm.ndx.dimension(function (d) {
+        //    vm.frameworkIdObject = vm.framework[vm.framework[d.account]];
+        //    vm.frameworkId = vm.frameworkIdObject.$path[3];
+        //
+        //    if (vm.frameworkIdObject.TreeLevel > 2) {
+        //        if (typeof vm.frameworkId === 'string') {
+        //            return vm.frameworkId;
+        //        } else {
+        //            console.log('Fehler value account1Dimension: ' + d.account);
+        //            return '_unknownAccount';
+        //        }
+        //    }
+        //    //return vm.framework[vm.framework[d.account]].treeLevel > 2 ? vm.framework[vm.framework[d.account]].$path[3] : "";
+        //});
+        //
+        //vm.accountIn1SumGroup = vm.account1Dimension.group().reduceSum(function (d) {
+        //    return Math.round(d.paymentsIn / 1000);
+        //});
+        //
+        //vm.accountOut1SumGroup = vm.account1Dimension.group().reduceSum(function (d) {
+        //    return Math.round(d.paymentsOut / 1000);
+        //});
 
         //Payment group dimension
         vm.paymentDimension = vm.ndx.dimension(function (d) {
             return Math.round(d.amount / 1000);
         });
-        //vm.paymentMax = 20000000;
+        vm.paymentMax = 20000000;
 
         //console.log(vm.paymentDimension);
         //vm.paymentGroup = vm.paymentDimension.group(function (d) {
@@ -264,7 +255,8 @@
             .xAxisLabel('Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€')
             .yAxisLabel(' ')
             .x(d3.scale.linear().domain([0, vm.paymentMax]))
-            .y(d3.scale.log().domain([0, vm.paymentMax]))
+            //.y(d3.scale.linear().domain([0, vm.paymentMax]))
+            .y(d3.scale.log().domain([1, vm.paymentMax]))
             .yAxis().ticks(0)
         ;
 
@@ -352,9 +344,9 @@
                         //d.bookingYear = vm.numberFormat(d.bookingYear);
                         if (d.account.substring(0, 7) === 'NKF05F1') {
                             d.paymentsIn = d.amount;
-                            d.paymentsOut = null;
+                            d.paymentsOut = 0;
                         } else {
-                            d.paymentsIn = null;
+                            d.paymentsIn = 0;
                             d.paymentsOut = d.amount;
                         }
                     });
