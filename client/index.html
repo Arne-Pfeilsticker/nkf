@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="de" class="no-js" ng-app="nkfApp" ng-strict-di>
+<html lang="de" >
 <head>
-    <meta charset="utf-8">
     <title>NKF</title>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic">
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">-->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
@@ -21,13 +22,15 @@
     <!-- endbuild -->
 
 </head>
-<body>
+<body ng-app="nkfApp" ng-strict-di ng-controller="MenuController as vm" md-theme='default'>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<div data-ng-include="'app/layout/shell.html'"></div>
+<div ng-include="'app/layout/menu.html'"></div>
+
+<md-content ui-view flex layout-padding></md-content>
 
 <!-- build:js app/vendor.js -->
 <!-- bower:js -->
@@ -41,13 +44,9 @@
 <script src="../bower_components/angular-dc/dist/angular-dc.js"></script>
 <script src="../bower_components/angular-material/angular-material.js"></script>
 <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="../bower_components/angular-soap/soapclient.js"></script>
-<script src="../bower_components/angular-soap/angular.soap.js"></script>
 <script src="../bower_components/angular-ui-ace/ui-ace.js"></script>
 <script src="../bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="../bower_components/x2js/xml2json.min.js"></script>
-<script src="../bower_components/angular-xml/angular-xml.js"></script>
 <script src="../bower_components/csv-js/csv.js"></script>
 <script src="../bower_components/moment/moment.js"></script>
 <script src="../bower_components/showdown/dist/showdown.js"></script>
@@ -62,11 +61,7 @@
 <script src="app/core/ldb-api.config.js"></script>
 <script src="app/core/ldb-api.service.js"></script>
 <script src="app/core/state-watcher.service.js"></script>
-<script src="app/layout/menu.service.js"></script>
-<script src="app/layout/menu-link.directive.js"></script>
-<script src="app/layout/menu-toggle.directive.js"></script>
-<script src="app/layout/shell.controller.js"></script>
-
+<script src="app/layout/menu.controller.js"></script>
 <script src="app/home/home.controller.js"></script>
 <script src="app/budget/budget.controller.js"></script>
 <script src="app/data-import/data-import.controller.js"></script>
@@ -76,7 +71,8 @@
 <script src="app/products/product-types.controller.js"></script>
 <script src="app/accounting/framework.controller.js"></script>
 <!--<script src="../bower_components/angular-i18n/de.js"></script>-->
-<script src="../bower_components/angular-i18n/angular-locale_de.js"></script>
+<!--<script src="../bower_components/angular-i18n/angular-locale_de.js"></script>-->
 <!-- endbuild -->
+
 </body>
 </html>

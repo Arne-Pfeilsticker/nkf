@@ -6,9 +6,10 @@
          * Angular modules
          */
         'ngAnimate',
-        'ngMaterial',
-        //'ngMdIcons',
         'ngAria',
+        'ngMaterial',
+        //'ngMaterial',
+        //'ngMdIcons',
         'ngSanitize',
         /*
          * 3rd Party modules
@@ -32,9 +33,10 @@
         'angularDc'
     ]);
 
-    angular.module('app.services', []);
+    //angular.module('app.services', []);
 
-    angular.module('app.layout', ['app.services']);
+    angular.module('app.layout', ['app.core']);
 
-    angular.module('nkfApp', ['app.layout', 'app.core']);
+    angular.module('nkfApp', ['app.layout']);
+
 })();

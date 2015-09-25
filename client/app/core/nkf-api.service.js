@@ -46,7 +46,6 @@
         var requestConfig = {
             headers: {
                 'Authorization': 'Basic YWRtaW46YWRtaW4=',
-                //'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json; charset=utf-8'
                 // 'Accept-Encoding': 'gzip,deflate',
                 // 'Content-Length': 500000

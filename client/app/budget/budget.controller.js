@@ -95,7 +95,7 @@
             vm.framework[vm.frameworkId] = vm.frameworkRid;
 
             if (vm.frameworkLevelMax < framework[i].treeLevel) {
-                vm.frameworkLevelMax = framework[i].treeLevel
+                vm.frameworkLevelMax = framework[i].treeLevel;
             }
         }
 
@@ -218,7 +218,7 @@
         vm.paymentDimension = vm.ndx.dimension(function (d) {
             return Math.round(d.amount / 1000);
         });
-        vm.paymentMax = 20000000;
+        vm.paymentMax = 2000000;
 
         //console.log(vm.paymentDimension);
         //vm.paymentGroup = vm.paymentDimension.group(function (d) {

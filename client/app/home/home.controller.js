@@ -1,7 +1,7 @@
-(function () {
+(function (nkfApp) {
     'use strict';
 
-    angular.module('nkfApp').controller('HomeController', HomeController);
+    nkfApp.controller('HomeController', HomeController);
 
     HomeController.$inject = ['$state'];
 
@@ -25,4 +25,4 @@
         }
 
     }
-})();
+})(angular.module('nkfApp'))

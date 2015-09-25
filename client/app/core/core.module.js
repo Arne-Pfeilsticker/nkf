@@ -25,8 +25,8 @@
         //'ui.grid.importer',
         'ui.grid.edit',
         'ui.grid.resizeColumns',
-        'ui.grid.autoResize',
-        'ui.select'
+        'ui.grid.autoResize'
+        //'ui.select'
         //'ui.alias'
         //'angularSoap'
     ]);

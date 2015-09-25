@@ -15,6 +15,28 @@
         delete $httpProvider.defaults.headers.common['X-Requested-With'];
     }]);
 
+    //nkfApp.config('$mdThemingProvider', '$mdIconProvider', function ($mdThemingProvider, $mdIconProvider) {
+    //
+    //    $mdIconProvider
+    //        .iconSet('action', './images/icons/action-icons.svg', 24)
+    //        .iconSet('content', './images/icons/content-icons.svg', 24)
+    //        .iconSet('file', './images/icons/file-icons.svg', 24)
+    //        .iconSet('navigation', './images/icons/navigation-icons.svg', 24)
+    //        .icon("menu", "./assets/svg/menu.svg", 24)
+    //        .icon("share", "./assets/svg/share.svg", 24)
+    //        .icon("google_plus", "./assets/svg/google_plus.svg", 512)
+    //        .icon("hangouts", "./assets/svg/hangouts.svg", 512)
+    //        .icon("twitter", "./assets/svg/twitter.svg", 512)
+    //        .icon("phone", "./assets/svg/phone.svg", 512)
+    //        .icon('kommune', './images/icons/icon_kommune.png', 24)
+    //        .icon('arrowright', './images/icons/arrow_right.svg', 150);
+    //
+    //    $mdThemingProvider.theme('default')
+    //        .primaryPalette('blue')
+    //        .accentPalette('deep-orange');
+    //
+    //});
+
 
     nkfApp.config(['$mdThemingProvider', '$mdIconProvider', function ($mdThemingProvider, $mdIconProvider) {
 
@@ -40,7 +62,7 @@
         ;
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('lime')
+            .primaryPalette('blue')
             .accentPalette('deep-orange');
 
     }]);

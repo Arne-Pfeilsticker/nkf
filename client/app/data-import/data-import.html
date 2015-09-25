@@ -42,7 +42,9 @@
         </span>
     </md-content>
 
-    <div class="spinner" ng-show="vm.loading"></div>
+    <div class="container" ng-show="vm.loading">
+        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+    </div>
 
     <div id="grid1" ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer ui-grid-edit ui-grid-resize-columns
          class="grid"></div>

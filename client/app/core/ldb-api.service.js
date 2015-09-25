@@ -84,8 +84,7 @@
             var parastr = ldbApiConfig.wsParametersToString(params);
 
             var headers = {
-                'Accept': 'application/xml',
-                'Access-Control-Allow-Origin': '*'
+                'Accept': 'application/xml'
                 // 'Accept-Language': 'de'
             };
 
