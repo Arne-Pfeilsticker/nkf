@@ -3,9 +3,9 @@
 
     angular.module('nkfApp').controller('DataImportController', DataImportController);
 
-    DataImportController.$inject = ['$state', '$q', 'ldbApi', 'nkfApi', '$interval'];
+    DataImportController.$inject = ['$q', 'ldbApi', 'nkfApi'];
 
-    function DataImportController($state, $q, ldbApi, nkfApi, $interval) {
+    function DataImportController($q, ldbApi, nkfApi) {
         /* jshint validthis: true */
         var vm = this;
         vm.importedData = [];
@@ -13,7 +13,7 @@
         //vm.navigate = navigate;
         vm.activate = activate;
         vm.personId = '05111000';  // Düsseldorf
-        vm.table = '71147GJ001';   // Einzahlungen
+        vm.table = '71717GJ001';   // Einzahlungen
         vm.bookingYear = '2009';
 
         vm.loading = false;
@@ -24,19 +24,19 @@
         vm.tables = [
             {
                 name: 'Aufwendungen',
-                code: '71147EGJ02'
+                code: '71717EGJ02'
             },
             {
                 name: 'Erträge',
-                code: '71147EGJ01'
+                code: '71717EGJ01'
             },
             {
                 name: 'Auszahlungen',
-                code: '71147GJ002'
+                code: '71717GJ002'
             },
             {
                 name: 'Einzahlungen',
-                code: '71147GJ001'
+                code: '71717GJ001'
             }
 
         ];
