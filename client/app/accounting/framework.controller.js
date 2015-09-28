@@ -3,12 +3,12 @@
 
     angular.module('nkfApp').controller('FrameworkController', FrameworkController);
 
-    FrameworkController.$inject = ['nkfApi', 'uiGridConstants'];
+    FrameworkController.$inject = ['framework', 'nkfApi', 'uiGridConstants'];
 
-    function FrameworkController(nkfApi, uiGridConstants) {
+    function FrameworkController(framework, nkfApi, uiGridConstants) {
         /* jshint validthis: true */
         var vm = this;
-        vm.framework = [];
+        vm.framework = framework;
 
         vm.loading = false;
 
@@ -24,18 +24,18 @@
             rowHeight: 30,
             headerHeight: 30,
             columnDefs: [
-                {field: 'id', displayName: 'Konto', width: '*'},
+                {field: 'id', displayName: 'Konto', width: '10%'},
                 {field: 'parent_id', visible: false, width: '*'},
                 {field: 'breakdown', displayName: 'Gliederung', visible: false, width: '*'},
                 {field: 'sign', displayName: 'VZ', visible: false, width: '*'},
                 {field: 'nkf_account', displayName: 'NKF-Konto', visible: false},
-                {field: 'label', displayName: 'Bezeichnung', width: '60%'},
+                {field: 'label', displayName: 'Bezeichnung', width: '40%'},
                 {field: 'shortcut', displayName: 'Kurzbezeichnung', visible: false},
                 {field: 'beneficiary', displayName: 'Leistungsempfänger', visible: false},
                 {field: 'provider', displayName: 'Leister', visible: false},
                 {field: 'treeLevel', displayName: 'Ebene', width: '*'},
-                {field: 'rid', displayName: 'RId', width: '*'},
-                {field: '$path', displayName: 'Pfad', width: '*'},
+                {field: 'rid', displayName: 'RId', visible: false, width: '*'},
+                {field: '$path', displayName: 'Pfad', visible: false, width: '*'},
                 {field: 'subaccounts', displayName: 'Anz. Unterkonten', width: '*'}
             ],
             importerDataAddCallback: function(grid, newObjects){

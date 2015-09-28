@@ -147,12 +147,12 @@
                 url: '/framework',
                 templateUrl: 'app/accounting/framework.html',
                 controller: 'FrameworkController',
-                controllerAs: 'vm'
-                //resolve: {
-                //    framework: ['nkfApi', function (nkfApi) {
-                //        return nkfApi.getFramework();
-                //    }]
-                //}
+                controllerAs: 'vm',
+                resolve: {
+                    framework: ['nkfApi', function (nkfApi) {
+                        return nkfApi.getFramework();
+                    }]
+                }
             })
         ;
 
