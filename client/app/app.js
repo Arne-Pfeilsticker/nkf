@@ -62,7 +62,7 @@
         ;
 
         $mdThemingProvider.theme('default')
-            .primaryPalette('blue')
+            .primaryPalette('indigo')
             .accentPalette('deep-orange');
 
     }]);

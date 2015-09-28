@@ -3,14 +3,15 @@
 
     nkfApp.controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$state'];
+    HomeController.$inject = ['$state', 'mdThemeColors'];
 
-    function HomeController($state) {
+    function HomeController($state, mdThemeColors) {
         /* jshint validthis: true */
         var vm = this;
         vm.notesCollapsed = true;
         vm.navigate = navigate;
         vm.activate = activate;
+        vm.mdThemeColors = mdThemeColors;
 
         activate();
 

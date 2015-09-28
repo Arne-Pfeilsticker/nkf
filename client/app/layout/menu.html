@@ -1,5 +1,5 @@
 <div>
-    <md-toolbar class="md-menu-toolbar md-warm md-hue-1 md-whiteframe-z2">
+    <md-toolbar class="md-menu-toolbar md-whiteframe-z2" ng-style="{background:vm.mdThemeColors.primary['50']}">
         <div layout="row">
 
             <!--<md-button style="margin: 0;color: white" ui-sref="home"-->
@@ -8,7 +8,7 @@
             <!--</md-button>-->
 
 
-            <md-toolbar-filler style="margin: 0;color: white; background-color: darkblue" layout="" layout-align="center center">
+            <md-toolbar-filler ng-style="{background:vm.mdThemeColors.primary.hue2}" style="margin: 0;color: white;" layout="" layout-align="center center">
                 <md-button ui-sref="home"
                            aria-label="Menü Startseite öffnen">
                     <h1>NKF</h1>
@@ -17,9 +17,14 @@
             </md-toolbar-filler>
 
             <div layout-fill>
-                <h2 class="md-toolbar-tools" hide-sm>Neues Kommunales Finanzmanagement Plus</h2>
+                <h2 ng-style="{background:vm.mdThemeColors.primary.hue2}" class="md-toolbar-tools" hide-sm>Neues Kommunales Finanzmanagement Plus</h2>
 
                 <md-menu-bar>
+                    <md-menu>
+                        <button ui-sref="home">
+                            Start
+                        </button>
+                    </md-menu>
                     <md-menu>
                         <button ng-click="$mdOpenMenu($event)">
                             Kommunen

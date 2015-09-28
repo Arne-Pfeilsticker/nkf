@@ -4,7 +4,7 @@
 
         <md-card class="md-whiteframe-z1">
             <md-card-content>
-                <h1 class="md-display-2 text-accent-color" style="text-align: center;">
+                <h1 class="md-display-2" ng-style="{color:vm.mdThemeColors.accent.hue2}" style="text-align: center;">
                     Das Kerngeschäft der Gemeinden ist das Gemeinwohl!
                 </h1>
 
@@ -30,7 +30,7 @@
                     </p>
                 </div>
             </md-card-content>
-            <md-card-footer class="md-primary">
+            <md-card-footer ng-style="{'background-color':vm.mdThemeColors.primary['50']}">
                 Weitere Informationen
             </md-card-footer>
         </md-card>
@@ -45,7 +45,7 @@
                 <!--</div>-->
                 <!--</md-toolbar>-->
 
-                <h4 class="md-title">Gemeinwohlorientierung statt Gewinnorientierung</h4>
+                <h4 class="md-title" ng-style="{color:vm.mdThemeColors.primary.hue2}">Gemeinwohlorientierung statt Gewinnorientierung</h4>
 
                 <p>
                     Eine gemeinwohlorientierte Haushaltsführung richtet sich an den Zielen und Aufgaben der Gemeinden
@@ -61,7 +61,7 @@
             </div>
 
             <div flex="" flex-md="100" flex-sm="100">
-                <h4 class="md-title">Global denken – lokal handeln</h4>
+                <h4 class="md-title" ng-style="{color:vm.mdThemeColors.primary.hue2}">Global denken – lokal handeln</h4>
 
                 <p>
                     Wer nicht möchte, dass unsere Welt zum Spielball globaler Finanzmärkte wird, der muss die Idee des

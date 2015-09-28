@@ -33,9 +33,9 @@
         'angularDc'
     ]);
 
-    //angular.module('app.services', []);
+    angular.module('mdThemeColors', ['ngMaterial']);
 
-    angular.module('app.layout', ['app.core']);
+    angular.module('app.layout', ['app.core', 'mdThemeColors']);
 
     angular.module('nkfApp', ['app.layout']);
 

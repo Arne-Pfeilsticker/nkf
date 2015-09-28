@@ -3,12 +3,12 @@
 
     appLayout.controller('MenuController', MenuController);
 
-    MenuController.$inject = ['$state'];
+    MenuController.$inject = ['$state', 'mdThemeColors'];
 
-    function MenuController($state) {
+    function MenuController($state, mdThemeColors) {
         /* jshint validthis: true */
         var vm = this;
-
+        vm.mdThemeColors = mdThemeColors;
 
     }
 })(angular.module('app.layout'));
