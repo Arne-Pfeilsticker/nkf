@@ -3,28 +3,27 @@
         <div layout="row">
 
             <!--<md-button style="margin: 0;color: white" ui-sref="home"-->
-                       <!--aria-label="Menü Startseite öffnen">-->
-                <!--<h1>NKF</h1>-->
+            <!--aria-label="Menü Startseite öffnen">-->
+            <!--<h1>NKF</h1>-->
             <!--</md-button>-->
 
 
-            <md-toolbar-filler ng-style="{background:vm.mdThemeColors.primary.hue2}" style="margin: 0;color: white;" layout="" layout-align="center center">
+            <md-toolbar-filler ng-style="{background:vm.mdThemeColors.primary.hue2}" style="margin: 0;color: white;"
+                               layout="" layout-align="center center">
                 <md-button ui-sref="home"
                            aria-label="Menü Startseite öffnen">
                     <h1>NKF</h1>
                 </md-button>
-            <md-icon md-svg-icon="call:chat"></md-icon>
             </md-toolbar-filler>
 
             <div layout-fill>
-                <h2 ng-style="{background:vm.mdThemeColors.primary.hue2}" class="md-toolbar-tools" hide-sm>Neues Kommunales Finanzmanagement Plus</h2>
+                <h2 ng-style="{background:vm.mdThemeColors.primary.hue2}" class="md-toolbar-tools" hide-sm>Neues
+                    Kommunales Finanzmanagement Plus</h2>
 
                 <md-menu-bar>
-                    <md-menu>
-                        <button ui-sref="home">
-                            Start
-                        </button>
-                    </md-menu>
+                    <button ui-sref="home">
+                        Start
+                    </button>
                     <md-menu>
                         <button ng-click="$mdOpenMenu($event)">
                             Kommunen
