@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    angular.module('nkfApp', ['app.layout']);
+
     angular.module('app.core', [
         /*
          * Angular modules
@@ -23,20 +25,13 @@
         'ui.grid.edit',
         'ui.grid.resizeColumns',
         'ui.grid.autoResize',
-        //'ui.select',
-        //'ui.alias'
-        //'angularSoap'
-        //'lodash',
-        //'dcjs',
-        //'d3',
+        'angularDc',
         //'crossfilter',
-        'angularDc'
+        //'d3',
     ]);
 
     angular.module('mdThemeColors', ['ngMaterial']);
 
     angular.module('app.layout', ['app.core', 'mdThemeColors']);
-
-    angular.module('nkfApp', ['app.layout']);
 
 })();

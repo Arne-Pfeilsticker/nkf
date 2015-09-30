@@ -26,4 +26,4 @@
         }
 
     }
-})(angular.module('nkfApp'))
+})(angular.module('nkfApp'));

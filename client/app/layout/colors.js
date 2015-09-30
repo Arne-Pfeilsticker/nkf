@@ -57,15 +57,15 @@
                 var getColorFactory = function (intent) {
                     return function () {
                         var colors = $mdThemingProvider._THEMES['default'].colors[intent];
-                        var name = colors.name
+                        var name = colors.name;
                         // Append the colors with links like hue-1, etc
-                        colorStore[name].default = colorStore[name][colors.hues['default']]
-                        colorStore[name].hue1 = colorStore[name][colors.hues['hue-1']]
-                        colorStore[name].hue2 = colorStore[name][colors.hues['hue-2']]
-                        colorStore[name].hue3 = colorStore[name][colors.hues['hue-3']]
+                        colorStore[name].default = colorStore[name][colors.hues['default']];
+                        colorStore[name].hue1 = colorStore[name][colors.hues['hue-1']];
+                        colorStore[name].hue2 = colorStore[name][colors.hues['hue-2']];
+                        colorStore[name].hue3 = colorStore[name][colors.hues['hue-3']];
                         return colorStore[name];
-                    }
-                }
+                    };
+                };
 
                 /**
                  * Define the getter methods for accessing the colors

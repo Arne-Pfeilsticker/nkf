@@ -3,9 +3,9 @@
 
     angular.module('nkfApp').controller('BudgetController', BudgetController);
 
-    BudgetController.$inject = ['$scope', '$state', '$http', 'nkfApi', 'productTypes', 'personsBooked', 'framework', 'frameworkShortcuts'];
+    BudgetController.$inject = ['$scope', 'nkfApi', 'productTypes', 'personsBooked', 'framework', 'frameworkShortcuts'];
 
-    function BudgetController($scope, $state, $http, nkfApi, productTypes, personsBooked, framework, frameworkShortcuts) {
+    function BudgetController($scope, nkfApi, productTypes, personsBooked, framework, frameworkShortcuts) {
         /* jshint validthis: true */
         var vm = this;
 
@@ -15,7 +15,7 @@
         //vm.yearDimensionData = {};
 
         //todo: implement locals
-        vm.de_DE = {
+        vm.deDE = {
             decimal: ",",
             thousands: ".",
             grouping: [3],
@@ -69,7 +69,8 @@
         for (i = 0, len = productTypes.length; i < len; i++) {
 
             vm.productTypes[productTypes[i].id] = productTypes[i].label;
-            vm.productTypeParent[productTypes[i].id] = productTypes[i].parent_id;
+            /* jshint validthis: true */
+            vm.productTypeParent[productTypes[i].id] = productTypes[i].parent_id; // jshint ignore:line
         }
 
         vm.frameworkShortcuts = {};
@@ -320,9 +321,9 @@
                 // (optional) sort order, :default ascending
                 .order(d3.descending)
                 // (optional) custom renderlet to post-process chart using D3
-                .on('renderlet', (function (table) {
+                .on('renderlet', function (table) {
                     table.selectAll(".dc-table-group").classed("info", true);
-                }));
+                });
 
             //vm.yearDimensionData = vm.yearDimension.top(Infinity);
         };
@@ -334,7 +335,7 @@
 
         vm.bookingsData = function (values) {
             vm.loading = true;
-            //var DE = d3.locale(vm.de_DE);
+            //var DE = d3.locale(vm.deDE);
 
             //console.log(vm.bookingsData[0].personId);
             nkfApi.getBookingsByPid(values)

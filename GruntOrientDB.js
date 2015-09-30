@@ -19,6 +19,9 @@ module.exports = function (grunt) {
     // Get OrientDB Parameters and Command parts
     var orient = require('./orientdb.config');
 
+    var
+    // OrientDB Home directory
+        orientHome = process.env.ORIENTDB_HOME;
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -71,6 +74,24 @@ module.exports = function (grunt) {
                 }
             }
         },
+
+        // Empties folders to start fresh
+        clean: {
+            orientPlugin: {
+                options: {force: true},
+                src: [orientHome + '/plugins/nkf']
+            }
+        },
+        // Copies remaining files to places other tasks can use
+        copy: {
+            orientPlugin: {
+                expand: true,
+                cwd: 'dist',
+                dest: orientHome + '/plugins',
+                src: ['nkf/**/*.*']
+            }
+        },
+
         compress: {
             plugin: {
                 options: {
