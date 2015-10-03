@@ -215,41 +215,7 @@ module.exports = function (grunt) {
                     }
                 }
             }
-            //sass: {
-            //    src: ['<%= yeoman.client %>/styles/{,*/}*.{scss,sass}']
-            //    // ignorePath: /\.\.\//
-            //    // ignorePath: /(\.\.\/){1,2}bower_components\//
-            //}
         },
-
-        // Compiles Sass to CSS and generates necessary files if requested
-        //compass: {
-        //    options: {
-        //        sassDir: '<%= yeoman.client %>/styles',
-        //        cssDir: '.tmp/styles',
-        //        generatedImagesDir: '.tmp/images/generated',
-        //        imagesDir: '<%= yeoman.client %>/images',
-        //        javascriptsDir: '<%= yeoman.client %>/app',
-        //        fontsDir: '<%= yeoman.client %>/styles/fonts',
-        //        importPath: './bower_components',
-        //        httpImagesPath: '/images',
-        //        httpGeneratedImagesPath: '/images/generated',
-        //        httpFontsPath: '/styles/fonts',
-        //        relativeAssets: false,
-        //        assetCacheBuster: false,
-        //        raw: 'Sass::Script::Number.precision = 10\n'
-        //    },
-        //    dist: {
-        //        options: {
-        //            generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        //        }
-        //    },
-        //    server: {
-        //        options: {
-        //            sourcemap: true
-        //        }
-        //    }
-        //},
 
         // Renames files for browser caching purposes
         filerev: {
@@ -257,7 +223,7 @@ module.exports = function (grunt) {
                 src: [
                     '<%= yeoman.dist %>/app/**/*.js',
                     '<%= yeoman.dist %>/styles/{,*/}*.css',
-                    '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                    //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     '<%= yeoman.dist %>/styles/fonts/*'
                 ]
             }
@@ -295,31 +261,31 @@ module.exports = function (grunt) {
             }
         },
 
-         //The following *-min tasks will produce minified files in the dist folder
-         //By default, your `index.html`'s <!-- Usemin block --> will take care of
-         //minification. These next options are pre-configured if you do not wish
-         //to use the Usemin blocks.
-         //cssmin: {
-         //  dist: {
-         //    files: {
-         //      '<%= yeoman.dist %>/styles/main.css': [
-         //        '.tmp/styles/{,*/}*.css'
-         //      ]
-         //    }
-         //  }
-         //},
-         //uglify: {
-         //  dist: {
-         //    files: {
-         //      '<%= yeoman.dist %>/app/scripts.js': [
-         //        '<%= yeoman.dist %>/app/scripts.js'
-         //      ]
-         //    }
-         //  }
-         //},
-         //concat: {
-         //  dist: {}
-         //},
+        //The following *-min tasks will produce minified files in the dist folder
+        //By default, your `index.html`'s <!-- Usemin block --> will take care of
+        //minification. These next options are pre-configured if you do not wish
+        //to use the Usemin blocks.
+        //cssmin: {
+        //  dist: {
+        //    files: {
+        //      '<%= yeoman.dist %>/styles/main.css': [
+        //        '.tmp/styles/{,*/}*.css'
+        //      ]
+        //    }
+        //  }
+        //},
+        //uglify: {
+        //  dist: {
+        //    files: {
+        //      '<%= yeoman.dist %>/app/scripts.js': [
+        //        '<%= yeoman.dist %>/app/scripts.js'
+        //      ]
+        //    }
+        //  }
+        //},
+        //concat: {
+        //  dist: {}
+        //},
 
         imagemin: {
             dist: {
@@ -336,6 +302,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
+                    //flatten: true,
                     cwd: '<%= yeoman.client %>/images',
                     src: '{,*/}*.svg',
                     dest: '<%= yeoman.dist %>/images'
@@ -395,21 +362,22 @@ module.exports = function (grunt) {
                         '../plugin.json',
                         '*.html',
                         'app/{,*/}*.html',
-                        'images/{,*/}*.{webp}',
+                        'images/{,*/}*.{webp,svg}',
                         'styles/fonts/{,*/}*.*'
                     ]
                 }, {
                     expand: true,
                     cwd: '.tmp/images',
                     dest: '<%= yeoman.dist %>/images',
-                    src: ['generated/*']
+                    src: ['generated/*',
+                        '<%= yeoman.client %>/images/icons']
+                }, {
+                    expand: true,
+                    flatten: true,
+                    //cwd: '<%= yeoman.client %>',
+                    dest: '<%= yeoman.dist %>/styles',
+                    src: ['bower_components/angular-ui-grid/*.{ttf,woff,eot,svg}']
                 }
-                //    {
-                //    expand: true,
-                //    cwd: '.',
-                //    src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
-                //    dest: '<%= yeoman.dist %>'
-                //}
                 ]
             },
             styles: {
@@ -436,8 +404,8 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'copy:styles',
-                'imagemin',
-                'svgmin'
+                'imagemin'
+                //'svgmin'
             ]
         },
 
@@ -459,7 +427,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: 'dist/nkf/',
-                        src: ['**','!*.zip']
+                        src: ['**', '!*.zip']
                     } // includes files in path and its subdirs
                     // {expand: true, cwd: 'path/', src: ['**'], dest: 'internal_folder3/'}, // makes all src relative to cwd
                     // {flatten: true, src: ['path/**'], dest: 'internal_folder4/', filter: 'isFile'} // flattens results to a single level
