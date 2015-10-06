@@ -9,6 +9,8 @@
         /* jshint validthis: true */
         var vm = this;
 
+        vm.selectedIndex = 0;
+
         vm.personsBooked = personsBooked;
         vm.personId = '';
 
@@ -365,6 +367,7 @@
                 })
                 .finally(function () {
                     vm.loading = false;
+                    vm.selectedIndex = 1;
                 });
         };
     }

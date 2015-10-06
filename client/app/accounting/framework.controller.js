@@ -24,7 +24,7 @@
             rowHeight: 30,
             headerHeight: 30,
             columnDefs: [
-                {field: 'id', displayName: 'Konto', width: '10%'},
+                {field: 'id', displayName: 'Konto', width: '13%'},
                 {field: 'parent_id', visible: false, width: '*'},
                 {field: 'breakdown', displayName: 'Gliederung', visible: false, width: '*'},
                 {field: 'sign', displayName: 'VZ', visible: false, width: '*'},

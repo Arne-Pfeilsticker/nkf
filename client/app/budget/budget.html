@@ -1,10 +1,12 @@
-<div  layout="column" layout-margin layout-fill layout-padding>
+<div layout="column" layout-margin layout-fill layout-padding>
 
-    <md-content class="md-whiteframe-z1" layout="row" layout-align="space-between center" class="md-padding" layout-sm="column">
+    <md-content class="md-whiteframe-z1" layout="row" layout-align="space-between center" class="md-padding"
+                layout-sm="column">
         <h1 class="md-display-1" style="margin: 0px">Haushaltsübersicht</h1>
-            <span >
+            <span>
                 <md-input-container flex style="padding: 0px">
-                    <md-select class="md-display-1" style="margin: 0px; padding: 0px" placeholder="Kommune auswählen" ng-model="vm.personId" md-on-close="vm.bookingsData(vm.personId)">
+                    <md-select class="md-display-1" style="margin: 0px; padding: 0px" placeholder="Kommune auswählen"
+                               ng-model="vm.personId" md-on-close="vm.bookingsData(vm.personId)">
                         <md-option ng-repeat="person in vm.personsBooked" value="{{person.id}}">
                             {{person.person_type}} {{person.name}}
                         </md-option>
@@ -26,103 +28,257 @@
         <md-progress-linear md-mode="indeterminate"></md-progress-linear>
     </div>
 
-    <div class="md-whiteframe-z1">
-        <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
-            <div class="md-toolbar-tools">
+    <!--<div class="md-whiteframe-z1">-->
+    <!--<md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">-->
+    <!--<div class="md-toolbar-tools">-->
 
-                <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
-                    Güterebene
-                </md-button>
-            </div>
+    <!--<md-button ui-sref="home" aria-label="Menü Startseite öffnen">-->
+    <!--Güterebene-->
+    <!--</md-button>-->
+    <!--</div>-->
 
-        </md-toolbar>
+    <!--</md-toolbar>-->
 
-        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Einzahlungen nach ...</h2>
+    <!--<h2 class="md-title" style="margin: 10px 0px 0px 10px">Einzahlungen nach ...</h2>-->
 
-        <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
+    <!--<div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">-->
 
-            <div layout="column" layout-align="space-between center" layout-fill>
+    <!--<div layout="column" layout-align="space-between center" layout-fill>-->
 
-                <h2 class="md-title">Produktfelder</h2>
+    <!--<h2 class="md-title">Produktfelder</h2>-->
 
-                <div id="paymentsIn1"
-                     dc-chart="rowChart"
-                     dc-chart-group="1"
-                     dc-dimension="vm.prod1Dimension" dc-group="vm.prodIn1SumGroup"
-                     dc-options="vm.rowChartOptions"
-                     dc-post-setup-chart="vm.rowChartPostSetup">
-                </div>
+    <!--<div id="paymentsIn1"-->
+    <!--dc-chart="rowChart"-->
+    <!--dc-chart-group="1"-->
+    <!--dc-dimension="vm.prod1Dimension" dc-group="vm.prodIn1SumGroup"-->
+    <!--dc-options="vm.rowChartOptions"-->
+    <!--dc-post-setup-chart="vm.rowChartPostSetup">-->
+    <!--</div>-->
 
-            </div>
-            <div layout="column" layout-align="space-between center" layout-fill>
-                <h2 class="md-title">Produktbereiche</h2>
+    <!--</div>-->
+    <!--<div layout="column" layout-align="space-between center" layout-fill>-->
+    <!--<h2 class="md-title">Produktbereiche</h2>-->
 
-                <div id="paymentsIn2"
-                     dc-chart="rowChart"
-                     dc-chart-group="1"
-                     dc-dimension="vm.prod2Dimension" dc-group="vm.prodIn2SumGroup"
-                     dc-options="vm.rowChartOptions"
-                     dc-post-setup-chart="vm.rowChartPostSetup">
-                </div>
+    <!--<div id="paymentsIn2"-->
+    <!--dc-chart="rowChart"-->
+    <!--dc-chart-group="1"-->
+    <!--dc-dimension="vm.prod2Dimension" dc-group="vm.prodIn2SumGroup"-->
+    <!--dc-options="vm.rowChartOptions"-->
+    <!--dc-post-setup-chart="vm.rowChartPostSetup">-->
+    <!--</div>-->
 
-            </div>
-            <div layout="column" layout-align="space-between center" layout-fill>
-                <h2 class="md-title">Produktgruppen</h2>
+    <!--</div>-->
+    <!--<div layout="column" layout-align="space-between center" layout-fill>-->
+    <!--<h2 class="md-title">Produktgruppen</h2>-->
 
-                <div id="paymentsIn3"
-                     dc-chart="rowChart"
-                     dc-chart-group="1"
-                     dc-dimension="vm.prod3Dimension" dc-group="vm.prodIn3SumGroup"
-                     dc-options="vm.rowChartOptions"
-                     dc-post-setup-chart="vm.rowChartPostSetup">
-                </div>
+    <!--<div id="paymentsIn3"-->
+    <!--dc-chart="rowChart"-->
+    <!--dc-chart-group="1"-->
+    <!--dc-dimension="vm.prod3Dimension" dc-group="vm.prodIn3SumGroup"-->
+    <!--dc-options="vm.rowChartOptions"-->
+    <!--dc-post-setup-chart="vm.rowChartPostSetup">-->
+    <!--</div>-->
 
-            </div>
-        </div>
+    <!--</div>-->
+    <!--</div>-->
 
-        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Auszahlungen nach ...</h2>
+    <!--<h2 class="md-title" style="margin: 10px 0px 0px 10px">Auszahlungen nach ...</h2>-->
 
-        <div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">
+    <!--<div layout="row" layout-align="space-between center" layout-padding layout-fill layout-sm="column">-->
 
-            <div layout="column" layout-align="space-between center" layout-fill>
+    <!--<div layout="column" layout-align="space-between center" layout-fill>-->
 
-                <h2 class="md-title">Produktfelder</h2>
+    <!--<h2 class="md-title">Produktfelder</h2>-->
 
-                <div id="paymentsOut1"
-                     dc-chart="rowChart"
-                     dc-chart-group="1"
-                     dc-dimension="vm.prod1Dimension" dc-group="vm.prodOut1SumGroup"
-                     dc-options="vm.rowChartOptions"
-                     dc-post-setup-chart="vm.rowChartPostSetup">
-                </div>
+    <!--<div id="paymentsOut1"-->
+    <!--dc-chart="rowChart"-->
+    <!--dc-chart-group="1"-->
+    <!--dc-dimension="vm.prod1Dimension" dc-group="vm.prodOut1SumGroup"-->
+    <!--dc-options="vm.rowChartOptions"-->
+    <!--dc-post-setup-chart="vm.rowChartPostSetup">-->
+    <!--</div>-->
 
-            </div>
-            <div layout="column" layout-align="space-between center" layout-fill>
-                <h2 class="md-title">Produktbereiche</h2>
+    <!--</div>-->
+    <!--<div layout="column" layout-align="space-between center" layout-fill>-->
+    <!--<h2 class="md-title">Produktbereiche</h2>-->
 
-                <div id="paymentsOut2"
-                     dc-chart="rowChart"
-                     dc-chart-group="1"
-                     dc-dimension="vm.prod2Dimension" dc-group="vm.prodOut2SumGroup"
-                     dc-options="vm.rowChartOptions"
-                     dc-post-setup-chart="vm.rowChartPostSetup">
-                </div>
+    <!--<div id="paymentsOut2"-->
+    <!--dc-chart="rowChart"-->
+    <!--dc-chart-group="1"-->
+    <!--dc-dimension="vm.prod2Dimension" dc-group="vm.prodOut2SumGroup"-->
+    <!--dc-options="vm.rowChartOptions"-->
+    <!--dc-post-setup-chart="vm.rowChartPostSetup">-->
+    <!--</div>-->
 
-            </div>
-            <div layout="column" layout-align="space-between center" layout-fill>
-                <h2 class="md-title">Produktgruppen</h2>
+    <!--</div>-->
+    <!--<div layout="column" layout-align="space-between center" layout-fill>-->
+    <!--<h2 class="md-title">Produktgruppen</h2>-->
 
-                <div id="paymentsOut3"
-                     dc-chart="rowChart"
-                     dc-chart-group="1"
-                     dc-dimension="vm.prod3Dimension" dc-group="vm.prodOut3SumGroup"
-                     dc-options="vm.rowChartOptions"
-                     dc-post-setup-chart="vm.rowChartPostSetup">
-                </div>
+    <!--<div id="paymentsOut3"-->
+    <!--dc-chart="rowChart"-->
+    <!--dc-chart-group="1"-->
+    <!--dc-dimension="vm.prod3Dimension" dc-group="vm.prodOut3SumGroup"-->
+    <!--dc-options="vm.rowChartOptions"-->
+    <!--dc-post-setup-chart="vm.rowChartPostSetup">-->
+    <!--</div>-->
 
-            </div>
-        </div>
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div ng-cloak>
+        <md-content class="md-padding">
+            <md-tabs md-dynamic-height md-border-bottom class="md-primary md-hue-3" md-selected="vm.selectedIndex">
+                <md-tab label="Hilfe">
+                    <md-content>
+                        <h1 class="md-display-2">Produktebene</h1>
+
+                        <p>Auf der Produktebene sollten die Waren und Dienstleistungen gezeigt werden, die die Kommunen
+                            für
+                            ihre Bürger erbringen.
+                        </p>
+
+                        <p>Leider wurde diese Vorgabe im Neuen kommunalen Finanzmanagement nicht wie erforderlich
+                            umgesetzt.
+                            Was im NKF Produkte oder Produktbereiche genannt wird, sind tatsächlich Kostenstellen bzw.
+                            Kostenstellenbereiche. Die Umsetzung ist ungefähr so, wie wenn ein Bäcker nicht seine
+                            Brötchen und sein
+                            Brot Produkte nennen würde, sondern die Backstube oder den Verkaufsraum.
+                        </p>
+
+                        <p>Die Konsequenz ist, dass die Leistungen der Kommunen weder in der Kommune selbst noch
+                            zwischen den
+                            Kommunen verglichen werden können. Nur wenn man weiß, welches Ergebnis mit welchen Kosten
+                            erziehlt
+                            wurde, kann man im Vergleich mit anderen Kommunen beurteilen, ob eine Gemeinde
+                            wirtschaftlich gehandelt hat.
+                        </p>
+
+                        <p>Um die Leser nicht zu verwirren, wird die irreführende Bezeichnung Produkte zunächst
+                            beibehalten.
+                            Zu einem späteren Zeitpunkt soll dann sowohl die tatsächliche Produktebene und die
+                            Kostenstellenebene
+                            gezeigt werden.
+                        </p>
+
+                        <h2 class="md-display-1">Anleitung</h2>
+
+                        <p>Wähle Sie eine Kommune aus. Danach werden die verfügbaren Daten dargestellt. Durch einen
+                            Klick
+                            auf einen farbigen Balken der Produktfelder, -bereiche oder -gruppen wird die Auswahl der
+                            Daten für alle
+                            verbundenen Diagramme und der Tabelle entsprechend eingeschränkt. Durch einen erneuten Klick
+                            wird die
+                            Auswahl wieder aufgehoben</p>
+
+                    </md-content>
+                </md-tab>
+                <md-tab label="Diagramme">
+                    <md-content>
+
+                        <md-toolbar class="md-primary md-hue-3" layout="row" layout-align="space-between center">
+                            <div class="md-toolbar-tools">
+
+                                <md-button ui-sref="home" aria-label="Menü Startseite öffnen">
+                                    Produktebene
+                                </md-button>
+                            </div>
+
+                        </md-toolbar>
+
+                        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Einzahlungen nach ...</h2>
+
+                        <div layout="row" layout-align="space-between center" layout-padding layout-fill
+                             layout-sm="column">
+
+                            <div layout="column" layout-align="space-between center" layout-fill>
+
+                                <h2 class="md-title">Produktfelder</h2>
+
+                                <div id="paymentsIn1"
+                                     dc-chart="rowChart"
+                                     dc-chart-group="1"
+                                     dc-dimension="vm.prod1Dimension" dc-group="vm.prodIn1SumGroup"
+                                     dc-options="vm.rowChartOptions"
+                                     dc-post-setup-chart="vm.rowChartPostSetup">
+                                </div>
+
+                            </div>
+                            <div layout="column" layout-align="space-between center" layout-fill>
+                                <h2 class="md-title">Produktbereiche</h2>
+
+                                <div id="paymentsIn2"
+                                     dc-chart="rowChart"
+                                     dc-chart-group="1"
+                                     dc-dimension="vm.prod2Dimension" dc-group="vm.prodIn2SumGroup"
+                                     dc-options="vm.rowChartOptions"
+                                     dc-post-setup-chart="vm.rowChartPostSetup">
+                                </div>
+
+                            </div>
+                            <div layout="column" layout-align="space-between center" layout-fill>
+                                <h2 class="md-title">Produktgruppen</h2>
+
+                                <div id="paymentsIn3"
+                                     dc-chart="rowChart"
+                                     dc-chart-group="1"
+                                     dc-dimension="vm.prod3Dimension" dc-group="vm.prodIn3SumGroup"
+                                     dc-options="vm.rowChartOptions"
+                                     dc-post-setup-chart="vm.rowChartPostSetup">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <h2 class="md-title" style="margin: 10px 0px 0px 10px">Auszahlungen nach ...</h2>
+
+                        <div layout="row" layout-align="space-between center" layout-padding layout-fill
+                             layout-sm="column">
+
+                            <div layout="column" layout-align="space-between center" layout-fill>
+
+                                <h2 class="md-title">Produktfelder</h2>
+
+                                <div id="paymentsOut1"
+                                     dc-chart="rowChart"
+                                     dc-chart-group="1"
+                                     dc-dimension="vm.prod1Dimension" dc-group="vm.prodOut1SumGroup"
+                                     dc-options="vm.rowChartOptions"
+                                     dc-post-setup-chart="vm.rowChartPostSetup">
+                                </div>
+
+                            </div>
+                            <div layout="column" layout-align="space-between center" layout-fill>
+                                <h2 class="md-title">Produktbereiche</h2>
+
+                                <div id="paymentsOut2"
+                                     dc-chart="rowChart"
+                                     dc-chart-group="1"
+                                     dc-dimension="vm.prod2Dimension" dc-group="vm.prodOut2SumGroup"
+                                     dc-options="vm.rowChartOptions"
+                                     dc-post-setup-chart="vm.rowChartPostSetup">
+                                </div>
+
+                            </div>
+                            <div layout="column" layout-align="space-between center" layout-fill>
+                                <h2 class="md-title">Produktgruppen</h2>
+
+                                <div id="paymentsOut3"
+                                     dc-chart="rowChart"
+                                     dc-chart-group="1"
+                                     dc-dimension="vm.prod3Dimension" dc-group="vm.prodOut3SumGroup"
+                                     dc-options="vm.rowChartOptions"
+                                     dc-post-setup-chart="vm.rowChartPostSetup">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
     </div>
+
     <br/>
 
     <div class="md-whiteframe-z1">

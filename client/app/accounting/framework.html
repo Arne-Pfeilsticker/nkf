@@ -19,7 +19,9 @@
 
     </md-content>
 
-    <div class="spinner" ng-show="vm.loading"></div>
+    <div class="container" ng-show="vm.loading">
+        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+    </div>
 
     <!--<div id="grid2" ui-grid="vm.gridOptions" ui-grid-tree-view class="grid"></div>-->
     <!--<div ui-if="gridData.data.length>0" ui-grid="vm.gridOptions" ui-grid-exporter ui-grid-importer class="grid" ui-grid-auto-resize ng-style="vm.getTableHeight()" ui-grid-edit></div>-->
