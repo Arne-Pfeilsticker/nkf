@@ -25,7 +25,7 @@
         'ui.grid.edit',
         'ui.grid.resizeColumns',
         'ui.grid.autoResize',
-        'angularDc',
+        'angularDc'
         //'crossfilter',
         //'d3',
     ]);

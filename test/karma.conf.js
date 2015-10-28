@@ -30,16 +30,16 @@ module.exports = function(config) {
       'bower_components/crossfilter/crossfilter.js',
       'bower_components/dcjs/dc.js',
       'bower_components/angular-dc/dist/angular-dc.js',
-      'bower_components/angular-material/angular-material.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-ui-ace/ui-ace.js',
       'bower_components/angular-ui-grid/ui-grid.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/csv-js/csv.js',
       'bower_components/moment/moment.js',
+      'bower_components/angular-material-icons/angular-material-icons.min.js',
+      'bower_components/angular-material/angular-material.js',
       'bower_components/showdown/dist/showdown.js',
       'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-material-icons/angular-material-icons.min.js',
       // endbower
       'client/app/**/*.js'
       // "test/mock/**/*.js",

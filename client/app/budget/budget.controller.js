@@ -254,12 +254,13 @@
             .dimension(vm.paymentDimension)
             .group(vm.paymentGroup)
             .outerPadding(0.05)
-            //.renderHorizontalGridLines(true)
+            .renderHorizontalGridLines(true)
+            .renderVerticalGridLines(true)
             .xAxisLabel('Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€')
             .yAxisLabel(' ')
             .x(d3.scale.linear().domain([0, vm.paymentMax]))
-            //.y(d3.scale.linear().domain([0, vm.paymentMax]))
-            .y(d3.scale.log().domain([1, vm.paymentMax]))
+            .y(d3.scale.linear().domain([0, vm.paymentMax]))
+            //.y(d3.scale.log().domain([1, vm.paymentMax]))
             .yAxis().ticks(0)
         ;
 

@@ -101,7 +101,7 @@
 
                 })
                 .catch(function (result) {
-                    $log.message = 'Fehler: ' + result.status + ' ' + result.statusText + ', ' + result.data.message;
+                    $log.message = 'Fehler: ' + result.status + ' ' + result.statusText + ', ' + result.data;
                 });
         }
     }
