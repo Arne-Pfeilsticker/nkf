@@ -37,8 +37,8 @@ module.exports = function(config) {
       'bower_components/csv-js/csv.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-material-icons/angular-material-icons.min.js',
-      'bower_components/angular-material/angular-material.js',
       'bower_components/showdown/dist/showdown.js',
+      'bower_components/angular-material/angular-material.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/**/*.js'

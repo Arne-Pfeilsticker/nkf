@@ -31,12 +31,15 @@
     "csv-js": "~1.1.1",
     "moment": "~2.10.2",
     "angular-material-icons": "~0.6.0",
-    "angular-material": "1.0.0-rc1-master-325d83e",
-    "showdown": "1.3.0"
+    "showdown": "1.3.0",
+    "angular-material": "1.0.0-rc2-master-fcd199e"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"
   },
   "appPath": "client",
-  "moduleName": "nkfApp"
+  "moduleName": "nkfApp",
+  "resolutions": {
+    "dcjs": "2.0.0-alpha.2"
+  }
 }

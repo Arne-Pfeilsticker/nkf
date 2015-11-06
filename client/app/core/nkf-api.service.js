@@ -6,14 +6,10 @@
 (function (appCore) {
     'use strict';
 
-    // Get OrientDB Parameters and Command parts
-    //var orient = require('../../../orientdb.config');
-
     appCore.factory('nkfApi', nkfApi);
 
-    nkfApi.$inject = ['$http'];
-
-    function nkfApi($http) {
+    nkfApi.$inject = ['$http', 'nkfApiConfig'];
+    function nkfApi($http, nkfApiConfig) {
         var service = {
             // Hierarchies
             getHierarchyById: getHierarchyById,
@@ -39,8 +35,8 @@
         };
 
         //var baseUrl = 'http://h2258975.stratoserver.net:2480/function/nkf';
-        var baseUrl = 'http://localhost:2480/function/nkf';
-        //var baseUrl = 'http://' + orient.Host + ':2480/function/' + orient.DB;
+        //var baseUrl = 'http://localhost:2480/function/nkf';
+        var baseUrl = 'http://' + nkfApiConfig.Host + '/function/' + nkfApiConfig.DB;
         console.log('Base URL: ' + baseUrl);
 
         var requestConfig = {

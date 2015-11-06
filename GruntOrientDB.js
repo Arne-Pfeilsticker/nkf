@@ -134,7 +134,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
         grunt.task.run([
-            'clean:orientPlugin',
+            //'clean:orientPlugin',
             'copy:orientPlugin'
         ]);
     });
