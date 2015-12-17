@@ -354,7 +354,7 @@
                             d.paymentsOut = d.amount;
                         }
                     });
-                    //console.log('Imported bookings data', results);
+                    // console.log('Imported bookings data', results);
 
                     vm.ndx.add(results);
                     //console.log(vm.ndx);

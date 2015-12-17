@@ -10,7 +10,6 @@
         'ngAnimate',
         'ngAria',
         'ngMaterial',
-        //'ngMaterial',
         //'ngMdIcons',
         'ngSanitize',
         /*
@@ -25,9 +24,9 @@
         'ui.grid.edit',
         'ui.grid.resizeColumns',
         'ui.grid.autoResize',
-        'angularDc'
-        //'crossfilter',
         //'d3',
+        //'crossfilter',
+        'angularDc'
     ]);
 
     angular.module('mdThemeColors', ['ngMaterial']);

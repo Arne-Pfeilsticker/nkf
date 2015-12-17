@@ -44,17 +44,13 @@
 **/
 md-toolbar-filler {
     margin: 0;
-    background-color: darkblue;
     color: white;
 }
 
 h2.md-toolbar-tools {
     margin: 0;
-    background-color: darkblue;
     color: white;
 }
-
-
 
 .tabsdemoDynamicHeight md-content {
     background-color: transparent !important; }
