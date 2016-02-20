@@ -241,6 +241,7 @@
         // Workaround: https://github.com/TomNeyland/angular-dc/issues/15
         // paymentRageSelectChart has to be defined separately due to an error in angular-dc
         // The attribute rangeChart can't be set directly in the range chart.
+
         vm.paymentRangeSelectChart = dc.barChart("#paymentRangeSelectChart", "1");
         vm.paymentRangeSelectChart.alwaysUseRounding(true)
             .width(1100)
@@ -256,8 +257,8 @@
             .outerPadding(0.05)
             .renderHorizontalGridLines(true)
             .renderVerticalGridLines(true)
-            .xAxisLabel('Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€')
-            .yAxisLabel(' ')
+            //.xAxisLabel('Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€')
+            //.yAxisLabel(' ')
             .x(d3.scale.linear().domain([0, vm.paymentMax]))
             .y(d3.scale.linear().domain([0, vm.paymentMax]))
             //.y(d3.scale.log().domain([1, vm.paymentMax]))
