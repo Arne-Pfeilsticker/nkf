@@ -26,7 +26,7 @@
 
         vm.numberFormat = d3.format('04d');
         vm.currenFormat = d3.format(',.0f');
-        vm.formatNumber = d3.format(".1f");
+        vm.formatNumber = d3.format(",.1f");
 
         vm.rowChartOptions = {
             width: 300,
@@ -53,6 +53,14 @@
                 })
             ;
             c.xAxis().ticks(5);
+        };
+
+        vm.barChartPostSetup = function (c) {
+            c.title(function (d) {
+                    return d.key + ': ' + vm.formatNumber(d.value) + ' Mio.€';
+                })
+            ;
+
         };
 
         function formatCurrency(d) {
@@ -136,15 +144,18 @@
         });
 
         vm.paymentsSumGroup = vm.yearDimension.group().reduceSum(function (d) {
-            return Math.round(d.amount / 1000000);
+            //return Math.round(d.amount / 1000000);
+            return d.amount / 1000000;
         });
 
         vm.paymentsInSumGroup = vm.yearDimension.group().reduceSum(function (d) {
-            return Math.round(d.paymentsIn / 1000000);
+            //return Math.round(d.paymentsIn / 1000000);
+            return d.amount / 1000000;
         });
 
         vm.paymentsOutSumGroup = vm.yearDimension.group().reduceSum(function (d) {
-            return Math.round(d.paymentsOut / 1000000);
+            //return Math.round(d.paymentsOut / 1000000);
+            return d.amount / 1000000;
         });
 
         //console.log(vm.paymentsSumGroup.top(3));
@@ -242,33 +253,33 @@
         // paymentRageSelectChart has to be defined separately due to an error in angular-dc
         // The attribute rangeChart can't be set directly in the range chart.
 
-        vm.paymentRangeSelectChart = dc.barChart("#paymentRangeSelectChart", "1");
-        vm.paymentRangeSelectChart.alwaysUseRounding(true)
-            .width(1100)
-            .height(85)
-            .margins({top: 0, right: 25, bottom: 40, left: 60})
-            .brushOn(true)
-            .elasticX(true) // First get the right size, then it has to be set to false in order to work.
-            .elasticY(true)
-            .centerBar(true)
-            .gap(0)
-            .dimension(vm.paymentDimension)
-            .group(vm.paymentGroup)
-            .outerPadding(0.05)
-            .renderHorizontalGridLines(true)
-            .renderVerticalGridLines(true)
-            //.xAxisLabel('Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€')
-            //.yAxisLabel(' ')
-            .x(d3.scale.linear().domain([0, vm.paymentMax]))
-            .y(d3.scale.linear().domain([0, vm.paymentMax]))
-            //.y(d3.scale.log().domain([1, vm.paymentMax]))
-            .yAxis().ticks(0)
-        ;
-
-        vm.setupRangeChart = function (myRangeChart) {
-            myRangeChart.rangeChart(vm.paymentRangeSelectChart);
-            vm.paymentRangeSelectChart.render();
-        };
+        //vm.paymentRangeSelectChart = dc.barChart("#paymentRangeSelectChart", "1");
+        //vm.paymentRangeSelectChart.alwaysUseRounding(true)
+        //    .width(1100)
+        //    .height(85)
+        //    .margins({top: 0, right: 25, bottom: 40, left: 60})
+        //    .brushOn(true)
+        //    .elasticX(true) // First get the right size, then it has to be set to false in order to work.
+        //    .elasticY(true)
+        //    .centerBar(true)
+        //    .gap(0)
+        //    .dimension(vm.paymentDimension)
+        //    .group(vm.paymentGroup)
+        //    .outerPadding(0.05)
+        //    .renderHorizontalGridLines(true)
+        //    .renderVerticalGridLines(true)
+        //    //.xAxisLabel('Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€')
+        //    //.yAxisLabel(' ')
+        //    .x(d3.scale.linear().domain([0, vm.paymentMax]))
+        //    .y(d3.scale.linear().domain([0, vm.paymentMax]))
+        //    //.y(d3.scale.log().domain([1, vm.paymentMax]))
+        //    .yAxis().ticks(0)
+        //;
+        //
+        //vm.setupRangeChart = function (myRangeChart) {
+        //    myRangeChart.rangeChart(vm.paymentRangeSelectChart);
+        //    vm.paymentRangeSelectChart.render();
+        //};
 
         //vm.rowChartProductField = dc.rowChart("#rowChartProductField");
         //vm.rowChartProductField
@@ -356,13 +367,13 @@
                         }
                     });
                     // console.log('Imported bookings data', results);
-
+                    vm.ndx.remove();
                     vm.ndx.add(results);
                     //console.log(vm.ndx);
                     vm.paymentMax = Math.round(vm.paymentDimension.top(1)[0].amount / 1000);
                     vm.resetAll();
                     // Reset elasticX to false, otherwise rage chart won't work.
-                    $scope.paymentRangeChart.elasticX(false);
+                    //$scope.paymentRangeChart.elasticX(false);
                 })
                 .catch(function (err) {
                     console.log('Error Imported bookings data', err);

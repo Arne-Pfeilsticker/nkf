@@ -30,8 +30,8 @@
         //    orientImportPath = process.cwd() + '/import',
 
         // Remote access to database
-            orientRemote = 'remote:h2258975.stratoserver.net/' + orientDB
-            //orientRemote = 'remote:' + orientHost + '/' + orientDB
+            //orientRemote = 'remote:h2258975.stratoserver.net/' + orientDB
+            orientRemote = 'remote:' + orientHost + '/' + orientDB
             ;
 
         return {

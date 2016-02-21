@@ -226,6 +226,7 @@
                                                      dc.outer-padding="0.05"
                                                      dc-dimension="vm.yearDimension"
                                                      dc-group="vm.paymentsInSumGroup"
+                                                     dc-post-setup-chart="vm.barChartPostSetup"
                                                      dc-elastic-x="true"
                                                      dc-elastic-y="true"
                                                      dc-center-bar="true">
@@ -273,6 +274,7 @@
                                                      dc.outer-padding="0.05"
                                                      dc-dimension="vm.yearDimension"
                                                      dc-group="vm.paymentsOutSumGroup"
+                                                     dc-post-setup-chart="vm.barChartPostSetup"
                                                      dc-elastic-x="true"
                                                      dc-elastic-y="true"
                                                      dc-center-bar="true">
@@ -306,13 +308,12 @@
                                      dc-margins="{top: 30, right: 25, bottom: 25, left: 60}"
                                      dc-name="'paymentRangeChart'"
                                      dc-options="vm.paymentRangeChartOptions"
-                                     dc-post-setup-chart="vm.setupRangeChart"
                                      dc-render-horizontal-grid-lines="true"
                                      dc-transition-duration="1000"
                                      dc-width="1100"
                                      dc-x="d3.scale.linear().domain([0, vm.paymentMax])"
                                      dc-y-axis-label="'Summe pro Gruppe in T€'">
-
+                                    <!--dc-post-setup-chart="vm.setupRangeChart"-->
                                 </div>
                                 <div>Zahlungen gruppiert nach Jahr, Produkt, Konto und Betrag in T€</div>
                                 <div id="paymentRangeSelectChart"></div>
