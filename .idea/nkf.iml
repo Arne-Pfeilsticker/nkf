@@ -4,7 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="nkf node_modules" level="project" />
     <orderEntry type="library" name="angular" level="application" />
     <orderEntry type="library" name="angular-cookies" level="application" />
     <orderEntry type="library" name="angular-jade" level="application" />

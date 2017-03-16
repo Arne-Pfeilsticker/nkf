@@ -22,7 +22,7 @@
         'ui.ace',
         'ui.grid',
         'ui.grid.treeView',
-        //'ui.grid.importer',
+        'ui.grid.importer',
         'ui.grid.edit',
         'ui.grid.resizeColumns',
         'ui.grid.autoResize'

@@ -10,9 +10,9 @@
 
         var
         // OrientDB database name
-            orientHost = 'h2258975.stratoserver.net',
+            //orientHost = 'h2258975.stratoserver.net',
             //orientHost = 'nkf-plus-thoma5b.c9.io:8080',
-            //orientHost = 'localhost:2480',
+            orientHost = 'localhost:2480',
             orientDB = 'nkf',
 
         // OrientDB Server User and Password
