@@ -71,4 +71,6 @@ Node-Module und Bower-Komponenten herunter zu laden:
 Ich freue mich über jeden, der sich für dieses Projekt interessiert und stehe für Fragen gerne zur Verfügung.
 Mein Skype name ist *arne.pfeilsticker* und die Email-Adresse: Arne.Pfeilsticker@pfeilsticker.de
 
-(c) 2015 Arne Pfeilsticker
+(c) 2017 Arne Pfeilsticker
+
+Die Veröffentlichung erfolgt unter Creative Comons CC-BY-SA. Eine kommerzielle Nutzung wird ausgeschlossen, bei Verwendung des Werks oder Teilen davon ist der Name des Urhebers zu nennen, eine Weitergabe ist nur zu gleichen Bedingungen möglich. 

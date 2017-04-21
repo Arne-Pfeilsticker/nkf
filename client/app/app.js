@@ -1,3 +1,10 @@
+// Autor Arne Pfeilsticker
+// Email: Arne.Pfeilsticker@pfeilsticker.de
+
+// Die Veröffentlichung erfolgt unter Creative Comons CC-BY-SA. Eine kommerzielle Nutzung wird ausgeschlossen,
+// bei Verwendung des Werks oder Teilen davon ist der Name des Urhebers zu nennen, eine Weitergabe ist nur zu gleichen
+// Bedingungen möglich.
+
 (function (nkfApp) {
     'use strict';
 

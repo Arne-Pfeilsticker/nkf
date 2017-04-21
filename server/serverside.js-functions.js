@@ -66,8 +66,6 @@
         // Just a way to get the current datetime
         var importDate = db.command('sql', 'select date() as importDate from OUser limit 1')[0].getProperty('importDate');
 
-        // db.begin(); // Not a function of db!?
-
         try {
             for (var i = 0, len = data.length; i < len; i++) {
                 row = data[i];
