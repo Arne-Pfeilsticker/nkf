@@ -67,6 +67,13 @@
         var importDate = db.command('sql', 'select date() as importDate from OUser limit 1')[0].getProperty('importDate');
 
         try {
+            // Delete all bookings of an personId and bookingYear bevore new bookings of the same person and year are imported
+            row = data[0];
+            row['personId'] = ('00000000' + row['personId'].toString()).slice(-8);
+            vt = db.command('sql', 'delete Vertex from Bookings where bookingYear = ' + row['bookingYear'] + " and personId = 'de." + row['personId'] + "' and nkfAccount like '" + row['nkfAccount'].substr(0,1) + "%'" );
+
+            // return 'SQL Befehl: ' + 'delete Vertex from Bookings where bookingYear = ' + row['bookingYear'] + " and personId = 'de." + row['personId'] + "' and nkfAccount like '" + row['nkfAccount'].substr(0,1) + "%'"  ;
+
             for (var i = 0, len = data.length; i < len; i++) {
                 row = data[i];
 
