@@ -362,6 +362,7 @@ module.exports = function (grunt) {
                         '../plugin.json',
                         '*.html',
                         'app/{,*/}*.html',
+                        'assets/{,*/}*.*',
                         'images/{,*/}*.{webp,svg}',
                         'styles/fonts/{,*/}*.*'
                     ]
