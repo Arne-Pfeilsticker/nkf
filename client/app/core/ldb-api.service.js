@@ -83,15 +83,15 @@
 
             var parastr = ldbApiConfig.wsParametersToString(params);
 
-            var headers = {
-                'Accept': 'application/xml'
-                // 'Accept-Language': 'de'
-            };
+            // var headers = {
+            //     'Accept': 'application/xml'
+            //     // 'Accept-Language': 'de'
+            // };
 
             return $http({
                 url: ldbApiConfig.wsEndpoint + parastr,
                 method: 'GET',
-                headers: headers,
+                //headers: headers,
                 transformResponse: transformXmlResponse
             })
                 .then(function (result) {

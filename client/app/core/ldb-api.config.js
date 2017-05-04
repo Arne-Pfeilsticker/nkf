@@ -13,8 +13,8 @@
             wsAction = 'DatenExport',
             dataExportParameters = {
                 method: 'DatenExport',
-                kennung: 'NW014114',
-                passwort: 'Nipa1gT2',
+                kennung: 'gast',
+                passwort: '',
                 namen: '71517NWGJ1',
                 bereich: 'Alle',
                 format: 'csv',
@@ -32,8 +32,8 @@
             },
             tableExportParameters = {
                 method: 'TabellenExport',
-                kennung: 'NW014114',
-                passwort: 'Nipa1gT2',
+                kennung: 'gast',
+                passwort: '',
                 namen: '71717E-14i',
                 bereich: 'Alle',
                 format: 'csv',
@@ -49,8 +49,8 @@
             },
 
         // LdbWS Server User and Password
-            ldbUser = 'NW014114',
-            ldbPassword = 'Nipa1gT2';
+            ldbUser =  'Gast',
+            ldbPassword = '';
 
         /**
          * Transforms data- or tableExportParameters into a string

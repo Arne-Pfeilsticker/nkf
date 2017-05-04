@@ -154,6 +154,7 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
+                        './dist/nkf.zip',
                         './dist/nkf/plugin.json',
                         '<%= yeoman.dist %>/{,*/}*',
                         '!<%= yeoman.dist %>/.git{,*/}*'
@@ -497,9 +498,16 @@ module.exports = function (grunt) {
         'htmlmin'
     ]);
 
-    grunt.registerTask('orientPlugin', 'Copy app into plugin directory of OrientDB', function () {
+    grunt.registerTask('buildPlugin', 'Build plugin for OrientDB as zip-file', function () {
         grunt.task.run([
-            //'clean:orientPlugin',
+            'build',
+            'compress:plugin'
+        ]);
+    });
+
+    grunt.registerTask('orientPlugin_move', 'Copy OrientDB-Plugin (nkf.zip) into plugin directory of OrientDB', function () {
+        grunt.task.run([
+            'clean:orientPlugin',
             'copy:orientPlugin'
         ]);
     });

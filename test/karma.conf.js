@@ -39,6 +39,7 @@ module.exports = function(config) {
       'bower_components/showdown/dist/showdown.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-material/angular-material.js',
+      'bower_components/Blob/Blob.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'client/app/**/*.js'

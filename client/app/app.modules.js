@@ -15,6 +15,7 @@
         /*
          * 3rd Party modules
          */
+        //'Blob',
         'ui.router',
         'ui.ace',
         'ui.grid',

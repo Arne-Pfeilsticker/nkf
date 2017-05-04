@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b5e426cc-fe06-4acf-a4e8-207eafab8706" name="pss-arch1704s1" url="http://192.168.3.100">
+        <fileTransfer host="192.168.3.100" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="785f795f-4e5d-4c01-bac0-ec78f21db08c" name="egov-infrastructure.org" url="http://www.egov-infrastructure.org">
+        <fileTransfer host="www.egov-infrastructure.org" port="22" privateKey="$USER_HOME$/.ssh/id_dsa" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

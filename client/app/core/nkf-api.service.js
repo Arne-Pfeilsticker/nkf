@@ -41,9 +41,11 @@
 
         var requestConfig = {
             headers: {
-                'Authorization': 'Basic YWRtaW46YWRtaW4=',
-                'Content-Type': 'application/json; charset=utf-8'
-                // 'Accept-Encoding': 'gzip,deflate',
+                'Authorization': 'Basic YWRtaW46YWRtaW4='
+                //'Accept': 'application/json; charset=utf-8'
+                //'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                //'Content-Type': 'text/plain; charset=utf-8'
+                //'Content-Type': 'application/json; charset=utf-8'
                 // 'Content-Length': 500000
             }
         };

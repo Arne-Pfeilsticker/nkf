@@ -11,8 +11,10 @@
         var
         // OrientDB database name
             //orientHost = 'h2258975.stratoserver.net',
+            //orientHost = 'egov-infrastructure.org',
             //orientHost = 'nkf-plus-thoma5b.c9.io:8080',
-            orientHost = 'localhost:2480',
+            //orientHost = 'localhost:2480',
+            orientHost = '127.0.0.1:2480',
             orientDB = 'nkf',
 
         // OrientDB Server User and Password
@@ -31,7 +33,8 @@
 
         // Remote access to database
             //orientRemote = 'remote:h2258975.stratoserver.net/' + orientDB
-            orientRemote = 'remote:' + orientHost + '/' + orientDB
+            //orientRemote = 'remote:' + orientHost + '/' + orientDB
+            orientRemote = orientHost + '/' + orientDB
             ;
 
         return {
