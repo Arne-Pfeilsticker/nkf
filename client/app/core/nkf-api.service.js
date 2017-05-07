@@ -37,7 +37,8 @@
         //var baseUrl = 'http://h2258975.stratoserver.net:2480/function/nkf';
         //var baseUrl = 'http://localhost:2480/function/nkf';
         var baseUrl = 'http://' + nkfApiConfig.Host + '/function/' + nkfApiConfig.DB;
-        console.log('Base URL: ' + baseUrl);
+        //var baseUrl = '/function/' + nkfApiConfig.DB;
+        //console.log('Base URL: ' + baseUrl);
 
         var requestConfig = {
             headers: {
